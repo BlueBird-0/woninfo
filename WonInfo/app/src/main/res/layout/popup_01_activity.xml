@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dip"
+    android:layout_height="350dip"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="219dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/popup_01_ic_logo"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:background="@drawable/ic_popup_01_logo" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/popup_01_btn_submit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp"
+            android:textSize="@dimen/title_size"
+            android:text="5.8 ~ 5.10"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/popup_01_btn_submit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="4dp"
+            android:text="멋쟁이 사자처럼"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/popup_01_btn_submit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text="축제 즐기기" />
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

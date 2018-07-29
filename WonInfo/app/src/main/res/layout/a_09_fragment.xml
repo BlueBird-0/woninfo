@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    android:clickable="true" >
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:layout_margin="@dimen/form_margin"
+        android:padding="2dp"
+        android:columnCount="2"
+        android:orientation="horizontal">
+
+        //수업 시간표
+
+        <TextView
+            android:layout_columnWeight="0.4"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp"
+            android:layout_rowSpan="1"
+            android:background="@color/dawnBlue"
+            android:gravity="center"
+            android:text="예비"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.6"
+            android:layout_marginBottom="2dp"
+            android:layout_rowSpan="1"
+            android:background="@color/colorBackground"
+            android:text=" 08:50~"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.4"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp"
+            android:layout_rowSpan="1"
+            android:background="@color/dawnBlue"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.6"
+            android:layout_marginBottom="2dp"
+            android:layout_rowSpan="1"
+            android:background="@color/colorBackground"
+            android:text=" 09:00~09:50"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.4"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp"
+            android:layout_rowSpan="1"
+            android:background="@color/dawnBlue"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="2"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.6"
+            android:layout_marginBottom="2dp"
+            android:layout_rowSpan="1"
+            android:background="@color/colorBackground"
+            android:textColor="@color/black"
+            android:text=" 10:00~10:50"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.4"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp"
+            android:layout_rowSpan="1"
+            android:background="@color/dawnBlue"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="3"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.6"
+            android:layout_marginBottom="2dp"
+            android:layout_rowSpan="1"
+            android:background="@color/colorBackground"
+            android:textColor="@color/black"
+            android:text=" 11:00~11:50"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.4"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp"
+            android:layout_rowSpan="1"
+            android:background="@color/dawnBlue"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="4"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.6"
+            android:layout_marginBottom="2dp"
+            android:layout_rowSpan="1"
+            android:background="@color/colorBackground"
+            android:textColor="@color/black"
+            android:text=" 12:00~12:50"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.4"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp"
+            android:layout_rowSpan="1"
+            android:background="@color/dawnBlue"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="5"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.6"
+            android:layout_marginBottom="2dp"
+            android:layout_rowSpan="1"
+            android:background="@color/colorBackground"
+            android:textColor="@color/black"
+            android:text=" 13:30~14:20"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.4"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp"
+            android:layout_rowSpan="1"
+            android:background="@color/dawnBlue"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="6"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.6"
+            android:layout_marginBottom="2dp"
+            android:layout_rowSpan="1"
+            android:background="@color/colorBackground"
+            android:textColor="@color/black"
+            android:text=" 14:30~15:20"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.4"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp"
+            android:layout_rowSpan="1"
+            android:background="@color/dawnBlue"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="7"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.6"
+            android:layout_marginBottom="2dp"
+            android:layout_rowSpan="1"
+            android:background="@color/colorBackground"
+            android:textColor="@color/black"
+            android:text=" 15:30~16:20"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.4"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp"
+            android:layout_rowSpan="1"
+            android:background="@color/dawnBlue"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="8"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.6"
+            android:layout_marginBottom="2dp"
+            android:layout_rowSpan="1"
+            android:background="@color/colorBackground"
+            android:textColor="@color/black"
+            android:text=" 16:30~17:20"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.4"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp"
+            android:layout_rowSpan="1"
+            android:background="@color/dawnBlue"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="9"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.6"
+            android:layout_marginBottom="2dp"
+            android:layout_rowSpan="1"
+            android:background="@color/colorBackground"
+            android:textColor="@color/black"
+            android:text=" 17:30~18:20"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.4"
+            android:layout_marginRight="1dp"
+            android:layout_rowSpan="1"
+            android:background="@color/dawnBlue"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="10"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_columnWeight="0.6"
+            android:layout_rowSpan="1"
+            android:background="@color/colorBackground"
+            android:textColor="@color/black"
+            android:text=" 18:30~19:20"
+            android:textSize="@dimen/title_size" />
+    </GridLayout>
+</LinearLayout>

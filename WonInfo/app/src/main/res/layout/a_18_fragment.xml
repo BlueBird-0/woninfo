@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/form_contentmargin"
+                android:layout_marginLeft="@dimen/form_margin"
+                android:layout_marginTop="@dimen/form_contentmargin"
+                android:textSize="@dimen/mini_size"
+                android:textColor="@color/colorPrimary"
+                android:text="모든 부서에서 교수님 개인 전화번호는 정보보를 위해 알려드릴 수 없습니다." />
+
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_18_exlbtn0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_18_exlimg0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:rotation="180"
+
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:text="부서 전화번호"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_18_exl0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/form_margin"
+                android:layout_marginRight="@dimen/form_margin"
+                app:exl_expanded="true">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:padding="1dp"
+                    android:columnCount="1"
+                    android:orientation="horizontal">
+
+                    //부서 전화번호
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:background="@color/dawnBlue"
+                        android:gravity="center"
+                        android:text="학사지원과" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 졸업/성적/수강/증명/출결/공결/교직" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-5146" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="교양교육대학" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 후마니타스장학" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-5372" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="교수학습개발센터" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 인터넷강좌" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-5027" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="장학복지과" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 장학/대출/복지" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-5242 ~3" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="학생과" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 졸업앨범/건강공제" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-5234 ~7" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="여대생커리어개발센터" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-5402 ~3" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="취업지원과(인력개발처)" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 취업프로그램" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-5319 ~ 20" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="재무과" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 등록금납부" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-5334 ~6" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="국제교류과" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 교환학생/GHRE" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-5752" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="예비군연대" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 예비군신고/훈련" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-5492" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="학생생활관" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 입사/생활관 문의" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-840-4004 ~5" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="의사소통교육센터" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-7132" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="인력개발처" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-5664" />
+
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:background="@color/dawnBlue"
+                        android:text="소통실" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 총장 경영운영방향 및 실행 보좌" />
+                    <TextView
+                        android:layout_columnWeight="1"
+                        android:autoLink="web"
+                        android:textSize="15dp"
+                        android:background="@color/blueblush"
+                        android:text=" 063-850-5500, 6500" />
+
+                </GridLayout>
+
+
+            </com.github.chuross.library.ExpandableLayout>
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_contentmargin"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
+
+
+

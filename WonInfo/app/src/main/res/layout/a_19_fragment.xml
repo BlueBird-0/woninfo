@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/a_19_exlbtn0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_19_exlimg0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    android:rotation="180"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="원광대 드루와란?"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_19_exl0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:exl_expanded="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="원광대 학생들의 대나무숲 같은 역할" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="익명,비익명으로 제보, 정보전달, 행사홍보 정보를 교류하는 페이스북 페이지" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/form_margin"
+                            android:text="facebook에 '" />
+
+                        <TextView
+                            android:id="@+id/a_19_btn_facebookLink0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="원광대 드루와"
+                            android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="' 검색" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_margin"
+                        android:layout_marginTop="@dimen/form_contentmargin"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/a_19_img_facebook" />
+
+
+                </LinearLayout>
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_19_exlbtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_19_exlimg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="그 외의 페이지"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_19_exl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true">-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="facebook→'원광대학교 대나무숲'" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="facebook→'원광대학교 공식 페이스북'" />
+
+
+                </LinearLayout>
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+
+

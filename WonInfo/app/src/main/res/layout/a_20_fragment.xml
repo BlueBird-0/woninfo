@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/a_20_exlbtn0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_20_exlimg0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="주요학사안내"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_20_exl0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true">-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_0"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="교육과정 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="성적처리 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="졸업논문 및 종합시험 관리"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="시험관리 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="학적부 기재사항 변경"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="수강신청 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="계절수업 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="학생 출·결석 관리"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="주소 및 연락처 변경"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <include
+                        layout="@layout/item_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="복수전공 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="전과(부)안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="군사학관련 수강 과목"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="교원자격 취득 이수 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="편입생 교육과정 이수 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/form_margin"
+                            android:layout_marginLeft="@dimen/form_margin"
+                            android:text="복합연계전공이수 안내"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15dp" />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="부전공 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="수련과봉사 과목"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_17"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="군복무중 학점 특별취득"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="평생교육과정 이수 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_19"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="복수학위 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+                            <TextView
+                                android:id="@+id/a_20_btnLink_20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="자율전공학부 운영 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <include
+                        layout="@layout/item_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_21"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="재입학 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_22"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="복학 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_23"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="졸업 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_24"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="휴학 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_25"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:layout_marginBottom="@dimen/form_margin"
+                                android:text="유급 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_20_btnLink_26"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/form_margin"
+                                android:text="제적 안내"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_20_exlbtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_20_exlimg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    android:rotation="180"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="자료실(학생용)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_20_exl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:exl_expanded="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/a_20_btnLink_27"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:textColor="@color/colorPrimary"
+                        android:text="자료실(학생용)" />
+
+                </LinearLayout>
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+
+

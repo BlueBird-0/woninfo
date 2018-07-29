@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/a_03_exlbtn0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_03_exlimg0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:text="학생증 발급 신청 방법"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+            </RelativeLayout>
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_03_exl0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:exl_expanded="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="전북은행 학생증신청 클릭" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="▼" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="정보제공동의&amp; 고객정보입력" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="▼" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="원광대학교 전북은행에 제출" />
+
+                    <TextView
+                        android:id="@+id/a_03_btn_manuallink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="자세한 내용"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mini_size" />
+
+
+                    <include
+                        layout="@layout/item_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_margin"
+                        android:text="학생증 예약등록"
+                        android:textSize="@dimen/title_size" />
+
+                    <TextView
+                        android:id="@+id/a_03_btn_banklink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="원광대학교 전북은행 학생증 신청"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <include
+                        layout="@layout/item_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_margin"
+                        android:text="원광대학교 전북은행 방문"
+                        android:textSize="@dimen/title_size" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="원광대학교 학생회관 1층 위치" />
+                </LinearLayout>
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_03_exlbtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_03_exlimg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:text="모바일 학생증"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+            </RelativeLayout>
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_03_exl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true">-->
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/form_margin"
+                            android:text="'Play 스토어'→'" />
+    
+                        <TextView
+                            android:id="@+id/a_03_btn_applink"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="원광대학교 모바일학생증" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="' 검색" />
+    
+                    </LinearLayout>
+    
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_margin"
+                        android:layout_marginTop="@dimen/form_contentmargin"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/a_03_img_mobile" />
+
+                </LinearLayout>
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

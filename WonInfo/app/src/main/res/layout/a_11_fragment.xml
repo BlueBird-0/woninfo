@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/form_margin"
+                android:text="KT, LG U+, SKT 와이파이 제공 중" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/form_margin"
+                android:layout_marginTop="@dimen/form_contentmargin"
+                android:text="KT, SKT 는 자사 가입자만 서비스 제공" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/form_contentmargin"
+                android:layout_marginLeft="@dimen/form_margin"
+                android:text="LG U+ 는 통신사 관계없이 제공" />
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_03_exl0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true"-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="adsdaad" />
+
+                </LinearLayout>
+
+            </com.github.chuross.library.ExpandableLayout>
+
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/form_margin"
+                android:text="와이파이 접속"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/form_margin"
+                android:text="와이파이 : U+ Zone" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/form_margin"
+                android:text="U+zone 아님"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/mini_size" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/form_margin"
+                android:layout_marginBottom="@dimen/form_contentmargin"
+                android:text="비밀번호 : lguplus100" />
+
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/form_margin"
+                android:text="자세한 이용방법"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_size" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="@dimen/form_contentmargin"
+                android:layout_marginLeft="@dimen/form_margin"
+                android:autoLink="web"
+                android:text="http://image.wku.ac.kr/2011/07/WIFI_Twifi.pdf" />
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/a_07_exlbtn0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_07_exlimg0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:rotation="180"
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="학식당 이용 방법"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_07_exl0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:exl_expanded="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="가격 : 3500원 ~ 4000원" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="위치 : 학생회관 지하1층" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="메뉴" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="실제 메뉴와 다를 수 있습니다(업데이트 예정)"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mini_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="백반··3500원 \n떡볶이돈까스···4000원 \n쫄면돈까스···4000원 \n불고기필라프···3500원 \n함박스테이크덮밥···3500원 \n치즈마요덮밥···3500원 \n파채불고기···4000원 \n불고기볶음밥···4000원 \n등심돈까스···3500원 \n" />
+
+                </LinearLayout>
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_07_exlbtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_07_exlimg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:rotation="180"
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="WM foodmall 이용 방법"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_07_exl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:exl_expanded="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="가격 : 3500원 ~ 7000원" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="위치 : 중앙도서관 옆 (WM관)" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="이용 시간 : (11:00 ~ 13:50), (16:50 ~ 18:00)" />
+
+
+                </LinearLayout>
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+
+

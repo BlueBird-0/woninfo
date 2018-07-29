@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/a_16_exlbtn0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_16_exlimg0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    android:rotation="180"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="기숙사 식단"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_16_exl0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:exl_expanded="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimaryDark"
+                            android:columnCount="8"
+                            android:orientation="horizontal"
+                            android:padding="1dp">
+                            <!-- TODO 학생생활관 주소       http://dorm.wku.ac.kr/ -->
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/dawnBlue"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_foodTitle_0"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/dawnBlue"
+                                android:gravity="center"
+                                android:text="6/11 월"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_foodTitle_1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/dawnBlue"
+                                android:gravity="center"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_foodTitle_2"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/dawnBlue"
+                                android:gravity="center"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_foodTitle_3"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/dawnBlue"
+                                android:gravity="center"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_foodTitle_4"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/dawnBlue"
+                                android:gravity="center"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_foodTitle_5"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/dawnBlue"
+                                android:gravity="center"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_foodTitle_6"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/dawnBlue"
+                                android:gravity="center"
+                                android:textSize="15dp" />
+
+
+                            <!-- TODO 식단표 아침 -->
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_rowSpan="3"
+                                android:background="@color/dawnBlue"
+                                android:gravity="center"
+                                android:text=" 아침 "
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_0_0"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:text="쌀밥"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_0_1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_0_2"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_0_3"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_0_4"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_0_5"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_0_6"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+
+                            <!--국-->
+                            <TextView
+                                android:id="@+id/a_16_food_1_0"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:text="동태국"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_1_1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_1_2"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_1_3"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_1_4"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_1_5"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_1_6"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+
+                            <!--반찬-->
+                            <TextView
+                                android:id="@+id/a_16_food_2_0"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:text="돈육짜장조림\n야채샐럿\n애호박새우젓볶음\n도토리묵&amp;양념장\n포기김치"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_2_1"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_2_2"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_2_3"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_2_4"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_2_5"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_2_6"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+
+                            <!-- TODO 식단표 점심 -->
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_rowSpan="3"
+                                android:background="@color/dawnBlue"
+                                android:gravity="center"
+                                android:text=" 점심 "
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_3_0"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:text="콩나물밥&amp;양념장"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_3_1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_3_2"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_3_3"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_3_4"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_3_5"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_3_6"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+
+                            <!--국-->
+                            <TextView
+                                android:id="@+id/a_16_food_4_0"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:text="유부쑥갓국"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_4_1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_4_2"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_4_3"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_4_4"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_4_5"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_4_6"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+
+                            <!--반찬-->
+                            <TextView
+                                android:id="@+id/a_16_food_5_0"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:text="자반고등어구이\n메란새알심조림\n상추치커리무침\n겉절이"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_5_1"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_5_2"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_5_3"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_5_4"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_5_5"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_5_6"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+
+                            <!-- TODO 식단표 저녁 -->
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginRight="1dp"
+                                android:layout_rowSpan="3"
+                                android:background="@color/dawnBlue"
+                                android:gravity="center"
+                                android:text=" 저녁 "
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_6_0"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:text="쌀밥"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_6_1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_6_2"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_6_3"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_6_4"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_6_5"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_6_6"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+
+                            <!--국-->
+                            <TextView
+                                android:id="@+id/a_16_food_7_0"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:text="건새우 콩나물국"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_7_1"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_7_2"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_7_3"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_7_4"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_7_5"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_7_6"
+                                android:layout_columnWeight="1"
+                                android:layout_marginBottom="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+
+                            <!--반찬-->
+                            <TextView
+                                android:id="@+id/a_16_food_8_0"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:text="간장불고기\n야채소세지전&amp;케찹\n마늘쫑매콤조림\n포기김치"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_8_1"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_8_2"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_8_3"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_8_4"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_8_5"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/a_16_food_8_6"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:background="@color/blueblush"
+                                android:textSize="15dp" />
+                        </GridLayout>
+                    </HorizontalScrollView>
+
+
+                </LinearLayout>
+
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_16_exlbtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_16_exlimg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="푸쉬 알림 설정"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_16_exl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true">-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/form_margin"
+                            android:layout_marginBottom="@dimen/form_margin"
+                            android:text="급식 메뉴를 푸쉬알림으로 받아봅니다." />
+
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/a_16_switch_push"
+                            android:layout_marginLeft="30dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="기준시간 ( 07:40, 12:00, 17:00 )"
+                        android:textColor="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioGroup
+                            android:id="@+id/a_16_radioGroup_pushTimer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/a_16_radioBtn_10m"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:text="10분 전"
+                                android:layout_marginLeft="@dimen/form_margin" />
+                            <RadioButton
+                                android:id="@+id/a_16_radioBtn_30m"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:text="30분 전"
+                                android:layout_marginLeft="@dimen/form_margin" />
+                            <RadioButton
+                                android:id="@+id/a_16_radioBtn_60m"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:text="1시간 전"
+                                android:layout_marginLeft="@dimen/form_margin" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_16_exlbtn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_16_exlimg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="식사 시간"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_16_exl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true">-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="기 간 (period (期)): 2018. 03. 05 ~ 2018. 6. 22" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="조 식 (Breakfast): 오전(AM) 07:40 ~ 오전(AM) 08:40"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="중 식 (Lunch): 오후(PM) 12:00 ~ 오후(PM) 01:40"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="석 식 (Dinner): 오후(PM) 05:00 ~ 오후(PM) 06:40"
+                        android:textColor="@color/colorPrimary" />
+                </LinearLayout>
+
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/a_16_btn_manual0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="자세한 사항"
+                android:textColor="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+
+

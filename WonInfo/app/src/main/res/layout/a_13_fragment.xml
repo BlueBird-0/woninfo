@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/a_13_exlbtn0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_13_exlimg0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="W-point란?"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_13_exl0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true"-->
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/form_contentmargin"
+                    android:layout_marginLeft="@dimen/form_margin"
+                    android:text="취·창업과 관련된 다양한비교과 프로그램 참여를 장려하기 위해 대학이 인정하는 비교과 활동에 대해 포인트를 지급하는 제도" />
+
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_13_exlbtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_13_exlimg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:text="혜택"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_13_exl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true"-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="① 매 학기 고득점의 W-point를 적립한 학생에게 장학금 지급" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="② 4년간 누적 W-point를 기반으로 졸업 시 최고점자에게 삼합신사상 및 역량별 역량우수상 수여" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="③ 기타 혜택 확대 예정" />
+                </LinearLayout>
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_13_exlbtn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_13_exlimg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/form_margin"
+                    android:text="적립기간"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+            </RelativeLayout>
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_13_exl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true"-->
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/form_margin"
+                    android:layout_marginRight="@dimen/form_margin"
+                    android:paddingRight="32dp">
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimaryDark"
+                        android:columnCount="4"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        //W-point 적립기간
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/dawnBlue"
+                            android:gravity="center"
+                            android:text="학기" />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/dawnBlue"
+                            android:gravity="center"
+                            android:text="적립기간" />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/dawnBlue"
+                            android:gravity="center"
+                            android:text="평가시점" />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:background="@color/dawnBlue"
+                            android:text=" W-point 적용" />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:gravity="center"
+                            android:text=" 1학기 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 당해년도 1월 1일 ~ 6월 20일까지 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 6월 20일 이후 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 당해년도 2학기 장학생 선발 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 2학기 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 당해년도 7월 1일 ~ 12월 20일까지 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 12월 20일 이후 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:background="@color/colorBackground"
+                            android:text=" 차년도 1학기 장학생 선발 " />
+                    </GridLayout>
+
+                </HorizontalScrollView>
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_13_exlbtn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_13_exlimg3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/form_margin"
+                    android:text="신청 및 확인 방법"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_13_exl3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true"-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:text="웹정보서비스 상단 '올인원 경력관리' 메뉴" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:text="▼" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:text="왼쪽 '실행관리'→ 'W-Point'" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginTop="@dimen/form_margin"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="개인 신청 시 '매뉴얼'→'인정항목(PDF)'의 증빙자료를 첨부하여 신청" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="교내 프로그램의 경우 관련부서에서 등록합니다"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mini_size" />
+                </LinearLayout>
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:id="@+id/a_13_exlbtn4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_13_exlimg4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/form_margin"
+                    android:text="매뉴얼"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_13_exl4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true"-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/a_13_btn_manual0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginRight="@dimen/form_margin"
+                        android:onClick="onClick"
+                        android:text="인정 항목(PDF)"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/a_13_btn_manual1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginRight="@dimen/form_margin"
+                        android:onClick="onClick"
+                        android:text="운영 매뉴얼(PDF)"
+                        android:textColor="@color/colorPrimary"/>
+
+                    <TextView
+                        android:id="@+id/a_13_btn_manual2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginRight="@dimen/form_margin"
+                        android:onClick="onClick"
+                        android:text="어학점수 환산표(PDF)"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/a_13_btn_manual3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginRight="@dimen/form_margin"
+                        android:onClick="onClick"
+                        android:text="참여확인서 양식(HWP)"
+                        android:textColor="@color/colorPrimary" />
+                </LinearLayout>
+            </com.github.chuross.library.ExpandableLayout>
+
+
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/a_13_btn_manual4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:text="자세한 사항" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+
+

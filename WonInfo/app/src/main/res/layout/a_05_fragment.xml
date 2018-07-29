@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/form_margin"
+                android:layout_marginTop="@dimen/form_margin"
+                android:layout_marginRight="@dimen/form_contentmargin"
+                android:text="2018학년도 1학기 시외통학버스를 이용할 학생은 다음과 같이 기간내에 신청 및 등록하여 주시기 바랍니다." />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/mini_size"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/form_margin"
+                android:layout_marginTop="@dimen/form_contentmargin"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginRight="@dimen/form_contentmargin"
+                android:text="['18. 3. 12(월)부터는 반드시 버스카드를 단말기에 체크하고 승차해야함]" />
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_05_exlbtn0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_05_exlimg0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="신청 및 등록기간"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_05_exl0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true"-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="ⓐ 신청기간(인터넷 접수) : '18. 2. 22(목) ~ 3. 2(금)'" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:textSize="@dimen/mini_size"
+                        android:textColor="@color/colorPrimary"
+                        android:text="    *단, 신·편입생은 3.2(금)부터 신청 가능함" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="ⓑ 등록기간(이용료 납부) : '18. 2. 26(월) ~ 3. 6(화)' " />
+
+
+                </LinearLayout>
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:id="@+id/a_05_exlbtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_05_exlimg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="신청방법"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_05_exl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true"-->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/form_contentmargin"
+                    android:layout_marginLeft="@dimen/form_margin"
+                    android:text="웹정보서비스 로그인→기타서비스→시외통학버스신청→승차지역선택(노선,지역,방면,승·하차지점)→전화번호입력(휴대폰번호)→다음학기 등록여부 선택→신청서출력→등록(가상계좌납부)→버스카드 수령" />
+
+
+            </com.github.chuross.library.ExpandableLayout>
+
+
+
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:id="@+id/a_05_exlbtn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_05_exlimg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="카드발급 및 이용안내"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_05_exl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true"-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_contentmargin"
+                        android:textColor="@color/colorPrimary"
+                        android:text="기존 버스카드 소지자 (카드 재발급 불필요)" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_contentmargin"
+                        android:text="인터넷 접수→신청서(가상계좌 확인) 출력→다음날 등록(이용료 납부)→현재카드사용" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_contentmargin"
+                        android:text="미발급자(신·편입생, 신임교직원 등) 및 '16년도 이전 발급된 카드소지자"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_contentmargin"
+                        android:text="- 신·편입생, 신임교직원, '16학년도 이전에 발급된 카드소지자는 신규발급요망" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_contentmargin"
+                        android:text="- 인터넷신청→신청서출력(가상계좌확인)→기한내 등록(이용료 납부)→버스카드 발급" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_contentmargin"
+                        android:text="*버스카드 발급장소 : 학생회관(24번 건물) 2층 장학복지과 사무실" />
+
+                </LinearLayout>
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/a_05_exlbtn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_05_exlimg3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="운행노선"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_05_exl3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <!--app:exl_expanded="true"-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/a_05_btn_buslink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_contentmargin"
+                        android:autoLink="web"
+                        android:text="① 운행노선 바로가기"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_contentmargin"
+                        android:text="*대표홈페이지→대학생활→통학버스 시내외방면→시외방면" />
+
+                    <TextView
+                        android:id="@+id/a_05_btn_wonpuslink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_contentmargin"
+                        android:text="② 원광대학교 시외버스 앱 (WonPus) 이용" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_margin"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/a_05_img_wonpus" />
+                </LinearLayout>
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:id="@+id/a_05_exlbtn4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_05_exlimg4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="유의사항"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_05_exl4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <!--app:exl_expanded="true"-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_contentmargin"
+                        android:text="ⓐ 버스카드 수령시 본인여부 대조를 위해 신청서 및 모바일 신청내역을 확인함" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_contentmargin"
+                        android:text="ⓑ 등록기간 이후에 등록하는 학생은 2일 후 카드가 발급되므로 반드시 기간내에 등록요망" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginRight="@dimen/form_contentmargin"
+                        android:text="ⓒ 미등록자, 버스카드 비소지자는 일절 탑승 불가하오니 불미스러운 일이 발생하지 않도록 반드시 등록 후 카드발급하여 통학버스를 이용하시기 바랍니다." />
+
+                </LinearLayout>
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_05_exlbtn5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_05_exlimg5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="지역별 이용요금"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_05_exl5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <!--app:exl_expanded="true"-->
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/form_margin"
+                    android:layout_marginRight="@dimen/form_margin"
+                    android:paddingRight="32dp">
+
+                    <GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"
+                        android:columnCount="8"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        //지역별 이용요금
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/dawnBlue"
+                            android:gravity="center"
+                            android:text="전주" />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/dawnBlue"
+                            android:gravity="center"
+                            android:text="군산" />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/dawnBlue"
+                            android:gravity="center"
+                            android:text="김제" />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/dawnBlue"
+                            android:gravity="center"
+                            android:text="정읍" />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/dawnBlue"
+                            android:gravity="center"
+                            android:text="신태인" />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/dawnBlue"
+                            android:gravity="center"
+                            android:text="부안" />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/dawnBlue"
+                            android:gravity="center"
+                            android:text="대전" />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginBottom="1dp"
+                            android:background="@color/dawnBlue"
+                            android:gravity="center"
+                            android:text="계룡/논산" />
+
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:gravity="center"
+                            android:text=" 325,000 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:gravity="center"
+                            android:text=" 310,000 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:gravity="center"
+                            android:text=" 235,000 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:gravity="center"
+                            android:text=" 395,000 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:gravity="center"
+                            android:text=" 315,000 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:gravity="center"
+                            android:text=" 365,000 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/colorBackground"
+                            android:gravity="center"
+                            android:text=" 603,000 " />
+
+                        <TextView
+                            android:layout_columnWeight="0.3"
+                            android:background="@color/colorBackground"
+                            android:gravity="center"
+                            android:text=" 381,000 " />
+                    </GridLayout>
+
+                </HorizontalScrollView>
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

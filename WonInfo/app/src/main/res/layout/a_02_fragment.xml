@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    android:clickable="true">
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark">
+
+        //대학 계열모집 학과(부) 전공
+        <TextView
+            android:layout_columnWeight="1"
+            android:layout_rowSpan="1"
+            android:gravity="center"
+            android:text="　대학　　"
+            android:textColor="@color/black"
+            android:background="@color/colorBackground"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp"/>
+
+        <TextView
+            android:layout_columnWeight="1"
+            android:layout_rowSpan="1"
+            android:gravity="center"
+            android:text="계열모집　"
+            android:textColor="@color/black"
+            android:background="@color/colorBackground"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp" />
+
+        <TextView
+            android:layout_columnWeight="1"
+            android:layout_rowSpan="1"
+            android:gravity="center"
+            android:text="　학과(부)　　"
+            android:textColor="@color/black"
+            android:background="@color/colorBackground"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp" />
+
+        <TextView
+            android:layout_columnWeight="1"
+            android:layout_rowSpan="1"
+            android:gravity="center"
+            android:text="　　전공　　　"
+            android:textColor="@color/black"
+            android:background="@color/colorBackground"
+            android:layout_marginBottom="2dp" />
+
+    </GridLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="4"
+            android:orientation="horizontal"
+            android:background="@color/colorPrimaryDark">
+
+            //교학대학 원불교학과
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="교학대학"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="원불교학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="1"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //인문대학 국어국문학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="8"
+                android:layout_gravity="fill"
+                android:gravity="center"
+                android:text="인문대학"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="8"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="국어국문학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="4"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //인문대학 문예창작학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="문예창작학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //인문대학 영어영문학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="영어영문학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //인문대학 중국학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="중국학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //인문대학 역사문화학부 사학전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill"
+                android:gravity="center"
+                android:text="역사문화학부"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="사학전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //인문대학 역사문화학부 고고·미술사학전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="고고·미술사학\n전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //인문대학 철학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="철학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill"
+                android:gravity="center"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //인문대학 음악과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="음악과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //경영대학 경영학부
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="3"
+                android:layout_gravity="fill"
+                android:gravity="center"
+                android:text="경영대학"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="3"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="경영학부"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="3"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //경영대학 경제학부
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="경제학부"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //경영대학 국제통상학부
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="국제통상학부"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //농식품융합대학 원예산업학부 원예학전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="6"
+                android:layout_gravity="fill"
+                android:gravity="center"
+                android:text="농식품\n융합대학"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="6"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill"
+                android:gravity="center"
+                android:text="원예산업학부"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="원예학전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //농식품융합대학 원예산업학부 종자산업학전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="종자산업학\n전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //농식품융합대학 산림ㆍ조경학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="산림조경학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="4"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //농식품융합대학 식품생명공학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="식품생명공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //농식품융합대학 생물환경화학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="생물환경화학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //농식품융합대학 식품영양학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="식품영양학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //약학대학 약학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill"
+                android:gravity="center"
+                android:text="약학대학"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="약학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //약학대학 한약학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="한약학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //사범대학 국어교육과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="11"
+                android:layout_gravity="fill"
+                android:gravity="center"
+                android:text="사범대학"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="11"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="국어교육과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="11"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //사범대학 영어교육과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="영어교육과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //사범대학 일어교육과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="일어교육과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //사범대학 한문교육과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="한문교육과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //사범대학 역사교육과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="역사교육과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //사범대학 교육학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="교육학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //사범대학 유아교육과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="유아교육과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //사범대학 중등특수교육과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="중등특수교육과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //사범대학 가정교육과
+
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="가정교육과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //사범대학 수학교육과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="수학교육과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //사범대학 체육교육과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="체육교육과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="자연과학\n대학"
+                android:layout_rowSpan="7"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="7"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="응용수학부"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="5"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //자연과학대학 빅데이터금융통계학부
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="빅데이터금융\n통계학부"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //자연과학대학 바이오나노화학부
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="바이오\n나노화학부"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //자연과학대학 반도체·디스플레이학부
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="반도체·\n디스플레이학부"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //자연과학대학 생명과학부
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="생명과학부"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //자연과학대학 스포츠과학부 사회체육스포츠건강관리 스포츠산업·복지 통합전공
+
+
+            //자연과학대학 스포츠과학부 사회체육스포츠건강관리 스포츠산업·복지 통합전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="스포츠과학부"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="사회체육\n스포츠건강관리\n스포츠산업복지\n통합전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //자연과학대학 뷰티디자인학부 헤어디자인 코디메이크업 피부미용 통합전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="뷰티디자인학부"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="헤어디자인\n코디메이크업\n피부미용\n통합전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+            //한의과대학 한의예과
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="한의과대학"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="한의예과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //조형예술디자인대학 미술과
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="조형예술\n디자인대학"
+                android:layout_rowSpan="5"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="5"
+                android:layout_gravity="fill"
+                android:gravity="center"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="미술과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //조형예술디자인대학 귀금속보석공예과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="귀금속보석\n공예과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //조형예술디자인대학 디자인학부 시각정보디자인전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="디자인학부"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="시각정보\n디자인전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //조형예술디자인대학 디자인학부 공간환경·산업디자인전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="공간환경·산업\n디자인전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //조형예술디자인대학 패션디자인산업학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="패션디자인\n산업학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"  />
+
+            //사회과학대학 행정·언론학부 행정학전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="사회과학\n대학"
+                android:layout_rowSpan="8"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="8"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="행정·언론학부"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="행정학전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //사회과학대학 행정·언론학부 신문방송학전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="신문방송학\n전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //사회과학대학 복지·보건학부 보건행정학전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="복지·보건학부"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="보건행정학\n전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //사회과학대학 복지·보건학부 사회복지학전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="사회복지학\n전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //사회과학대학 가정아동복지학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="가정아동\n복지학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:layout_rowSpan="4"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //사회과학대학 군사학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="군사학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //사회과학대학 경찰행정학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="경찰행정학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //사회과학대학 소방행정학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="소방행정학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+
+            //창의공과대학 전기전자정보계열 계열모집
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="창의공과\n대학"
+                android:layout_rowSpan="21"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="전기전자\n정보계열"
+                android:layout_rowSpan="5"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="계열모집"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="12"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //창의공과대학 전기전자정보계열 전기공학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="전기공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+
+            //창의공과대학 전기전자정보계열 정보통신공학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="정보통신공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+
+            //창의공과대학 전기전자정보계열 전자공학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="전자공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+
+            //창의공과대학 전기전자정보계열 전자융합공학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="전자융합공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //창의공과대학 기계자동차계열 계열모집
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="기계자동차\n계열"
+                android:layout_rowSpan="4"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="계열모집"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //창의공과대학 기계자동차계열 기계공학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="기계공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //창의공과대학 기계자동차계열 스마트자동차공학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="스마트자동차\n공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //창의공과대학 기계자동차계열 기계설계공학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="기계설계공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //창의공과대학 독립계열 토목환경공학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="독립계열"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="토목환경공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //창의공과대학 건설환경계열 계열모집
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="건설환경\n계열"
+                android:layout_rowSpan="4"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="계열모집"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //창의공과대학 건설환경계열 건축공학과(4년제)
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="건축공학과\n(4년제)"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //창의공과대학 건설환경계열 도시공학부 도시계획설계전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="도시공학부"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="도시계획\n설계전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //창의공과대학 건설환경계열 도시공학부 경관문화공학전공
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="경관문화\n공학전공"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //창의공과대학 컴퓨터소프트웨어계열 계열모집
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="컴퓨터\n소프트웨어\n계열"
+                android:layout_rowSpan="3"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="계열모집"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="7"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //창의공과대학 컴퓨터소프트웨어계열 컴퓨터소프트웨어공학과
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="컴퓨터\n소프트웨어\n공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //창의공과대학 컴퓨터소프트웨어계열 디지털콘텐츠공학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="디지털콘텐츠\n공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //창의공과대학 독립계열 건축학과(5년제)
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="독립계열"
+                android:background="@color/colorBackground"
+                android:layout_gravity="fill"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="건축학과\n(5년제)"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //창의공과대학 화학생명공학계열 계열모집
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="화학생명\n공학계열"
+                android:layout_rowSpan="3"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="계열모집"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //창의공과대학 화학생명공학계
+            열 화학융합공학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="화학융합공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //창의공과대학 화학생명공학계열 탄소융합공학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="탄소융합공학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            //치과대학 치의예과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="치과대학"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="치의예과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp" />
+
+            //의과대학 의예과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="의과대학"
+                android:layout_rowSpan="3"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="3"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp" />
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="의예과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowSpan="3"
+                android:layout_gravity="fill"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"/>
+
+            //의과대학 간호학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="간호학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+            //의과대학 작업치료학과
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="작업치료학과"
+                android:background="@color/colorBackground"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"/>
+
+        </GridLayout>
+    </ScrollView>
+
+
+
+
+</LinearLayout>

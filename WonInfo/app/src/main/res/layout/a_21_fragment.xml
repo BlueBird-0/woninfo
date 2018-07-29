@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/form_margin"
+                android:layout_marginBottom="@dimen/form_contentmargin"
+                android:text="도서검색 및 대출연장등 자세한 사항은" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="'" />
+
+                <TextView
+                    android:id="@+id/a_21_btn_libraryLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="원광대학교 중앙도서관 홈페이지"
+                    android:textColor="@color/colorPrimary" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="' 를 이용해 주세요" />
+
+            </LinearLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_21_exlbtn0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_21_exlimg0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="중앙도서관 이용시간"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_21_exl0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true">-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimaryDark"
+                            android:columnCount="5"
+                            android:orientation="horizontal"
+                            android:padding="1dp">
+
+                            <TextView
+                                android:layout_columnSpan="2"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:gravity="center"
+                                android:text="구 분"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:gravity="center"
+                                android:text="자료열람실"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:gravity="center"
+                                android:text="중앙도서관(1,2층)\n자유열람실"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:background="@color/blueblush"
+                                android:gravity="center"
+                                android:text="학생지원관(3,4층)\n자유열람실"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_rowSpan="2"
+                                android:background="@color/blueblush"
+                                android:gravity="center"
+                                android:text="학기중"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:gravity="center"
+                                android:text="평 일"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/colorBackground"
+                                android:gravity="center"
+                                android:text=" 09:00 - 22:00 "
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_rowSpan="2"
+                                android:background="@color/colorBackground"
+                                android:gravity="center"
+                                android:text="06:30 - 24:00"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:layout_rowSpan="2"
+                                android:background="@color/colorBackground"
+                                android:gravity="center"
+                                android:text="24시간"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:gravity="center"
+                                android:text="토요일"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/colorBackground"
+                                android:gravity="center"
+                                android:text=" 09:00 - 17:00 "
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginRight="1dp"
+                                android:layout_rowSpan="2"
+                                android:background="@color/blueblush"
+                                android:gravity="center"
+                                android:text="방학중"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:gravity="center"
+                                android:text="평 일"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/colorBackground"
+                                android:gravity="center"
+                                android:text=" 09:00 - 17:00 "
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginRight="1dp"
+                                android:layout_rowSpan="2"
+                                android:background="@color/colorBackground"
+                                android:gravity="center"
+                                android:text="06:30 - 24:00"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_rowSpan="2"
+                                android:background="@color/colorBackground"
+                                android:gravity="center"
+                                android:text="24시간"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/blueblush"
+                                android:gravity="center"
+                                android:text="토요일"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="fill"
+                                android:layout_marginRight="1dp"
+                                android:background="@color/colorBackground"
+                                android:gravity="center"
+                                android:text=" 09:00 - 17:00 "
+                                android:textSize="15dp" />
+
+                        </GridLayout>
+                    </HorizontalScrollView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/form_margin"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="중앙도서관 1층 안내(Infomation)데스크, 6층 고문헌자료실, 6, 7층 보존서고 - 평일 17:20 / 토요일 휴무"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="학생지원관 5층 학술논문실 - 평일 17:20 / 토요일 휴무"
+                        android:textColor="@color/colorPrimary"/>
+
+
+                </LinearLayout>
+
+
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_21_exlbtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_21_exlimg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="중앙도서관 층별안내"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_21_exl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true">-->
+
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/form_margin">
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimaryDark"
+                        android:columnCount="2"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/blueblush"
+                            android:gravity="center"
+                            android:text="안내데스크[1층]"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 도서의 반납, 단행본 상호대차, 이용증 발급 업무와 One-Stop 참고봉사"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/blueblush"
+                            android:gravity="center"
+                            android:text=" 자유열람실[1-2층]"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 06:30 - 24:00 개방"
+                            android:textSize="15dp" />
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/blueblush"
+                            android:gravity="center"
+                            android:text="디지털정보센터[3층]"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 검색, 동영상 강의, 영화 DVD, 어학학습, 장애인열람실, 프린트&amp;스캔실"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/blueblush"
+                            android:gravity="center"
+                            android:text="인문 예술자료실[4층]"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 철학, 종교, 예술, 언어, 문학, 역사"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/blueblush"
+                            android:gravity="center"
+                            android:text="원불교자료실[4층]"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 원불교자료와 교사(敎史)자료 소장"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/blueblush"
+                            android:gravity="center"
+                            android:text="사회 과학기술자료실[5층]"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 총류, 사회과학, 순수과학, 기술과학, 건축술"
+                            android:textSize="15dp" />
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/blueblush"
+                            android:gravity="center"
+                            android:text="고문헌자료실[6층]"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginBottom="1dp"
+                            android:background="@color/colorBackground"
+                            android:text=" 고서 및 족보, 각종 문집류"
+                            android:textSize="15dp" />
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_marginRight="1dp"
+                            android:background="@color/blueblush"
+                            android:gravity="center"
+                            android:text="보존서고1,2[7층]"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:background="@color/colorBackground"
+                            android:text=" 발행년도가 지났거나 이용도가 낮은 자료"
+                            android:textSize="15dp" />
+
+                    </GridLayout>
+
+                </HorizontalScrollView>
+
+            </com.github.chuross.library.ExpandableLayout>
+
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_21_exlbtn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_21_exlimg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_weight="1"
+                    android:text="이용 문의"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+
+            </RelativeLayout>
+
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_21_exl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true">-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginTop="@dimen/form_margin"
+                        android:text="중앙 도서관 운영관리팀 (063) 850 - 5444" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="E-mail : bu5444@wonkwang.ac.kr" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/form_margin"
+                        android:layout_marginLeft="@dimen/form_margin"
+                        android:text="중앙도서관 1층 안내데스크 (063) 850-5464" />
+
+                </LinearLayout>
+
+            </com.github.chuross.library.ExpandableLayout>
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:id="@+id/a_21_btn_libraryApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/ic_appicon_round" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text=" 중앙도서관 앱"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17dp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+
+

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_alert_exit"
+            android:title="자퇴하기" />
+        <item
+            android:id="@+id/nav_update"
+            android:icon="@drawable/ic_menu_update"
+            android:title="업데이트 확인" />
+        <item
+            android:id="@+id/nav_tutorial"
+            android:icon="@drawable/ic_menu_tutorial"
+            android:title="도움말" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="환경설정" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="공유" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="문의 및 제안 주소" />
+            <item
+                android:id="@+id/test_sendIcon"
+                android:icon="@drawable/ic_listbtn_image"
+                android:title="ij3512@naver.com" />
+
+        </menu>
+    </item>
+
+</menu>

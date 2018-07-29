@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">WonInfo</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_search">Search</string>
+
+    <string name="SETTING_FILENAME">Setting File Name</string>
+    <string name="TUTORIAL_START">Tutorial Start</string>
+
+    <string name="SHARED_PRE_NAME">woninfo_shared</string>
+
+    <!-- 유저 정보 -->
+    <string name="shared_user_id">shared_user_id</string>
+    <string name="shared_user_pw">shared_user_pw</string>
+    <string name="shared_user_loginState">shared_user_loginState</string>   <!--bool-->
+    <string name="shared_user_name">shared_user_name</string>
+    <string name="shared_user_major">shared_user_major</string>
+    <string name="shared_user_grade">shared_user_grade</string>
+    <string name="shared_user_dormitory">shared_user_dormitory</string>
+
+    <!-- 급식표 정보 -->
+    <string name="shared_food_push_state">shared_food_push_state</string>   <!--bool-->
+    <string name="shared_food_push_updateTime">shared_food_push_updateTime</string> <!--Long-->
+    <string name="shared_food_push_timer">shared_food_push_timer</string>   <!--int-->
+    <string name="shared_food_data">shared_food_data</string>
+
+</resources>
