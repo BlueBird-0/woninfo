@@ -37,11 +37,6 @@ public class A16Fragment extends Fragment {
     static String foodTitle[] = new String[7];
     static String htmlPageUrl = "http://61.245.232.174/wordpress/dormitoryfood/";
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -196,9 +191,6 @@ public class A16Fragment extends Fragment {
         Calendar calendar = Calendar.getInstance();
 
 
-
-
-
         // TODO 나중에 변경해야함 자동 업데이트 기능 수정바람
 //        if(calendar.getTimeInMillis() > updateTime){
             //다음 업데이트 날자 설정
@@ -285,6 +277,7 @@ public class A16Fragment extends Fragment {
     }
 
 
+    //홈페이지 (급식표) 파싱 class
     private static class JsoupAsyncTask extends AsyncTask<Void, Void, Void>
     {
         private Context context;
@@ -323,16 +316,6 @@ public class A16Fragment extends Fragment {
                     }
                     link.attr("td");
                 }
-                /*
-                for (Element link : links) {
-                    Log.d ("test000",link.text().trim());
-                    String parseString[] = link.text().trim().split(" ");
-                    String foodTitle_parse[] = parseString;
-
-
-                    htmlContentInStringFormat += (link.attr("td")
-                    +"("+link.text().trim()+")\n");
-                }*/
 
             } catch(IOException e) {
                 e.printStackTrace();
@@ -346,6 +329,39 @@ public class A16Fragment extends Fragment {
             SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.SHARED_PRE_NAME), Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
             String foodString = "";
+
+            //TODO 식단 수동입력   비사용시 주석처리
+            //식단 수동 입력시 사용
+            foodTitle = new String[]{"7/23 월", "7/24 화", "7/25 수", "7/26 목", "7/27 금", "7/28 토", "7/29 일"};
+            food[0] = new String[]{"쌀밥", "쌀밥", "쌀밥", "쌀밥", "쌀밥", "쌀밥", "쌀밥"};
+            food[1] = new String[]{"아우국", "북어해장국", "오징어국", "돈육김치찌개", "콩나물무채국", "어묵국", "두부된장국"};
+            food[2] = new String[]{"고추장불고기\n계란장조림\n청경채나물\n포기김치",
+                    "함박콘치즈\n만두간장조림\n시금치나물\n브로컬리\n포기김치",
+                    "돈육피망볶음\n프랑크소시지\n깻잎김치\n포기김치",
+                    "참치볶음\n후라이\n가지나물\n건파래무침\n포기김치",
+                    "미트볼케찹조림\n두부스크램블\n미역줄기팽이볶음\n포기김치",
+                    "돈육스튜조림\n양상추샐럿\n새송이피망볶음\n도시락김\n포기김치",
+                    "햄칠리부추볶음\n코다리조림\n고구마순볶음\n포기김치"};
+            food[3] = new String[]{"김치주먹밥", "잡곡밥", "잡곡밥", "야채비빔밥", "잡곡밥", "잡곡밥", "잡곡밥"};
+            food[4] = new String[]{"계란국/크림스프", "냉콩나물국", "닭무국", "건새우미역국", "시래기국", "부대찌개", "유부국"};
+            food[5] = new String[]{"로제스파게티\n야채과일샐럿\n초코머핀\n포기김치",
+                    "탕수육\n두부조림\n상추초무침\n멸치볶음\n포기김치",
+                    "골뱅이소면무침\n해물경단전\n고구마순쌈잠무침\n콩조림\n포기김치",
+                    "마카로니샐럿\n단무지\n찐옥수수\n요구르트",
+                    "오리훈제&수육\n야채쌈\n어묵매콤볶음\n부추겉절이\n식혜\n포기김치",
+                    "삼치엿장조림\n잡채고로케\n청경채겉절이\n포기김치",
+                    "찜닭\n감자매콤조림\n오이무침\n포기김치"};
+            food[6] = new String[]{"쌀밥", "쌀밥", "쌀밥", "쌀밥", "쌀밥", "쌀밥", "쌀밥"};
+            food[7] = new String[]{"맑은미역국", "육개장", "수제비국", "순두부버섯국", "계란국", "콩나물국", "북어국"};
+            food[8] = new String[]{"오불볶음\n라면땅\n느타리들깨볶음\n포기김치",
+                    "옥수수전\n달걀찜\n오이부추무침\n쥐채조림\n포기김치",
+                    "매콤돈육단호박조림\n손만두\n얼갈이쌈장무침\n포기김치",
+                    "매콤메란조림\n크림떡볶이\n콩나물무침\n호박맛살볶음\n포기김치",
+                    "돈육콩나물볶음\n감자단호박범벅\n상추치커리무침\n포기김치",
+                    "오로시가스\n마파두부\n가지구이무침\n포기김치",
+                    "낙지야채볶음\n달걀범벅\n숙주김가루무침\n포기김치"};
+
+
             for(int i=0; i<7; i++)
             {
                 foodString += foodTitle[i];

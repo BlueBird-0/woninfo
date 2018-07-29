@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/a_24_exlbtn0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_24_exlimg0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    android:rotation="180"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:text="자주 타는 버스"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+            </RelativeLayout>
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_24_exl0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:exl_expanded="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_margin"
+                        android:text="집에가는길은"
+                        android:textSize="@dimen/title_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="멀고도 험해" />
+
+
+                </LinearLayout>
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_24_exlbtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_24_exlimg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_marginStart="16dp"
+                    android:text="전체 노선"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+            </RelativeLayout>
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_24_exl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:exl_expanded="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/a_24_exlbtn2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/a_24_exlimg2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/form_margin"
+                            app:srcCompat="@drawable/ic_page_expand" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/a_24_exlimg2"
+                            android:layout_margin="@dimen/form_margin"
+                            android:text="시외 방면"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/title_size" />
+                    </RelativeLayout>
+                    <com.github.chuross.library.ExpandableLayout
+                        android:id="@+id/a_24_exl2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:exl_expanded="true">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/a_24_routeBtn0"
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:background="@drawable/selector_menu_button"
+                                android:clickable="true">
+
+                                <RelativeLayout
+                                    android:layout_width="7dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/listbtn1" />
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="12dp"
+                                    android:src="@drawable/ic_listbtn_image" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:text="전주"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/a_24_routeBtn1"
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:background="@drawable/selector_menu_button"
+                                android:clickable="true">
+
+                                <RelativeLayout
+                                    android:layout_width="7dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/listbtn2" />
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="12dp"
+                                    android:src="@drawable/ic_listbtn_image" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:text="군산"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/a_24_routeBtn2"
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:background="@drawable/selector_menu_button"
+                                android:clickable="true">
+
+                                <RelativeLayout
+                                    android:layout_width="7dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/listbtn3" />
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="12dp"
+                                    android:src="@drawable/ic_listbtn_image" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:text="김제/정읍/부안"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/a_24_routeBtn3"
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:background="@drawable/selector_menu_button"
+                                android:clickable="true">
+
+                                <RelativeLayout
+                                    android:layout_width="7dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/listbtn4" />
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="12dp"
+                                    android:src="@drawable/ic_listbtn_image" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:text="대전/계룡/논산"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </com.github.chuross.library.ExpandableLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/a_24_exlbtn3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/a_24_exlimg3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/form_margin"
+                            app:srcCompat="@drawable/ic_page_expand" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="@dimen/form_margin"
+                            android:layout_toStartOf="@+id/a_24_exlimg3"
+                            android:text="시내 방면"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/title_size" />
+                    </RelativeLayout>
+                    <com.github.chuross.library.ExpandableLayout
+                        android:id="@+id/a_24_exl3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:exl_expanded="true">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/a_24_routeBtn4"
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:background="@drawable/selector_menu_button"
+                                android:clickable="true">
+
+                                <RelativeLayout
+                                    android:layout_width="7dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/listbtn1" />
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="12dp"
+                                    android:src="@drawable/ic_listbtn_image" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:text="익산역/송학동/모현동"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/a_24_routeBtn5"
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:background="@drawable/selector_menu_button"
+                                android:clickable="true">
+
+                                <RelativeLayout
+                                    android:layout_width="7dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/listbtn2" />
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="12dp"
+                                    android:src="@drawable/ic_listbtn_image" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:text="영등동/부송동"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/a_24_routeBtn6"
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:background="@drawable/selector_menu_button"
+                                android:clickable="true">
+
+                                <RelativeLayout
+                                    android:layout_width="7dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/listbtn3" />
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="12dp"
+                                    android:src="@drawable/ic_listbtn_image" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:text="동산동"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </com.github.chuross.library.ExpandableLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/a_24_exlbtn4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/a_24_exlimg4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/form_margin"
+                            app:srcCompat="@drawable/ic_page_expand" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="@dimen/form_margin"
+                            android:layout_toStartOf="@+id/a_24_exlimg4"
+                            android:text="방학중"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/title_size" />
+                    </RelativeLayout>
+                    <com.github.chuross.library.ExpandableLayout
+                        android:id="@+id/a_24_exl4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:exl_expanded="true">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/a_24_routeBtn7"
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:background="@drawable/selector_menu_button"
+                                android:clickable="true">
+
+                                <RelativeLayout
+                                    android:layout_width="7dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/listbtn1" />
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="12dp"
+                                    android:src="@drawable/ic_listbtn_image" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:text="방학중"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </com.github.chuross.library.ExpandableLayout>
+
+                </LinearLayout>
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

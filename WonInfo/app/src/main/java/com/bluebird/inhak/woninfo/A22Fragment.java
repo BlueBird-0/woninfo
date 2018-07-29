@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
+//TODO 22Fragment 사용 안함
 /**
  * Created by InHak on 2017-12-31.
  */
@@ -19,11 +19,6 @@ import android.webkit.WebViewClient;
 public class A22Fragment extends Fragment {
     static private boolean WEBVIEW_STATE_OPENED = false;
     static View view;
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Nullable
     @Override

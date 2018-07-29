@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/a_23_exlbtn0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_23_exlimg0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    android:rotation="180"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:text="교내 체육시설 사용신청 방법 안내"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+            </RelativeLayout>
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_23_exl0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:exl_expanded="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_margin"
+                        android:text="시설물 사용신청"
+                        android:textSize="@dimen/title_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="웹정보서비스 상단 '기타서비스' 메뉴" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="▼" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="왼쪽 '행사시설물 사용신청'" />
+
+
+                    <include
+                        layout="@layout/item_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_margin"
+                        android:text="행사원"
+                        android:textSize="@dimen/title_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="웹정보서비스 상단 '부서게시판' 메뉴" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="▼" />
+
+                    <TextView
+                        android:layout_marginStart="@dimen/form_contentmargin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="왼쪽 '대학본부' → '학생복지처' → '학생과' → '자료실'" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="▼" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="행사원" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="행사 일주일 전까지 제출하지 않을 경우 승인 불가"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mini_size" />
+
+
+                </LinearLayout>
+            </com.github.chuross.library.ExpandableLayout>
+
+            <include
+                layout="@layout/item_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/a_23_exlbtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/a_23_exlimg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/form_margin"
+                    app:srcCompat="@drawable/ic_page_expand" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_marginStart="16dp"
+                    android:text="행사원 싸인 받는 순서"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_size" />
+            </RelativeLayout>
+
+            <com.github.chuross.library.ExpandableLayout
+                android:id="@+id/a_23_exl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--app:exl_expanded="true">-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_margin"
+                        android:text="구체육관"
+                        android:textSize="@dimen/title_size" />
+
+                    <TextView
+                        android:layout_marginStart="@dimen/form_contentmargin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="신청자 및 담당교수님 → 구체육관 스포츠과학부 시설을 담당 조교 선생님 싸인 → 문화체육관 체육실운영관리과 → 학생과 " />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="(구체육관은 현재 중앙동아리 및 교내외 행사시에만 사용 가능합니다)"
+                        android:textSize="@dimen/mini_size"
+                        android:textColor="@color/colorPrimary"/>
+
+                    <include
+                        layout="@layout/item_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_margin"
+                        android:text="대운동장 &amp; 소운동장"
+                        android:textSize="@dimen/title_size" />
+
+                    <TextView
+                        android:layout_marginStart="@dimen/form_contentmargin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:text="신청자 및 담당교수님 → 교학과 → 문화체육관 체육실운영관리과 → 학생과 " />
+
+                    <include
+                        layout="@layout/item_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+            </com.github.chuross.library.ExpandableLayout>
+
+    <include
+        layout="@layout/item_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+    </ScrollView>
+    </LinearLayout>

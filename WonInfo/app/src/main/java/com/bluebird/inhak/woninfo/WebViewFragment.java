@@ -103,7 +103,7 @@ public class WebViewFragment extends Fragment {
         webView.setX((float)0.5);
         webView.loadUrl("http://intra.wku.ac.kr");
 
-        //
+        // 웹정보서비스 자동로그인 구현하려다가 실패함ㅠㅠ
         //new Thread(new Runnable() {
          //   @Override
          //   public void run() {

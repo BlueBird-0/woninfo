@@ -120,11 +120,6 @@ public class A15Fragment extends Fragment {
         redList.add("2018.12.25.크리스마스(휴무일)");
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
