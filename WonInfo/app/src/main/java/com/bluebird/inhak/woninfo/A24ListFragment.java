@@ -29,6 +29,10 @@ public class A24ListFragment extends Fragment {
         ArrayList<A24Item> rightData = new ArrayList<>();
 
 
+
+
+
+
         A24Item test = new A24Item("삼천동", "07:10");
         leftData.add(test);
         leftData.add(test);
