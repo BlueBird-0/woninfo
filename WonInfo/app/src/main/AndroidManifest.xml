@@ -49,7 +49,7 @@
             android:value="@string/kakao_app_key"/>
 
 
-        <receiver android:name=".A16Broadcast"/>
+        <receiver android:name=".A16Fragment.A16Broadcast"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

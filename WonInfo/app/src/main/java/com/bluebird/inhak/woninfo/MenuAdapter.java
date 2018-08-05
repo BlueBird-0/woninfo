@@ -77,8 +77,8 @@ public class MenuAdapter extends BaseAdapter {
                 FragmentManager fragmentManager = mainActivity.getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 try {
-                    Class t = Class.forName("com.bluebird.inhak.woninfo."+ primaryKey +"Fragment");
-                    //Class t = Class.forName("com.example.inhak.woninfo."+"A09"+"Fragment");
+                    Class t = Class.forName("com.bluebird.inhak.woninfo."+ primaryKey +"Fragment."+ primaryKey +"Fragment");
+                    //Class t = Class.forName("com.example.inhak.woninfo."+"A09"+"Fragment"+".A09"+"Fragment");
                     Fragment fragment = (Fragment)t.newInstance();
 
                     fragmentTransaction.replace(R.id.view_fragment, fragment);
