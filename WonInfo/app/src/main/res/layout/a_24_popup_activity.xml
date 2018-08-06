@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="350dp"
+    android:clickable="true"
+    android:background="@color/colorPrimary">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow>
+            <TextView
+                android:layout_weight="0.2"
+                android:layout_height="wrap_content"
+                android:text="승차장소"/>
+            <TextView
+                android:layout_weight="0.1"
+                android:layout_height="wrap_content"
+                android:text="시간"/>
+            <TextView
+                android:layout_weight="0.7"
+                android:layout_height="wrap_content"
+                android:text="경유장소"/>
+        </TableRow>
+    </TableLayout>
+
+
+</android.support.constraint.ConstraintLayout>

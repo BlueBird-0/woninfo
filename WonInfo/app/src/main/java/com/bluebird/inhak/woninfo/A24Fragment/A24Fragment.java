@@ -42,7 +42,7 @@ public class A24Fragment extends Fragment {
                     FragmentManager fragmentManager = getActivity().getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     try {
-                        Class t = Class.forName("com.bluebird.inhak.woninfo."+ "A24ListFragment");
+                        Class t = Class.forName("com.bluebird.inhak.woninfo."+ "A24Fragment."+"A24ListFragment");
                         Fragment fragment = (Fragment)t.newInstance();
 
                         fragmentTransaction.replace(R.id.view_fragment, fragment);
