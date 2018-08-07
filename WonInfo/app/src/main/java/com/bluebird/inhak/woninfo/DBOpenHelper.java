@@ -18,7 +18,7 @@ import jxl.Workbook;
  */
 public class DBOpenHelper {
     private static final String DATABASE_NAME = "woninfo.db";
-    private static final int DATABASE_VERSION = 30;
+    private static final int DATABASE_VERSION = 31;
     public static SQLiteDatabase sqLiteDatabase;
     private DBHelper dbHelper;
     private Context context;
