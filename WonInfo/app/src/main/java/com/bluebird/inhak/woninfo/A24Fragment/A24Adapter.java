@@ -1,6 +1,7 @@
 package com.bluebird.inhak.woninfo.A24Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,13 +47,14 @@ public class A24Adapter extends BaseAdapter {
         TextView date=(TextView)convertView.findViewById(R.id.a_24_departure_area);
         date.setText(listviewitem.getDepartureArea());
 
-        TextView content=(TextView)convertView.findViewById(R.id.a_24_departure_time);
+        final TextView content=(TextView)convertView.findViewById(R.id.a_24_departure_time);
         content.setText(listviewitem.getDepartureTime());
 
         RelativeLayout busList = convertView.findViewById(R.id.a_24_busList_btn);
         busList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                v.getContext().startActivity(new Intent(v.getContext(), A24PopupFragment.class));
                 //시간과 제목 보내주면서 프레그먼트 출력
             }
         });

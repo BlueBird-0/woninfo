@@ -8,21 +8,90 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TableRow>
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/com_kakao_padding">
+
+        <TableRow
+            android:paddingBottom="4dp">
+
             <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="0.2"
-                android:layout_height="wrap_content"
-                android:text="승차장소"/>
+                android:text="시간"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
             <TextView
-                android:layout_weight="0.1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="시간"/>
-            <TextView
-                android:layout_weight="0.7"
-                android:layout_height="wrap_content"
-                android:text="경유장소"/>
+                android:layout_weight="0.8"
+                android:text="경유장소"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
         </TableRow>
+
+        <TableRow
+            android:paddingBottom="4dp"
+            android:background="@color/colorAccent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="7:10"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="삼천뜨란체주공4단지 맞은편 전북지리산낙농농협앞 "
+
+                android:textColor="@color/white" />
+        </TableRow>
+
+
+        <TableRow
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="12:13"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="풍남중 건너 하나전기조명 앞"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:paddingBottom="4dp"
+            android:background="@color/colorAccent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="12:13"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="풍남중 건너 하나전기조명 앞"
+                android:textColor="@color/white" />
+        </TableRow>
+
     </TableLayout>
 
 

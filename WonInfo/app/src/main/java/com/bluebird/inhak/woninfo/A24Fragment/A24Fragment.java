@@ -43,7 +43,11 @@ public class A24Fragment extends Fragment {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     try {
                         Class t = Class.forName("com.bluebird.inhak.woninfo."+ "A24Fragment."+"A24ListFragment");
+                        Bundle bundle = new Bundle();
+                        bundle.putString("area", FragmentTitle[finalI]);
+
                         Fragment fragment = (Fragment)t.newInstance();
+                        fragment.setArguments(bundle);
 
                         fragmentTransaction.replace(R.id.view_fragment, fragment);
                         fragmentTransaction.addToBackStack(null);
