@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,10 +36,17 @@ public class MenuDictionaryFragment extends Fragment {
         //DB에서 메뉴목록 가져오기
         dbOpenHelper = new DBOpenHelper(getActivity());
         dbOpenHelper.open();
+        //cursor = dbOpenHelper.sqLiteDatabase.rawQuery("select * from info", null);
         cursor = dbOpenHelper.sqLiteDatabase.rawQuery("select * from info", null);
 
         while(cursor.moveToNext()){
-            menuAdapter.addItem(cursor.getString(0), cursor.getString(1));
+            if(cursor.getString(2).equals("1"))
+            menuAdapter.addItem(cursor.getString(0), cursor.getString(1),cursor.getString(2));
+        }
+        cursor.moveToFirst();
+        while (cursor.moveToNext()){
+            if(cursor.getString(2).equals("0"))
+            menuAdapter.addItem(cursor.getString(0), cursor.getString(1),cursor.getString(2));
         }
         listView.setAdapter(menuAdapter);
         menuAdapter.notifyDataSetChanged();
@@ -58,7 +66,7 @@ public class MenuDictionaryFragment extends Fragment {
         menuAdapter.clear();
         while(cursor.moveToNext()){
             //... DB 작업 처리
-            menuAdapter.addItem(cursor.getString(0), cursor.getString(1));
+            menuAdapter.addItem(cursor.getString(0), cursor.getString(1),cursor.getString(2));
             menuAdapter.notifyDataSetChanged();
         }
     }
@@ -80,7 +88,7 @@ public class MenuDictionaryFragment extends Fragment {
                     menuAdapter.clear();
                     while (cursor.moveToNext()) {
                         //... DB 작업 처리
-                        menuAdapter.addItem(cursor.getString(0), cursor.getString(1));
+                        menuAdapter.addItem(cursor.getString(0), cursor.getString(1),cursor.getString(2));
                     }
                     menuAdapter.notifyDataSetChanged();
                 }

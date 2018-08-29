@@ -18,7 +18,7 @@ import jxl.Workbook;
  */
 public class DBOpenHelper {
     private static final String DATABASE_NAME = "woninfo.db";
-    private static final int DATABASE_VERSION = 32;
+    private static final int DATABASE_VERSION = 36;
     public static SQLiteDatabase sqLiteDatabase;
     private DBHelper dbHelper;
     private Context context;
@@ -48,7 +48,7 @@ public class DBOpenHelper {
                 //시트 이름
                 Sheet sh = workbook.getSheet("Data");
 
-                String primaryKey="", title="", content="";
+                String primaryKey="", title="",likes="", content="";
                 int row = sh.getRows();
                 int column = sh.getColumns();
 
@@ -63,16 +63,16 @@ public class DBOpenHelper {
                             case 1:
                                 title = sheetCell.getContents();
                                 break;
-                            //case 2:
-                            //    content = sheetCell.getContents();
-                            //   break;
+                            case 2:
+                                likes = sheetCell.getContents();
+                               break;
                             case 3:
                                 content = sheetCell.getContents();
                                 break;
                         }
                     }
-                    String sql = "insert into "+DBStruct.CreateDB._TABLENAME + " " + "(primary_key, title, content) values( '" +
-                                    primaryKey + "','" + title + "','" + content + "')";
+                    String sql = "insert into "+DBStruct.CreateDB._TABLENAME + " " + "(primary_key, title,likes, content) values( '" +
+                                    primaryKey + "','" + title + "','" +likes+ "','" + content + "')";
                     db.execSQL(sql);
                 }
             }catch (Exception e){}

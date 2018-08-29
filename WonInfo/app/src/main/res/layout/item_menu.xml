@@ -3,30 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/menuList_btn"
     android:layout_width="match_parent"
-    android:layout_height="64dp"
-    android:background="@drawable/selector_menu_button">
-
-    <RelativeLayout
-        android:id="@+id/menuList_icon"
-        android:layout_width="7dp"
-        android:layout_height="match_parent"
-        android:background="@color/listbtn1"/>
+    android:layout_height="45dp"
+    android:background="@drawable/item_menuline">
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="12dp"
-        android:src="@drawable/ic_listbtn_image"
-        android:id="@+id/imageView2" />
+        android:src="@drawable/ic_listbtn_image" />
 
     <TextView
         android:id="@+id/menuList_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
+        android:layout_marginStart="22dp"
         android:text="웹정보서비스 이용방법"
         android:textColor="@color/black"
         android:textSize="16sp" />

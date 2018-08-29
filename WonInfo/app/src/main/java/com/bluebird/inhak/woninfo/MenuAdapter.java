@@ -55,7 +55,6 @@ public class MenuAdapter extends BaseAdapter {
         /* 'item_menu' 에 정의된 위젯에 대한 참조 획득 */
         RelativeLayout menuList_btn = (RelativeLayout) convertView.findViewById(R.id.menuList_btn);
         TextView menuList_title = (TextView) convertView.findViewById(R.id.menuList_title);
-        RelativeLayout menuList_icon = (RelativeLayout) convertView.findViewById(R.id.menuList_icon);
         ///////////////////////////////////////////////////////aslkdasnldkandklsandklsandlksandklsadnklsadnlsakdnsakldnsakldnakldnlksadnklsa//////asdklasnbdlkasnfsalkfnsaklnal k즐겨찾기 추가해야함
 
 
@@ -66,8 +65,6 @@ public class MenuAdapter extends BaseAdapter {
         /* 각 위젯에 세팅된 아이템을 뿌려준다 */
         final String primaryKey = menuItem.getPrimaryKey();
 
-        final int listColor[] = {R.color.listbtn1, R.color.listbtn2, R.color.listbtn3, R.color.listbtn4, R.color.listbtn5};
-        menuList_icon.setBackgroundColor(convertView.getResources().getColor(listColor[count++%5]));
         menuList_title.setText(menuItem.getText());
         /////////////////////////////////////////////////////////////asdklsndsaklndlsakdnsalkdnsakldnsakldnsa;kadsnglkdfn;kldfngbkl'adfnbl'akdfbnl'akdfbasl;kdnaslasknlksanslanlsansfkl 즐겨찾기 준비
         /* (위젯에 대한 이벤트리스너를 지정하고 싶다면 여기에 작성하면 된다) */
@@ -92,14 +89,15 @@ public class MenuAdapter extends BaseAdapter {
     }
 
     /* 아이템 데이터 추가를 위한 함수. 자신이 원하는대로 작성*/
-    public void addItem(String primaryKey, String text)
+    public void addItem(String primaryKey, String text,String likeCheck)
     {
+        Boolean likeChange=Boolean.valueOf(likeCheck);
         MenuItem menuItem = new MenuItem();
 
         /* MenuItem에 아이템을 setting 한다. */
         menuItem.setPrimaryKey(primaryKey);
         menuItem.setText(text);
-        menuItem.setLike(false);
+        menuItem.setLike(likeChange);
 
         arrayList.add(menuItem);
     }
