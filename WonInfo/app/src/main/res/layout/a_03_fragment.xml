@@ -57,6 +57,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="@dimen/form_contentmargin"
                         android:text="전북은행 학생증신청 클릭" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -70,6 +71,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="@dimen/form_contentmargin"
                         android:text="정보제공동의&amp; 고객정보입력" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -133,8 +135,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/form_margin"
                         android:layout_marginBottom="@dimen/form_contentmargin"
+                        android:layout_marginLeft="@dimen/form_margin"
                         android:text="원광대학교 학생회관 1층 위치" />
                 </LinearLayout>
             </com.github.chuross.library.ExpandableLayout>
@@ -171,47 +173,96 @@
             <com.github.chuross.library.ExpandableLayout
                 android:id="@+id/a_03_exl1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <!--app:exl_expanded="true">-->
+                android:layout_height="wrap_content"
+                app:exl_expanded="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/form_margin"
-                            android:text="'Play 스토어'→'" />
-
-                        <TextView
-                            android:id="@+id/a_03_btn_applink"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/colorPrimary"
-                            android:text="원광대학교 모바일학생증" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="' 검색" />
-
-                    </LinearLayout>
-
-                    <ImageView
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/form_margin"
-                        android:layout_marginRight="@dimen/form_margin"
-                        android:layout_marginTop="@dimen/form_contentmargin"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitStart"
-                        android:src="@drawable/a_03_img_mobile" />
+                        android:layout_gravity="center"
+                        android:layout_margin="7dp"
+                        android:text="Android" />
+
+                    <RelativeLayout
+
+                        android:layout_width="86dp"
+                        android:layout_height="86dp"
+                        android:layout_gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="86dp"
+                            android:layout_height="86dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/menu_roundlayout"
+                            android:backgroundTint="@color/listbtn1">
+
+
+                            <ImageButton
+                                android:id="@+id/a_03_btn_playapplink"
+                                android:layout_width="86dp"
+                                android:layout_height="86dp"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="208dp"
+                                android:background="@android:color/transparent"
+                                app:srcCompat="@drawable/unnamed" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="원광대학교 모바일학생증 바로가기" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="7dp"
+                        android:text="IOS" />
+
+                    <RelativeLayout
+
+                        android:layout_width="86dp"
+                        android:layout_height="86dp"
+                        android:layout_gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="86dp"
+                            android:layout_height="86dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/menu_roundlayout"
+                            android:backgroundTint="@color/listbtn1">
+
+
+                            <ImageButton
+                                android:id="@+id/a_03_btn_appstorelink"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="208dp"
+                                android:background="@android:color/transparent"
+                                app:srcCompat="@drawable/app_store_logo" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="원광대학교 모바일학생증 바로가기" />
+
 
                 </LinearLayout>
             </com.github.chuross.library.ExpandableLayout>
