@@ -190,12 +190,12 @@
 
                     <RelativeLayout
 
-                        android:layout_width="86dp"
+                        android:layout_width="180dp"
                         android:layout_height="86dp"
                         android:layout_gravity="center">
 
                         <RelativeLayout
-                            android:layout_width="86dp"
+                            android:layout_width="180dp"
                             android:layout_height="86dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"
@@ -205,12 +205,12 @@
 
                             <ImageButton
                                 android:id="@+id/a_03_btn_playapplink"
-                                android:layout_width="86dp"
+                                android:layout_width="150dp"
                                 android:layout_height="86dp"
                                 android:layout_centerInParent="true"
                                 android:layout_marginTop="208dp"
                                 android:background="@android:color/transparent"
-                                app:srcCompat="@drawable/unnamed" />
+                                app:srcCompat="@drawable/app_store_logo" />
 
                         </RelativeLayout>
 
@@ -231,12 +231,12 @@
 
                     <RelativeLayout
 
-                        android:layout_width="86dp"
+                        android:layout_width="180dp"
                         android:layout_height="86dp"
                         android:layout_gravity="center">
 
                         <RelativeLayout
-                            android:layout_width="86dp"
+                            android:layout_width="180dp"
                             android:layout_height="86dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"
@@ -246,7 +246,7 @@
 
                             <ImageButton
                                 android:id="@+id/a_03_btn_appstorelink"
-                                android:layout_width="60dp"
+                                android:layout_width="180dp"
                                 android:layout_height="60dp"
                                 android:layout_centerInParent="true"
                                 android:layout_marginTop="208dp"

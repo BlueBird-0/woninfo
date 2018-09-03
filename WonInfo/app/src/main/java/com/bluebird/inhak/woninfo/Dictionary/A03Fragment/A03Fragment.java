@@ -1,17 +1,19 @@
 package com.bluebird.inhak.woninfo.Dictionary.A03Fragment;
 
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.bluebird.inhak.woninfo.Expandable;
+
 import com.bluebird.inhak.woninfo.R;
 
 /**
@@ -19,6 +21,12 @@ import com.bluebird.inhak.woninfo.R;
  */
 
 public class A03Fragment extends Fragment {
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Nullable
     @Override
@@ -41,22 +49,68 @@ public class A03Fragment extends Fragment {
                     case R.id.a_03_btn_banklink:
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://goo.gl/XkBrhX")));
                         break;
-                    case R.id.a_03_btn_applink:
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=kr.co.duoit.mobileid.wku")));
+
+                }
+            }
+        };
+        ImageButton.OnClickListener onClickListener2 = new ImageButton.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch(v.getId())
+                {
+                    case R.id.a_03_btn_playapplink:
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=kr.co.duoit.mobileid.wku")));
                         break;
+                    case R.id.a_03_btn_appstorelink:
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=kr.co.duoit.mobileid.wku")));
+                        break;
+
                 }
             }
         };
 
 
-        int btnArray[] = {R.id.a_03_btn_banklink, R.id.a_03_btn_applink, R.id.a_03_btn_manuallink};
+        int btnArray[] = {R.id.a_03_btn_banklink, R.id.a_03_btn_manuallink};
         for(int i=0; i< btnArray.length; i++)
         {
             TextView textView = (TextView)view.findViewById(btnArray[i]);
             String string = textView.getText().toString();
             textView.setText(Html.fromHtml("<u>"+string+"</u>"));
             textView.setOnClickListener(onClickListener);
+
         }
+
+        ImageButton googleplayapp = (ImageButton) view.findViewById(R.id.a_03_btn_playapplink);
+        ImageButton appstore = (ImageButton) view.findViewById(R.id.a_03_btn_appstorelink);
+
+        googleplayapp.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=kr.co.duoit.mobileid.wku"));
+                startActivity(intent);
+
+            }
+
+
+        });
+        appstore.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=kr.co.duoit.mobileid.wku"));
+                startActivity(intent);
+            }
+
+
+        });
         return view;
+
+
     }
 }

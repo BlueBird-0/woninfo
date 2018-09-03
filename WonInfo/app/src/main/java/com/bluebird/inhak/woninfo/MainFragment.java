@@ -19,10 +19,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.bluebird.inhak.woninfo.Dictionary.A08Fragment.A08Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
-
 /**
  * Created by InHak on 2017-12-30.
  */
