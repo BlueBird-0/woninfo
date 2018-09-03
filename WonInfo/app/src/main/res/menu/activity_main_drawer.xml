@@ -5,9 +5,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_createUser"
             android:icon="@drawable/ic_alert_exit"
-            android:title="자퇴하기" />
+            android:title="회원가입" />
         <item
             android:id="@+id/nav_update"
             android:icon="@drawable/ic_menu_update"
@@ -31,11 +31,7 @@
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="문의 및 제안 주소" />
-            <item
-                android:id="@+id/test_sendIcon"
-                android:icon="@drawable/ic_listbtn_image"
-                android:title="ij3512@naver.com" />
+                android:title="문의 및 제안" />
 
         </menu>
     </item>

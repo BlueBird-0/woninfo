@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "481755653817",
+    "firebase_url": "https://woninfo-6b957.firebaseio.com",
+    "project_id": "woninfo-6b957",
+    "storage_bucket": "woninfo-6b957.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481755653817:android:6197e9e3bacc0de0",
+        "android_client_info": {
+          "package_name": "com.bluebird.inhak.woninfo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481755653817-0sgko0feho53mt1ukujib11r8mjs3fqj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bluebird.inhak.woninfo",
+            "certificate_hash": "dca0624adf621c57c56d7421e9aa23fb22c7ac63"
+          }
+        },
+        {
+          "client_id": "481755653817-4a9gpch1aoe1quumubgg9br3bq1cp3ht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdQnm8t1fYWE1b-O8b8n5y0xT8eotKa4A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481755653817-4a9gpch1aoe1quumubgg9br3bq1cp3ht.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

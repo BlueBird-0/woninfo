@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/form_margin"
                     android:text="교내 체육시설 사용신청 방법 안내"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
             </RelativeLayout>
 
@@ -171,7 +171,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_marginStart="16dp"
                     android:text="행사원 싸인 받는 순서"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
             </RelativeLayout>
 

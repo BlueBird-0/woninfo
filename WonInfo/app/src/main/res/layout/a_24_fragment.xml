@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/form_margin"
                     android:text="자주 타는 버스"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
             </RelativeLayout>
 
@@ -98,7 +98,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_marginStart="16dp"
                     android:text="전체 노선"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
             </RelativeLayout>
 
@@ -172,7 +172,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:text="전주"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/Theme_Black"
                                     android:textSize="16sp" />
                             </RelativeLayout>
 
@@ -203,7 +203,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:text="군산"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/Theme_Black"
                                     android:textSize="16sp" />
                             </RelativeLayout>
 
@@ -234,7 +234,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:text="김제/정읍/부안"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/Theme_Black"
                                     android:textSize="16sp" />
                             </RelativeLayout>
 
@@ -265,7 +265,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:text="대전/계룡/논산"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/Theme_Black"
                                     android:textSize="16sp" />
                             </RelativeLayout>
                         </LinearLayout>
@@ -331,7 +331,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:text="익산역/송학동/모현동"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/Theme_Black"
                                     android:textSize="16sp" />
                             </RelativeLayout>
 
@@ -362,7 +362,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:text="영등동/부송동"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/Theme_Black"
                                     android:textSize="16sp" />
                             </RelativeLayout>
 
@@ -393,7 +393,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:text="동산동"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/Theme_Black"
                                     android:textSize="16sp" />
                             </RelativeLayout>
                         </LinearLayout>
@@ -459,7 +459,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:text="방학중"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/Theme_Black"
                                     android:textSize="16sp" />
                             </RelativeLayout>
                         </LinearLayout>

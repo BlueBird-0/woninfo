@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/form_margin"
                     android:text="학생증 발급 신청 방법"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
             </RelativeLayout>
 
@@ -164,7 +164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/form_margin"
                     android:text="모바일 학생증"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
             </RelativeLayout>
 

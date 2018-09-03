@@ -59,7 +59,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="신청 및 등록기간"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -128,7 +128,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="신청방법"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -179,7 +179,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="카드발급 및 이용안내"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -277,7 +277,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="운행노선"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -359,7 +359,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="유의사항"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -427,7 +427,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="지역별 이용요금"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -460,7 +460,7 @@
                             android:layout_columnWeight="0.3"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/dawnBlue"
+                            android:background="@color/Theme_Beige"
                             android:gravity="center"
                             android:text="전주" />
 
@@ -468,7 +468,7 @@
                             android:layout_columnWeight="0.3"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/dawnBlue"
+                            android:background="@color/Theme_Beige"
                             android:gravity="center"
                             android:text="군산" />
 
@@ -476,7 +476,7 @@
                             android:layout_columnWeight="0.3"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/dawnBlue"
+                            android:background="@color/Theme_Beige"
                             android:gravity="center"
                             android:text="김제" />
 
@@ -484,7 +484,7 @@
                             android:layout_columnWeight="0.3"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/dawnBlue"
+                            android:background="@color/Theme_Beige"
                             android:gravity="center"
                             android:text="정읍" />
 
@@ -492,7 +492,7 @@
                             android:layout_columnWeight="0.3"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/dawnBlue"
+                            android:background="@color/Theme_Beige"
                             android:gravity="center"
                             android:text="신태인" />
 
@@ -500,7 +500,7 @@
                             android:layout_columnWeight="0.3"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/dawnBlue"
+                            android:background="@color/Theme_Beige"
                             android:gravity="center"
                             android:text="부안" />
 
@@ -508,14 +508,14 @@
                             android:layout_columnWeight="0.3"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/dawnBlue"
+                            android:background="@color/Theme_Beige"
                             android:gravity="center"
                             android:text="대전" />
 
                         <TextView
                             android:layout_columnWeight="0.3"
                             android:layout_marginBottom="1dp"
-                            android:background="@color/dawnBlue"
+                            android:background="@color/Theme_Beige"
                             android:gravity="center"
                             android:text="계룡/논산" />
 

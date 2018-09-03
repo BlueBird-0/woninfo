@@ -36,7 +36,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="주요학사안내"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -424,7 +424,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="자료실(학생용)"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>

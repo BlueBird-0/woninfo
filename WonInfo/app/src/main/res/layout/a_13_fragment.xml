@@ -37,7 +37,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="W-point란?"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/form_margin"
                     android:text="혜택"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -148,7 +148,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/form_margin"
                     android:text="적립기간"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
             </RelativeLayout>
 
@@ -178,7 +178,7 @@
                             android:layout_columnWeight="0.3"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/dawnBlue"
+                            android:background="@color/Theme_Beige"
                             android:gravity="center"
                             android:text="학기" />
 
@@ -186,7 +186,7 @@
                             android:layout_columnWeight="0.3"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/dawnBlue"
+                            android:background="@color/Theme_Beige"
                             android:gravity="center"
                             android:text="적립기간" />
 
@@ -194,13 +194,13 @@
                             android:layout_columnWeight="0.3"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/dawnBlue"
+                            android:background="@color/Theme_Beige"
                             android:gravity="center"
                             android:text="평가시점" />
 
                         <TextView
                             android:layout_columnWeight="0.3"
-                            android:background="@color/dawnBlue"
+                            android:background="@color/Theme_Beige"
                             android:text=" W-point 적용" />
 
                         <TextView
@@ -283,7 +283,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/form_margin"
                     android:text="신청 및 확인 방법"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
             </RelativeLayout>
 
@@ -365,7 +365,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/form_margin"
                     android:text="매뉴얼"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
             </RelativeLayout>
 

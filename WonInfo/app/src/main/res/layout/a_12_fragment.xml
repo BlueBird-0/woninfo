@@ -49,9 +49,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:rotation="180"
-
                     android:layout_marginRight="@dimen/form_margin"
+
+                    android:rotation="180"
                     app:srcCompat="@drawable/ic_page_expand" />
 
 
@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/form_margin"
                     android:text="학과(전공) 홈페이지"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -74,1270 +74,1274 @@
                 app:exl_expanded="true">
 
                 <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryDark"
-                android:padding="1dp"
-                android:columnCount="2"
-                android:orientation="horizontal">
-
-                //학과 홈페이지
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="가정교육과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" homeedu.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="가정아동복지학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" wonfamily.wku.ac.kr" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="간호학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" nursing.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="건축공학과(4년제)" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" archi.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="건축학과(5년제)" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" wona.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="경영학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" biz.wku.ac.kr" />
-
-
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="경관문화공학전공" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" urban2.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="경제학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" economic.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="경찰행정학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" police.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="고고·미술사학 전공" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" gomisa.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="공간환경산업학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" seidesign.wku.ac.kr" />
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="교육학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" education.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="국어교육과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" koredu.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="국어국문학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" korean.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="국제통상학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" trade.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="군사학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" gunsa.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="귀금속보석공예과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" jewelry.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="기계공학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" me.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="기계설계공학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" mdesign.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="기계자동차공학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" mechanical.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="도시공학부" />
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" urban2.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="도시계획 설계전공" />
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" urban2.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="디지털콘텐츠공학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" contents.wku.ac.kr" />
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="문예창작학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" munchang.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="미술과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" finearts.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="바이오나노화학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" nano.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="반도체·디스플레이학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" semicon.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="보건행정학전공" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" health.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="뷰티디자인학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" beauty.wku.ac.kr" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="빅데이터금융통계학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" bigdata-finstats.wku.ac.kr" />
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="사학전공" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" history.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="사회복지학전공" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" socialwelfare.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="산림조경학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" landscape.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="생명공학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" bio.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="생물환경화학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" bioenv.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="소방행정학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" fire.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="수학·정보통계학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" math-stats.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="수학교육과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" mathedu.wku.ac.kr" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="스포츠과학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" sportscience.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="시각정보디자인과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" vcdesign.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="식품·환경학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" foodbiotech.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="식품생명공학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" fsb.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="식품영양학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" nutrition.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="신문방송학전공" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" masscom.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="약학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" pharmacy.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="역사교육과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" historyedu.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="영어교육과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" englishedu.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="영어영문학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" english.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="원불교학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" wonbuddhism.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="원예산업학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" horticulture.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="유아교육과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" childedu.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="음악과" />
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" music.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="응용수학부" />
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" http://amath.wku.ac.kr" />
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="의학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" premedicine.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="일어교육과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" japan.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="작업치료학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" ot.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="전기공학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" ee.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="전자공학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" elc.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="전자융합공학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" ece.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="정보·전자상거래학부" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" ec.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="정보통신공학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" ice.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="중국학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" zhongwen.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="중등특수교육과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" special.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="철학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" philosophy.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="체육교육과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" physical.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="치의예과, 치의학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" dentistry.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="컴퓨터소프트공학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" computer.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="탄소융합공학과" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" carbon.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="토목환경공학과" />
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" civil.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="패션디자인산업학과" />
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" fashion.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="한문교육과" />
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" hanyak.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="한의예과, 한의학과" />
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" kmed.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="행정학전공" />
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" admin.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginRight="1dp"
-                    android:textSize="15dp"
-                    android:background="@color/dawnBlue"
-                    android:text="화학융합공학과" />
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" chemeng.wku.ac.kr" />
-            </GridLayout>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:columnCount="2"
+                    android:orientation="horizontal"
+                    android:padding="1dp">
+
+                    //학과 홈페이지
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="가정교육과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" homeedu.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="가정아동복지학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" wonfamily.wku.ac.kr"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="간호학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" nursing.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="건축공학과(4년제)"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" archi.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="건축학과(5년제)"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" wona.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="경영학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" biz.wku.ac.kr"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="경관문화공학전공"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" urban2.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="경제학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" economic.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="경찰행정학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" police.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="고고·미술사학 전공"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" gomisa.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="공간환경산업학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" seidesign.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="교육학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" education.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="국어교육과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" koredu.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="국어국문학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" korean.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="국제통상학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" trade.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="군사학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" gunsa.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="귀금속보석공예과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" jewelry.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="기계공학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" me.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="기계설계공학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" mdesign.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="기계자동차공학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" mechanical.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="도시공학부"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" urban2.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="도시계획 설계전공"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" urban2.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="디지털콘텐츠공학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" contents.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="문예창작학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" munchang.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="미술과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" finearts.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="바이오나노화학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" nano.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="반도체·디스플레이학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" semicon.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="보건행정학전공"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" health.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="뷰티디자인학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" beauty.wku.ac.kr"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="빅데이터금융통계학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" bigdata-finstats.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="사학전공"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" history.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="사회복지학전공"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" socialwelfare.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="산림조경학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" landscape.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="생명공학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" bio.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="생물환경화학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" bioenv.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="소방행정학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" fire.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="수학·정보통계학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" math-stats.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="수학교육과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" mathedu.wku.ac.kr"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="스포츠과학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" sportscience.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="시각정보디자인과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" vcdesign.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="식품·환경학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" foodbiotech.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="식품생명공학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" fsb.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="식품영양학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" nutrition.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="신문방송학전공"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" masscom.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="약학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" pharmacy.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="역사교육과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" historyedu.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="영어교육과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" englishedu.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="영어영문학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" english.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="원불교학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" wonbuddhism.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="원예산업학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" horticulture.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="유아교육과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" childedu.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="음악과"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" music.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="응용수학부"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" http://amath.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="의학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" premedicine.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="일어교육과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" japan.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="작업치료학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" ot.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="전기공학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" ee.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="전자공학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" elc.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="전자융합공학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" ece.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="정보·전자상거래학부"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" ec.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="정보통신공학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" ice.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="중국학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" zhongwen.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="중등특수교육과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" special.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="철학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" philosophy.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="체육교육과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" physical.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="치의예과, 치의학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" dentistry.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="컴퓨터소프트공학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" computer.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="탄소융합공학과"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" carbon.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="토목환경공학과"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" civil.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="패션디자인산업학과"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" fashion.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="한문교육과"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" hanyak.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="한의예과, 한의학과"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" kmed.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="행정학전공"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" admin.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="화학융합공학과"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" chemeng.wku.ac.kr"
+                        android:textSize="15dp" />
+                </GridLayout>
 
 
             </com.github.chuross.library.ExpandableLayout>
+
             <include
                 layout="@layout/item_line"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/form_contentmargin"/>
+                android:layout_marginTop="@dimen/form_contentmargin" />
 
             <RelativeLayout
                 android:id="@+id/a_12_exlbtn1"
@@ -1352,14 +1356,14 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/form_margin"
                     app:srcCompat="@drawable/ic_page_expand" />
-                    <!--android:rotation="180"-->
+                <!--android:rotation="180"-->
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/form_margin"
                     android:text="대학 홈페이지"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -1372,229 +1376,230 @@
                 android:layout_marginRight="@dimen/form_margin">
                 <!--app:exl_expanded="true"-->
                 <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryDark"
-                android:padding="1dp"
-                android:columnCount="2"
-                android:orientation="horizontal">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:columnCount="2"
+                    android:orientation="horizontal"
+                    android:padding="1dp">
 
-                //대학 홈페이지
+                    //대학 홈페이지
 
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/dawnBlue"
-                    android:text="교학대학"
-                    android:textSize="15dp" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" colbud.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/dawnBlue"
-                    android:text="인문대학"
-                    android:textSize="15dp" />
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="교학대학"
+                        android:textSize="15dp" />
 
 
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" colhuman.wku.ac.kr" />
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" colbud.wku.ac.kr"
+                        android:textSize="15dp" />
 
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/dawnBlue"
-                    android:text="경영대학"
-                    android:textSize="15dp" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" colbus.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/dawnBlue"
-                    android:text="농식품융합대학"
-                    android:textSize="15dp" />
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="인문대학"
+                        android:textSize="15dp" />
 
 
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" collif.wku.ac.kr" />
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" colhuman.wku.ac.kr"
+                        android:textSize="15dp" />
 
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/dawnBlue"
-                    android:text="약학대학"
-                    android:textSize="15dp" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" colpha.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/dawnBlue"
-                    android:text="사범대학"
-                    android:textSize="15dp" />
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="경영대학"
+                        android:textSize="15dp" />
 
 
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" coledu.wku.ac.kr" />
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" colbus.wku.ac.kr"
+                        android:textSize="15dp" />
 
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/dawnBlue"
-                    android:text="자연과학대학"
-                    android:textSize="15dp" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" natural.wku.ac.kr" />
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="농식품융합대학"
+                        android:textSize="15dp" />
 
 
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/dawnBlue"
-                    android:text="한의과대학"
-                    android:textSize="15dp" />
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" collif.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="약학대학"
+                        android:textSize="15dp" />
 
 
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" kmed.wku.ac.kr" />
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" colpha.wku.ac.kr"
+                        android:textSize="15dp" />
 
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/dawnBlue"
-                    android:text="조형예술대학"
-                    android:textSize="15dp" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" colfin.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/dawnBlue"
-                    android:text="사회과학대학"
-                    android:textSize="15dp" />
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="사범대학"
+                        android:textSize="15dp" />
 
 
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" colsoc.wku.ac.kr" />
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" coledu.wku.ac.kr"
+                        android:textSize="15dp" />
 
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/dawnBlue"
-                    android:text="창의공과대학"
-                    android:textSize="15dp" />
-
-
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:layout_marginBottom="1dp"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" coleng.wku.ac.kr" />
-
-                <TextView
-                    android:layout_columnWeight="0.3"
-                    android:layout_marginRight="1dp"
-                    android:background="@color/dawnBlue"
-                    android:text="의과대학"
-                    android:textSize="15dp" />
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="자연과학대학"
+                        android:textSize="15dp" />
 
 
-                <TextView
-                    android:layout_columnWeight="0.7"
-                    android:autoLink="web"
-                    android:textSize="15dp"
-                    android:background="@color/blueblush"
-                    android:text=" med.wku.ac.kr" />
-            </GridLayout>
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" natural.wku.ac.kr"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="한의과대학"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" kmed.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="조형예술대학"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" colfin.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="사회과학대학"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" colsoc.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="창의공과대학"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:layout_marginBottom="1dp"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" coleng.wku.ac.kr"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_columnWeight="0.3"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/Theme_Beige"
+                        android:text="의과대학"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:layout_columnWeight="0.7"
+                        android:autoLink="web"
+                        android:background="@color/Theme_Yellow"
+                        android:text=" med.wku.ac.kr"
+                        android:textSize="15dp" />
+                </GridLayout>
 
             </com.github.chuross.library.ExpandableLayout>
+
             <include
                 layout="@layout/item_line"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/form_contentmargin"/>
+                android:layout_marginTop="@dimen/form_contentmargin" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"/>
+                android:layout_height="80dp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

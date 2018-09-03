@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/midNight</color>
-    <color name="colorPrimaryDark">@color/black</color>
-    <color name="colorAccent">@color/darkDenim</color>
-    <color name="colorBackground">@color/white</color>
+    <color name="colorPrimary">@color/Theme_Red</color>
+    <color name="colorPrimaryDark">@color/Theme_Blue</color>
+    <color name="colorAccent">@color/Theme_Red</color>
+    <color name="colorBackground">@color/Theme_White</color>
 
 
-    <color name="black">#000000</color>
-    <color name="darkDenim">#35485e</color>
-    <color name="midNight">#315d78</color>
-    <color name="toumaline">#88a5af</color>
-    <color name="blueMist">#58afc8</color>
-    <color name="meadowbrook">#549ba0</color>
-    <color name="pastelTurquoise">#97c7c7</color>
-    <color name="starlightBlue">#b5d2dc</color>
-    <color name="opalBlue">#c6e2da</color>
-    <color name="dawnBlue">#ccd1cf</color>
-    <color name="blueblush">#e9eae8</color>
-    <color name="white">#F4F5F3</color>
+    <color name="Theme_Red">#AF3537</color>
+    <color name="Theme_Blue">#465D72</color>
+    <color name="Theme_Orange">#C98781</color>
+    <color name="Theme_Yellow">#E5D0AD</color>
+    <color name="Theme_Beige">#F5EBDC</color>
+    <color name="Theme_Black">#000000</color>
+    <color name="Theme_Gray">#9E9E9E</color>
+    <color name="Theme_White">#FFFFFF</color>
+
+
 
 
     <color name="listbtn1">#b0c4df</color>

@@ -78,7 +78,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="중앙도서관 이용시간"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -114,7 +114,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="구 분"
                                 android:textSize="15dp" />
@@ -124,7 +124,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="자료열람실"
                                 android:textSize="15dp" />
@@ -134,7 +134,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="중앙도서관(1,2층)\n자유열람실"
                                 android:textSize="15dp" />
@@ -143,7 +143,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="학생지원관(3,4층)\n자유열람실"
                                 android:textSize="15dp" />
@@ -154,7 +154,7 @@
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
                                 android:layout_rowSpan="2"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="학기중"
                                 android:textSize="15dp" />
@@ -164,7 +164,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="평 일"
                                 android:textSize="15dp" />
@@ -205,7 +205,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="토요일"
                                 android:textSize="15dp" />
@@ -225,7 +225,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginRight="1dp"
                                 android:layout_rowSpan="2"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="방학중"
                                 android:textSize="15dp" />
@@ -235,7 +235,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="평 일"
                                 android:textSize="15dp" />
@@ -273,7 +273,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="토요일"
                                 android:textSize="15dp" />
@@ -340,7 +340,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="중앙도서관 층별안내"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -372,7 +372,7 @@
                             android:layout_gravity="fill"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/blueblush"
+                            android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="안내데스크[1층]"
                             android:textSize="15dp" />
@@ -390,7 +390,7 @@
                             android:layout_gravity="fill"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/blueblush"
+                            android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text=" 자유열람실[1-2층]"
                             android:textSize="15dp" />
@@ -407,7 +407,7 @@
                             android:layout_gravity="fill"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/blueblush"
+                            android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="디지털정보센터[3층]"
                             android:textSize="15dp" />
@@ -425,7 +425,7 @@
                             android:layout_gravity="fill"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/blueblush"
+                            android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="인문 예술자료실[4층]"
                             android:textSize="15dp" />
@@ -443,7 +443,7 @@
                             android:layout_gravity="fill"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/blueblush"
+                            android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="원불교자료실[4층]"
                             android:textSize="15dp" />
@@ -461,7 +461,7 @@
                             android:layout_gravity="fill"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/blueblush"
+                            android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="사회 과학기술자료실[5층]"
                             android:textSize="15dp" />
@@ -478,7 +478,7 @@
                             android:layout_gravity="fill"
                             android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
-                            android:background="@color/blueblush"
+                            android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="고문헌자료실[6층]"
                             android:textSize="15dp" />
@@ -494,7 +494,7 @@
                             android:layout_columnWeight="1"
                             android:layout_gravity="fill"
                             android:layout_marginRight="1dp"
-                            android:background="@color/blueblush"
+                            android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="보존서고1,2[7층]"
                             android:textSize="15dp" />
@@ -539,7 +539,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="이용 문의"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
