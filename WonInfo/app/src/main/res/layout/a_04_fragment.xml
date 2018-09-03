@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/form_margin"
                 android:text="장학금 계좌 등록"
-                android:textColor="@color/black"
+                android:textColor="@color/Theme_Black"
                 android:textSize="@dimen/title_size" />
 
             <TextView
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/form_margin"
                 android:text="장학금 확인"
-                android:textColor="@color/black"
+                android:textColor="@color/Theme_Black"
                 android:textSize="@dimen/title_size" />
 
             <TextView
@@ -138,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/form_margin"
                 android:text="등록금 납입"
-                android:textColor="@color/black"
+                android:textColor="@color/Theme_Black"
                 android:textSize="@dimen/title_size" />
             <TextView
                 android:layout_width="wrap_content"

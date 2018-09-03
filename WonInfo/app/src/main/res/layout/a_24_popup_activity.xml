@@ -20,7 +20,7 @@
                 android:layout_weight="0.2"
                 android:text="시간"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/Theme_White" />
 
             <TextView
                 android:layout_width="0dp"
@@ -28,7 +28,7 @@
                 android:layout_weight="0.8"
                 android:text="경유장소"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/Theme_White" />
         </TableRow>
 
         <TableRow
@@ -41,7 +41,7 @@
                 android:layout_weight="0.2"
                 android:text="7:10"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/Theme_White" />
 
             <TextView
                 android:layout_width="0dp"
@@ -49,7 +49,7 @@
                 android:layout_weight="0.8"
                 android:text="삼천뜨란체주공4단지 맞은편 전북지리산낙농농협앞 "
 
-                android:textColor="@color/white" />
+                android:textColor="@color/Theme_White" />
         </TableRow>
 
 
@@ -62,14 +62,14 @@
                 android:layout_weight="0.2"
                 android:text="12:13"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/Theme_White" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.8"
                 android:text="풍남중 건너 하나전기조명 앞"
-                android:textColor="@color/white" />
+                android:textColor="@color/Theme_White" />
         </TableRow>
 
         <TableRow
@@ -82,14 +82,14 @@
                 android:layout_weight="0.2"
                 android:text="12:13"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/Theme_White" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.8"
                 android:text="풍남중 건너 하나전기조명 앞"
-                android:textColor="@color/white" />
+                android:textColor="@color/Theme_White" />
         </TableRow>
 
     </TableLayout>

@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="6"
             android:text="00.00.00 ~ 00.00.00"
-            android:textColor="@color/black" />
+            android:textColor="@color/Theme_Black" />
 
         <TextView
             android:id="@+id/a_15_textContent"
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="4"
             android:text="내용"
-            android:textColor="@color/black" />
+            android:textColor="@color/Theme_Black" />
 
     </LinearLayout>
 

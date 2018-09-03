@@ -37,7 +37,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="학교 MS Office란?"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -131,7 +131,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="학교 MS Office 이용등록"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -190,7 +190,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="학교 MS Office 설치"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -254,7 +254,7 @@
                         android:layout_marginLeft="@dimen/form_margin"
                         android:layout_marginRight="@dimen/form_margin"
                         android:padding="1dp"
-                        android:background="@color/black"
+                        android:background="@color/Theme_Black"
                         android:layout_marginBottom="@dimen/form_margin"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
@@ -274,7 +274,7 @@
                         android:layout_marginLeft="@dimen/form_margin"
                         android:layout_marginRight="@dimen/form_margin"
                         android:padding="1dp"
-                        android:background="@color/black"
+                        android:background="@color/Theme_Black"
                         android:layout_marginBottom="@dimen/form_margin"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
@@ -301,7 +301,7 @@
                         android:layout_marginLeft="@dimen/form_margin"
                         android:layout_marginRight="@dimen/form_margin"
                         android:padding="1dp"
-                        android:background="@color/black"
+                        android:background="@color/Theme_Black"
                         android:layout_marginBottom="@dimen/form_margin"
                         android:adjustViewBounds="true"
                         android:scaleType="fitEnd"

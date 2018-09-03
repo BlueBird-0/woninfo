@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/form_margin"
                     android:text="부서 전화번호"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -82,7 +82,7 @@
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:gravity="center"
                         android:text="학사지원과" />
                     <TextView
@@ -90,14 +90,14 @@
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 졸업/성적/수강/증명/출결/공결/교직" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-5146" />
 
                     <TextView
@@ -105,21 +105,21 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="교양교육대학" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 후마니타스장학" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-5372" />
 
                     <TextView
@@ -127,21 +127,21 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="교수학습개발센터" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 인터넷강좌" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-5027" />
 
                     <TextView
@@ -149,21 +149,21 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="장학복지과" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 장학/대출/복지" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-5242 ~3" />
 
                     <TextView
@@ -171,21 +171,21 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="학생과" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 졸업앨범/건강공제" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-5234 ~7" />
 
                     <TextView
@@ -193,7 +193,7 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="여대생커리어개발센터" />
 
                     <TextView
@@ -201,7 +201,7 @@
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-5402 ~3" />
 
                     <TextView
@@ -209,21 +209,21 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="취업지원과(인력개발처)" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 취업프로그램" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-5319 ~ 20" />
 
                     <TextView
@@ -231,21 +231,21 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="재무과" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 등록금납부" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-5334 ~6" />
 
                     <TextView
@@ -253,21 +253,21 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="국제교류과" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 교환학생/GHRE" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-5752" />
 
                     <TextView
@@ -275,21 +275,21 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="예비군연대" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 예비군신고/훈련" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-5492" />
 
                     <TextView
@@ -297,21 +297,21 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="학생생활관" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 입사/생활관 문의" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-840-4004 ~5" />
 
                     <TextView
@@ -319,14 +319,14 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="의사소통교육센터" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-7132" />
 
                     <TextView
@@ -334,14 +334,14 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="인력개발처" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-5664" />
 
                     <TextView
@@ -349,20 +349,20 @@
                         android:layout_marginBottom="1dp"
                         android:textSize="15dp"
                         android:gravity="center"
-                        android:background="@color/dawnBlue"
+                        android:background="@color/Theme_Beige"
                         android:text="소통실" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:layout_marginBottom="1dp"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 총장 경영운영방향 및 실행 보좌" />
                     <TextView
                         android:layout_columnWeight="1"
                         android:autoLink="web"
                         android:textSize="15dp"
-                        android:background="@color/blueblush"
+                        android:background="@color/Theme_Yellow"
                         android:text=" 063-850-5500, 6500" />
 
                 </GridLayout>

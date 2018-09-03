@@ -1,8 +1,5 @@
 package com.bluebird.inhak.woninfo;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,8 +9,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.support.design.widget.FloatingActionButton;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -30,7 +31,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bluebird.inhak.woninfo.A16Fragment.A16Fragment;
+import com.bluebird.inhak.woninfo.Community.BoardListFragment;
+import com.bluebird.inhak.woninfo.Dictionary.A01Fragment.A01Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A02Fragment.A02Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A03Fragment.A03Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A04Fragment.A04Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A05Fragment.A05Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A10Fragment.A10Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
 import com.kakao.util.KakaoParameterException;
@@ -45,15 +53,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.main_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        final FloatingActionButton  fab =(FloatingActionButton)findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                WebViewFragment.changeState();
-            }
-        });
-
 
         final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -129,6 +128,7 @@ public class MainActivity extends AppCompatActivity
         }
 
 
+        setBottomBar();
 
         //db초기화
         dbOpenHelper = new DBOpenHelper(this);
@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity
     public void replaceFragment()
     {
         MenuDictionaryFragment menuDictionaryFragment = new MenuDictionaryFragment();
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.view_fragment, menuDictionaryFragment);
         fragmentTransaction.commit();
@@ -243,7 +243,7 @@ public class MainActivity extends AppCompatActivity
             }
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
-                Fragment fragment = (Fragment) getFragmentManager().findFragmentById(R.id.view_fragment);
+                Fragment fragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.view_fragment);
                 //프레그먼트가 (Dictionary) 꺼져있을시
                 if(fragment != null)
                 {
@@ -260,7 +260,7 @@ public class MainActivity extends AppCompatActivity
             //검색어 입력시
             @Override
             public boolean onQueryTextSubmit(final String query) {
-                Fragment fragment = (Fragment) getFragmentManager().findFragmentById(R.id.view_fragment);
+                Fragment fragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.view_fragment);
                 //프레그먼트가 (Dictionary) 꺼져있을시
                 if(fragment != null)
                 {
@@ -276,7 +276,7 @@ public class MainActivity extends AppCompatActivity
                 else
                 {
                     //프레그먼트 (Dictionary) 실행
-                    FragmentManager fm = getFragmentManager();
+                    FragmentManager fm = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fm.beginTransaction();
                     fragmentTransaction.add(R.id.view_fragment, new MenuDictionaryFragment());
                     fragmentTransaction.addToBackStack("menu_dictionary");
@@ -294,7 +294,7 @@ public class MainActivity extends AppCompatActivity
                                         Thread.sleep(200);
                                     }catch(Exception e){e.printStackTrace();}
                                     //searchView.setQuery( query, true);
-                                    MenuDictionaryFragment menuDictionaryFragment = (MenuDictionaryFragment) getFragmentManager().findFragmentById(R.id.view_fragment);
+                                    MenuDictionaryFragment menuDictionaryFragment = (MenuDictionaryFragment) getSupportFragmentManager().findFragmentById(R.id.view_fragment);
                                     menuDictionaryFragment.search(query);
                                 }
                             });
@@ -320,10 +320,15 @@ public class MainActivity extends AppCompatActivity
         //if (id == R.id.action_settings) {
         //    return true;
         //}
-
         return super.onOptionsItemSelected(item);
     }
 
+
+
+
+
+
+    //네비게이션 아이템 선택 (Drawable View)
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -331,8 +336,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //TOAST
-        if (id == R.id.nav_camera) {
-            Toast.makeText(this, "자퇴하고싶다...", Toast.LENGTH_LONG).show();
+        if (id == R.id.nav_createUser) {
+            startActivity(new Intent(getApplicationContext(), CreateUserPopup.class));
         } else if (id == R.id.nav_update) {
             navUpdate();
         } else if (id == R.id.nav_tutorial) {
@@ -409,7 +414,7 @@ public class MainActivity extends AppCompatActivity
     public void navTutorial()
     {
         //앱이 처음 시작될 때, 튜토리얼 페이지 출력
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         try {
             Class t = Class.forName("com.bluebird.inhak.woninfo."+ "Tutorial" +"Fragment");
@@ -438,4 +443,52 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+
+
+
+    //bottom_bar 하단바 설정
+    private void setBottomBar() {
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment = null;
+                switch (item.getItemId())
+                {
+                    case R.id.bottom_bar_menu_community:
+                        fragment = new BoardListFragment();
+                        break;
+                    case R.id.bottom_bar_menu_dictionary:
+                        fragment = new A02Fragment();
+                        break;
+                    case R.id.bottom_bar_menu_home:
+                        fragment = new A03Fragment();
+                        break;
+                    case R.id.bottom_bar_menu_custom:
+                        fragment = new A04Fragment();
+                        break;
+                    case R.id.bottom_bar_menu_web:
+                        fragment = new A05Fragment();
+                        break;
+                }
+                return loadFragment(fragment);
+            }
+        });
+    }
+
+    private boolean loadFragment(Fragment fragment)
+    {
+        Log.d("test001", "1111");
+        //switching fragment
+        if(fragment != null)
+        {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_fragment_container, fragment)
+                    .commit();
+            Log.d("test001", "2222");
+            return true;
+        }
+        return false;
+    }
 }

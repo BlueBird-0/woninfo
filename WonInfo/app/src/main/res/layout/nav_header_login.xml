@@ -30,14 +30,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="학과"
-                android:textColor="@color/black" />
+                android:textColor="@color/Theme_Black" />
 
             <TextView
                 android:id="@+id/login_text_grade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="학년"
-                android:textColor="@color/black" />
+                android:textColor="@color/Theme_Black" />
 
             <TextView
                 android:id="@+id/login_text_name"
@@ -46,7 +46,7 @@
                 android:layout_above="@+id/login_text_major"
                 android:text="이름"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/black" />
+                android:textColor="@color/Theme_Black" />
 
         </LinearLayout>
 

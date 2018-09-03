@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/title_size"
-        app:mcv_selectionColor="@color/toumaline"
+        app:mcv_selectionColor="@color/Theme_Beige"
         app:mcv_showOtherDates="defaults"
         app:mcv_tileHeight="35dp">
 
@@ -54,7 +54,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="내용 보기"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>

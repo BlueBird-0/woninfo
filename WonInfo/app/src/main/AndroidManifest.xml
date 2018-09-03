@@ -44,7 +44,11 @@
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" >
         </activity>
 
-        <activity android:name="com.bluebird.inhak.woninfo.A24Fragment.A24PopupFragment"
+        <activity android:name=".Dictionary.A24Fragment.A24PopupFragment"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" >
+        </activity>
+
+        <activity android:name="com.bluebird.inhak.woninfo.CreateUserPopup"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" >
         </activity>
 
@@ -54,7 +58,7 @@
             android:value="@string/kakao_app_key"/>
 
 
-        <receiver android:name=".A16Fragment.A16Broadcast"/>
+        <receiver android:name=".Dictionary.A16Fragment.A16Broadcast"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

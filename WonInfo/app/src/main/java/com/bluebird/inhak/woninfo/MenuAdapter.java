@@ -1,8 +1,8 @@
 package com.bluebird.inhak.woninfo;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,7 +71,7 @@ public class MenuAdapter extends BaseAdapter {
         menuList_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fragmentManager = mainActivity.getFragmentManager();
+                FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 try {
                     Class t = Class.forName("com.bluebird.inhak.woninfo."+ primaryKey +"Fragment."+ primaryKey +"Fragment");

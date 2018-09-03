@@ -12,7 +12,7 @@
         android:layout_marginRight="1dp"
         android:layout_marginTop="1dp"
         android:layout_weight="1"
-        android:background="@color/white"
+        android:background="@color/Theme_White"
         android:clickable="true">
 
         <LinearLayout
@@ -31,7 +31,7 @@
                 android:layout_marginBottom="-5sp"
                 android:text="출발시간"
                 android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:textColor="@color/Theme_Black" />
 
             <TextView
                 android:id="@+id/a_24_departure_area"
@@ -40,7 +40,7 @@
                 android:layout_centerInParent="true"
                 android:text="출발장소"
                 android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:textColor="@color/Theme_Black" />
 
 
         </LinearLayout>

@@ -23,7 +23,7 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="22dp"
         android:text="웹정보서비스 이용방법"
-        android:textColor="@color/black"
+        android:textColor="@color/Theme_Black"
         android:textSize="16sp" />
 
 

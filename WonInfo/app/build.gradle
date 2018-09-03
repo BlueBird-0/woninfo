@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.bluebird.inhak.woninfo"
         minSdkVersion 21
@@ -21,9 +21,12 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support:support-v4:26.1.0'
-    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:animated-vector-drawable:27.1.1'
+    implementation 'com.android.support:exifinterface:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1' //recyclerview 이용 (listView 대체)
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
@@ -35,6 +38,12 @@ dependencies {
     implementation 'com.prolificinteractive:material-calendarview:1.4.3'   //캘린더
     implementation group: 'org.jsoup', name: 'jsoup', version: '1.9.2' //버전체크용 Jsoup
     implementation 'com.github.florent37:materialtextfield:1.0.7'  //로그인 페이지 editText Design
+    implementation 'com.google.firebase:firebase-firestore:15.0.0'  //firebase Cloud Firestore사용
+    implementation 'com.google.firebase:firebase-core:15.0.0'       //firebase login (Analytics)
+    implementation 'com.google.firebase:firebase-auth:15.0.0'       //firebase login
 
-    implementation group: 'com.kakao.sdk', name: 'kakaolink', version:project.KAKAO_SDK_VERSION    //카카오 링크
+    implementation group: 'com.kakao.sdk', name: 'kakaolink', version: project.KAKAO_SDK_VERSION
+    //카카오 링크
 }
+
+apply plugin: 'com.google.gms.google-services'

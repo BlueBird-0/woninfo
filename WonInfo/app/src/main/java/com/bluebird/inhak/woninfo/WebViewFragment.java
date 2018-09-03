@@ -1,6 +1,6 @@
 package com.bluebird.inhak.woninfo;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.res.ColorStateList;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,19 +29,12 @@ public class WebViewFragment extends Fragment {
     static public void changeState()
     {
         WebView webView = (WebView)view.findViewById(R.id.webview);
-        FloatingActionButton floatingActionButton = view.getRootView().findViewById(R.id.fab);
-        Animation fab_open = AnimationUtils.loadAnimation(view.getContext(), R.anim.shake);
-        floatingActionButton.startAnimation(fab_open);
         if(WEBVIEW_STATE_OPENED == true)
         {
             webView.setVisibility(View.GONE);
-            floatingActionButton.setImageResource(R.drawable.ic_webview_o);
-            floatingActionButton.setBackgroundTintList(ColorStateList.valueOf(view.getResources().getColor(R.color.colorAccent)));
         }else if(WEBVIEW_STATE_OPENED == false)
         {
             webView.setVisibility(View.VISIBLE);
-            floatingActionButton.setImageResource(R.drawable.ic_webview_c);
-            floatingActionButton.setBackgroundTintList(ColorStateList.valueOf(view.getResources().getColor(R.color.colorPrimary)));
         }
         WEBVIEW_STATE_OPENED = !WEBVIEW_STATE_OPENED;
         view.bringToFront();
@@ -103,57 +96,6 @@ public class WebViewFragment extends Fragment {
         webView.setX((float)0.5);
         webView.loadUrl("http://intra.wku.ac.kr");
 
-        // 웹정보서비스 자동로그인 구현하려다가 실패함ㅠㅠ
-        //new Thread(new Runnable() {
-         //   @Override
-         //   public void run() {
-                /*
-                WebParser webparser = new WebParser();
-                webparser.Login("ije5581", "Jeon3512!");
-                Document document = webparser.getDomitoryPage();
-                Log.d("test33", document.getAllElements().toString());
-                Log.d("test33", webparser.loginCookie.toString());
-
-                CookieManager cookieManager = null;
-                CookieSyncManager cookieSyncManager = null;
-                cookieSyncManager = CookieSyncManager.createInstance(view.getContext());
-                cookieSyncManager.sync();
-                cookieManager = CookieManager.getInstance();
-                String strCookies = webparser.loginCookie.toString();
-                strCookies = strCookies.substring(1, strCookies.length()-1);
-                Log.d("test33", "test: "+strCookies);
-
-                String[] strCookiess = strCookies.split(", ");
-                for(int i=0; i<strCookiess.length; i++)
-                {
-                    cookieManager.setCookie("http://intra.wku.ac.kr", strCookiess[i]);
-                    Log.d("test33","Cookies : "+strCookiess[i]);
-                }
-                CookieSyncManager.getInstance().sync();
-                Log.d("test33","CCCCCCCCCC : "+CookieManager.getInstance().getCookie("http://intra.wku.ac.kr/SWupis/V005/main.jsp?tmep="));
-
-*/
-           //     final Map<String, String> extraHeaders = new HashMap<String, String>();
-           //     extraHeaders.put("Origin", "http://intra.wku.ac.kr");
-           //     extraHeaders.put("Referer", "http://intra.wku.ac.kr/SWupis/V005/login.jsp");
-           //     extraHeaders.put("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
-          //      extraHeaders.put("Content-Type", "application/x-www-form-urlencoded");
-           //     extraHeaders.put("Accept-Encoding", "gzip, deflate, br");
-           //     extraHeaders.put("Accept-Language", "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7");
-          //      extraHeaders.put("Cache-Control", "max-age=0");
-          //      extraHeaders.put("Connection", "keep-alive");
-           //     extraHeaders.put("Content-Length", "104");
-
-           //   getActivity().runOnUiThread(new Runnable(){
-               //     public void run(){
-              //          WebView webView = (WebView)view.findViewById(R.id.webview);
-                        //webView.reload();
-              //          webView.loadUrl("http://intra.wku.ac.kr",extraHeaders);
-           //         }
-        //        });
-       //     }
-     //   }).start();
-
         return view;
     }
 
@@ -181,11 +123,6 @@ public class WebViewFragment extends Fragment {
             String Script = "var id = document.getElementById(\"userid\");id.value = \"" + "ije5581" + "\";" +
                     "var pw = document.getElementById(\"passwd\");pw.value = \"" + "Jeon3512!" + "\";" +
                     "};";
-                    //"document.getElementById(\"btn\").click();" +
-                    //"var button = document.getElementsByClassName(\"btn\");" +
-                    //"for (var i=0;i<button.length; i++) {\n" +
-                    //"    button[i].click();\n" +
-                    //"};";
             view.evaluateJavascript(Script, null);
             Log.d("test33","d");
         }

@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/form_margin"
                 android:text="교재 구입"
-                android:textColor="@color/black"
+                android:textColor="@color/Theme_Black"
                 android:textSize="@dimen/title_size" />
 
             <TextView
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/form_margin"
                 android:text="제본 및 분권"
-                android:textColor="@color/black"
+                android:textColor="@color/Theme_Black"
                 android:textSize="@dimen/title_size" />
 
             <TextView

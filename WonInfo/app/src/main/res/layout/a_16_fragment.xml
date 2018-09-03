@@ -38,7 +38,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="기숙사 식단"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -73,7 +73,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/dawnBlue"
+                                android:background="@color/Theme_Beige"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -81,7 +81,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/dawnBlue"
+                                android:background="@color/Theme_Beige"
                                 android:gravity="center"
                                 android:text="6/11 월"
                                 android:textSize="15dp" />
@@ -91,7 +91,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/dawnBlue"
+                                android:background="@color/Theme_Beige"
                                 android:gravity="center"
                                 android:textSize="15dp" />
 
@@ -100,7 +100,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/dawnBlue"
+                                android:background="@color/Theme_Beige"
                                 android:gravity="center"
                                 android:textSize="15dp" />
 
@@ -109,7 +109,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/dawnBlue"
+                                android:background="@color/Theme_Beige"
                                 android:gravity="center"
                                 android:textSize="15dp" />
 
@@ -118,7 +118,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/dawnBlue"
+                                android:background="@color/Theme_Beige"
                                 android:gravity="center"
                                 android:textSize="15dp" />
 
@@ -127,7 +127,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/dawnBlue"
+                                android:background="@color/Theme_Beige"
                                 android:gravity="center"
                                 android:textSize="15dp" />
 
@@ -135,7 +135,7 @@
                                 android:id="@+id/a_16_foodTitle_6"
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="2dp"
-                                android:background="@color/dawnBlue"
+                                android:background="@color/Theme_Beige"
                                 android:gravity="center"
                                 android:textSize="15dp" />
 
@@ -147,7 +147,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
                                 android:layout_rowSpan="3"
-                                android:background="@color/dawnBlue"
+                                android:background="@color/Theme_Beige"
                                 android:gravity="center"
                                 android:text=" 아침 "
                                 android:textSize="15dp" />
@@ -157,7 +157,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:text="쌀밥"
                                 android:textSize="15dp" />
 
@@ -166,7 +166,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -174,7 +174,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -182,7 +182,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -190,7 +190,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -198,14 +198,14 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
                                 android:id="@+id/a_16_food_0_6"
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
 
@@ -215,7 +215,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:text="동태국"
                                 android:textSize="15dp" />
 
@@ -224,7 +224,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -232,7 +232,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -240,7 +240,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -248,7 +248,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -256,14 +256,14 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
                                 android:id="@+id/a_16_food_1_6"
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
 
@@ -274,7 +274,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:text="돈육짜장조림\n야채샐럿\n애호박새우젓볶음\n도토리묵&amp;양념장\n포기김치"
                                 android:textSize="15dp" />
 
@@ -284,7 +284,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -293,7 +293,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -302,7 +302,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -311,7 +311,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -320,7 +320,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -328,7 +328,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
 
@@ -339,7 +339,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
                                 android:layout_rowSpan="3"
-                                android:background="@color/dawnBlue"
+                                android:background="@color/Theme_Beige"
                                 android:gravity="center"
                                 android:text=" 점심 "
                                 android:textSize="15dp" />
@@ -349,7 +349,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:text="콩나물밥&amp;양념장"
                                 android:textSize="15dp" />
 
@@ -358,7 +358,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -366,7 +366,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -374,7 +374,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -382,7 +382,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -390,14 +390,14 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
                                 android:id="@+id/a_16_food_3_6"
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
 
@@ -407,7 +407,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:text="유부쑥갓국"
                                 android:textSize="15dp" />
 
@@ -416,7 +416,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -424,7 +424,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -432,7 +432,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -440,7 +440,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -448,14 +448,14 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
                                 android:id="@+id/a_16_food_4_6"
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
 
@@ -466,7 +466,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:text="자반고등어구이\n메란새알심조림\n상추치커리무침\n겉절이"
                                 android:textSize="15dp" />
 
@@ -476,7 +476,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -485,7 +485,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -494,7 +494,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -503,7 +503,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -512,7 +512,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -520,7 +520,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="2dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
 
@@ -530,7 +530,7 @@
                                 android:layout_gravity="fill"
                                 android:layout_marginRight="1dp"
                                 android:layout_rowSpan="3"
-                                android:background="@color/dawnBlue"
+                                android:background="@color/Theme_Beige"
                                 android:gravity="center"
                                 android:text=" 저녁 "
                                 android:textSize="15dp" />
@@ -540,7 +540,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:text="쌀밥"
                                 android:textSize="15dp" />
 
@@ -549,7 +549,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -557,7 +557,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -565,7 +565,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -573,7 +573,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -581,14 +581,14 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
                                 android:id="@+id/a_16_food_6_6"
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
 
@@ -598,7 +598,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:text="건새우 콩나물국"
                                 android:textSize="15dp" />
 
@@ -607,7 +607,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -615,7 +615,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -623,7 +623,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -631,7 +631,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -639,14 +639,14 @@
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
                                 android:id="@+id/a_16_food_7_6"
                                 android:layout_columnWeight="1"
                                 android:layout_marginBottom="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
 
@@ -656,7 +656,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:text="간장불고기\n야채소세지전&amp;케찹\n마늘쫑매콤조림\n포기김치"
                                 android:textSize="15dp" />
 
@@ -665,7 +665,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -673,7 +673,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -681,7 +681,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -689,7 +689,7 @@
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
@@ -697,14 +697,14 @@
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginRight="1dp"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
 
                             <TextView
                                 android:id="@+id/a_16_food_8_6"
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:background="@color/blueblush"
+                                android:background="@color/Theme_Yellow"
                                 android:textSize="15dp" />
                         </GridLayout>
                     </HorizontalScrollView>
@@ -741,7 +741,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="푸쉬 알림 설정"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
@@ -849,7 +849,7 @@
                     android:layout_margin="@dimen/form_margin"
                     android:layout_weight="1"
                     android:text="식사 시간"
-                    android:textColor="@color/black"
+                    android:textColor="@color/Theme_Black"
                     android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
