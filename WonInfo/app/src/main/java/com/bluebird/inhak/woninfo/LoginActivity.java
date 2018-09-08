@@ -3,6 +3,7 @@ package com.bluebird.inhak.woninfo;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -14,6 +15,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -38,6 +42,39 @@ public class LoginActivity extends Activity{
         final EditText edit_pw= (EditText)findViewById(R.id.login_edit_pw);
         final Button login_submit = (Button)findViewById(R.id.login_btn_submit);
 
+
+        login_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserManager.checkLoggedin();
+                UserManager.loginUser(edit_id.getText().toString(),edit_pw.getText().toString());
+
+
+                FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+                finish();
+              /*  if(user != null){
+                    String name = user.getDisplayName();
+                    String email=user.getEmail();
+                    // Uri photoUrl = user.getPhotoUrl();
+
+                    boolean emailVerified = user.isEmailVerified();
+*/
+
+
+
+                }
+
+            }
+        );}}
+
+
+
+
+
+
+
+
+        /*
         TextView.OnEditorActionListener editorActionListener = new TextView.OnEditorActionListener()
         {
             @Override
@@ -121,7 +158,5 @@ public class LoginActivity extends Activity{
                 }).start();
                 finish();
             }
-        });
+        });*/
 
-    }
-}

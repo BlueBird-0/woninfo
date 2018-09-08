@@ -46,10 +46,7 @@ public class CreateUserPopup extends Activity
 
                     UserManager.checkLoggedin();
                     UserManager.logoutUser();
-            //       UserManager.createUser(email.getText().toString(), password.getText().toString());
-                    UserManager.createUser("1", "2");
-
-                    UserManager.loginUser("3", "4");
+                   UserManager.createUser(email.getText().toString(), password.getText().toString());
 
                     UserManager.checkLoggedin();
                     Log.d("test001","asdsd");

@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         String email = "ij3512@naver.com";
         String password = "Jeon3512!";
         auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {

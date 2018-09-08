@@ -32,12 +32,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.Community.BoardListFragment;
-import com.bluebird.inhak.woninfo.Dictionary.A01Fragment.A01Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A02Fragment.A02Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A03Fragment.A03Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A04Fragment.A04Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A05Fragment.A05Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A10Fragment.A10Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
@@ -64,14 +62,11 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
             @Override
             public void onDrawerOpened(View drawerView) {
-                //로그인 상황 확인
-                final SharedPreferences sharedPref = getSharedPreferences(getString(R.string.SHARED_PRE_NAME), Context.MODE_PRIVATE);
-                boolean loginState = sharedPref.getBoolean(getString(R.string.shared_user_loginState), false);
                 //로그인 돼 있을 경우
-                if(loginState == true) {
-                    navigationView.inflateHeaderView(R.layout.nav_header_login);
+                if(UserManager.checkLoggedin() == true) {
+                    navigationView.inflateHeaderView(R.layout.nav_header_loggedin);
                     navigationView.removeHeaderView( navigationView.getHeaderView(0));
-
+/*
                     //정보 출력
                     TextView login_text_name = (TextView)findViewById(R.id.login_text_name);
                     login_text_name.setText( sharedPref.getString(getString(R.string.shared_user_name), "") );
@@ -79,13 +74,14 @@ public class MainActivity extends AppCompatActivity
                     login_text_grade.setText( sharedPref.getString(getString(R.string.shared_user_grade), "") + "학년");
                     TextView login_text_major = (TextView)findViewById(R.id.login_text_major);
                     login_text_major.setText( sharedPref.getString(getString(R.string.shared_user_major), ""));
-
+*/
                     //로그아웃 버튼 클릭시
                     Button btn_logout = (Button)navigationView.getHeaderView(0).findViewById(R.id.login_btn_logout);
                     btn_logout.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            SharedPreferences.Editor editor = sharedPref.edit();
+                            UserManager.logoutUser();
+                            /*SharedPreferences.Editor editor = sharedPref.edit();
                             editor.remove(getString(R.string.shared_user_id));
                             editor.remove(getString(R.string.shared_user_pw));
                             editor.remove(getString(R.string.shared_user_loginState));
@@ -93,7 +89,7 @@ public class MainActivity extends AppCompatActivity
                             editor.remove(getString(R.string.shared_user_major));
                             editor.remove(getString(R.string.shared_user_grade));
                             editor.remove(getString(R.string.shared_user_dormitory));
-                            editor.commit();
+                            editor.commit();*/
                             drawer.closeDrawer(GravityCompat.START);
                         }
                     });
@@ -144,7 +140,7 @@ public class MainActivity extends AppCompatActivity
         boolean loginState = sharedPref.getBoolean(getString(R.string.shared_user_loginState), false);
         //로그인 돼 있을 경우
         if(loginState == true) {
-            navigationView.inflateHeaderView(R.layout.nav_header_login);
+            navigationView.inflateHeaderView(R.layout.nav_header_loggedin);
             navigationView.removeHeaderView( navigationView.getHeaderView(0));
             //로그아웃 버튼 클릭시
             Button btn_logout = (Button)navigationView.getHeaderView(0).findViewById(R.id.login_btn_logout);
