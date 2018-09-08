@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "481755653817-2m5tqctd5dghkqa6i5jue5grr5cvh137.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bluebird.inhak.woninfo",
+            "certificate_hash": "0d30d3e81d5f49744d7981bd467fbbba99f6f8f1"
+          }
+        },
+        {
           "client_id": "481755653817-4a9gpch1aoe1quumubgg9br3bq1cp3ht.apps.googleusercontent.com",
           "client_type": 3
         }

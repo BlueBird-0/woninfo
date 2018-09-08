@@ -8,11 +8,13 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import com.bluebird.inhak.woninfo.Expandable;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
+import com.bluebird.inhak.woninfo.UserManager;
 
 /**
  * Created by InHak on 2017-12-31.
@@ -53,6 +55,7 @@ public class A24Fragment extends Fragment {
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
                         ((MainActivity)getActivity()).getSupportActionBar().setTitle(FragmentTitle[finalI]);
+
                     }catch(Exception e) {}
                 }
             });
