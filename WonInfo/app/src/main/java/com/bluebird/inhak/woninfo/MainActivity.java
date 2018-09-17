@@ -39,6 +39,7 @@ import com.bluebird.inhak.woninfo.Dictionary.A04Fragment.A04Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A05Fragment.A05Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A10Fragment.A10Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.Textboard.Textboard;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
 import com.kakao.util.KakaoParameterException;
@@ -456,7 +457,7 @@ public class MainActivity extends AppCompatActivity
                 switch (item.getItemId())
                 {
                     case R.id.bottom_bar_menu_community:
-                        fragment = new BoardListFragment();
+                        fragment = new Textboard();
                         break;
                     case R.id.bottom_bar_menu_dictionary:
                         fragment = new A02Fragment();
