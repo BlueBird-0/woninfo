@@ -1,4 +1,4 @@
-package com.bluebird.inhak.woninfo;
+package com.bluebird.inhak.woninfo.Dictionary.A08Fragment;
 
 import android.content.Intent;
 import android.media.Image;
@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 
 import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
+import com.bluebird.inhak.woninfo.R;
 
 /**
  * Created by InHak on 2017-12-31.
