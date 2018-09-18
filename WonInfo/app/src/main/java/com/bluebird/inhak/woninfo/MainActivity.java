@@ -35,11 +35,8 @@ import com.bluebird.inhak.woninfo.Dictionary.A02Fragment.A02Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A03Fragment.A03Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A05Fragment.A05Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
-<<<<<<< HEAD
 import com.bluebird.inhak.woninfo.Dictionary.A25Fragment.A25Fragment;
-=======
 import com.bluebird.inhak.woninfo.Dictionary.Textboard.Textboard;
->>>>>>> origin/sojeong
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
 import com.kakao.util.KakaoParameterException;
