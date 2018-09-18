@@ -28,15 +28,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bluebird.inhak.woninfo.Community.BoardListFragment;
+import com.bluebird.inhak.woninfo.Community.CommunityMainFragment;
 import com.bluebird.inhak.woninfo.Dictionary.A02Fragment.A02Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A03Fragment.A03Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A04Fragment.A04Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A05Fragment.A05Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A25Fragment.A25Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.Textboard.Textboard;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
@@ -46,6 +45,10 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private DBOpenHelper dbOpenHelper;
 
+    private DrawerLayout drawer;
+    private NavigationView navigationView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,63 +56,12 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-
-        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        replaceNavigation();
         //TODO 로그인 버튼이랑 로그아웃 버튼 <- 실행시 바로 실행되도록 수정필요함
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
             @Override
             public void onDrawerOpened(View drawerView) {
-                //로그인 돼 있을 경우
-                if(UserManager.checkLoggedin() == true) {
-                    navigationView.inflateHeaderView(R.layout.nav_header_loggedin);
-                    navigationView.removeHeaderView( navigationView.getHeaderView(0));
-/*
-                    //정보 출력
-                    TextView login_text_name = (TextView)findViewById(R.id.login_text_name);
-                    login_text_name.setText( sharedPref.getString(getString(R.string.shared_user_name), "") );
-                    TextView login_text_grade = (TextView)findViewById(R.id.login_text_grade);
-                    login_text_grade.setText( sharedPref.getString(getString(R.string.shared_user_grade), "") + "학년");
-                    TextView login_text_major = (TextView)findViewById(R.id.login_text_major);
-                    login_text_major.setText( sharedPref.getString(getString(R.string.shared_user_major), ""));
-*/
-                    //로그아웃 버튼 클릭시
-                    Button btn_logout = (Button)navigationView.getHeaderView(0).findViewById(R.id.login_btn_logout);
-                    btn_logout.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            UserManager.logoutUser();
-                            /*SharedPreferences.Editor editor = sharedPref.edit();
-                            editor.remove(getString(R.string.shared_user_id));
-                            editor.remove(getString(R.string.shared_user_pw));
-                            editor.remove(getString(R.string.shared_user_loginState));
-                            editor.remove(getString(R.string.shared_user_name));
-                            editor.remove(getString(R.string.shared_user_major));
-                            editor.remove(getString(R.string.shared_user_grade));
-                            editor.remove(getString(R.string.shared_user_dormitory));
-                            editor.commit();*/
-                            drawer.closeDrawer(GravityCompat.START);
-                        }
-                    });
-                }else
-                {
-                    navigationView.inflateHeaderView(R.layout.nav_header_main);
-                    navigationView.removeHeaderView( navigationView.getHeaderView(0));
-                    //로그인 버튼 클릭시
-                    Button btn_login = (Button)navigationView.getHeaderView(0).findViewById(R.id.login_btn_login);
-                    btn_login.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                            ((DrawerLayout)findViewById(R.id.drawer_layout)).closeDrawer(GravityCompat.START);
-                        }
-                    });
-                }
-                Log.d("test33","호출!");
-                super.onDrawerOpened(drawerView);
             }
         };
         drawer.addDrawerListener(toggle);
@@ -133,39 +85,12 @@ public class MainActivity extends AppCompatActivity
         dbOpenHelper.close();
     }
     //TODO 로그인 버튼쓸때 사용할 함수
-    public void drawerLayoutRefresh()
-    {
-        //로그인 상황 확인
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        final SharedPreferences sharedPref = getSharedPreferences(getString(R.string.SHARED_PRE_NAME), Context.MODE_PRIVATE);
-        boolean loginState = sharedPref.getBoolean(getString(R.string.shared_user_loginState), false);
-        //로그인 돼 있을 경우
-        if(loginState == true) {
-            navigationView.inflateHeaderView(R.layout.nav_header_loggedin);
-            navigationView.removeHeaderView( navigationView.getHeaderView(0));
-            //로그아웃 버튼 클릭시
-            Button btn_logout = (Button)navigationView.getHeaderView(0).findViewById(R.id.login_btn_logout);
-            btn_logout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.remove(getString(R.string.shared_user_loginState));
-                    editor.commit();
-                }
-            });
-        }else
-        {
-            //로그인 버튼 클릭시
-            Button btn_login = (Button)navigationView.getHeaderView(0).findViewById(R.id.login_btn_login);
-            btn_login.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                    ((DrawerLayout)findViewById(R.id.drawer_layout)).closeDrawer(GravityCompat.START);
-                }
-            });
-        }
-        Log.d("test33","호출!");
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        replaceNavigation();
     }
 
     @Override
@@ -220,6 +145,49 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.view_fragment, menuDictionaryFragment);
         fragmentTransaction.commit();
+    }
+    public void replaceNavigation()
+    {
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        navigationView.setNavigationItemSelectedListener(this);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //로그인 되기까지 대기 후 실행
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        navigationView.getMenu().clear();
+                        if(UserManager.checkLoggedin() == true)
+                        {
+                            navigationView.inflateHeaderView(R.layout.nav_header_loggedin);
+                            navigationView.inflateMenu(R.menu.nav_menu_loggedin);
+                        }else
+                        {
+                            navigationView.inflateHeaderView(R.layout.nav_header_loggedout);
+                            navigationView.inflateMenu(R.menu.nav_menu_loggedout);
+                            Button btn_login = (Button)navigationView.getHeaderView(1).findViewById(R.id.login_btn_login);
+                            btn_login.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                                    ((DrawerLayout)findViewById(R.id.drawer_layout)).closeDrawer(GravityCompat.START);
+                                }
+                            });
+                        }
+                        navigationView.removeHeaderView(navigationView.getHeaderView(0));
+                    }
+                });
+            }
+        }).start();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -340,6 +308,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_tutorial) {
             navTutorial();
         } else if (id == R.id.nav_manage) {
+            UserManager.checkLoggedin();
             Toast.makeText(this, "미개발 기능입니다", Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_share) {
             navShareKakao();
@@ -348,6 +317,10 @@ public class MainActivity extends AppCompatActivity
             Intent it = new Intent(Intent.ACTION_SENDTO, uri);
             startActivity(it);
             Toast.makeText(this, "사랑합니다", Toast.LENGTH_LONG).show();
+        }
+        else if(id==R.id.nav_logout){
+            UserManager.logoutUser();
+            this.replaceNavigation();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -445,7 +418,7 @@ public class MainActivity extends AppCompatActivity
 
     //bottom_bar 하단바 설정
     private void setBottomBar() {
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
+        final BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -453,16 +426,17 @@ public class MainActivity extends AppCompatActivity
                 switch (item.getItemId())
                 {
                     case R.id.bottom_bar_menu_community:
+                        fragment = new CommunityMainFragment();
                         fragment = new Textboard();
                         break;
                     case R.id.bottom_bar_menu_dictionary:
                         fragment = new A02Fragment();
                         break;
                     case R.id.bottom_bar_menu_home:
-                        fragment = new A03Fragment();
+                        fragment = new A25Fragment();
                         break;
                     case R.id.bottom_bar_menu_custom:
-                        fragment = new A04Fragment();
+                        fragment = new A16Fragment();
                         break;
                     case R.id.bottom_bar_menu_web:
                         fragment = new A05Fragment();

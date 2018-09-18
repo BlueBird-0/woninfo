@@ -3,6 +3,8 @@ package com.bluebird.inhak.woninfo;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.widget.EditText;
 
@@ -13,14 +15,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class UserManager {
-    static private FirebaseUser firebaseUser;
     static private FirebaseAuth auth;
+    static private FirebaseUser firebaseUser;
     static private FirebaseAuth.AuthStateListener mAuthListener;
 
     //로그인 함수
 
     static public void loginUser(String email, String password) {
+        checkLoggedin();Log.d("test001","1");
         auth.signInWithEmailAndPassword(email,password);
+        checkLoggedin();Log.d("test001","2");
     }
 
     static public void logoutUser() {
@@ -28,6 +32,7 @@ public class UserManager {
         //if (mAuthListener != null) {
         //    auth.removeAuthStateListener(mAuthListener);
         //}
+
     }
 
 
