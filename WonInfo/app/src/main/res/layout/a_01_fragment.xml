@@ -82,6 +82,11 @@
 
             </com.github.chuross.library.ExpandableLayout>
 
+            
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/item_line"/>
             <include
                 layout="@layout/item_line"
                 android:layout_width="match_parent"
