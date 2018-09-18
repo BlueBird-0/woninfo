@@ -32,46 +32,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="8dp"
         android:text="title"
         android:textColor="@color/Theme_Black"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
-
-        android:id="@+id/textView23"
-
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:layout_marginBottom="8dp"
-
-        android:layout_marginTop="8dp"
-        android:layout_weight="1"
-        android:text=""
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <TextView
         android:id="@+id/community_list_item_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:text="content"
         android:textColor="@color/Theme_Gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/community_list_item_title"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/community_list_item_title" />
 
     <ImageView
         android:id="@+id/community_list_item_image"
@@ -109,13 +85,11 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline3" />
 
     <FrameLayout
-        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="6dp"
+        android:layout_height="2dp"
         android:background="@drawable/item_line"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
