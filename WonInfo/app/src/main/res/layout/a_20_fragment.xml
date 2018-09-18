@@ -37,7 +37,8 @@
                     android:layout_weight="1"
                     android:text="주요학사안내"
                     android:textColor="@color/Theme_Black"
-                    android:textSize="@dimen/title_size" />
+                    android:textSize="@dimen/title_size"
+                    />
 
             </RelativeLayout>
 

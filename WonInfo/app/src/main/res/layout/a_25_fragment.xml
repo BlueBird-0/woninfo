@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/roundbox">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="120dp"
+                    android:text="수강계획신청 및 수강신청 방법"
+                    android:textColor="@color/Theme_Blue"
+                    android:textSize="@dimen/bigtitle_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:padding="10dp"
+                    android:text="\u00b7 수강신청 전용 홈페이지 → course.wku.ac.kr  → 수강계획/수강신청관리 "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:padding="10dp"
+                    android:text="\u00b7 각 대학 전산실 및 인터넷이 가능한 곳"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                <TextView
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:padding="10dp"
+                    android:text="\u00b7 재수강과목으로 수강신청시 왼쪽메뉴 재수강 과목관리에서 재수강 해당과목을 선택하시기 바랍니다"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            </android.support.constraint.ConstraintLayout>
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/roundbox">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="120dp"
+                    android:text="수강계획기간"
+                    android:textColor="@color/Theme_Blue"
+                    android:textSize="@dimen/bigtitle_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:padding="5dp"
+                    android:text="\u00b7 일시 : 2018.08.07(화) - 08.09(목) \n\t10:00 - 17:00 3일간 (전체학생) "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+            </android.support.constraint.ConstraintLayout>
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/roundbox">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="120dp"
+                    android:text="수강신청기간"
+                    android:textColor="@color/Theme_Blue"
+                    android:textSize="@dimen/bigtitle_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:padding="5dp"
+                    android:text="\u00b7 2018.08.13(월) 10:00-17:00 : 4학년 (약학과 6학년, 건축학과 5학년포함) "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="44dp"
+                    android:padding="5dp"
+                    android:text="\u00b7 2018.08.14(화) 10:00-17:00 : 3학년 (약학과 5학년 포함) "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="80dp"
+                    android:padding="5dp"
+                    android:text="\u00b7 2018.08.16(목) 10:00-17:00 : 2학년 (약학과 4학년) "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="120dp"
+                    android:padding="5dp"
+                    android:text="\u00b7  2018.08.17(금) 10:00-17:00 : 1학년 (약학과 3학년 포함) "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+            </android.support.constraint.ConstraintLayout>
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/roundbox">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="120dp"
+                    android:text="추가 수강신청기간"
+                    android:textColor="@color/Theme_Blue"
+                    android:textSize="@dimen/bigtitle_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:padding="5dp"
+                    android:text="\u00b7 2018.08.22(수) 10:00-17:00 : 전체학생 (초과학기 학생포함) "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="48dp"
+                    android:padding="5dp"
+                    android:text="\u00b7 2018.08.23(목) 10:00-17:00 : 산업체/군위탁 편입생 "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_margin"
+                    android:layout_marginTop="92dp"
+                    android:padding="5dp"
+                    android:text="수강신청 변경기간"
+                    android:textColor="@color/Theme_Blue"
+                    android:textSize="@dimen/bigtitle_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="108dp"
+                    android:padding="5dp"
+                    android:text="\u00b7 일시 : 2018.08.30(목) - 08.31(금) 10:00-17:00 2일간 "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="152dp"
+                    android:padding="5dp"
+                    android:text="\u00b7 장소 : 학생지원관 1층 로비, 인터넷이 가능한 곳"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginTop="172dp"
+                    android:padding="5dp"
+                    android:text="전공과목만 수강허가동의서 사용 가능"
+                    android:textColor="@color/Theme_Red"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>
