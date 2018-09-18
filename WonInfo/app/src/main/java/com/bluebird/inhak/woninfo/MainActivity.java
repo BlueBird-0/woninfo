@@ -425,11 +425,8 @@ public class MainActivity extends AppCompatActivity
                 switch (item.getItemId())
                 {
                     case R.id.bottom_bar_menu_community:
-<<<<<<< HEAD
                         fragment = new CommunityMainFragment();
-=======
                         fragment = new Textboard();
->>>>>>> origin/HyeongJin
                         break;
                     case R.id.bottom_bar_menu_dictionary:
                         fragment = new A02Fragment();
