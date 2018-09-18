@@ -7,8 +7,9 @@ public class BoardListItem {
     private int newContent;
     private int image;
 
-    public BoardListItem(String title) {
+    public BoardListItem(String title, String content) {
         this.title = title;
+        this.content = content;
     }
 
     public String getTitle() {
