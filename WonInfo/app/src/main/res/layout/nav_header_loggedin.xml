@@ -20,8 +20,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_alignBottom="@+id/imageView"
+            android:layout_marginLeft="15dp"
             android:layout_toEndOf="@+id/imageView"
             android:orientation="vertical">
 
@@ -59,14 +59,6 @@
             android:paddingTop="@dimen/nav_header_vertical_spacing"
             app:srcCompat="@mipmap/ic_appicon_round" />
 
-        <Button
-            android:id="@+id/login_btn_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="@color/colorPrimary"
-            android:text=" 로그아웃" />
 
     </RelativeLayout>
 

@@ -3,27 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_createUser"
-            android:icon="@drawable/ic_alert_exit"
-            android:title="회원가입" />
+            android:id="@+id/nav_bookmark"
+            android:title="즐겨찾기"/>
         <item
-            android:id="@+id/nav_update"
-            android:icon="@drawable/ic_menu_update"
-            android:title="업데이트 확인" />
+            android:id="@+id/message"
+            android:title="쪽지"/>
         <item
             android:id="@+id/nav_tutorial"
             android:icon="@drawable/ic_menu_tutorial"
             android:title="도움말" />
-     <item
+        <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="환경설정" />
-
-
-
-
+        <item
+            android:id="@+id/nav_logout"
+            android:title=" 로그아웃" />
     </group>
 
     <item android:title="Communicate">

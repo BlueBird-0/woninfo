@@ -49,18 +49,16 @@ public class LoginActivity extends Activity{
                 UserManager.checkLoggedin();
                 UserManager.loginUser(edit_id.getText().toString(),edit_pw.getText().toString());
 
-
                 FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+                UserManager.checkLoggedin();
                 finish();
               /*  if(user != null){
                     String name = user.getDisplayName();
                     String email=user.getEmail();
                     // Uri photoUrl = user.getPhotoUrl();
 
-                    boolean emailVerified = user.isEmailVerified();
+                    boolean emailVerified = user.isEmailVerified();             //이메일 인증
 */
-
-
 
                 }
 
