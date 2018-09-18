@@ -24,6 +24,7 @@ import com.bluebird.inhak.woninfo.Expandable;
 import com.bluebird.inhak.woninfo.R;
 
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
@@ -38,8 +39,10 @@ import java.util.Calendar;
 public class A16Fragment extends Fragment {
     static String food[][] = new String[9][7];
     static String foodTitle[] = new String[7];
-    static String htmlPageUrl = "http://61.245.232.174/wordpress/dormitoryfood/";
-
+    static String htmlPageUrl = "http://dorm.wku.ac.kr/?cat=6";
+    static TextView textviewHtmlDocument;
+    static String htmlContentInStringFormat;
+    static  String relf;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -284,13 +287,13 @@ public class A16Fragment extends Fragment {
     private static class JsoupAsyncTask extends AsyncTask<Void, Void, Void>
     {
         private Context context;
-        JsoupAsyncTask(Context context)
+            JsoupAsyncTask(Context context)
         {
             this.context = context;
         }
 
-        @Override
-        protected void onPreExecute() {
+            @Override
+            protected void onPreExecute() {
             super.onPreExecute();
         }
 
@@ -298,9 +301,42 @@ public class A16Fragment extends Fragment {
         protected Void doInBackground(Void... voids) {
             try{
                 org.jsoup.nodes.Document doc = Jsoup.connect(htmlPageUrl).get();
-                Elements links = doc.select("tbody.row-hover tr");
+                Elements links = doc.select(".boardList");
 
-                Element link = links.get(0);
+                for (Element link : links) {
+                    link = links.select("a").first();
+                    relf = link.attr("href");
+                    Log.d("test001", relf);
+
+                    htmlContentInStringFormat += (link.attr("abs:href")
+                            + "("+link.text().trim() + ")\n");
+                }
+
+
+                Document docdoc = Jsoup.connect(relf).get();
+                Element link = docdoc.select(".tbl_type").first();
+                Elements elements = link.select("td");
+
+                foodTitle = new String[]{"월", "화", "수", "목", "금", "토", "일"};
+                for(int i=0; i<7;i++){
+                    food[0][i]=elements.get(i+2).text();
+                    food[1][i]=elements.get(i+10).text();
+                    food[2][i]=elements.get(i+18).text()+ "\n" + elements.get(i+25).text() + "\n";
+                    food[2][i]+=elements.get(i+32).text().replace("/", "").replace(" ", "\n");
+
+                    food[3][i]=elements.get(i+41).text();
+                    food[4][i]=elements.get(i+49).text();
+                    food[5][i]=elements.get(i+57).text()+ "\n" + elements.get(i+64).text() + "\n";
+                    food[5][i]+=elements.get(i+71).text().replace("/", "").replace(" ", "\n");
+
+                    food[6][i]=elements.get(i+80).text();
+                    food[7][i]=elements.get(i+88).text();
+                    food[8][i]=elements.get(i+96).text()+ "\n" + elements.get(i+103).text() + "\n";
+                    food[8][i]+=elements.get(i+110).text().replace("/", "").replace(" ", "\n");
+                }
+
+
+                /*Element link = links.get(0);
 
                 //날자 설정
                 foodTitle = link.text().trim().split(" ");
@@ -318,7 +354,7 @@ public class A16Fragment extends Fragment {
                         food[j*3 + 2][i] = data[index++].replace("/", "\n");
                     }
                     link.attr("td");
-                }
+                }*/
 
             } catch(IOException e) {
                 e.printStackTrace();
@@ -332,7 +368,7 @@ public class A16Fragment extends Fragment {
             SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.SHARED_PRE_NAME), Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
             String foodString = "";
-
+/*
             //TODO 식단 수동입력   비사용시 주석처리
             //식단 수동 입력시 사용
             foodTitle = new String[]{"8/6 월", "8/7 화", "8/8 수", "8/9 목", "8/10 금", "8/11 토", "8/12 일"};
@@ -363,7 +399,7 @@ public class A16Fragment extends Fragment {
                     "간장갈비찜\n생선까스\n청경채고추장무침\n포기김치",
                     "북어찜\n감자메란조림\n상추부추무침\n포기김치",
                     "고등어무조림\n치킨너겟\n깻잎찜\n포기김치"};
-
+*/
 
             for(int i=0; i<7; i++)
             {

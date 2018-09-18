@@ -859,19 +859,13 @@
                 android:id="@+id/a_16_exl2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <!--app:exl_expanded="true">-->
+               <!--app:exl_expanded="true">-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/form_margin"
-                        android:layout_marginLeft="@dimen/form_margin"
-                        android:text="기 간 (period (期)): 2018. 03. 05 ~ 2018. 6. 22" />
 
                     <TextView
                         android:layout_width="wrap_content"
