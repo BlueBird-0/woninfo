@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.bluebird.inhak.woninfo.Expandable;
+import com.bluebird.inhak.woninfo.ExpandableNew;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
 
@@ -25,9 +26,9 @@ public class A25Fragment extends Fragment {
         View view = inflater.inflate(R.layout.a_25_fragment, container, false);
 
         //메뉴 레이아웃 2개 + 2번째 메뉴안에 노선별 레이아웃 3개
-        for(int i=0; i<0;i++)
+        for(int i=0; i<4;i++)
         {
-//            Expandable expandable = new Expandable(view, R.id.a_24_exl0+i, R.id.a_24_exlbtn0+i, R.id.a_24_exlimg0+i);
+         ExpandableNew expandable = new ExpandableNew(view, R.id.a_25_exl0+i,R.id.a_25_exlbtn0+i);
         }
 
 
