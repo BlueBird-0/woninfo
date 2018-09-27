@@ -14,6 +14,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import static android.content.ContentValues.TAG;
+
 public class UserManager {
     static private FirebaseAuth auth;
     static private FirebaseUser firebaseUser;
@@ -22,24 +24,42 @@ public class UserManager {
     //로그인 함수
 
     static public void loginUser(String email, String password) {
-        checkLoggedin();Log.d("test001","1");
+
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    Log.d("LoginActivity", "onAuthStateChanged:signed_in:" + user.getUid());
+                } else {
+                    // User is signed out
+                    Log.d("LoginActivity", "onAuthStateChanged:signed_out");
+                }
+                //로그인 후 사용자 정보창 새로고침
+                ((MainActivity)MainActivity.mainContext).replaceNavigation();
+            }
+        };
+
         auth.signInWithEmailAndPassword(email,password);
+        auth.addAuthStateListener(mAuthListener);
         checkLoggedin();Log.d("test001","2");
     }
 
     static public void logoutUser() {
         auth.signOut();
-        //if (mAuthListener != null) {
-        //    auth.removeAuthStateListener(mAuthListener);
-        //}
+        if (mAuthListener != null) {
+            auth.removeAuthStateListener(mAuthListener);
+        }
 
     }
 
 
     //로그인 상태 확인
-    static public boolean checkLoggedin()
-    {
+    static public boolean checkLoggedin() {
+
         auth = FirebaseAuth.getInstance();
+
         firebaseUser = auth.getCurrentUser();
         if(firebaseUser == null) {
             Log.d("test001", "로그인 안됨");
@@ -49,8 +69,8 @@ public class UserManager {
             Log.d("test001", "로그인 됨");
             return true;
         }
-    }
 
+    }
     // 프로필 이미지 변경
     static public void updateProfile(){
 

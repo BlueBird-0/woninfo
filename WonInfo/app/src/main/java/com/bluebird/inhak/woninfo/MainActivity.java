@@ -43,6 +43,7 @@ import com.kakao.util.KakaoParameterException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    public static Context mainContext;
     private DBOpenHelper dbOpenHelper;
 
     private DrawerLayout drawer;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        mainContext = this;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -83,14 +85,6 @@ public class MainActivity extends AppCompatActivity
         dbOpenHelper = new DBOpenHelper(this);
         dbOpenHelper.open();
         dbOpenHelper.close();
-    }
-    //TODO 로그인 버튼쓸때 사용할 함수
-
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        replaceNavigation();
     }
 
     @Override
@@ -159,12 +153,6 @@ public class MainActivity extends AppCompatActivity
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        //로그인 되기까지 대기 후 실행
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
                         navigationView.getMenu().clear();
                         if(UserManager.checkLoggedin() == true)
                         {
