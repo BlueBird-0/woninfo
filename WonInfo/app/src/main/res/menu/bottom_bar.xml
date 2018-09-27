@@ -3,22 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/bottom_bar_menu_community"
-        android:icon="@drawable/ic_alert_exit"
+        android:icon="@drawable/menu"
         android:title="" />
     <item
         android:id="@+id/bottom_bar_menu_dictionary"
-        android:icon="@drawable/ic_alert_exit"
+        android:icon="@drawable/ic_home"
         android:title=""/>
     <item
         android:id="@+id/bottom_bar_menu_home"
-        android:icon="@drawable/ic_alert_exit"
+        android:icon="@drawable/ic_library"
         android:title=""/>
     <item
         android:id="@+id/bottom_bar_menu_custom"
-        android:icon="@drawable/ic_alert_exit"
+        android:icon="@drawable/ic_bus"
         android:title="" />
     <item
         android:id="@+id/bottom_bar_menu_web"
-        android:icon="@drawable/ic_alert_exit"
+        android:icon="@drawable/ic_bbs"
         android:title=""/>
 </menu>

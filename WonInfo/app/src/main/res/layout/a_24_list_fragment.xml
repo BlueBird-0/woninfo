@@ -33,16 +33,16 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/a_24_text01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="@dimen/title_size"
             android:text="등교"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="@dimen/title_size" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/a_25_text02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

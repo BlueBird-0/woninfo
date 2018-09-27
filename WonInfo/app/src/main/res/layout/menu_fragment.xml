@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/a_25_text01"
                 android:layout_width="175dp"
                 android:layout_height="99dp"
                 android:layout_margin="15dp"
@@ -54,7 +54,7 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/a_25_text02"
                 android:layout_width="175dp"
                 android:layout_height="99dp"
                 android:layout_margin="15dp"
@@ -114,7 +114,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/a_25_text11"
                 android:layout_width="229dp"
                 android:layout_height="99dp"
                 android:layout_margin="15dp"

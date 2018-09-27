@@ -21,7 +21,8 @@
         android:id="@+id/main_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize" />
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginBottom="?attr/actionBarSize"/>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
@@ -35,6 +36,8 @@
         app:itemIconTint="@color/Theme_Gray"
         app:itemTextColor="@color/Theme_White"
         app:menu="@menu/bottom_bar" />
+
+
 
 
 
