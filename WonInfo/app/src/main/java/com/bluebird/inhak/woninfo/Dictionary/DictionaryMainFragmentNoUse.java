@@ -1,29 +1,26 @@
-package com.bluebird.inhak.woninfo;
+package com.bluebird.inhak.woninfo.Dictionary;
 
 import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.bluebird.inhak.woninfo.DBOpenHelper;
+import com.bluebird.inhak.woninfo.R;
 
 /**
  * Created by InHak on 2017-12-30.
  */
 
-public class MainFragment extends Fragment  {
+public class DictionaryMainFragmentNoUse extends Fragment  {
     private DBOpenHelper dbOpenHelper;
     private Cursor cursor;
 
@@ -35,7 +32,7 @@ public class MainFragment extends Fragment  {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.main_fragment, container, false);
+        View view = inflater.inflate(R.layout.dictionary_main_fragment_nouse, container, false);
 
 
 
@@ -60,6 +57,7 @@ public class MainFragment extends Fragment  {
                 fragmentTransaction.commit();
             }catch(Exception e) {}
         }
+
 
         if (savedInstanceState != null) {
             int j = getArguments().getInt("index");

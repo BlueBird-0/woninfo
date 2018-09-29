@@ -2,73 +2,116 @@ package com.bluebird.inhak.woninfo.Community;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
+import android.widget.Button;
 
 import com.bluebird.inhak.woninfo.R;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerFragment;
-import com.google.android.youtube.player.YouTubePlayerSupportFragment;
-import com.google.android.youtube.player.YouTubePlayerView;
 
-public class CommunityMainFragment extends Fragment implements  YouTubePlayer.OnInitializedListener{
+public class CommunityMainFragment extends Fragment{
 
-    YouTubePlayerView youTubeView;
-    YouTubePlayer.OnInitializedListener listener;
-    YouTubePlayerSupportFragment mYoutubePlayerFragment;
+    Button button1;
+    Button button2;
+    Button button3;
+    Button button4;
+    Button button5;
+    Button button6;
 
-    public static final String ARG_ITEM_ID = "item_id";
-    public String youtubeKey = "AIzaSyAU98php0k0e6lWkw_he1RHMgilmvzRc1U";
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.community_main_fragment, container, false);
+/*
 
-        View fragmentYoutubeView = inflater.inflate(R.layout.community_main_fragment, container, false);
-        mYoutubePlayerFragment = new YouTubePlayerSupportFragment();
-        mYoutubePlayerFragment.initialize(youtubeKey, this);
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_youtube_player, mYoutubePlayerFragment);
-        fragmentTransaction.commit();
+        button1 = (Button)view.findViewById(R.id.unbtn);
+        button2 = (Button)view.findViewById(R.id.proudbtn);
+        button3 = (Button)view.findViewById(R.id.freebtn);
+        button4 = (Button)view.findViewById(R.id.foodbtn);
+        button5 = (Button)view.findViewById(R.id.hibtn);
+        button6 = (Button)view.findViewById(R.id.busbtn);
 
-        return fragmentYoutubeView;
-    }
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getFragmentManager();
+                Fragment fragment = null;
+                fragment = new BoardListFragment();
+                loadFragment(fragment);
 
-    @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-            if(!b){
-                youTubePlayer.cueVideo("tcuLThIyA70");
             }
-    }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager2 = getFragmentManager();
+                Fragment fragment = null;
+                fragment = new BoardListFragment2();
+                loadFragment(fragment);
 
-    @Override
-    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult result) {
-            if (result.isUserRecoverableError()) {
-                result.getErrorDialog(this.getActivity(),1).show();
-            } else {
-                Toast.makeText(this.getActivity(),
-                        "YouTubePlayer.onInitializationFailure(): " + result.toString(),
-                        Toast.LENGTH_LONG).show();
             }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager3 = getFragmentManager();
+                Fragment fragment = null;
+                fragment = new BoardListFragment3();
+                loadFragment(fragment);
+
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager testlistview = getFragmentManager();
+                Fragment fragment = null;
+                fragment = new BoardListFragment4();
+                loadFragment(fragment);
+
+            }
+        });
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager a_15_fragment = getFragmentManager();
+                Fragment fragment = null;
+                fragment = new A15Fragment();
+                loadFragment(fragment);
+
+            }
+        });
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager a_24_fragment = getFragmentManager();
+                Fragment fragment = null;
+                fragment = new A24Fragment();
+                loadFragment(fragment);
+
+            }
+        });
+    */
+        return view;
     }
 
-
-
+    private boolean loadFragment(Fragment fragment)
+    {
+        Log.d("test001", "1111");
+        //switching fragment
+        if(fragment != null)
+        {
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_fragment_container, fragment)
+                    .commit();
+            Log.d("test001", "2222");
+            return true;
+        }
+        return false;
+    }
 
 }

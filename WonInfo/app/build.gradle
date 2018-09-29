@@ -54,6 +54,7 @@ dependencies {
     //firebase login
     implementation group: 'com.kakao.sdk', name: 'kakaolink', version: project.KAKAO_SDK_VERSION
     //카카오 링크
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
 }
 
 

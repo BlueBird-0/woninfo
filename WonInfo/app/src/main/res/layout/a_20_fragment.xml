@@ -416,7 +416,6 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/form_margin"
-                    android:rotation="180"
                     app:srcCompat="@drawable/ic_page_expand" />
 
                 <TextView
@@ -434,8 +433,7 @@
             <com.github.chuross.library.ExpandableLayout
                 android:id="@+id/a_20_exl1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:exl_expanded="true">
+                android:layout_height="wrap_content">
 
 
                 <LinearLayout

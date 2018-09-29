@@ -1,9 +1,10 @@
-package com.bluebird.inhak.woninfo;
+package com.bluebird.inhak.woninfo.Dictionary;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,19 +12,22 @@ import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bluebird.inhak.woninfo.MainActivity;
+import com.bluebird.inhak.woninfo.R;
+
 import java.util.ArrayList;
 
 /**
  * Created by InHak on 2018-01-28.
  */
 
-public class MenuAdapter extends BaseAdapter {
+public class ListAdapter extends BaseAdapter {
 
-    private ArrayList<MenuItem> arrayList = new ArrayList<>();
+    private ArrayList<ListItem> arrayList = new ArrayList<>();
     private MainActivity mainActivity;
     private int count=0;    //listView 색상 나타내기 위해서 이용 -> 나중에는 분류별로 색상을 나타내야함
 
-    public MenuAdapter(MainActivity mainActivity) {
+    public ListAdapter(MainActivity mainActivity) {
         super();
         this.mainActivity = mainActivity;
     }
@@ -34,7 +38,7 @@ public class MenuAdapter extends BaseAdapter {
     }
 
     @Override
-    public MenuItem getItem(int position) {
+    public ListItem getItem(int position) {
         return arrayList.get(position);
     }
 
@@ -60,7 +64,7 @@ public class MenuAdapter extends BaseAdapter {
 
 
         /* 각 리스트에 뿌려줄 아이템을 받아오는데 mMyItem 재활용 */
-        final MenuItem menuItem = getItem(position);
+        final ListItem  menuItem = getItem(position);
 
         /* 각 위젯에 세팅된 아이템을 뿌려준다 */
         final String primaryKey = menuItem.getPrimaryKey();
@@ -74,11 +78,11 @@ public class MenuAdapter extends BaseAdapter {
                 FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 try {
-                    Class t = Class.forName("com.bluebird.inhak.woninfo."+ primaryKey +"Fragment."+ primaryKey +"Fragment");
+                    Class t = Class.forName("com.bluebird.inhak.woninfo.Dictionary."+ primaryKey +"Fragment."+ primaryKey +"Fragment");
                     //Class t = Class.forName("com.example.inhak.woninfo."+"A09"+"Fragment"+".A09"+"Fragment");
                     Fragment fragment = (Fragment)t.newInstance();
 
-                    fragmentTransaction.replace(R.id.view_fragment, fragment);
+                    fragmentTransaction.replace(R.id.main_fragment_container, fragment);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                     mainActivity.getSupportActionBar().setTitle(menuItem.getText());
@@ -92,7 +96,7 @@ public class MenuAdapter extends BaseAdapter {
     public void addItem(String primaryKey, String text,String likeCheck)
     {
         Boolean likeChange=Boolean.valueOf(likeCheck);
-        MenuItem menuItem = new MenuItem();
+        ListItem menuItem = new ListItem();
 
         /* MenuItem에 아이템을 setting 한다. */
         menuItem.setPrimaryKey(primaryKey);
