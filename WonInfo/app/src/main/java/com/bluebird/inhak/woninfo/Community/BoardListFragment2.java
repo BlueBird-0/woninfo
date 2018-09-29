@@ -33,7 +33,7 @@ public class BoardListFragment2 extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.community_list_fragment2, container, false);
+        view = inflater.inflate(R.layout.community_list_fragment, container, false);
 
         ArrayList<BoardListItem> boardlist = new ArrayList();
         Board2="자랑게시판";

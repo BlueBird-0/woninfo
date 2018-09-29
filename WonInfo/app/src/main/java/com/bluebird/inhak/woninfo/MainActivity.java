@@ -31,23 +31,28 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.Community.CommunityMainFragment;
-import com.bluebird.inhak.woninfo.Dictionary.A02Fragment.A02Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A03Fragment.A03Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A05Fragment.A05Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
+import com.bluebird.inhak.woninfo.Home.HomeMainFragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A25Fragment.A25Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.Textboard.Textboard;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
 import com.kakao.util.KakaoParameterException;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static Context mainContext;
     private DBOpenHelper dbOpenHelper;
 
     private DrawerLayout drawer;
     private NavigationView navigationView;
+
+    static int FRAGMENT_STATE = 0;
+    static int COMMUNITY_PAGE=1;
+    static int DICTIONARY_PAGE=2;
+    static int HOME_PAGE=3;
+    static int CUSTOM_PAGE=4;
+
+
+
 
 
     @Override
@@ -58,7 +63,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        replaceNavigation();
+            replaceNavigation();
         //TODO 로그인 버튼이랑 로그아웃 버튼 <- 실행시 바로 실행되도록 수정필요함
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
@@ -81,6 +86,11 @@ public class MainActivity extends AppCompatActivity
 
         setBottomBar();
 
+        Fragment fragment = new WebViewFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.webview_fragment_container, fragment)
+                .commit();
         //db초기화
         dbOpenHelper = new DBOpenHelper(this);
         dbOpenHelper.open();
@@ -95,18 +105,18 @@ public class MainActivity extends AppCompatActivity
             drawerLayout.closeDrawer(GravityCompat.START);
         }
         //웹뷰(원광대학교 웹정보창) 열려있을 경우
-        else if(WebViewFragment.webViewIsOpened())
+        else if(WebViewFragment.WEBVIEW_STATE_OPENED == true)
         {
             WebView webView = (WebView)findViewById(R.id.webview);
             if(webView.canGoBack())//웹뷰 뒤로가기
             {
                 webView.goBack();
             }else {
-                WebViewFragment.changeState();
+                //WebViewFragment.changeState();
             }
         }
         //프레그먼트(ViewFragment)가 열려있을 경우
-        else if (getFragmentManager().getBackStackEntryCount() != 0) {
+        else if (getSupportFragmentManager().getBackStackEntryCount() != 0) {
             this.getSupportActionBar().setTitle(R.string.app_name);
             super.onBackPressed();
         }
@@ -134,7 +144,7 @@ public class MainActivity extends AppCompatActivity
 
     public void replaceFragment()
     {
-        MenuDictionaryFragment menuDictionaryFragment = new MenuDictionaryFragment();
+        DictionaryMainFragment menuDictionaryFragment = new DictionaryMainFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.view_fragment, menuDictionaryFragment);
@@ -202,7 +212,7 @@ public class MainActivity extends AppCompatActivity
                 {
                     //다른 프레그먼트일 경우 = 검색 취소
                     try {
-                        ((MenuDictionaryFragment) fragment).search();
+                        ((DictionaryMainFragment) fragment).search();
                     }catch(ClassCastException e) { e.getStackTrace(); }
                 }
                 return true;
@@ -219,7 +229,7 @@ public class MainActivity extends AppCompatActivity
                 {
                     //다른 프레그먼트일 경우 = 뒤로가기 한번 후, 재검색 실행
                     try {
-                        ((MenuDictionaryFragment) fragment).search(query);
+                        ((DictionaryMainFragment) fragment).search(query);
                     }catch(ClassCastException e) {
                         onBackPressed();
                         searchView.setQuery( query, true);
@@ -231,7 +241,7 @@ public class MainActivity extends AppCompatActivity
                     //프레그먼트 (Dictionary) 실행
                     FragmentManager fm = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                    fragmentTransaction.add(R.id.view_fragment, new MenuDictionaryFragment());
+                    fragmentTransaction.add(R.id.view_fragment, new DictionaryMainFragment());
                     fragmentTransaction.addToBackStack("menu_dictionary");
                     fragmentTransaction.commit();
 
@@ -247,7 +257,7 @@ public class MainActivity extends AppCompatActivity
                                         Thread.sleep(200);
                                     }catch(Exception e){e.printStackTrace();}
                                     //searchView.setQuery( query, true);
-                                    MenuDictionaryFragment menuDictionaryFragment = (MenuDictionaryFragment) getSupportFragmentManager().findFragmentById(R.id.view_fragment);
+                                    DictionaryMainFragment menuDictionaryFragment = (DictionaryMainFragment) getSupportFragmentManager().findFragmentById(R.id.view_fragment);
                                     menuDictionaryFragment.search(query);
                                 }
                             });
@@ -259,6 +269,9 @@ public class MainActivity extends AppCompatActivity
             //검색어 입력 도중
             @Override
             public boolean onQueryTextChange(String newText) {
+
+
+
                 return false;
             }
         });
@@ -405,32 +418,41 @@ public class MainActivity extends AppCompatActivity
 
     //bottom_bar 하단바 설정
     private void setBottomBar() {
+
         final BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
         BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment = null;
-                switch (item.getItemId())
-                {
-                    case R.id.bottom_bar_menu_community:
-                        fragment = new CommunityMainFragment();
-                        fragment = new Textboard();
-                        break;
-                    case R.id.bottom_bar_menu_dictionary:
-                        fragment = new A02Fragment();
-                        break;
-                    case R.id.bottom_bar_menu_home:
-                        fragment = new A25Fragment();
-                        break;
-                    case R.id.bottom_bar_menu_custom:
-                        fragment = new A16Fragment();
-                        break;
-                    case R.id.bottom_bar_menu_web:
-                        fragment = new A05Fragment();
-                        break;
+                    switch (item.getItemId()) {
+                        case R.id.bottom_bar_menu_community:
+                            if(FRAGMENT_STATE != COMMUNITY_PAGE){
+                                fragment = new CommunityMainFragment();
+                                FRAGMENT_STATE = COMMUNITY_PAGE;
+                            }break;
+                        case R.id.bottom_bar_menu_dictionary:
+                            if(FRAGMENT_STATE != DICTIONARY_PAGE){
+                                fragment = new DictionaryMainFragment();
+                                FRAGMENT_STATE = DICTIONARY_PAGE;
+                            }break;
+                        case R.id.bottom_bar_menu_home:
+                            if(FRAGMENT_STATE != HOME_PAGE) {
+                                fragment = new HomeMainFragment();
+                                FRAGMENT_STATE = HOME_PAGE;
+                            }break;
+                        case R.id.bottom_bar_menu_custom:
+                            if(FRAGMENT_STATE != CUSTOM_PAGE) {
+                                fragment = new A16Fragment();
+                                FRAGMENT_STATE = CUSTOM_PAGE;
+                            }break;
+                        case R.id.bottom_bar_menu_web:
+                            WebViewFragment.changedWebView();
+                            return true;
                 }
-                return loadFragment(fragment);
+                loadFragment(fragment);
+                WebViewFragment.closedWebView();
+                return true;
             }
         });
     }
@@ -445,9 +467,9 @@ public class MainActivity extends AppCompatActivity
                     .beginTransaction()
                     .replace(R.id.main_fragment_container, fragment)
                     .commit();
-            Log.d("test001", "2222");
             return true;
         }
         return false;
     }
+
 }

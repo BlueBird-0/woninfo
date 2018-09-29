@@ -1,4 +1,4 @@
-package com.bluebird.inhak.woninfo.Dictionary.Textboard;
+package com.bluebird.inhak.woninfo.Community.Textboard;
 
 
 import android.os.Bundle;
@@ -27,20 +27,20 @@ import java.util.Map;
  * Created by InHak on 2017-12-31.
  */
 
-public class Textboard3 extends Fragment {
+public class Textboard4 extends Fragment {
 
 
     private Button sendbt;
     private EditText editdt;
     private EditText editdt2;
-    private String Board3;
+    private String Board4;
 
 
     @Nullable
     @Override
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.textboard, container, false);
+        final View view = inflater.inflate(R.layout.community_textboard, container, false);
 
         sendbt = (Button)view.findViewById(R.id.textboard_write_btn);
         sendbt.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +63,7 @@ public class Textboard3 extends Fragment {
                 editdt = (EditText)view.findViewById(R.id.editText2);
                 editdt2 = (EditText)view.findViewById(R.id.editText4);
                 String msg = editdt.getText().toString();
-                Map<String, Object> 자유게시판 = new HashMap<>();
+                Map<String, Object> 맛집게시판 = new HashMap<>();
 
                 Map<String, Object> uData = new HashMap<>();
                 uData.put("title", editdt2.getText().toString());
@@ -73,15 +73,15 @@ public class Textboard3 extends Fragment {
 
 
 
-                자유게시판.put(editdt.getText().toString(), uData);
+                맛집게시판.put(editdt.getText().toString(), uData);
 
-                Board3="자유게시판";
+                Board4="맛집게시판";
 
 
                 //databaseReference.child("message").push().setValue(msg);
                 //// Add a new document with a generated ID
-                db.collection("Community").document("게시판").collection(Board3)
-                        .add(자유게시판)
+                db.collection("Community").document("게시판").collection(Board4)
+                        .add(맛집게시판)
                                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                     @Override
                                     public void onSuccess(DocumentReference documentReference) {

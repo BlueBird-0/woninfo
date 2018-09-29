@@ -24,37 +24,41 @@ import android.webkit.WebViewClient;
  */
 
 public class WebViewFragment extends Fragment {
-    static private boolean WEBVIEW_STATE_OPENED = false;
+    static public boolean WEBVIEW_STATE_OPENED = false;
+
     static View view;
-    static public void changeState()
+
+
+    static public void openedWebView()
     {
-        WebView webView = (WebView)view.findViewById(R.id.webview);
-        if(WEBVIEW_STATE_OPENED == true)
-        {
-            webView.setVisibility(View.GONE);
-        }else if(WEBVIEW_STATE_OPENED == false)
-        {
-            webView.setVisibility(View.VISIBLE);
-        }
+        WEBVIEW_STATE_OPENED = true;
+        replaceWebView();
+    }
+    static public void closedWebView()
+    {
+        WEBVIEW_STATE_OPENED = false;
+        replaceWebView();
+    }
+    static public void changedWebView()
+    {
         WEBVIEW_STATE_OPENED = !WEBVIEW_STATE_OPENED;
+        replaceWebView();
+    }
+    static public void replaceWebView()
+    {
+        WebView webView = (WebView) view.findViewById(R.id.webview);
+        if (WEBVIEW_STATE_OPENED == true) {
+            webView.setVisibility(View.VISIBLE);
+
+        } else if (WEBVIEW_STATE_OPENED == false) {
+            webView.setVisibility(View.GONE);
+        }
         view.bringToFront();
     }
-    static public boolean webViewIsOpened()
-    {
-        return WEBVIEW_STATE_OPENED;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.webview_fragment, container, false);
-
         WebView webView = (WebView)view.findViewById(R.id.webview);
 
         CookieSyncManager cookieSyncManager = CookieSyncManager.createInstance(webView.getContext());
@@ -99,7 +103,6 @@ public class WebViewFragment extends Fragment {
         return view;
     }
 
-
     @Override
     public void onResume() {
         super.onResume();
@@ -112,7 +115,7 @@ public class WebViewFragment extends Fragment {
         CookieSyncManager.getInstance().stopSync();
     }
 
-
+/*
 
     protected class ViewClient extends WebViewClient
     {
@@ -126,5 +129,5 @@ public class WebViewFragment extends Fragment {
             view.evaluateJavascript(Script, null);
             Log.d("test33","d");
         }
-    }
+    }*/
 }

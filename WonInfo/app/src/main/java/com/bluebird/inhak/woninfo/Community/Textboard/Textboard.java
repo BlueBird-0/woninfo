@@ -1,4 +1,4 @@
-package com.bluebird.inhak.woninfo.Dictionary.Textboard;
+package com.bluebird.inhak.woninfo.Community.Textboard;
 
 
 import android.os.Bundle;
@@ -41,7 +41,7 @@ public class Textboard extends Fragment {
     @Override
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.textboard, container, false);
+        final View view = inflater.inflate(R.layout.community_textboard, container, false);
 
 
         sendbt = (Button)view.findViewById(R.id.textboard_write_btn);

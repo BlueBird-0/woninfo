@@ -1,10 +1,10 @@
-package com.bluebird.inhak.woninfo;
+package com.bluebird.inhak.woninfo.Dictionary;
 
 /**
  * Created by InHak on 2018-01-28.
  */
 
-public class MenuItem {
+public class ListItem {
     private String primaryKey;
     private String title;
     private boolean like;

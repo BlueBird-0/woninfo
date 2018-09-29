@@ -1,37 +1,40 @@
-package com.bluebird.inhak.woninfo;
+package com.bluebird.inhak.woninfo.Dictionary;
 
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.bluebird.inhak.woninfo.DBOpenHelper;
+import com.bluebird.inhak.woninfo.Dictionary.ListAdapter;
+import com.bluebird.inhak.woninfo.MainActivity;
+import com.bluebird.inhak.woninfo.R;
 
 /**
  * Created by InHak on 2017-12-31.
  */
 
-public class MenuDictionaryFragment extends Fragment {
+public class DictionaryMainFragment extends Fragment {
     static View view;
     private DBOpenHelper dbOpenHelper;
     private Cursor cursor;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
+    private AdapterView.OnItemClickListener mOnItemClickListner;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.menu_dictionary_fragment, container, false);
-        ListView listView = (ListView)view.findViewById(R.id.listview);
-        MenuAdapter menuAdapter = new MenuAdapter((MainActivity)getActivity());
+        view = inflater.inflate(R.layout.dictionary_main_fragment, container, false);
+        final ListView listView = (ListView)view.findViewById(R.id.dictionary_listview);
+        ListAdapter menuAdapter = new ListAdapter((MainActivity)getActivity());
 
         //DB에서 메뉴목록 가져오기
         dbOpenHelper = new DBOpenHelper(getActivity());
@@ -48,6 +51,9 @@ public class MenuDictionaryFragment extends Fragment {
             if(cursor.getString(2).equals("0"))
             menuAdapter.addItem(cursor.getString(0), cursor.getString(1),cursor.getString(2));
         }
+
+
+
         listView.setAdapter(menuAdapter);
         menuAdapter.notifyDataSetChanged();
         return view;
@@ -56,8 +62,9 @@ public class MenuDictionaryFragment extends Fragment {
 
     public void search()
     {
-        ListView listView = (ListView)view.findViewById(R.id.listview);
-        MenuAdapter menuAdapter = (MenuAdapter)listView.getAdapter();
+        ListView listView = (ListView)view.findViewById(R.id.dictionary_listview);
+        ListAdapter menuAdapter = (ListAdapter)listView.getAdapter();
+
 
         dbOpenHelper.open();
         //검색어 쿼리
@@ -74,8 +81,8 @@ public class MenuDictionaryFragment extends Fragment {
 
     public void search(String query)
     {
-                ListView listView = (ListView)view.findViewById(R.id.listview);
-                MenuAdapter menuAdapter = (MenuAdapter)listView.getAdapter();
+                ListView listView = (ListView)view.findViewById(R.id.dictionary_listview);
+                ListAdapter menuAdapter = (ListAdapter)listView.getAdapter();
 
                 dbOpenHelper.open();
                 //검색어 쿼리

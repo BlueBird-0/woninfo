@@ -50,8 +50,6 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/form_margin"
-
-                    android:rotation="180"
                     app:srcCompat="@drawable/ic_page_expand" />
 
 
@@ -70,8 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/form_margin"
-                android:layout_marginRight="@dimen/form_margin"
-                app:exl_expanded="true">
+                android:layout_marginRight="@dimen/form_margin">
 
                 <GridLayout
                     android:layout_width="match_parent"
