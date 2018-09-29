@@ -32,10 +32,12 @@
         android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
         android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/colorBackground"
-        app:itemIconTint="@color/Theme_Gray"
-        app:itemTextColor="@color/Theme_White"
-        app:menu="@menu/bottom_bar" />
+        app:itemIconTint="@drawable/select_bottom_navigation"
+        app:itemBackground="@color/Theme_White"
+        app:itemTextColor="@color/Theme_Gray"
+        app:menu="@menu/bottom_bar"
+        app:labelVisibilityMode="unlabeled"/>
+
 
 
 

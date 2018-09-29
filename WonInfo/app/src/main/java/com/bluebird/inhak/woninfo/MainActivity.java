@@ -427,7 +427,6 @@ public class MainActivity extends AppCompatActivity
                 {
                     case R.id.bottom_bar_menu_community:
                         fragment = new CommunityMainFragment();
-                        fragment = new Textboard();
                         break;
                     case R.id.bottom_bar_menu_dictionary:
                         fragment = new A02Fragment();
@@ -447,9 +446,9 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+
     private boolean loadFragment(Fragment fragment)
     {
-        Log.d("test001", "1111");
         //switching fragment
         if(fragment != null)
         {
@@ -457,7 +456,6 @@ public class MainActivity extends AppCompatActivity
                     .beginTransaction()
                     .replace(R.id.main_fragment_container, fragment)
                     .commit();
-            Log.d("test001", "2222");
             return true;
         }
         return false;

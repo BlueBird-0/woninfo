@@ -4,21 +4,26 @@
     <item
         android:id="@+id/bottom_bar_menu_community"
         android:icon="@drawable/menu"
-        android:title="" />
+        app:showAsAction="ifRoom"
+        android:title=""/>
     <item
         android:id="@+id/bottom_bar_menu_dictionary"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_library"
+        app:showAsAction="ifRoom"
         android:title=""/>
     <item
         android:id="@+id/bottom_bar_menu_home"
-        android:icon="@drawable/ic_library"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="ifRoom"
         android:title=""/>
     <item
         android:id="@+id/bottom_bar_menu_custom"
         android:icon="@drawable/ic_bus"
-        android:title="" />
+        app:showAsAction="ifRoom"
+        android:title=""/>
     <item
         android:id="@+id/bottom_bar_menu_web"
         android:icon="@drawable/ic_bbs"
+        app:showAsAction="ifRoom"
         android:title=""/>
 </menu>

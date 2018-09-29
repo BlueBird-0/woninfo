@@ -25,4 +25,9 @@
     <style name="NavigationTheme" parent="AppTheme">
         <item name="listPreferredItemHeightSmall">36dp</item>
     </style>
+
+    <style name="Apptheme.BottomItems" parent="AppTheme">
+        <item name="android:textSize">2sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
 </resources>
