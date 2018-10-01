@@ -9,23 +9,23 @@
                 android:angle="90"
                 android:startColor="@color/colorPrimary"
                 android:centerColor="@color/colorPrimary"
-                android:endColor="@color/Theme_White"
+                android:endColor="#c99293"
                 android:type="linear"
                 />
         </shape>
     </item>
 
     <item
-        android:width="64dp"
-        android:height="64dp"
-        android:top="140dp"
+        android:width="90dp"
+        android:height="90dp"
+        android:top="215dp"
         android:gravity="center_horizontal">
         <bitmap android:src="@drawable/ic_webview_o" />
     </item>
 
     <item
-        android:bottom="70dp"
-        android:gravity="center_horizontal|bottom">
+        android:top="300dp"
+        android:gravity="center_horizontal|top">
         <bitmap android:src="@drawable/ic_textlogo" />
     </item>
 
