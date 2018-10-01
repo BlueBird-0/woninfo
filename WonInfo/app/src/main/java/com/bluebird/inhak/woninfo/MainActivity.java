@@ -31,9 +31,14 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.Community.CommunityMainFragment;
+import com.bluebird.inhak.woninfo.Dictionary.A02Fragment.A02Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A05Fragment.A05Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A25Fragment.A25Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
 import com.bluebird.inhak.woninfo.Home.HomeMainFragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
+import com.google.android.youtube.player.YouTubePlayerFragment;
+import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
 import com.kakao.util.KakaoParameterException;
@@ -80,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         boolean pushState = preferences.getBoolean(getString(R.string.shared_food_push_state),true);
         if(pushState) {
             new A16Fragment().setMenu(this);    //메뉴 불러오기
+            Log.d("test001","셋 메뉴");
             new A16Fragment.PushAlarm(getApplicationContext()).Alarm(); //푸쉬알림설정
         }
 
@@ -123,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else {
             AlertDialog.Builder d = new AlertDialog.Builder(MainActivity.this);
             d.setTitle("종료여부");
-            d.setMessage("진짜 갈꺼야? ㅇ3ㅇ;;;");
+            d.setMessage("종료합니다.");
             d.setIcon(R.drawable.ic_alert_exit);
 
             d.setPositiveButton("예", new DialogInterface.OnClickListener() {
@@ -147,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DictionaryMainFragment menuDictionaryFragment = new DictionaryMainFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.view_fragment, menuDictionaryFragment);
+        fragmentTransaction.replace(R.id.main_fragment_container, menuDictionaryFragment);
         fragmentTransaction.commit();
     }
     public void replaceNavigation()
@@ -206,7 +212,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
-                Fragment fragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.view_fragment);
+                Fragment fragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
                 //프레그먼트가 (Dictionary) 꺼져있을시
                 if(fragment != null)
                 {
@@ -218,30 +224,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             }
         });
+
         //검색어 입력 처리
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
             //검색어 입력시
             @Override
             public boolean onQueryTextSubmit(final String query) {
-                Fragment fragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.view_fragment);
+
+                Fragment fragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
+
                 //프레그먼트가 (Dictionary) 꺼져있을시
                 if(fragment != null)
                 {
                     //다른 프레그먼트일 경우 = 뒤로가기 한번 후, 재검색 실행
-                    try {
-                        ((DictionaryMainFragment) fragment).search(query);
-                    }catch(ClassCastException e) {
-                        onBackPressed();
-                        searchView.setQuery( query, true);
-                    }
+                        try {
+                            ((DictionaryMainFragment) fragment).search(query);
+                        } catch (ClassCastException e) {
+
+                            onBackPressed();
+                            searchView.setQuery(query, true);
+                        }
                 }
                 //프레그먼트가 (Dictionary) 꺼져있을시
                 else
                 {
+                    Log.d("test001", "d");
                     //프레그먼트 (Dictionary) 실행
                     FragmentManager fm = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                    fragmentTransaction.add(R.id.view_fragment, new DictionaryMainFragment());
+                    fragmentTransaction.add(R.id.main_fragment_container, new DictionaryMainFragment());
                     fragmentTransaction.addToBackStack("menu_dictionary");
                     fragmentTransaction.commit();
 
@@ -257,7 +268,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                         Thread.sleep(200);
                                     }catch(Exception e){e.printStackTrace();}
                                     //searchView.setQuery( query, true);
-                                    DictionaryMainFragment menuDictionaryFragment = (DictionaryMainFragment) getSupportFragmentManager().findFragmentById(R.id.view_fragment);
+                                    DictionaryMainFragment menuDictionaryFragment = (DictionaryMainFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
                                     menuDictionaryFragment.search(query);
                                 }
                             });
@@ -269,9 +280,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             //검색어 입력 도중
             @Override
             public boolean onQueryTextChange(String newText) {
-
-
-
                 return false;
             }
         });
@@ -391,7 +399,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Class t = Class.forName("com.bluebird.inhak.woninfo."+ "Tutorial" +"Fragment");
             Fragment fragment = (Fragment)t.newInstance();
 
-            fragmentTransaction.replace(R.id.view_fragment, fragment);
+            fragmentTransaction.replace(R.id.main_fragment_container, fragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }catch(Exception e) {}
@@ -418,54 +426,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     //bottom_bar 하단바 설정
     private void setBottomBar() {
-
         final BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
         BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment = null;
-                switch (item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.bottom_bar_menu_community:
-                        fragment = new CommunityMainFragment();
+                        if (FRAGMENT_STATE != COMMUNITY_PAGE) {
+                            fragment = new CommunityMainFragment();
+                            FRAGMENT_STATE = COMMUNITY_PAGE;
+                        }
                         break;
                     case R.id.bottom_bar_menu_dictionary:
-                        fragment = new A02Fragment();
+                        if (FRAGMENT_STATE != DICTIONARY_PAGE) {
+                            fragment = new DictionaryMainFragment();
+                            FRAGMENT_STATE = DICTIONARY_PAGE;
+                        }
                         break;
                     case R.id.bottom_bar_menu_home:
-                        fragment = new A25Fragment();
+                        if (FRAGMENT_STATE != HOME_PAGE) {
+                            fragment = new HomeMainFragment();
+                            FRAGMENT_STATE = HOME_PAGE;
+                        }
                         break;
                     case R.id.bottom_bar_menu_custom:
-                        fragment = new A16Fragment();
+                        if (FRAGMENT_STATE != CUSTOM_PAGE) {
+                            fragment = new A16Fragment();
+                            FRAGMENT_STATE = CUSTOM_PAGE;
+                        }
                         break;
                     case R.id.bottom_bar_menu_web:
-                        fragment = new A05Fragment();
-                        break;
-                    switch (item.getItemId()) {
-                        case R.id.bottom_bar_menu_community:
-                            if(FRAGMENT_STATE != COMMUNITY_PAGE){
-                                fragment = new CommunityMainFragment();
-                                FRAGMENT_STATE = COMMUNITY_PAGE;
-                            }break;
-                        case R.id.bottom_bar_menu_dictionary:
-                            if(FRAGMENT_STATE != DICTIONARY_PAGE){
-                                fragment = new DictionaryMainFragment();
-                                FRAGMENT_STATE = DICTIONARY_PAGE;
-                            }break;
-                        case R.id.bottom_bar_menu_home:
-                            if(FRAGMENT_STATE != HOME_PAGE) {
-                                fragment = new HomeMainFragment();
-                                FRAGMENT_STATE = HOME_PAGE;
-                            }break;
-                        case R.id.bottom_bar_menu_custom:
-                            if(FRAGMENT_STATE != CUSTOM_PAGE) {
-                                fragment = new A16Fragment();
-                                FRAGMENT_STATE = CUSTOM_PAGE;
-                            }break;
-                        case R.id.bottom_bar_menu_web:
-                            WebViewFragment.changedWebView();
-                            return true;
+                        WebViewFragment.changedWebView();
+                        return true;
                 }
                 loadFragment(fragment);
                 WebViewFragment.closedWebView();

@@ -1,6 +1,7 @@
 package com.bluebird.inhak.woninfo.Home;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.Fragment;
@@ -8,22 +9,38 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.R;
+import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class HomeMainFragment extends Fragment implements  YouTubePlayer.OnInitializedListener{
+public class HomeMainFragment extends Fragment{
+    public  HomeMainFragment(){
 
+    }
 
-    YouTubePlayerSupportFragment mYoutubePlayerFragment;
-
-    public static final String ARG_ITEM_ID = "item_id";
-    public String youtubeKey = "AIzaSyAU98php0k0e6lWkw_he1RHMgilmvzRc1U";
     @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v =inflater.inflate(R.layout.home_main_fragment,container,false);
+      //  WebView webView = (WebView)v.findViewById(R.id.youtube_player_view);
+       // webView.getSettings().setJavaScriptEnabled(true);
+       // webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
+       // webView.setWebViewClient(new WebViewClient());
+       // webView.loadUrl("https://www.youtube.com/watch?v=tcuLThIyA70");
+
+
+
+        return v;
+    }
+
+    /*
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
@@ -32,7 +49,7 @@ public class HomeMainFragment extends Fragment implements  YouTubePlayer.OnIniti
         mYoutubePlayerFragment.initialize(youtubeKey, this);
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_youtube_player, mYoutubePlayerFragment);
+        fragmentTransaction.replace(R.id.youtube_player_view, mYoutubePlayerFragment);
         fragmentTransaction.commit();
 
         return fragmentYoutubeView;
@@ -55,7 +72,7 @@ public class HomeMainFragment extends Fragment implements  YouTubePlayer.OnIniti
                         Toast.LENGTH_LONG).show();
             }
     }
-
+*/
 
 
 }

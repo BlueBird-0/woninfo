@@ -17,7 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '28.0.2'
 }
 
 dependencies {
@@ -42,7 +42,7 @@ dependencies {
     // 대용량 이미지 핀치줌
     implementation 'com.prolificinteractive:material-calendarview:1.4.3'
     //캘린더
-    implementation 'org.jsoup:jsoup:1.9.2'
+    implementation 'org.jsoup:jsoup:1.11.3'
     //버전체크용 Jsoup
     implementation 'com.github.florent37:materialtextfield:1.0.7'
     //로그인 페이지 editText Design
