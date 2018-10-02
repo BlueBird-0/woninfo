@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bluebird.inhak.woninfo">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -12,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:hardwareAccelerated="true"
-        android:resizeableActivity="false">
+        android:resizeableActivity="false"
+        android:usesCleartextTraffic="true">
         <activity
             android:name="com.bluebird.inhak.woninfo.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

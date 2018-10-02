@@ -52,7 +52,7 @@ public class DictionaryMainFragmentNoUse extends Fragment  {
                 Class t = Class.forName("com.bluebird.inhak.woninfo."+ "Tutorial" +"Fragment");
                 Fragment fragment = (Fragment)t.newInstance();
 
-                fragmentTransaction.replace(R.id.view_fragment, fragment);
+                fragmentTransaction.replace(R.id.main_fragment_container, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }catch(Exception e) {}

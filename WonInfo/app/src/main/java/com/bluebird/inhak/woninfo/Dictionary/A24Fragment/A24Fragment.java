@@ -51,7 +51,7 @@ public class A24Fragment extends Fragment {
                         Fragment fragment = (Fragment)t.newInstance();
                         fragment.setArguments(bundle);
 
-                        fragmentTransaction.replace(R.id.view_fragment, fragment);
+                        fragmentTransaction.replace(R.id.main_fragment_container, fragment);
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
                         ((MainActivity)getActivity()).getSupportActionBar().setTitle(FragmentTitle[finalI]);

@@ -159,6 +159,7 @@ public class A16Fragment extends Fragment {
                 {
                     case R.id.a_16_btn_manual0:
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://dorm.wku.ac.kr/")));
+                        Log.d("test001","파싱부분");
                         break;
                 }
             }
@@ -300,10 +301,15 @@ public class A16Fragment extends Fragment {
         @Override
         protected Void doInBackground(Void... voids) {
             try{
-                org.jsoup.nodes.Document doc = Jsoup.connect(htmlPageUrl).get();
+
+                Log.d("test001","전인학 망해라아아아아아아");
+                Document doc = Jsoup.connect(htmlPageUrl).userAgent("Mozilla").get();
                 Elements links = doc.select(".boardList");
 
+
+
                 for (Element link : links) {
+
                     link = links.select("a").first();
                     relf = link.attr("href");
                     Log.d("test001", relf);
