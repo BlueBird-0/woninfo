@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/freebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
@@ -42,7 +42,7 @@
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout2"
+            android:id="@+id/changebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
@@ -50,7 +50,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/boxbutton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+            app:layout_constraintTop_toBottomOf="@+id/freebtn">
 
             <TextView
                 android:id="@+id/a_25_text02"
@@ -70,7 +70,7 @@
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout3"
+            android:id="@+id/foodbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
@@ -78,7 +78,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/boxbutton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+            app:layout_constraintTop_toBottomOf="@+id/changebtn">
 
             <TextView
                 android:id="@+id/textVie3"
@@ -98,7 +98,7 @@
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout4"
+            android:id="@+id/secretbtn"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="7dp"
@@ -107,9 +107,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:background="@drawable/boxbutton"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+            app:layout_constraintBottom_toTopOf="@+id/foodbtn"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+            app:layout_constraintStart_toEndOf="@+id/freebtn"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -144,8 +144,8 @@
                 android:background="@drawable/boxbutton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+                app:layout_constraintStart_toEndOf="@+id/foodbtn"
+                app:layout_constraintTop_toBottomOf="@+id/secretbtn"
                 app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -165,12 +165,12 @@
         </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout6"
+        android:id="@+id/busbtn"
         android:layout_width="255dp"
         android:layout_height="133dp"
         android:layout_margin="7dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginStart="36dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/boxbutton"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout5"
         app:layout_constraintStart_toStartOf="parent"
@@ -184,13 +184,12 @@
             android:layout_margin="15dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="홍보게시판"
+            android:text="버스노선도"
             android:textColor="@color/Theme_Blue"
             android:textSize="@dimen/menubigtitle_size"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
 
     </android.support.constraint.ConstraintLayout>

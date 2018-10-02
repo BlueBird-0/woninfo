@@ -2,38 +2,41 @@ package com.bluebird.inhak.woninfo.Community;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A24Fragment.A24Fragment;
 import com.bluebird.inhak.woninfo.R;
 
 public class CommunityMainFragment extends Fragment{
 
-    Button button1;
-    Button button2;
-    Button button3;
-    Button button4;
-    Button button5;
-    Button button6;
+    ConstraintLayout button1;
+    ConstraintLayout button2;
+    ConstraintLayout button3;
+    ConstraintLayout button4;
+    ConstraintLayout button5;
+    ConstraintLayout button6;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.community_main_fragment, container, false);
-/*
 
-        button1 = (Button)view.findViewById(R.id.unbtn);
-        button2 = (Button)view.findViewById(R.id.proudbtn);
-        button3 = (Button)view.findViewById(R.id.freebtn);
-        button4 = (Button)view.findViewById(R.id.foodbtn);
-        button5 = (Button)view.findViewById(R.id.hibtn);
-        button6 = (Button)view.findViewById(R.id.busbtn);
 
+        button1 = (ConstraintLayout)view.findViewById(R.id.freebtn);
+        button2 = (ConstraintLayout)view.findViewById(R.id.changebtn);
+        button3 = (ConstraintLayout)view.findViewById(R.id.secretbtn);
+        button4 = (ConstraintLayout)view.findViewById(R.id.foodbtn);
+        button5 = (ConstraintLayout)view.findViewById(R.id.button);
+        button6 = (ConstraintLayout)view.findViewById(R.id.busbtn);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,7 +97,7 @@ public class CommunityMainFragment extends Fragment{
 
             }
         });
-    */
+
         return view;
     }
 

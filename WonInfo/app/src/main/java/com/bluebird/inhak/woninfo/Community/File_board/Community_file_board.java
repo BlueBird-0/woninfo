@@ -1,9 +1,9 @@
-package com.bluebird.inhak.woninfo.Community;
+/*
+package com.bluebird.inhak.woninfo.Community.File_board;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bluebird.inhak.woninfo.Community.BoardListAdapter;
+import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,12 +22,13 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class BoardListFragment extends Fragment{
+public class Community_file_board {
+
     private String[] titles = {""};
     private String[] contents = {""};
     private BoardListAdapter boardListAdapter;
     private String Board;
-   // private TextView numtext;
+    // private TextView numtext;
     private ArrayList<BoardListItem> items = new ArrayList<>();
     private View view;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -34,14 +37,14 @@ public class BoardListFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.community_list_fragment, container, false);
+        view = inflater.inflate(R.layout.community_file_board, container, false);
         //numtext = (TextView)view.findViewById(R.id.number_btn);
         //String num;
 
 
         ArrayList<BoardListItem> boardlist = new ArrayList();
         Board = "대나무숲";
-  {
+        {
 
             final BoardListItem item = new BoardListItem("제목", "내용");
             int i = 0;
@@ -75,8 +78,8 @@ public class BoardListFragment extends Fragment{
 
             setRecyclerView();
         }
-            return view;
-        }
+        return view;
+    }
 
     private void setRecyclerView(){
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.community_listView);
@@ -102,8 +105,9 @@ public class BoardListFragment extends Fragment{
             BoardListItem item = new BoardListItem(titles[i],contents[i]);
             items.add(item);
 
-        //데이터 추가가 완료되었으면 notifyDataSetChanged() 메서드를 호출해 데이터 변경 체크를 실시합니다.
-        boardListAdapter.notifyDataSetChanged();
+            //데이터 추가가 완료되었으면 notifyDataSetChanged() 메서드를 호출해 데이터 변경 체크를 실시합니다.
+            boardListAdapter.notifyDataSetChanged();
         }
     }
 }
+*/

@@ -31,6 +31,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.Community.CommunityMainFragment;
+import com.bluebird.inhak.woninfo.Community.Textboard.Textboard;
+import com.bluebird.inhak.woninfo.Community.Textboard.test_delete;
+import com.bluebird.inhak.woninfo.Community.Textboard.test_fix;
 import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
 import com.bluebird.inhak.woninfo.Home.HomeMainFragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
@@ -421,72 +424,58 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         final BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
         BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment = null;
-                switch (item.getItemId())
-                {
-                    case R.id.bottom_bar_menu_community:
-                        fragment = new CommunityMainFragment();
-                        break;
-                    case R.id.bottom_bar_menu_dictionary:
-                        fragment = new A02Fragment();
-                        break;
-                    case R.id.bottom_bar_menu_home:
-                        fragment = new A25Fragment();
-                        break;
-                    case R.id.bottom_bar_menu_custom:
-                        fragment = new A16Fragment();
-                        break;
-                    case R.id.bottom_bar_menu_web:
-                        fragment = new A05Fragment();
-                        break;
                     switch (item.getItemId()) {
                         case R.id.bottom_bar_menu_community:
-                            if(FRAGMENT_STATE != COMMUNITY_PAGE){
-                                fragment = new CommunityMainFragment();
+                            if (FRAGMENT_STATE != COMMUNITY_PAGE) {
+                                fragment = new test_fix();
                                 FRAGMENT_STATE = COMMUNITY_PAGE;
-                            }break;
+                            }
+                            break;
                         case R.id.bottom_bar_menu_dictionary:
-                            if(FRAGMENT_STATE != DICTIONARY_PAGE){
+                            if (FRAGMENT_STATE != DICTIONARY_PAGE) {
                                 fragment = new DictionaryMainFragment();
                                 FRAGMENT_STATE = DICTIONARY_PAGE;
-                            }break;
+                            }
+                            break;
                         case R.id.bottom_bar_menu_home:
-                            if(FRAGMENT_STATE != HOME_PAGE) {
+                            if (FRAGMENT_STATE != HOME_PAGE) {
                                 fragment = new HomeMainFragment();
                                 FRAGMENT_STATE = HOME_PAGE;
-                            }break;
+                            }
+                            break;
                         case R.id.bottom_bar_menu_custom:
-                            if(FRAGMENT_STATE != CUSTOM_PAGE) {
+                            if (FRAGMENT_STATE != CUSTOM_PAGE) {
                                 fragment = new A16Fragment();
                                 FRAGMENT_STATE = CUSTOM_PAGE;
-                            }break;
+                            }
+                            break;
                         case R.id.bottom_bar_menu_web:
                             WebViewFragment.changedWebView();
                             return true;
+                    }
+                    loadFragment(fragment);
+                    WebViewFragment.closedWebView();
+                    return true;
                 }
-                loadFragment(fragment);
-                WebViewFragment.closedWebView();
-                return true;
+
+            });
+    }
+
+            private boolean loadFragment(Fragment fragment) {
+                //switching fragment
+                if (fragment != null) {
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.main_fragment_container, fragment)
+                            .commit();
+                    return true;
+                }
+                return false;
             }
-        });
-    }
 
-
-    private boolean loadFragment(Fragment fragment)
-    {
-        //switching fragment
-        if(fragment != null)
-        {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.main_fragment_container, fragment)
-                    .commit();
-            return true;
         }
-        return false;
-    }
 
-}
