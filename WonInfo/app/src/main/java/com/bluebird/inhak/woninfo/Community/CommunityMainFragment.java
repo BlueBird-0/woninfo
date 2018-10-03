@@ -31,12 +31,12 @@ public class CommunityMainFragment extends Fragment{
         View view = inflater.inflate(R.layout.community_main_fragment, container, false);
 
 
-        button1 = (ConstraintLayout)view.findViewById(R.id.box1);
-        button2 = (ConstraintLayout)view.findViewById(R.id.box2);
-        button3 = (ConstraintLayout)view.findViewById(R.id.box3);
-        button4 = (ConstraintLayout)view.findViewById(R.id.box4);
-        button5 = (ConstraintLayout)view.findViewById(R.id.box5);
-        button6 = (ConstraintLayout)view.findViewById(R.id.box6);
+        button1 = (ConstraintLayout)view.findViewById(R.id.community_main_1);
+        button2 = (ConstraintLayout)view.findViewById(R.id.community_main_2);
+        button3 = (ConstraintLayout)view.findViewById(R.id.community_main_3);
+        button4 = (ConstraintLayout)view.findViewById(R.id.community_main_4);
+        button5 = (ConstraintLayout)view.findViewById(R.id.community_main_5);
+        button6 = (ConstraintLayout)view.findViewById(R.id.community_main_6);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override

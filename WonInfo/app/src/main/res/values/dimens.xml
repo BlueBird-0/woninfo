@@ -9,8 +9,11 @@
     <dimen name="form_margin">16dp</dimen>
     <dimen name="form_contentmargin">7dp</dimen>
 
+    list_item_bigtitle_size
 
     <!--font-->
+
+    <dimen name="list_item_bigtitle_size">17dp</dimen>
     <dimen name="title_size">18sp</dimen>
     <dimen name="mini_size">10sp</dimen>
     <dimen name="bigtitle_size">15sp</dimen>
