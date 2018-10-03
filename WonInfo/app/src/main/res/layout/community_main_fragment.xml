@@ -16,7 +16,7 @@
 
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/box1"
+            android:id="@+id/community_main_1"
             android:layout_width="165dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/text1"
+                android:id="@+id/community_main_text1"
                 android:layout_width="164dp"
                 android:layout_height="98dp"
                 android:layout_marginStart="16dp"
@@ -48,24 +48,20 @@
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/box2"
+            android:id="@+id/community_main_2"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="7dp"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/boxbutton"
-            app:layout_constraintBottom_toTopOf="@+id/box4"
+            app:layout_constraintBottom_toTopOf="@+id/community_main_4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/box1"
-
-
-
-
+            app:layout_constraintStart_toEndOf="@+id/community_main_1"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/text2"
+                android:id="@+id/community_main_text2"
                 android:layout_width="164dp"
                 android:layout_height="98dp"
                 android:layout_margin="15dp"
@@ -80,7 +76,7 @@
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/box3"
+            android:id="@+id/community_main_3"
             android:layout_width="165dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
@@ -88,10 +84,10 @@
             android:layout_marginTop="4dp"
             android:background="@drawable/boxbutton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/box1">
+            app:layout_constraintTop_toBottomOf="@+id/community_main_1">
 
             <TextView
-                android:id="@+id/text3"
+                android:id="@+id/community_main_text3"
                 android:layout_width="164dp"
                 android:layout_height="98dp"
                 android:layout_margin="15dp"
@@ -106,7 +102,7 @@
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/box4"
+            android:id="@+id/community_main_4"
             android:layout_width="225dp"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
@@ -114,10 +110,10 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/boxbutton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/box3">
+            app:layout_constraintTop_toBottomOf="@+id/community_main_3">
 
             <TextView
-                android:id="@+id/text4"
+                android:id="@+id/community_main_text4"
                 android:layout_width="164dp"
                 android:layout_height="98dp"
                 android:layout_margin="15dp"
@@ -132,7 +128,7 @@
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/box5"
+            android:id="@+id/community_main_5"
             android:layout_width="225dp"
             android:layout_height="134dp"
             android:layout_margin="7dp"
@@ -140,10 +136,10 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/boxbutton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/box4">
+            app:layout_constraintTop_toBottomOf="@+id/community_main_4">
 
             <TextView
-                android:id="@+id/text5"
+                android:id="@+id/community_main_text5"
                 android:layout_width="164dp"
                 android:layout_height="98dp"
                 android:layout_margin="15dp"
@@ -158,7 +154,7 @@
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/box6"
+            android:id="@+id/community_main_6"
             android:layout_width="0dp"
             android:layout_height="219dp"
             android:layout_margin="7dp"
@@ -167,11 +163,11 @@
             android:layout_marginEnd="8dp"
             android:background="@drawable/boxbutton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/box5"
-            app:layout_constraintTop_toBottomOf="@+id/box2">
+            app:layout_constraintStart_toEndOf="@+id/community_main_5"
+            app:layout_constraintTop_toBottomOf="@+id/community_main_2">
 
             <TextView
-                android:id="@+id/text6"
+                android:id="@+id/community_main_text6"
                 android:layout_width="164dp"
                 android:layout_height="98dp"
                 android:layout_margin="15dp"
