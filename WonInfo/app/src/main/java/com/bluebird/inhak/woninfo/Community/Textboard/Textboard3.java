@@ -34,6 +34,7 @@ public class Textboard3 extends Fragment {
     private EditText editdt;
     private EditText editdt2;
     private String Board3;
+    private String date;
 
 
     @Nullable
@@ -62,26 +63,30 @@ public class Textboard3 extends Fragment {
 
                 editdt = (EditText)view.findViewById(R.id.editText2);
                 editdt2 = (EditText)view.findViewById(R.id.editText4);
+                date = now;
                 String msg = editdt.getText().toString();
-                Map<String, Object> 자유게시판 = new HashMap<>();
+                Map<String, String> 자유시장 = new HashMap<>();
 
-                Map<String, Object> uData = new HashMap<>();
-                uData.put("title", editdt2.getText().toString());
-                uData.put("content", editdt.getText().toString());
-                uData.put("date",now);
+                Map<String, String> uData = new HashMap<>();
+                //uData.put("title", msg);
+                //uData.put("content", msg2);
+                //uData.put("date", now);
+                자유시장.put("title",editdt.getText().toString());
+                자유시장.put("content",editdt2.getText().toString());
+                자유시장.put("date",date);
 
 
 
 
-                자유게시판.put(editdt.getText().toString(), uData);
+                // 자유시장.put(editdt.getText().toString(), uData);
 
-                Board3="자유게시판";
+                Board3="자유시장";
 
 
                 //databaseReference.child("message").push().setValue(msg);
                 //// Add a new document with a generated ID
                 db.collection("Community").document("게시판").collection(Board3)
-                        .add(자유게시판)
+                        .add(자유시장)
                                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                     @Override
                                     public void onSuccess(DocumentReference documentReference) {
@@ -96,10 +101,6 @@ public class Textboard3 extends Fragment {
                                 });
             }
         });
-        // Create a new user with a first and last name
-        //user.put("first", "Ada");
-        //user.put("last", "Lovelace");
-        //user.put("born", 1815);
 
 
 

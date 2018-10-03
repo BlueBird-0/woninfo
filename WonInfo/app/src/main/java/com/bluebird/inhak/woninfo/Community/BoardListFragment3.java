@@ -16,13 +16,17 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
 public class BoardListFragment3 extends Fragment{
-    private String[] titles = {""};
-    private String[] contents = {""};
+    // TODO 여기 String 으로 옮겨야함
+    static int PAGE_COUNT = 9;  //한페이지에 보여주는 게시글 수
+
+    static  private String[] titles = new String[PAGE_COUNT];
+    static  private String[] contents = new String[PAGE_COUNT];
     private BoardListAdapter boardListAdapter;
     private String Board3;
     private ArrayList<BoardListItem> items = new ArrayList<>();
@@ -37,29 +41,31 @@ public class BoardListFragment3 extends Fragment{
 
         ArrayList<BoardListItem> boardlist = new ArrayList();
         Board3="자유게시판";
-        int i = 0;
-
 
         final BoardListItem item = new BoardListItem("제목","내용");
         db.collection("Community").document("게시판").collection(Board3)
-                .whereEqualTo("num",i++)
+                .orderBy("num", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
+                            int i = 0;
                             for (DocumentSnapshot document : task.getResult()) {
                                 Log.d("test003", document.getId() + " => " + document.getData());
                                 //Map<String,Object> map = document.getData();
-                                titles[0] = document.get("title").toString();
-                                contents[0] = document.get("content").toString();
-                                setData();
-                                Log.d("test003", document.get("title").toString() + " => " + titles[0]);
+
+
+                                titles[i] = document.get("title").toString();
+                                contents[i] = document.get("content").toString();
+
+
                                 //map. ()
                                 //item.setContent(document.getData().toString());
+                                i++;
                             }
                         } else {
-                             Log.w("test003", "Error getting documents.", task.getException());
+                            Log.w("test003", "Error getting documents.", task.getException());
                         }
                     }
                 });
@@ -82,21 +88,22 @@ public class BoardListFragment3 extends Fragment{
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        Log.d("test001", "여기 실행 되나요?");
         setData();
     }
 
     private void setData(){
         items.clear();
+        Log.d("test001", "dlkandklasndansdlk : " + titles[0]);
         //RecyclerView 에 들어갈 데이터를 추가합니다.
         for(int i=0; i<titles.length; i++)
         {
-
-            BoardListItem item = new BoardListItem(titles[i],contents[i]);
-            items.add(item);
-            items.add(item);
-            items.add(item);
-            //데이터 추가가 완료되었으면 notifyDataSetChanged() 메서드를 호출해 데이터 변경 체크를 실시합니다.
-            boardListAdapter.notifyDataSetChanged();
+            if( titles[i] != null ) {
+                BoardListItem item = new BoardListItem(titles[i], contents[i]);
+                items.add(item);
+                //데이터 추가가 완료되었으면 notifyDataSetChanged() 메서드를 호출해 데이터 변경 체크를 실시합니다.
+                boardListAdapter.notifyDataSetChanged();
+            }
         }
     }
 }

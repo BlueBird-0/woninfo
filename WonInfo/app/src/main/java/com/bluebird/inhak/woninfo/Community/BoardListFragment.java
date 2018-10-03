@@ -16,16 +16,19 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
 public class BoardListFragment extends Fragment{
-    private String[] titles = {""};
-    private String[] contents = {""};
+    // TODO 여기 String 으로 옮겨야함
+    static int PAGE_COUNT = 9;  //한페이지에 보여주는 게시글 수
+
+    static  private String[] titles = new String[PAGE_COUNT];
+    static  private String[] contents = new String[PAGE_COUNT];
     private BoardListAdapter boardListAdapter;
     private String Board;
-   // private TextView numtext;
     private ArrayList<BoardListItem> items = new ArrayList<>();
     private View view;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -35,47 +38,43 @@ public class BoardListFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.community_list_fragment, container, false);
-        //numtext = (TextView)view.findViewById(R.id.number_btn);
-        //String num;
-
 
         ArrayList<BoardListItem> boardlist = new ArrayList();
-        Board = "익명게시판";
-        for(int i = 0 ; i < 999 ; i++) {
+        Board="대나무숲";
 
-            final BoardListItem item = new BoardListItem("제목", "내용");
+        final BoardListItem item = new BoardListItem("제목","내용");
+        db.collection("Community").document("게시판").collection(Board)
+                .orderBy("num", Query.Direction.DESCENDING)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            int i = 0;
+                            for (DocumentSnapshot document : task.getResult()) {
+                                Log.d("test003", document.getId() + " => " + document.getData());
+                                //Map<String,Object> map = document.getData();
 
 
+                                titles[i] = document.get("title").toString();
+                                contents[i] = document.get("content").toString();
 
-            db.collection("Community").document("게시판").collection(Board)
-                    .whereEqualTo("num", i++)
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                            if (task.isSuccessful()) {
-                                for (DocumentSnapshot document : task.getResult()) {
-                                    Log.d("test003", document.getId() + " => " + document.getData());
-                                    //Map<String,Object> map = document.getData();
-                                    titles[0] = document.get("title").toString();
-                                    contents[0] = document.get("content").toString();
-                                    setData();
-                                    Log.d("test003", document.get("title").toString() + " => " + titles[0]);
-                                    Log.d("test003", document.get("title").toString() + " => " + contents[0]);
-                                    //map. ()
-                                    //item.setContent(document.getData().toString());
-                                }
-                            } else {
-                                Log.w("test003", "Error getting documents.", task.getException());
+
+                                //map. ()
+                                //item.setContent(document.getData().toString());
+                                i++;
                             }
+                        } else {
+                            Log.w("test003", "Error getting documents.", task.getException());
                         }
-                    });
-            boardlist.add(item);
+                    }
+                });
+        boardlist.add(item);
 
-            setRecyclerView();
-        }
-            return view;
-        }
+        setRecyclerView();
+
+        return view;
+    }
 
     private void setRecyclerView(){
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.community_listView);
@@ -89,20 +88,22 @@ public class BoardListFragment extends Fragment{
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        Log.d("test001", "여기 실행 되나요?");
         setData();
     }
 
     private void setData(){
         items.clear();
+        Log.d("test001", "dlkandklasndansdlk : " + titles[0]);
         //RecyclerView 에 들어갈 데이터를 추가합니다.
         for(int i=0; i<titles.length; i++)
         {
-
-            BoardListItem item = new BoardListItem(titles[i],contents[i]);
-            items.add(item);
-
-        //데이터 추가가 완료되었으면 notifyDataSetChanged() 메서드를 호출해 데이터 변경 체크를 실시합니다.
-        boardListAdapter.notifyDataSetChanged();
+            if( titles[i] != null ) {
+                BoardListItem item = new BoardListItem(titles[i], contents[i]);
+                items.add(item);
+                //데이터 추가가 완료되었으면 notifyDataSetChanged() 메서드를 호출해 데이터 변경 체크를 실시합니다.
+                boardListAdapter.notifyDataSetChanged();
+            }
         }
     }
 }

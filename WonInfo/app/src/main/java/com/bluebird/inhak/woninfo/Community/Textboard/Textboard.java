@@ -1,4 +1,4 @@
-package com.bluebird.inhak.woninfo.Community.Textboard;
+package com.bluebird.inhak.woninfo.Community.Textboard5;
 
 
 import android.os.Bundle;
@@ -35,6 +35,7 @@ public class Textboard extends Fragment {
     private EditText editdt;
     private EditText editdt2;
     private String Board;
+    private String date;
 
 
     @Nullable
@@ -49,7 +50,7 @@ public class Textboard extends Fragment {
             @Override
             public void onClick(View v) {
 
-                for (int i = 0; i < 50; i++) {
+                {
                     Toast.makeText(getContext(), "글이 작성되었습니다.", Toast.LENGTH_SHORT).show();
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -68,31 +69,28 @@ public class Textboard extends Fragment {
 
                     editdt = (EditText) view.findViewById(R.id.editText2);
                     editdt2 = (EditText) view.findViewById(R.id.editText4);
+                    date = now;
+
                     String msg = editdt.getText().toString();
-                    Map<String, Object> 익명게시판 = new HashMap<>();
+                    String msg2 = editdt2.getText().toString();
+                    Map<String, String> 대나무숲 = new HashMap<>();
 
-                    Map<String, Object> uData = new HashMap<>();
-                    uData.put("title", editdt.getText().toString());
-                    uData.put("content", editdt2.getText().toString());
-                    uData.put("date", now);
+                    Map<String, String> uData = new HashMap<>();
+                    //uData.put("title", msg);
+                    //uData.put("content", msg2);
+                    //uData.put("date", now);
+                    대나무숲.put("title",editdt.getText().toString());
+                    대나무숲.put("content",editdt2.getText().toString());
+                    대나무숲.put("date",date);
 
 
-                    Map<String, Object> data1 = new HashMap<>();
-                    data1.put("name", "San Francisco");
-                    data1.put("state", "CA");
-                    data1.put("country", "USA");
-                    data1.put("capital", false);
-                    data1.put("population", 860000);
-                    익명게시판.put("씨발 1번문서", data1);
-                    익명게시판.put(editdt.getText().toString(), uData);
-
-                    Board = "익명게시판";
+                    Board = "대나무숲";
 
 
                     //databaseReference.child("message").push().setValue(msg);
                     //// Add a new document with a generated ID
                     db.collection("Community").document("게시판").collection(Board)
-                            .add(익명게시판)
+                            .add(대나무숲)
                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override
                                 public void onSuccess(DocumentReference documentReference) {
@@ -105,15 +103,11 @@ public class Textboard extends Fragment {
                                     Log.w("test002", "Error adding document", e);
                                 }
                             });
-                    Log.d("test004", "test : "+ i + "\n");
+                    Log.d("test004", "test : \n");
                 }
             }
         });
 
-        // Create a new user with a first and last name
-        //user.put("first", "Ada");
-        //user.put("last", "Lovelace");
-        //user.put("born", 1815);
 
 
 
