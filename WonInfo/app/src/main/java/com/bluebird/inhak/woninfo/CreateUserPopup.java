@@ -32,7 +32,6 @@ public class CreateUserPopup extends Activity
         final EditText password = ((EditText)findViewById(R.id.create_user_password_edit));
         final EditText password_confirm = ((EditText)findViewById(R.id.create_user_confirm_edit));
         Button createBtn = (Button)findViewById(R.id.create_user_create_btn);
-        Log.d("test001","0000000000000000");
 
         createBtn.setOnClickListener(new View.OnClickListener() {
 

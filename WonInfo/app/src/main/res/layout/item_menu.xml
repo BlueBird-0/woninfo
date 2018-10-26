@@ -4,7 +4,7 @@
     android:id="@+id/menuList_btn"
     android:layout_width="match_parent"
     android:layout_height="45dp"
-    android:background="@drawable/list_pressed">
+    android:background="@drawable/all_ripple_click">
 
     <ImageView
         android:id="@+id/imageView2"

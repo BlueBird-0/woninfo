@@ -1,5 +1,6 @@
 package com.bluebird.inhak.woninfo.Community;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -39,9 +40,8 @@ public class BoardListFragment3 extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.community_list_fragment, container, false);
 
-        ArrayList<BoardListItem> boardlist = new ArrayList();
-        Board3="자유게시판";
 
+        Board3="자유게시판";
         final BoardListItem item = new BoardListItem("제목","내용");
         db.collection("Community").document("게시판").collection(Board3)
                 .orderBy("num", Query.Direction.DESCENDING)
@@ -52,26 +52,16 @@ public class BoardListFragment3 extends Fragment{
                         if (task.isSuccessful()) {
                             int i = 0;
                             for (DocumentSnapshot document : task.getResult()) {
-                                Log.d("test003", document.getId() + " => " + document.getData());
-                                //Map<String,Object> map = document.getData();
-
 
                                 titles[i] = document.get("title").toString();
                                 contents[i] = document.get("content").toString();
 
-
-                                //map. ()
-                                //item.setContent(document.getData().toString());
                                 i++;
                             }
-                        } else {
-                            Log.w("test003", "Error getting documents.", task.getException());
+                            setRecyclerView();
                         }
                     }
                 });
-        boardlist.add(item);
-
-        setRecyclerView();
 
         return view;
     }
@@ -94,7 +84,6 @@ public class BoardListFragment3 extends Fragment{
 
     private void setData(){
         items.clear();
-        Log.d("test001", "dlkandklasndansdlk : " + titles[0]);
         //RecyclerView 에 들어갈 데이터를 추가합니다.
         for(int i=0; i<titles.length; i++)
         {

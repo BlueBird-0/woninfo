@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -33,6 +35,7 @@ public class DictionaryMainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.dictionary_main_fragment, container, false);
+        setHasOptionsMenu(true);
         final ListView listView = (ListView)view.findViewById(R.id.dictionary_listview);
         ListAdapter menuAdapter = new ListAdapter((MainActivity)getActivity());
 
@@ -59,6 +62,12 @@ public class DictionaryMainFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.clear();
+        inflater.inflate(R.menu.actionbar_menu_community_search, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
 
     public void search()
     {

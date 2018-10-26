@@ -253,6 +253,7 @@ public class A16Fragment extends Fragment {
                 calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE), 7, 40, 0);
                 calendar.add(Calendar.MINUTE, -minute_dif);
                 if(now.before(calendar)){
+                    Log.d("test001", "1");
                     sender = PendingIntent.getBroadcast(context, requestCode, intent, PendingIntent.FLAG_CANCEL_CURRENT);
                     alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), sender);
                 }
@@ -261,6 +262,7 @@ public class A16Fragment extends Fragment {
                 calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE), 12, 0, 0);
                 calendar.add(Calendar.MINUTE, -minute_dif);
                 if(now.before(calendar)){
+                    Log.d("test001", "2");
                     sender = PendingIntent.getBroadcast(context, requestCode+1, intent, PendingIntent.FLAG_CANCEL_CURRENT);
                     alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), sender);
                 }
@@ -269,6 +271,7 @@ public class A16Fragment extends Fragment {
                 calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE), 17, 0, 0);
                 calendar.add(Calendar.MINUTE, -minute_dif);
                 if(now.before(calendar)){
+                Log.d("test001", "3");
                     sender = PendingIntent.getBroadcast(context, requestCode+2, intent, PendingIntent.FLAG_CANCEL_CURRENT);
                     alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), sender);
                 }
