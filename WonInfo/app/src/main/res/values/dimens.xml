@@ -18,6 +18,7 @@
     <dimen name="mini_size">10sp</dimen>
     <dimen name="bigtitle_size">15sp</dimen>
     <dimen name="menubigtitle_size">20sp</dimen>
+    <dimen name="list_item_bigtitle_size">17sp</dimen>
 
 
 
