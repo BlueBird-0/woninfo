@@ -14,9 +14,41 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorBackground"
             android:layout_marginBottom="1dp"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:background="@color/Theme_White"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ToolbarColor">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WON"
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INFO"
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+        </android.support.v7.widget.Toolbar>
+        <TextView
+            android:id="@+id/tv_nav_drawer_count"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="-45dp"
+            android:background="@drawable/toolbar_badge_counter"
+            android:gravity="center"
+            android:text="10"
+            android:textColor="@android:color/white"
+            android:textSize="8dp"/>
+
     </android.support.design.widget.AppBarLayout>
 
 

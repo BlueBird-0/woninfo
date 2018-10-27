@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +16,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -64,21 +66,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.main_activity);
         mainContext = this;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        //getSupportActionBar().setCustomView(R.layout.abs_title_layout);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.abs_title_layout);
-
 
         replaceNavigation();
         //TODO 로그인 버튼이랑 로그아웃 버튼 <- 실행시 바로 실행되도록 수정필요함
+
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
             @Override
             public void onDrawerOpened(View drawerView) {
             }
         };
+        //TODO 2018.10.27 토요일 새벽 drawertoggle 아이콘 변경 가능한지 테스트하고있었음
+        //toggle.setDrawerIndicatorEnabled(false);
+        //Drawable drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_action_edit, this.getTheme());
+        //toggle.setHomeAsUpIndicator(drawable);
+        ////////////// 여기까지가 수정한 코드
+
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
