@@ -1,185 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorBackground"
-    android:clickable="true"
-    android:orientation="vertical">
+    android:background="@color/Theme_Beige"
+    tools:layout_editor_absoluteY="25dp">
 
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/Theme_Beige">
+        android:id="@+id/community_main_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/all_ripple_click"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.45"
+        app:layout_constraintHeight_percent="0.2">
 
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/community_main_1"
-            android:layout_width="165dp"
+        <TextView
+            android:id="@+id/community_main_text1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="7dp"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/boxbutton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/community_main_text1"
-                android:layout_width="164dp"
-                android:layout_height="98dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="대나무숲"
-                android:textColor="@color/Theme_Blue"
-                android:textSize="@dimen/menubigtitle_size"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="62dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/ic_bamboo" />
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/community_main_2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="7dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/boxbutton"
-            app:layout_constraintBottom_toTopOf="@+id/community_main_4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/community_main_1"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/community_main_text2"
-                android:layout_width="164dp"
-                android:layout_height="98dp"
-                android:layout_margin="15dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="자유게시판"
-                android:textColor="@color/Theme_Blue"
-                android:textSize="@dimen/menubigtitle_size"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/community_main_3"
-            android:layout_width="165dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="7dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/boxbutton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/community_main_1">
-
-            <TextView
-                android:id="@+id/community_main_text3"
-                android:layout_width="164dp"
-                android:layout_height="98dp"
-                android:layout_margin="15dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="자유시장"
-                android:textColor="@color/Theme_Blue"
-                android:textSize="@dimen/menubigtitle_size"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/community_main_4"
-            android:layout_width="225dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="7dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/boxbutton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/community_main_3">
-
-            <TextView
-                android:id="@+id/community_main_text4"
-                android:layout_width="164dp"
-                android:layout_height="98dp"
-                android:layout_margin="15dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="전국노래자랑"
-                android:textColor="@color/Theme_Blue"
-                android:textSize="@dimen/menubigtitle_size"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/community_main_5"
-            android:layout_width="225dp"
-            android:layout_height="134dp"
-            android:layout_margin="7dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/boxbutton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/community_main_4">
-
-            <TextView
-                android:id="@+id/community_main_text5"
-                android:layout_width="164dp"
-                android:layout_height="98dp"
-                android:layout_margin="15dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="침묵게시판"
-                android:textColor="@color/Theme_Blue"
-                android:textSize="@dimen/menubigtitle_size"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/community_main_6"
-            android:layout_width="0dp"
-            android:layout_height="219dp"
-            android:layout_margin="7dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="16dp"
+            android:text="대나무숲"
+            android:textColor="@color/Theme_Blue"
+            android:textSize="@dimen/menubigtitle_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="62dp"
             android:layout_marginEnd="8dp"
-            android:background="@drawable/boxbutton"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/community_main_5"
-            app:layout_constraintTop_toBottomOf="@+id/community_main_2">
-
-            <TextView
-                android:id="@+id/community_main_text6"
-                android:layout_width="164dp"
-                android:layout_height="98dp"
-                android:layout_margin="15dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="인성터진\n사람모임"
-                android:textColor="@color/Theme_Blue"
-                android:textSize="@dimen/menubigtitle_size"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </android.support.constraint.ConstraintLayout>
+            app:srcCompat="@drawable/ic_bamboo" />
     </android.support.constraint.ConstraintLayout>
-</LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/community_main_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/all_ripple_click"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/community_main_1"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/community_main_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="자유게시판"
+            android:textColor="@color/Theme_Blue"
+            android:textSize="@dimen/menubigtitle_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/community_main_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/all_ripple_click"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/community_main_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/community_main_1">
+
+        <TextView
+            android:id="@+id/community_main_text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="자유시장"
+            android:textColor="@color/Theme_Blue"
+            android:textSize="@dimen/menubigtitle_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/community_main_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/all_ripple_click"
+        app:layout_constraintHeight_percent="0.20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline4"
+        app:layout_constraintWidth_percent="0.6">
+
+        <TextView
+            android:id="@+id/community_main_text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="전국노래자랑"
+            android:textColor="@color/Theme_Blue"
+            android:textSize="@dimen/menubigtitle_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/community_main_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/all_ripple_click"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/community_main_6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/community_main_4">
+
+        <TextView
+            android:id="@+id/community_main_text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="침묵게시판"
+            android:textColor="@color/Theme_Blue"
+            android:textSize="@dimen/menubigtitle_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/community_main_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/all_ripple_click"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/community_main_4"
+        app:layout_constraintTop_toBottomOf="@+id/guideline4">
+
+        <TextView
+            android:id="@+id/community_main_text6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="인성터진\n사람모임"
+            android:textColor="@color/Theme_Blue"
+            android:textSize="@dimen/menubigtitle_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+</android.support.constraint.ConstraintLayout>

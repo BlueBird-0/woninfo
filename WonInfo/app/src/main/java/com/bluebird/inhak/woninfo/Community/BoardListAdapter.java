@@ -2,6 +2,7 @@ package com.bluebird.inhak.woninfo.Community;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,5 +56,19 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
             title = (TextView)itemView.findViewById(R.id.community_list_item_title);
             content = (TextView)itemView.findViewById(R.id.community_list_item_content);
         }
+    }
+
+    public interface OnLoadMoreItems {
+        void onLoadMore();
+    }
+
+    public void setRecyclerView(RecyclerView recyclerView){
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener(){
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                Log.d("test031","scrolled");
+            }
+        });
     }
 }

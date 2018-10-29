@@ -1,24 +1,26 @@
 package com.bluebird.inhak.woninfo.Community;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A24Fragment.A24Fragment;
 import com.bluebird.inhak.woninfo.R;
 
 public class CommunityMainFragment extends Fragment{
-
     ConstraintLayout button1;
     ConstraintLayout button2;
     ConstraintLayout button3;
@@ -26,6 +28,10 @@ public class CommunityMainFragment extends Fragment{
     ConstraintLayout button5;
     ConstraintLayout button6;
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
 
     @Nullable
     @Override
@@ -45,7 +51,7 @@ public class CommunityMainFragment extends Fragment{
             public void onClick(View v) {
                 FragmentManager fragmentManager = getFragmentManager();
                 Fragment fragment = null;
-                fragment = new BoardListFragment();
+                fragment = new BoardListFragment1();
                 loadFragment(fragment);
 
             }
@@ -57,7 +63,6 @@ public class CommunityMainFragment extends Fragment{
                 Fragment fragment = null;
                 fragment = new BoardListFragment2();
                 loadFragment(fragment);
-
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +72,6 @@ public class CommunityMainFragment extends Fragment{
                 Fragment fragment = null;
                 fragment = new BoardListFragment3();
                 loadFragment(fragment);
-
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
@@ -104,24 +108,16 @@ public class CommunityMainFragment extends Fragment{
         return view;
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.clear();
-        inflater.inflate(R.menu.actionbar_menu_community_search, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
     private boolean loadFragment(Fragment fragment)
     {
-        Log.d("test001", "1111");
         //switching fragment
         if(fragment != null)
         {
+            getFragmentManager().beginTransaction().addToBackStack(null);
             getFragmentManager()
                     .beginTransaction()
                     .replace(R.id.main_fragment_container, fragment)
                     .commit();
-            Log.d("test001", "2222");
             return true;
         }
         return false;

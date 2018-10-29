@@ -7,25 +7,18 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <!--<item name="android:textColor">@color/colorPrimaryDark</item>      테마 글씨체 (지우면 원래색) -->
-    </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-
-    <style name="ToolbarColor" parent="Theme.AppCompat">
-        <item name="android:colorControlNormal">@color/colorPrimaryDark</item>
+        <!-- toolbar & bottombar -->
+        <item name="actionBarSize">49dp</item>
+        <!-- 포커스 되어있지 않은 경우의 밑줄 부분 -->
+        <item name="android:colorControlNormal">@color/Theme_Black</item>
+        <!-- 터치된 마지막 물방울 모양 -->
+        <item name="android:colorControlActivated">@color/colorPrimary</item>
+        <!-- 툴바 아이콘 색 -->
         <item name="android:textColorSecondary">@color/colorPrimaryDark</item>
-        <item name="color">@color/colorPrimaryDark</item>
+        <!-- edittext 커서 색 -->
+        <item name="android:textCursorDrawable">@color/colorPrimary</item>
     </style>
-
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
-
 
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_background</item>

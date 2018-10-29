@@ -4,9 +4,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_search">Search</string>
-    <string name="action_edit">Edit</string>
-    <string name="action_menu">Menu</string>
+    <string name="action_search">검색</string>
+    <string name="action_edit">글쓰기</string>
+    <string name="action_menu">메뉴</string>
 
     <string name="SETTING_FILENAME">Setting File Name</string>
     <string name="TUTORIAL_START">Tutorial Start</string>

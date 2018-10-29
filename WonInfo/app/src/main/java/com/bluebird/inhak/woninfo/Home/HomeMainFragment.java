@@ -38,7 +38,6 @@ public class HomeMainFragment extends Fragment{
        // webView.loadUrl("https://www.youtube.com/watch?v=tcuLThIyA70");
 
 
-
         ArrayList<String> data = new ArrayList<>(); //이미지 url를 저장하는 arraylist
         data.add("https://upload.wikimedia.org/wikipedia/en/thumb/2/24/SpongeBob_SquarePants_logo.svg/1200px-SpongeBob_SquarePants_logo.svg.png");
         data.add("http://nick.mtvnimages.com/nick/promos-thumbs/videos/spongebob-squarepants/rainbow-meme-video/spongebob-rainbow-meme-video-16x9.jpg?quality=0.60");

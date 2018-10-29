@@ -79,11 +79,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onDrawerOpened(View drawerView) {
             }
         };
-        //TODO 2018.10.27 토요일 새벽 drawertoggle 아이콘 변경 가능한지 테스트하고있었음
-        //toggle.setDrawerIndicatorEnabled(false);
-        //Drawable drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_action_edit, this.getTheme());
-        //toggle.setHomeAsUpIndicator(drawable);
-        ////////////// 여기까지가 수정한 코드
 
         drawer.addDrawerListener(toggle);
         toggle.syncState();
@@ -202,113 +197,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         }).start();
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-
-        final SearchView searchView = (SearchView)searchItem.getActionView();
-       searchView.setQueryHint(" 원광사전에서 검색합니다...");    //검색 쿼리 힌트
-        /* searchView 생김새 결정 코드 부분 */
-
-        //검색창 열릴때와 닫힐때
-        searchItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
-            @Override
-            public boolean onMenuItemActionExpand(MenuItem item) {
-                return true;
-            }
-            @Override
-            public boolean onMenuItemActionCollapse(MenuItem item) {
-                Fragment fragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
-                //프레그먼트가 (Dictionary) 꺼져있을시
-                if(fragment != null)
-                {
-                    //다른 프레그먼트일 경우 = 검색 취소
-                    try {
-                        ((DictionaryMainFragment) fragment).search();
-                    }catch(ClassCastException e) { e.getStackTrace(); }
-                }
-                return true;
-            }
-        });
-
-        //검색어 입력 처리
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
-            //검색어 입력시
-            @Override
-            public boolean onQueryTextSubmit(final String query) {
-
-                Fragment fragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
-
-                //프레그먼트가 (Dictionary) 꺼져있을시
-                if(fragment != null)
-                {
-                    //다른 프레그먼트일 경우 = 뒤로가기 한번 후, 재검색 실행
-                        try {
-                            ((DictionaryMainFragment) fragment).search(query);
-                        } catch (ClassCastException e) {
-
-                            onBackPressed();
-                            searchView.setQuery(query, true);
-                        }
-                }
-                //프레그먼트가 (Dictionary) 꺼져있을시
-                else
-                {
-                    Log.d("test001", "d");
-                    //프레그먼트 (Dictionary) 실행
-                    FragmentManager fm = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                    fragmentTransaction.add(R.id.main_fragment_container, new DictionaryMainFragment());
-                    fragmentTransaction.addToBackStack("menu_dictionary");
-                    fragmentTransaction.commit();
-
-                    //프레그먼트 실행 후에 한번더 검색하도록
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run()
-                        {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    try {
-                                        Thread.sleep(200);
-                                    }catch(Exception e){e.printStackTrace();}
-                                    //searchView.setQuery( query, true);
-                                    DictionaryMainFragment menuDictionaryFragment = (DictionaryMainFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
-                                    menuDictionaryFragment.search(query);
-                                }
-                            });
-                        }
-                    }).start();
-                }
-                return false;
-            }
-            //검색어 입력 도중
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        // Menu option 설정
-        //if (id == R.id.action_settings) {
-        //    return true;
-        //}
-        return super.onOptionsItemSelected(item);
-    }
-
-
-
-
 
 
     //네비게이션 아이템 선택 (Drawable View)

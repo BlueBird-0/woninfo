@@ -8,6 +8,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -21,7 +24,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class BoardListFragment extends Fragment{
+public class BoardListFragment1 extends Fragment {
     // TODO 여기 String 으로 옮겨야함
     static int PAGE_COUNT = 9;  //한페이지에 보여주는 게시글 수
 
@@ -33,11 +36,11 @@ public class BoardListFragment extends Fragment{
     private View view;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.community_list_fragment, container, false);
+        setHasOptionsMenu(true);
 
         ArrayList<BoardListItem> boardlist = new ArrayList();
         Board="대나무숲";
@@ -76,6 +79,27 @@ public class BoardListFragment extends Fragment{
         return view;
     }
 
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.clear();
+        inflater.inflate(R.menu.actionbar_menu_community_edit, menu);
+
+        MenuItem editItem = menu.findItem(R.id.action_edit);
+        editItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Log.d("test031","헿 여기 눌렀다능");
+                return false;
+            }
+        });
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+
+
     private void setRecyclerView(){
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.community_listView);
         //각 Item들이 RecyclerView 의 전체 크기를 변경하지 않는다면
@@ -84,6 +108,7 @@ public class BoardListFragment extends Fragment{
         recyclerView.setHasFixedSize(true);
         //RecyclerView에 Adapter를 설정해줍니다.
         boardListAdapter = new BoardListAdapter(items);
+        boardListAdapter.setRecyclerView(recyclerView);
         recyclerView.setAdapter(boardListAdapter);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -91,6 +116,11 @@ public class BoardListFragment extends Fragment{
         Log.d("test001", "여기 실행 되나요?");
         setData();
     }
+
+
+
+    //스크롤이 끝에 도달하였을 때 실행 내용
+
 
     private void setData(){
         items.clear();
