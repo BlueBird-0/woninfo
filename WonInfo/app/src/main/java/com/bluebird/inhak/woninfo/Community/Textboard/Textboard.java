@@ -4,7 +4,9 @@ package com.bluebird.inhak.woninfo.Community.Textboard5;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +25,8 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
 /**
  * Created by InHak on 2017-12-31.
@@ -51,7 +55,14 @@ public class Textboard extends Fragment {
             public void onClick(View v) {
 
                 {
-                    Toast.makeText(getContext(), "글이 작성되었습니다.", Toast.LENGTH_SHORT).show();
+
+
+
+                    Snackbar snackbar = Snackbar.make(view.getRootView(),"글이 작성되었습니다.",Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
+
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
                     GregorianCalendar calendar = new GregorianCalendar();

@@ -22,6 +22,7 @@ public class A16Broadcast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String food[][] = new A16Fragment().getMenu(context);
+        String food_title[] = new A16Fragment().getTitle(context);
         String title = "푸쉬 제목";
         String content = "푸쉬 내용";
 
@@ -35,22 +36,23 @@ public class A16Broadcast extends BroadcastReceiver {
         Calendar calendar = Calendar.getInstance();
         calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE), 17, 0, 0); //저녁
         if(now.before(calendar)){
-            title = "저녁 식사";
+
+            title = "저녁";
             time = 2;
         }
         calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE), 12, 0, 0); //점심
         if(now.before(calendar)){
-            title = "점심 식사";
+            title = "점심";
             time = 1;
         }
         calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE), 7, 40, 0); //아침
         if(now.before(calendar)){
-            title = "아침 식사";
+            title = "아침";
             time = 0;
         }
-        content = food[3*time+0][dayOfTheWeek] + "\n" + food[3*time+1][dayOfTheWeek] + "\n" + food[3*time+2][dayOfTheWeek];
-        Log.d("test000", content);
+        title = food_title[dayOfTheWeek];
 
+        content = food[3*time+0][dayOfTheWeek] + "\n" + food[3*time+1][dayOfTheWeek] + "\n" + food[3*time+2][dayOfTheWeek];
 
         NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT);

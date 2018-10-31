@@ -5,6 +5,9 @@ import android.content.res.AssetManager;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
+import android.view.View;
 import android.widget.Toast;
 
 import java.io.InputStream;
@@ -12,6 +15,9 @@ import java.io.InputStream;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
+
+import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
+import static java.security.AccessController.getContext;
 
 /**
  * Created by InHak on 2018-01-27.
@@ -77,7 +83,12 @@ public class DBOpenHelper {
                 }
             }catch (Exception e){}
 
-            Toast.makeText(context, "데이터베이스 생성", Toast.LENGTH_SHORT).show();
+            /*
+            Snackbar snackbar = Snackbar.make(context, "데이터베이스 생성",Snackbar.LENGTH_SHORT);
+            View snackBarView = snackbar.getView();
+            snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+            snackbar.show();
+            */
         }
 
         //버전이 업데이트 되었을 경우 DB를 다시 만들어 준다.

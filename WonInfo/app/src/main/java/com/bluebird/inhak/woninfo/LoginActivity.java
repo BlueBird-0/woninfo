@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.florent37.materialtextfield.MaterialTextField;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -38,20 +39,37 @@ public class LoginActivity extends Activity{
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.login_activity);
 
+        final MaterialTextField layout_id= (MaterialTextField)findViewById(R.id.login_textfiled_id);
+        final MaterialTextField layout_pw= (MaterialTextField)findViewById(R.id.login_textfiled_pw);
+
         final EditText edit_id= (EditText)findViewById(R.id.login_edit_id);
         final EditText edit_pw= (EditText)findViewById(R.id.login_edit_pw);
         final Button login_submit = (Button)findViewById(R.id.login_btn_submit);
 
 
+        Log.d("test031", "login test");
         login_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserManager.checkLoggedin();
-                UserManager.loginUser(edit_id.getText().toString(),edit_pw.getText().toString());
 
-                FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
-                UserManager.checkLoggedin();
-                finish();
+                if(edit_pw.getText().toString().equals("")){
+                    layout_pw.expand();
+                    edit_pw.requestFocus();
+
+                }
+                if(edit_id.getText().toString().equals(""))
+                {
+                    layout_id.expand();
+                    edit_id.requestFocus();
+                }
+                if(!edit_pw.getText().toString().equals("") && !edit_id.getText().toString().equals("")) {
+
+                    //UserManager.checkLoggedin();
+                    UserManager.loginUser(edit_id.getText().toString(),edit_pw.getText().toString());
+
+                    FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+                    UserManager.checkLoggedin();
+                    finish();
               /*  if(user != null){
                     String name = user.getDisplayName();
                     String email=user.getEmail();
@@ -59,11 +77,14 @@ public class LoginActivity extends Activity{
 
                     boolean emailVerified = user.isEmailVerified();             //이메일 인증
 */
+                }
 
                 }
 
             }
-        );}}
+        );}
+
+}
 
 
 
@@ -147,8 +168,10 @@ public class LoginActivity extends Activity{
                                 public void run() {
                                     if(!finalLoginSuccess)
                                     {
-                                        Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_LONG).show();
-                                    }
+                                        Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(),"미개발 기능입니다.",Snackbar.LENGTH_SHORT);
+                                        View snackBarView = snackbar.getView();
+                                        snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                                        }
                                 }
                             });
                         }
