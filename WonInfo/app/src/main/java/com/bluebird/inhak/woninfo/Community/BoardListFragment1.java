@@ -108,7 +108,7 @@ public class BoardListFragment1 extends Fragment {
         recyclerView.setHasFixedSize(true);
         //RecyclerView에 Adapter를 설정해줍니다.
         boardListAdapter = new BoardListAdapter(items);
-        boardListAdapter.setRecyclerView(recyclerView);
+        //boardListAdapter.setRecyclerView(recyclerView);
         recyclerView.setAdapter(boardListAdapter);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

@@ -64,7 +64,7 @@ public class Textboard2 extends Fragment {
                 String now = year + "-" + month + "-" + day + "\n" + hour + ":" + min + ":" + sec;
 
                 editdt = (EditText)view.findViewById(R.id.editText2);
-                editdt2 = (EditText)view.findViewById(R.id.editText4);
+                editdt2 = (EditText)view.findViewById(R.id.community_market_editText4);
                 date = now;
                 String msg = editdt.getText().toString();
                 Map<String, String> 자유게시판 = new HashMap<>();

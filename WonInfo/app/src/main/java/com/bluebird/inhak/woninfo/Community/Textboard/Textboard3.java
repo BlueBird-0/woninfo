@@ -62,7 +62,7 @@ public class Textboard3 extends Fragment {
                 //db에 insert시켜준다
 
                 editdt = (EditText)view.findViewById(R.id.editText2);
-                editdt2 = (EditText)view.findViewById(R.id.editText4);
+                editdt2 = (EditText)view.findViewById(R.id.community_market_editText4);
                 date = now;
                 String msg = editdt.getText().toString();
                 Map<String, String> 자유시장 = new HashMap<>();
