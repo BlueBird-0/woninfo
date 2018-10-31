@@ -1,6 +1,7 @@
 package com.bluebird.inhak.woninfo.Dictionary.A16Fragment;
 
 import android.app.AlarmManager;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -10,6 +11,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.SwitchCompat;
 import android.text.Html;
 import android.util.Log;
@@ -31,6 +33,8 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
 /**
  * Created by InHak on 2017-12-31.
@@ -69,7 +73,10 @@ public class A16Fragment extends Fragment {
                     editor.commit();
                     for(int i=0; i<pushTimerGroup.getChildCount(); i++)
                         pushTimerGroup.getChildAt(i).setEnabled(true);
-                    Toast toast = Toast.makeText(getActivity(), "푸쉬알림을 받습니다.", Toast.LENGTH_LONG); toast.show();
+                    Snackbar snackbar = Snackbar.make(getView().getRootView(),"푸쉬알림을 받습니다.",Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
 
                     new A16Fragment().setMenu(getActivity());    //메뉴 불러오기
                     new A16Fragment.PushAlarm(getActivity()).Alarm(); //푸쉬알림설정
@@ -81,7 +88,11 @@ public class A16Fragment extends Fragment {
                     editor.commit();
                     for(int i=0; i<pushTimerGroup.getChildCount(); i++)
                         pushTimerGroup.getChildAt(i).setEnabled(false);
-                    Toast toast = Toast.makeText(getActivity(), "푸쉬알림을 받지 않습니다.", Toast.LENGTH_LONG); toast.show();
+                    Snackbar snackbar = Snackbar.make(getView().getRootView(),"푸쉬알림을 받지 않습니다.",Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
+
                 }
             }
         });
@@ -113,13 +124,17 @@ public class A16Fragment extends Fragment {
                 editor.commit();
                 new A16Fragment().setMenu(getActivity());    //메뉴 불러오기
                 new A16Fragment.PushAlarm(getActivity()).Alarm(); //푸쉬알림설정
-                Toast toast = Toast.makeText(getActivity(), "설정 변경 완료", Toast.LENGTH_SHORT); toast.show();
+                Snackbar snackbar = Snackbar.make(getView().getRootView(),"설정변경완료",Snackbar.LENGTH_SHORT);
+                View snackBarView = snackbar.getView();
+                snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                snackbar.show();
+
             }
         });
 
         this.getMenu(getActivity());
 
-        //날자 표기
+        //날짜 표기
         TextView textViewFoodTitle[] = new TextView[7];
         for(int i=0; i<7; i++)
         {
@@ -158,7 +173,7 @@ public class A16Fragment extends Fragment {
                 switch(v.getId())
                 {
                     case R.id.a_16_btn_manual0:
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://dorm.wku.ac.kr/")));
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://dorm.wku.ac.kr/?cat=6")));
                         Log.d("test001","파싱부분");
                         break;
                 }
@@ -174,6 +189,15 @@ public class A16Fragment extends Fragment {
         return view;
     }
 
+    public String[]getTitle(Context context)
+    {
+        SharedPreferences preferences = context.getSharedPreferences(context.getString(R.string.SHARED_PRE_NAME), Context.MODE_PRIVATE);
+        String callValue = preferences.getString(context.getString(R.string.shared_food_data), null);
+        String[] splitStr = callValue.split("\\\\");
+        for(int i=0; i<7; i++)
+            foodTitle[i] = splitStr[i];
+        return foodTitle;
+    }
     public String[][] getMenu(Context context)
     {
         SharedPreferences preferences = context.getSharedPreferences(context.getString(R.string.SHARED_PRE_NAME), Context.MODE_PRIVATE);
@@ -304,15 +328,10 @@ public class A16Fragment extends Fragment {
         @Override
         protected Void doInBackground(Void... voids) {
             try{
-
-                Log.d("test001","전인학 망해라아아아아아아");
-                Document doc = Jsoup.connect(htmlPageUrl).userAgent("Mozilla").get();
+                Document doc = Jsoup.connect(htmlPageUrl).get();
                 Elements links = doc.select(".boardList");
 
-
-
                 for (Element link : links) {
-
                     link = links.select("a").first();
                     relf = link.attr("href");
                     Log.d("test001", relf);
@@ -321,12 +340,14 @@ public class A16Fragment extends Fragment {
                             + "("+link.text().trim() + ")\n");
                 }
 
-
                 Document docdoc = Jsoup.connect(relf).get();
                 Element link = docdoc.select(".tbl_type").first();
+                Elements elementsTitle = link.select("tr");
+                foodTitle = elementsTitle.get(0).text().split(" ");
+
                 Elements elements = link.select("td");
 
-                foodTitle = new String[]{"월", "화", "수", "목", "금", "토", "일"};
+             //   foodTitle = new String[]{"월", "화", "수", "목", "금", "토", "일"};
                 for(int i=0; i<7;i++){
                     food[0][i]=elements.get(i+2).text();
                     food[1][i]=elements.get(i+10).text();
@@ -344,10 +365,9 @@ public class A16Fragment extends Fragment {
                     food[8][i]+=elements.get(i+110).text().replace("/", "").replace(" ", "\n");
                 }
 
-
                 /*Element link = links.get(0);
 
-                //날자 설정
+                //날짜 설정
                 foodTitle = link.text().trim().split(" ");
                 link.attr("td");
 

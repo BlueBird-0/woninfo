@@ -82,5 +82,5 @@
             android:text="로그인" />
     </RelativeLayout>
 
-
+<requestFocus/>
 </android.support.constraint.ConstraintLayout>

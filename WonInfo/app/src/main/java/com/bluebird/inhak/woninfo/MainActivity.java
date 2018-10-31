@@ -13,9 +13,11 @@ import android.os.HandlerThread;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -176,10 +178,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         navigationView.getMenu().clear();
                         if(UserManager.checkLoggedin() == true)
                         {
+                            Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(),"로그인 성공",Snackbar.LENGTH_SHORT);
+                            View snackBarView = snackbar.getView();
+                            snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                            snackbar.show();
                             navigationView.inflateHeaderView(R.layout.nav_header_loggedin);
                             navigationView.inflateMenu(R.menu.nav_menu_loggedin);
                         }else
                         {
+                            Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(),"아이디/패스워드를 확인해주세요",Snackbar.LENGTH_SHORT);
+                            View snackBarView = snackbar.getView();
+                            snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                            snackbar.show();
                             navigationView.inflateHeaderView(R.layout.nav_header_loggedout);
                             navigationView.inflateMenu(R.menu.nav_menu_loggedout);
                             Button btn_login = (Button)navigationView.getHeaderView(1).findViewById(R.id.login_btn_login);
@@ -215,14 +225,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navTutorial();
         } else if (id == R.id.nav_manage) {
             UserManager.checkLoggedin();
-            Toast.makeText(this, "미개발 기능입니다", Toast.LENGTH_LONG).show();
+            Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(),"미개발 기능입니다.",Snackbar.LENGTH_SHORT);
+            View snackBarView = snackbar.getView();
+            snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+            snackbar.show();
         } else if (id == R.id.nav_share) {
             navShareKakao();
         } else if (id == R.id.nav_send) {
             Uri uri = Uri.parse("mailto:ij3512@naver.com");
             Intent it = new Intent(Intent.ACTION_SENDTO, uri);
             startActivity(it);
-            Toast.makeText(this, "사랑합니다", Toast.LENGTH_LONG).show();
+            Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(),"사랑합니다",Snackbar.LENGTH_SHORT);
+            View snackBarView = snackbar.getView();
+            snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+            snackbar.show();
         }
         else if(id==R.id.nav_logout){
             UserManager.logoutUser();
@@ -282,7 +298,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 }
                             }).show();
                 } else {
-                    Toast.makeText(MainActivity.this, "새로운 업데이트 없음", Toast.LENGTH_LONG).show();
+                    Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(),"새로운 업데이트 없음",Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
                 }
             }
         });

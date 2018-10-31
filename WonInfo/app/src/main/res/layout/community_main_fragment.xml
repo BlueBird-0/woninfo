@@ -120,7 +120,6 @@
             android:layout_margin="15dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="전국노래자랑"
             android:textColor="@color/Theme_Blue"
             android:textSize="@dimen/menubigtitle_size"
             android:textStyle="bold"

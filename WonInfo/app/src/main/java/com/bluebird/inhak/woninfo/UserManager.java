@@ -40,10 +40,8 @@ public class UserManager {
                 ((MainActivity)MainActivity.mainContext).replaceNavigation();
             }
         };
-
         auth.signInWithEmailAndPassword(email,password);
         auth.addAuthStateListener(mAuthListener);
-        checkLoggedin();Log.d("test001","2");
     }
 
     static public void logoutUser() {
@@ -63,6 +61,8 @@ public class UserManager {
         firebaseUser = auth.getCurrentUser();
         if(firebaseUser == null) {
             Log.d("test001", "로그인 안됨");
+
+
             return false;
         }
         else {

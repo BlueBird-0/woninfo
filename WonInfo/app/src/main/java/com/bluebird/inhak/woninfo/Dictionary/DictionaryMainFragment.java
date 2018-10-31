@@ -5,10 +5,12 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,6 +28,8 @@ import com.bluebird.inhak.woninfo.DBOpenHelper;
 import com.bluebird.inhak.woninfo.Dictionary.ListAdapter;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
+
+import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
 /**
  * Created by InHak on 2017-12-31.
@@ -199,7 +203,10 @@ public class DictionaryMainFragment extends Fragment {
                 Cursor cursor = dbOpenHelper.sqLiteDatabase.rawQuery(sql,null);
                 if(cursor.getCount() == 0)
                 {
-                    Toast.makeText(view.getContext(), "검색된 값이 없습니다.", Toast.LENGTH_SHORT).show();
+                    Snackbar snackbar = Snackbar.make(view.getRootView(),"검색된 값이 없습니다.",Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
                 }else {
                     menuAdapter.clear();
                     while (cursor.moveToNext()) {
