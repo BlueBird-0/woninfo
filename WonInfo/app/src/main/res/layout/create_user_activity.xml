@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
-    android:layout_height="350dp"
+    android:layout_height="500dp"
     android:background="@color/Theme_White"
     tools:layout_editor_absoluteY="81dp">
 
@@ -22,8 +22,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/create_user_activity_4"
-        android:layout_width="221dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
@@ -36,34 +36,42 @@
         <EditText
             android:id="@+id/create_user_id_edit"
             android:layout_width="wrap_content"
-            android:layout_height="41dp"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@null"
             android:ems="10"
             android:hint="ID(닉네임)"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/create_user_activity_1"
-        android:layout_width="223dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/roundbox"
         app:layout_constraintBottom_toTopOf="@+id/create_user_activity_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/create_user_activity_4">
 
         <EditText
             android:id="@+id/create_user_email_edit"
             android:layout_width="wrap_content"
-            android:layout_height="41dp"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@null"
             android:ems="10"
             android:hint="E-mail"
             android:inputType="textPersonName"
@@ -78,48 +86,53 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/create_user_activity_2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="49dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/roundbox"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/create_user_activity_1">
 
         <EditText
             android:id="@+id/create_user_password_edit"
             android:layout_width="wrap_content"
-            android:layout_height="41dp"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
+            android:background="@null"
             android:ems="10"
             android:hint="password"
             android:inputType="textPassword"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/create_user_activity_3"
         android:layout_width="wrap_content"
-        android:layout_height="41dp"
+        android:layout_height="49dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/roundbox"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/create_user_activity_2">
 
         <EditText
             android:id="@+id/create_user_confirm_edit"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:background="@null"
             android:ems="10"
             android:hint="confirm"
             android:inputType="textPassword"
@@ -127,21 +140,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
     <Button
         android:id="@+id/create_user_create_btn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="41dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/Theme_Red"
         android:text="가입하기"
         android:textColor="@color/Theme_White"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_user_activity_3"
+        app:layout_constraintVertical_bias="0.208" />
 </android.support.constraint.ConstraintLayout>
