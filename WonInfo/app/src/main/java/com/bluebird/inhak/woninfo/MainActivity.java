@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                             navigationView.inflateHeaderView(R.layout.nav_header_loggedout);
                             //navigationView.inflateMenu(R.menu.nav_menu_loggedout);
-                            navigationView.inflateMenu(R.menu.nav_menu_mypage);
+                            navigationView.inflateMenu(R.menu.nav_menu_loggedout);
 
                             Button btn_login = (Button)navigationView.getHeaderView(1).findViewById(R.id.login_btn_login);
                             btn_login.setOnClickListener(new View.OnClickListener() {

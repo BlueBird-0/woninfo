@@ -21,7 +21,7 @@
             android:fitsSystemWindows="true"
             android:theme="@style/NavigationTheme"
             app:headerLayout="@layout/nav_header_main"
-            app:menu="@menu/nav_menu_mypage" />
+            app:menu="@menu/nav_menu_loggedout" />
 
 
 </android.support.v4.widget.DrawerLayout>

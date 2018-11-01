@@ -5,18 +5,23 @@
     android:layout_height="350dip"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:clickable="true"
-    android:background="@color/colorBackground">
+    android:background="@color/colorPrimary">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="296dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
             android:orientation="vertical">
 
             <com.github.florent37.materialtextfield.MaterialTextField
@@ -24,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:mtf_image="@drawable/ic_login_id"
-                app:mtf_labelColor="@color/Theme_Blue"
+                app:mtf_labelColor="@color/Theme_White"
                 app:mtf_openKeyboardOnFocus="true"
                 tools:layout_editor_absoluteX="42dp"
                 tools:layout_editor_absoluteY="16dp">
@@ -45,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 app:mtf_image="@drawable/ic_login_pw"
-                app:mtf_labelColor="@color/Theme_Blue"
+                app:mtf_labelColor="@color/Theme_White"
                 app:mtf_openKeyboardOnFocus="true"
                 tools:layout_editor_absoluteX="42dp"
                 tools:layout_editor_absoluteY="16dp">
@@ -70,7 +75,7 @@
             android:layout_marginBottom="10dp"
             android:text="ID, PW 는 암호화 되지 않고\n현재 기기에 저장됩니다"
             android:textAlignment="center"
-            android:textColor="@color/Theme_Red" />
+            android:textColor="@color/Theme_White" />
 
         <Button
             android:id="@+id/login_btn_submit"
@@ -79,8 +84,13 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
-            android:text="로그인" />
+            android:background="@drawable/all_item_loggedinbtn"
+            android:text="로그인"
+            android:textColor="@color/Theme_White"
+            android:textStyle="bold" />
     </RelativeLayout>
+
+
 
 <requestFocus/>
 </android.support.constraint.ConstraintLayout>
