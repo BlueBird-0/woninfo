@@ -6,13 +6,190 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/home_main_smallbtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/all_ripple_click_smallbtn"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/a_25_text01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/home_main_small_text_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="5dp"
+            android:text="Clicker"
+            android:textColor="@color/Theme_Blue"
+            android:textSize="@dimen/mini_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="34dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/home_main_small_text_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_bbs" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/home_main_smallbtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/all_ripple_click_smallbtn"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/a_25_text01"
+        app:layout_constraintStart_toEndOf="@+id/home_main_smallbtn1"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/home_main_small_text_2"
+            android:layout_width="0dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="중앙\n도서관"
+            android:textColor="@color/Theme_Blue"
+            android:textSize="@dimen/mini_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/home_main_small_text_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_board" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/home_main_smallbtn3"
+        android:layout_width="80dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/all_ripple_click_smallbtn"
+        android:clickable="true"
+        app:layout_constraintStart_toEndOf="@+id/home_main_smallbtn2"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/home_main_small_text_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="8dp"
+            android:text="E-Class"
+            android:textColor="@color/Theme_Blue"
+            android:textSize="@dimen/mini_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/home_main_small_text_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_speaker" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/home_main_smallbtn4"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/all_ripple_click_smallbtn"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/home_main_smallbtn3"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/home_main_small_text_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="우리집"
+            android:textColor="@color/Theme_Blue"
+            android:textSize="@dimen/mini_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/home_main_small_text_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_clock" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
     <TextView
         android:id="@+id/a_25_text01"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:text="공지사항이다아아아아아악"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,7 +211,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/roundbox"
+        android:clickable="true"
+        android:background="@drawable/all_ripple_click_roundbox"
         app:layout_constraintEnd_toStartOf="@+id/home_main_fragment_2"
         app:layout_constraintHeight_percent="0.2"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +258,8 @@
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/roundbox"
+        android:clickable="true"
+        android:background="@drawable/all_ripple_click_roundbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.2"
         app:layout_constraintTop_toBottomOf="@+id/autoViewPager"
@@ -127,7 +306,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/roundbox"
+        android:clickable="true"
+        android:background="@drawable/all_ripple_click_roundbox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/home_main_fragment_4"
         app:layout_constraintHeight_percent="0.2"
@@ -176,7 +356,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/roundbox"
+        android:clickable="true"
+        android:background="@drawable/all_ripple_click_roundbox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.2"

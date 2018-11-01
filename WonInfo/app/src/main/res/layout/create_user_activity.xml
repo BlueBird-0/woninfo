@@ -2,36 +2,52 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="300dp"
-    android:layout_height="500dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@color/Theme_White"
     tools:layout_editor_absoluteY="81dp">
 
 
-    <TextView
-        android:id="@+id/textView6"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
-        android:text="회원가입"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가입"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/create_user_activity_4"
         android:layout_width="wrap_content"
-        android:layout_height="49dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/roundbox"
+        android:background="@drawable/all_shape_roundbox"
         app:layout_constraintBottom_toTopOf="@+id/create_user_activity_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <EditText
             android:id="@+id/create_user_id_edit"
@@ -53,12 +69,12 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/create_user_activity_1"
         android:layout_width="wrap_content"
-        android:layout_height="49dp"
+        android:layout_height="41dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/roundbox"
+        android:background="@drawable/all_shape_roundbox"
         app:layout_constraintBottom_toTopOf="@+id/create_user_activity_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.58"
@@ -86,13 +102,12 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/create_user_activity_2"
         android:layout_width="wrap_content"
-        android:layout_height="49dp"
+        android:layout_height="41dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/roundbox"
+        android:background="@drawable/all_shape_roundbox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/create_user_activity_1">
 
@@ -116,13 +131,12 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/create_user_activity_3"
         android:layout_width="wrap_content"
-        android:layout_height="49dp"
+        android:layout_height="41dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/roundbox"
+        android:background="@drawable/all_shape_roundbox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/create_user_activity_2">
 
@@ -138,24 +152,25 @@
             android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
     <Button
         android:id="@+id/create_user_create_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/Theme_Red"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/all_item_cunfirmbtn"
         android:text="가입하기"
         android:textColor="@color/Theme_White"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/create_user_activity_3"
-        app:layout_constraintVertical_bias="0.208" />
+        app:layout_constraintVertical_bias="1.0" />
 </android.support.constraint.ConstraintLayout>

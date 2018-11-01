@@ -191,7 +191,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
                             snackbar.show();
                             navigationView.inflateHeaderView(R.layout.nav_header_loggedout);
-                            navigationView.inflateMenu(R.menu.nav_menu_loggedout);
+                            //navigationView.inflateMenu(R.menu.nav_menu_loggedout);
+                            navigationView.inflateMenu(R.menu.nav_menu_mypage);
+
                             Button btn_login = (Button)navigationView.getHeaderView(1).findViewById(R.id.login_btn_login);
                             btn_login.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -337,8 +339,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             e.printStackTrace();
         }
     }
-
-
 
     //bottom_bar 하단바 설정
     private void setBottomBar() {
