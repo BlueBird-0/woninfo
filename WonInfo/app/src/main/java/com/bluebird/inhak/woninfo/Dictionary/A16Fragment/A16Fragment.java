@@ -47,10 +47,11 @@ public class A16Fragment extends Fragment {
     static TextView textviewHtmlDocument;
     static String htmlContentInStringFormat;
     static  String relf;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.a_16_fragment, container, false);
+       final View view = inflater.inflate(R.layout.a_16_fragment, container, false);
 
         final SwitchCompat popupSwitch = (SwitchCompat) view.findViewById(R.id.a_16_switch_push);
         final RadioGroup pushTimerGroup = (RadioGroup)view.findViewById(R.id.a_16_radioGroup_pushTimer);
@@ -73,7 +74,8 @@ public class A16Fragment extends Fragment {
                     editor.commit();
                     for(int i=0; i<pushTimerGroup.getChildCount(); i++)
                         pushTimerGroup.getChildAt(i).setEnabled(true);
-                    Snackbar snackbar = Snackbar.make(getView().getRootView(),"푸쉬알림을 받습니다.",Snackbar.LENGTH_SHORT);
+                    View main_view = (View)getView().getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "푸쉬알림을 받습니다.", Snackbar.LENGTH_SHORT);
                     View snackBarView = snackbar.getView();
                     snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
                     snackbar.show();
@@ -88,7 +90,8 @@ public class A16Fragment extends Fragment {
                     editor.commit();
                     for(int i=0; i<pushTimerGroup.getChildCount(); i++)
                         pushTimerGroup.getChildAt(i).setEnabled(false);
-                    Snackbar snackbar = Snackbar.make(getView().getRootView(),"푸쉬알림을 받지 않습니다.",Snackbar.LENGTH_SHORT);
+                    View main_view = (View)getView().getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "푸쉬알림을 받지 않습니다.", Snackbar.LENGTH_SHORT);
                     View snackBarView = snackbar.getView();
                     snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
                     snackbar.show();
@@ -124,7 +127,8 @@ public class A16Fragment extends Fragment {
                 editor.commit();
                 new A16Fragment().setMenu(getActivity());    //메뉴 불러오기
                 new A16Fragment.PushAlarm(getActivity()).Alarm(); //푸쉬알림설정
-                Snackbar snackbar = Snackbar.make(getView().getRootView(),"설정변경완료",Snackbar.LENGTH_SHORT);
+                View main_view = (View)getView().getRootView().findViewById(R.id.snackbar_view);
+                Snackbar snackbar = Snackbar.make(main_view, "설정변경완료", Snackbar.LENGTH_SHORT);
                 View snackBarView = snackbar.getView();
                 snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
                 snackbar.show();
@@ -277,7 +281,6 @@ public class A16Fragment extends Fragment {
                 calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE), 7, 40, 0);
                 calendar.add(Calendar.MINUTE, -minute_dif);
                 if(now.before(calendar)){
-                    Log.d("test001", "1");
                     sender = PendingIntent.getBroadcast(context, requestCode, intent, PendingIntent.FLAG_CANCEL_CURRENT);
                     alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), sender);
                 }
@@ -286,7 +289,6 @@ public class A16Fragment extends Fragment {
                 calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE), 12, 0, 0);
                 calendar.add(Calendar.MINUTE, -minute_dif);
                 if(now.before(calendar)){
-                    Log.d("test001", "2");
                     sender = PendingIntent.getBroadcast(context, requestCode+1, intent, PendingIntent.FLAG_CANCEL_CURRENT);
                     alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), sender);
                 }
@@ -295,7 +297,6 @@ public class A16Fragment extends Fragment {
                 calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE), 17, 0, 0);
                 calendar.add(Calendar.MINUTE, -minute_dif);
                 if(now.before(calendar)){
-                Log.d("test001", "3");
                     sender = PendingIntent.getBroadcast(context, requestCode+2, intent, PendingIntent.FLAG_CANCEL_CURRENT);
                     alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), sender);
                 }
@@ -334,7 +335,6 @@ public class A16Fragment extends Fragment {
                 for (Element link : links) {
                     link = links.select("a").first();
                     relf = link.attr("href");
-                    Log.d("test001", relf);
 
                     htmlContentInStringFormat += (link.attr("abs:href")
                             + "("+link.text().trim() + ")\n");
@@ -384,8 +384,11 @@ public class A16Fragment extends Fragment {
                     }
                     link.attr("td");
                 }*/
+                Log.d("food","식단 저장 완료");
 
             } catch(IOException e) {
+                Log.d("food","에러");
+
                 e.printStackTrace();
             }
             return null;
@@ -393,6 +396,7 @@ public class A16Fragment extends Fragment {
 
         @Override
         protected void onPostExecute(Void aVoid) {
+                Log.d("food","식단 저장 완료");
             //Preferences 저장소에 식단 저장
             SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.SHARED_PRE_NAME), Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();

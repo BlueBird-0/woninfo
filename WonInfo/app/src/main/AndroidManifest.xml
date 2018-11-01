@@ -41,19 +41,19 @@
         </activity>
 
         <activity android:name="com.bluebird.inhak.woninfo.LoginActivity"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" >
+            android:theme="@style/DialogTheme" >
         </activity>
 
         <activity android:name="com.bluebird.inhak.woninfo.Popup01Activity"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" >
+            android:theme="@style/DialogTheme" >
         </activity>
 
         <activity android:name=".Dictionary.A24Fragment.A24PopupFragment"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" >
+            android:theme="@style/DialogTheme" >
         </activity>
 
         <activity android:name="com.bluebird.inhak.woninfo.CreateUserPopup"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" >
+            android:theme="@style/DialogTheme" >
         </activity>
 
 

@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -34,6 +35,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.Community.CommunityMainFragment;
@@ -98,10 +100,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setBottomBar();
 
-        Fragment fragment = new WebViewFragment();
+        // 메인화면
+        Fragment mainFragment = new HomeMainFragment();
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.webview_fragment_container, fragment)
+                .replace(R.id.main_fragment_container,mainFragment)
+                .commit();
+
+        //웹뷰화면
+        Fragment webViewFragment = new WebViewFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.webview_fragment_container, webViewFragment)
                 .commit();
         //db초기화
         dbOpenHelper = new DBOpenHelper(this);
@@ -178,18 +188,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         navigationView.getMenu().clear();
                         if(UserManager.checkLoggedin() == true)
                         {
-                            Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(),"로그인 성공",Snackbar.LENGTH_SHORT);
-                            View snackBarView = snackbar.getView();
-                            snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
-                            snackbar.show();
+
+                        //    View main_view = (View)findViewById(R.id.snackbar_view);
+                        //    Snackbar snackbar = Snackbar.make(main_view,"로그인 성공",Snackbar.LENGTH_SHORT);
+                        //    View snackBarView = snackbar.getView();
+                        //    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                        //    snackbar.show();
                             navigationView.inflateHeaderView(R.layout.nav_header_loggedin);
                             navigationView.inflateMenu(R.menu.nav_menu_loggedin);
                         }else
                         {
-                            Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(),"아이디/패스워드를 확인해주세요",Snackbar.LENGTH_SHORT);
-                            View snackBarView = snackbar.getView();
-                            snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
-                            snackbar.show();
+                        //    View main_view = (View)findViewById(R.id.snackbar_view);
+                        //    Snackbar snackbar = Snackbar.make(main_view,"아이디/패스워드를 확인해주세요",Snackbar.LENGTH_SHORT);
+                        //    View snackBarView = snackbar.getView();
+                        //    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                        //    snackbar.show();
+
                             navigationView.inflateHeaderView(R.layout.nav_header_loggedout);
                             //navigationView.inflateMenu(R.menu.nav_menu_loggedout);
                             navigationView.inflateMenu(R.menu.nav_menu_mypage);
@@ -227,7 +241,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navTutorial();
         } else if (id == R.id.nav_manage) {
             UserManager.checkLoggedin();
-            Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(),"미개발 기능입니다.",Snackbar.LENGTH_SHORT);
+            View main_view = (View)findViewById(R.id.snackbar_view);
+            Snackbar snackbar = Snackbar.make(main_view, "미개발 기능입니다.", Snackbar.LENGTH_SHORT);
             View snackBarView = snackbar.getView();
             snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
             snackbar.show();
@@ -237,7 +252,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Uri uri = Uri.parse("mailto:ij3512@naver.com");
             Intent it = new Intent(Intent.ACTION_SENDTO, uri);
             startActivity(it);
-            Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(),"사랑합니다",Snackbar.LENGTH_SHORT);
+            View main_view = (View)findViewById(R.id.snackbar_view);
+            Snackbar snackbar = Snackbar.make(main_view, "사랑합니다", Snackbar.LENGTH_SHORT);
             View snackBarView = snackbar.getView();
             snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
             snackbar.show();
@@ -300,7 +316,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 }
                             }).show();
                 } else {
-                    Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(),"새로운 업데이트 없음",Snackbar.LENGTH_SHORT);
+                    View main_view = (View)findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "새로운 업데이트 없음", Snackbar.LENGTH_SHORT);
                     View snackBarView = snackbar.getView();
                     snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
                     snackbar.show();

@@ -58,7 +58,8 @@ public class Textboard extends Fragment {
 
 
 
-                    Snackbar snackbar = Snackbar.make(view.getRootView(),"글이 작성되었습니다.",Snackbar.LENGTH_SHORT);
+                    View main_view = (View)view.findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "글이 작성되었습니다.", Snackbar.LENGTH_SHORT);
                     View snackBarView = snackbar.getView();
                     snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
                     snackbar.show();
