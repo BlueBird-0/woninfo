@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bluebird.inhak.woninfo.Community.BoardListFragment1;
+import com.bluebird.inhak.woninfo.Dictionary.A08Fragment.A08Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A20Fragment.A20Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
 import com.bluebird.inhak.woninfo.R;
@@ -101,7 +103,18 @@ public class HomeMainFragment extends Fragment{
 
                 FragmentManager fragmentManager = getFragmentManager();
                 Fragment fragment = null;
-                fragment = new A20Fragment();
+                fragment = new A15Fragment();
+                loadFragment(fragment);
+
+            }
+        });
+
+        mainBotton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getFragmentManager();
+                Fragment fragment = null;
+                fragment = new A08Fragment();
                 loadFragment(fragment);
 
             }
