@@ -47,7 +47,6 @@ public class CreateUserPopup extends AppCompatActivity
             public void onClick(View v) {
                 //비밀번호 확인
                 if (!password.getText().toString().equals(password_confirm.getText().toString())) {
-
                     View main_view = (View)findViewById(R.id.create_layout_main);
                     Snackbar snackbar = Snackbar.make(main_view, "비밀번호를 확인해주세요", Snackbar.LENGTH_SHORT);
                     View snackBarView = snackbar.getView();

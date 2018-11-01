@@ -3,12 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-     <android.support.constraint.ConstraintLayout
-        android:id="@+id/home_main_smallbtn1"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/home_layout_smallbtn1"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
         android:layout_marginStart="8dp"
@@ -52,7 +53,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/home_main_smallbtn2"
+        android:id="@+id/home_layout_smallbtn2"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:layout_marginStart="16dp"
@@ -61,7 +62,7 @@
         android:background="@drawable/all_ripple_click_smallbtn"
         android:clickable="true"
         app:layout_constraintBottom_toTopOf="@+id/a_25_text01"
-        app:layout_constraintStart_toEndOf="@+id/home_main_smallbtn1"
+        app:layout_constraintStart_toEndOf="@+id/home_layout_smallbtn1"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -95,14 +96,14 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/home_main_smallbtn3"
+        android:id="@+id/home_layout_smallbtn3"
         android:layout_width="80dp"
         android:layout_height="36dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/all_ripple_click_smallbtn"
         android:clickable="true"
-        app:layout_constraintStart_toEndOf="@+id/home_main_smallbtn2"
+        app:layout_constraintStart_toEndOf="@+id/home_layout_smallbtn2"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -138,7 +139,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/home_main_smallbtn4"
+        android:id="@+id/home_layout_smallbtn4"
         android:layout_width="74dp"
         android:layout_height="36dp"
         android:layout_marginStart="16dp"
@@ -148,7 +149,7 @@
         android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/home_main_smallbtn3"
+        app:layout_constraintStart_toEndOf="@+id/home_layout_smallbtn3"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -205,7 +206,7 @@
     </cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/home_main_fragment_1"
+        android:id="@+id/home_layout_btn1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -213,7 +214,7 @@
         android:layout_marginEnd="8dp"
         android:clickable="true"
         android:background="@drawable/all_ripple_click_roundbox"
-        app:layout_constraintEnd_toStartOf="@+id/home_main_fragment_2"
+        app:layout_constraintEnd_toStartOf="@+id/home_layout_btn2"
         app:layout_constraintHeight_percent="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/autoViewPager"
@@ -253,13 +254,13 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/home_main_fragment_2"
+        android:id="@+id/home_layout_btn2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:clickable="true"
         android:background="@drawable/all_ripple_click_roundbox"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.2"
         app:layout_constraintTop_toBottomOf="@+id/autoViewPager"
@@ -299,20 +300,20 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/home_main_fragment_3"
+        android:id="@+id/home_layout_btn3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:clickable="true"
         android:background="@drawable/all_ripple_click_roundbox"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/home_main_fragment_4"
+        app:layout_constraintEnd_toStartOf="@+id/home_layout_btn4"
         app:layout_constraintHeight_percent="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_main_fragment_1"
+        app:layout_constraintTop_toBottomOf="@+id/home_layout_btn1"
         app:layout_constraintWidth_percent="0.45">
 
         <ImageView
@@ -350,7 +351,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/home_main_fragment_4"
+        android:id="@+id/home_layout_btn4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -361,7 +362,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.2"
-        app:layout_constraintTop_toBottomOf="@+id/home_main_fragment_2"
+        app:layout_constraintTop_toBottomOf="@+id/home_layout_btn2"
         app:layout_constraintWidth_percent="0.45">
 
         <ImageView
