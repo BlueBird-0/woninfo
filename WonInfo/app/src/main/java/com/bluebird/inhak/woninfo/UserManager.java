@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -15,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import static android.content.ContentValues.TAG;
+import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
 public class UserManager {
     static private FirebaseAuth auth;
@@ -24,7 +28,6 @@ public class UserManager {
     //로그인 함수
 
     static public void loginUser(String email, String password) {
-
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -37,7 +40,7 @@ public class UserManager {
                     Log.d("LoginActivity", "onAuthStateChanged:signed_out");
                 }
                 //로그인 후 사용자 정보창 새로고침
-                ((MainActivity)MainActivity.mainContext).replaceNavigation();
+                ((MainActivity)mainContext).replaceNavigation();
             }
         };
         auth.signInWithEmailAndPassword(email,password);

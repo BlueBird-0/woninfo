@@ -158,4 +158,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/create_user_activity_3"
         app:layout_constraintVertical_bias="0.208" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/create_layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </android.support.constraint.ConstraintLayout>
