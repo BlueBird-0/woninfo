@@ -1,24 +1,22 @@
 package com.bluebird.inhak.woninfo.Home;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Toast;
 
+import com.bluebird.inhak.woninfo.Community.BoardListFragment1;
+import com.bluebird.inhak.woninfo.Dictionary.A20Fragment.A20Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
 import com.bluebird.inhak.woninfo.R;
-import com.google.android.youtube.player.YouTubeBaseActivity;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerSupportFragment;
-import com.google.android.youtube.player.YouTubePlayerView;
 
 import java.util.ArrayList;
 
@@ -27,6 +25,9 @@ import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 public class HomeMainFragment extends Fragment{
 
     AutoScrollViewPager autoViewPager;
+    static Fragment fragment = null;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -51,9 +52,81 @@ public class HomeMainFragment extends Fragment{
         autoViewPager.startAutoScroll(); //Auto Scroll 시작
 
 
+        ConstraintLayout topBotton1 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn1);
+        topBotton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                    PackageManager pm = getActivity().getPackageManager();
+                    pm.getApplicationInfo("kr.co.libtech.sponge", PackageManager.GET_META_DATA);
+                    Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("kr.co.libtech.sponge");
+                    startActivity(launchIntent);
+                }
+                catch (PackageManager.NameNotFoundException e)
+                {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=kr.co.libtech.sponge"));
+                    startActivity(intent);
+                }
+            }
+        });
+
+        ConstraintLayout topBotton2 = (ConstraintLayout)v.findViewById(R.id.home_layout_smallbtn2);
+        topBotton2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://elibrary.wku.ac.kr/lib/SlimaPlus.csp"));
+                startActivity(intent);
+            }
+        });
+
+        ConstraintLayout topBotton3 = (ConstraintLayout)v.findViewById(R.id.home_layout_smallbtn3);
+        topBotton3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://wvu.wku.ac.kr"));
+                startActivity(intent);
+            }
+        });
+
+        ConstraintLayout mainBotton1=(ConstraintLayout)v.findViewById(R.id.home_layout_btn1);
+        ConstraintLayout mainBotton2=(ConstraintLayout)v.findViewById(R.id.home_layout_btn2);
+        ConstraintLayout mainBotton3=(ConstraintLayout)v.findViewById(R.id.home_layout_btn3);
+        ConstraintLayout mainBotton4=(ConstraintLayout)v.findViewById(R.id.home_layout_btn4);
+
+
+
+        mainBotton1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                FragmentManager fragmentManager = getFragmentManager();
+                Fragment fragment = null;
+                fragment = new A20Fragment();
+                loadFragment(fragment);
+
+            }
+        });
+
+
 
         return v;
     }
+    private boolean loadFragment(Fragment fragment)
+    {
+        //switching fragment
+        if(fragment != null)
+        {
+            getFragmentManager().beginTransaction().addToBackStack(null);
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_fragment_container, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
+
+
 
     /*
     @Override
