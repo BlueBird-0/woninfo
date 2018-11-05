@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
@@ -36,6 +37,8 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.Community.CommunityMainFragment;
@@ -47,6 +50,8 @@ import com.bluebird.inhak.woninfo.Home.HomeMainFragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
 import com.google.android.youtube.player.YouTubePlayerFragment;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
 import com.kakao.util.KakaoParameterException;
@@ -195,6 +200,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         //    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
                         //    snackbar.show();
                             navigationView.inflateHeaderView(R.layout.nav_header_loggedin);
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                            TextView textView = (TextView)navigationView.getHeaderView(1).findViewById(R.id.nav_text_userid);
+                            textView.setText(user.getDisplayName());
+
+                            ImageView profilePic = (ImageView)navigationView.getHeaderView(1).findViewById(R.id.nav_btn_profilepic);
+                            profilePic.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            });
+
                             navigationView.inflateMenu(R.menu.nav_menu_loggedin);
                         }else
                         {
