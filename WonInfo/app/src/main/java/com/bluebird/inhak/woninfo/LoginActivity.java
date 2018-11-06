@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -31,7 +32,7 @@ import java.util.List;
  * Created by InHak on 2017-12-31.
  */
 
-public class LoginActivity extends Activity{
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,8 +65,7 @@ public class LoginActivity extends Activity{
                 }
                 if(!edit_pw.getText().toString().equals("") && !edit_id.getText().toString().equals("")) {
 
-                    //UserManager.checkLoggedin();
-                    UserManager.loginUser(edit_id.getText().toString(),edit_pw.getText().toString());
+                    UserManager.loginUser(edit_id.getText().toString(), edit_pw.getText().toString());
 
                     FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
                     UserManager.checkLoggedin();

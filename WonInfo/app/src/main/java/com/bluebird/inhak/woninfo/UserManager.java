@@ -1,30 +1,45 @@
 package com.bluebird.inhak.woninfo;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+
+import java.io.File;
+import java.io.IOException;
 
 import static android.content.ContentValues.TAG;
+import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
 public class UserManager {
     static private FirebaseAuth auth;
     static private FirebaseUser firebaseUser;
     static private FirebaseAuth.AuthStateListener mAuthListener;
 
+
+
     //로그인 함수
-
     static public void loginUser(String email, String password) {
-
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -37,7 +52,7 @@ public class UserManager {
                     Log.d("LoginActivity", "onAuthStateChanged:signed_out");
                 }
                 //로그인 후 사용자 정보창 새로고침
-                ((MainActivity)MainActivity.mainContext).replaceNavigation();
+                ((MainActivity)mainContext).replaceNavigation();
             }
         };
         auth.signInWithEmailAndPassword(email,password);
@@ -107,9 +122,10 @@ public class UserManager {
     }
 
     //회원가입
-    static public Task<AuthResult> createUser(String email, String password)
+    static public Task<AuthResult> createUser(String email, String password, final String nickname)
     {
         Log.d("test001", "--------------회원가입 진입----------------");
+
 
         if(checkLoggedin() == true) {
             return null;
@@ -139,6 +155,27 @@ public class UserManager {
                         if (task.isSuccessful()) {
                             Log.d("test001", "--------------회원가입 성공----------------");
                             FirebaseUser user = auth.getCurrentUser();
+
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(nickname)
+                                    .build();
+
+                            user.updateProfile(profileUpdates)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(task.isSuccessful()){
+                                                Log.d("test987", "User Profile updated.");
+                                            }
+                                        }
+                                    })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("test987", "User Profile updateddddd.");
+
+                                }
+                            });
                         }else {
                             Log.d("test001", "--------------회원가입 실패----------------");
                             Log.w("test001", task.getException());

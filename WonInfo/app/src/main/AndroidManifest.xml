@@ -41,19 +41,19 @@
         </activity>
 
         <activity android:name="com.bluebird.inhak.woninfo.LoginActivity"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" >
+            android:theme="@style/DialogTheme" >
         </activity>
 
         <activity android:name="com.bluebird.inhak.woninfo.Popup01Activity"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" >
+            android:theme="@style/DialogTheme" >
         </activity>
 
         <activity android:name=".Dictionary.A24Fragment.A24PopupFragment"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" >
+            android:theme="@style/DialogTheme" >
         </activity>
 
         <activity android:name="com.bluebird.inhak.woninfo.CreateUserPopup"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" >
+            android:theme="@style/DialogTheme" >
         </activity>
 
 
@@ -67,7 +67,9 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 </manifest>

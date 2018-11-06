@@ -76,7 +76,15 @@ public class DictionaryMainFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         fragmentActivity = (FragmentActivity) context;
+        Log.d("qwe", "붙음");
         super.onAttach(context);
+    }
+
+
+    @Override
+    public void onDetach() {
+        Log.d("qwe", "떨어짐");
+        super.onDetach();
     }
 
     @Override
@@ -203,7 +211,8 @@ public class DictionaryMainFragment extends Fragment {
                 Cursor cursor = dbOpenHelper.sqLiteDatabase.rawQuery(sql,null);
                 if(cursor.getCount() == 0)
                 {
-                    Snackbar snackbar = Snackbar.make(view.getRootView(),"검색된 값이 없습니다.",Snackbar.LENGTH_SHORT);
+                    View main_view = (View)getView().getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "검색된 값이 없습니다.", Snackbar.LENGTH_SHORT);
                     View snackBarView = snackbar.getView();
                     snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
                     snackbar.show();

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
     android:background="@drawable/side_nav_bar"
@@ -13,53 +14,40 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
 
-    <RelativeLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/nav_text_userid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/imageView"
-            android:layout_marginLeft="15dp"
-            android:layout_toEndOf="@+id/imageView"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/login_text_major"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="학과"
-                android:textColor="@color/Theme_Black" />
-
-            <TextView
-                android:id="@+id/login_text_grade"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="학년"
-                android:textColor="@color/Theme_Black" />
-
-            <TextView
-                android:id="@+id/login_text_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/login_text_major"
-                android:text="이름"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/Theme_Black" />
-
-        </LinearLayout>
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="1dp"
+            android:text="닉네임"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/Theme_Black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nav_btn_profilepic" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/nav_btn_profilepic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="10dp"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_appicon_round" />
 
 
-    </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>

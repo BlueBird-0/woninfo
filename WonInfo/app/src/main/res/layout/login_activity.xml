@@ -8,15 +8,20 @@
     android:background="@color/colorPrimary">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="296dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
             android:orientation="vertical">
 
             <com.github.florent37.materialtextfield.MaterialTextField
@@ -79,8 +84,13 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
-            android:text="로그인" />
+            android:background="@drawable/all_item_loggedinbtn"
+            android:text="로그인"
+            android:textColor="@color/Theme_White"
+            android:textStyle="bold" />
     </RelativeLayout>
+
+
 
 <requestFocus/>
 </android.support.constraint.ConstraintLayout>
