@@ -74,6 +74,7 @@ public class UserManager {
     // 프로필 이미지 변경
     static public void updateProfile(){
 
+
     }
 
     //비밀번호 변경

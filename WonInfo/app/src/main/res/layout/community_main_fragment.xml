@@ -15,10 +15,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/all_ripple_click"
+        app:layout_constraintHeight_percent="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.45"
-        app:layout_constraintHeight_percent="0.2">
+        app:layout_constraintWidth_percent="0.45">
 
         <TextView
             android:id="@+id/community_main_text1"
@@ -26,20 +26,24 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="7dp"
             android:text="대나무숲"
             android:textColor="@color/Theme_Blue"
             android:textSize="@dimen/menubigtitle_size"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/imageView14"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:layout_width="64dp"
+            android:id="@+id/imageView14"
+            android:layout_width="0dp"
             android:layout_height="64dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/community_main_text1"
             app:srcCompat="@drawable/ic_bamboo" />
     </android.support.constraint.ConstraintLayout>
 

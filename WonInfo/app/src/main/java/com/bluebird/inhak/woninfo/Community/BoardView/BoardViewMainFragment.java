@@ -1,29 +1,26 @@
-package com.bluebird.inhak.woninfo.Community;
+/*
+package com.bluebird.inhak.woninfo.Community.BoardView;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bluebird.inhak.woninfo.Community.Board1.BoardListFragment;
+import com.bluebird.inhak.woninfo.Community.Board1.BoardViewFragment;
 import com.bluebird.inhak.woninfo.Community.Board2.BoardListFragment2;
 import com.bluebird.inhak.woninfo.Community.Board3.BoardListFragment3;
+import com.bluebird.inhak.woninfo.Community.Board4.BoardListFragment4;
 import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A24Fragment.A24Fragment;
 import com.bluebird.inhak.woninfo.R;
 
-public class CommunityMainFragment extends Fragment{
+public class BoardViewMainFragment extends Fragment {
+
     ConstraintLayout button1;
     ConstraintLayout button2;
     ConstraintLayout button3;
@@ -31,18 +28,14 @@ public class CommunityMainFragment extends Fragment{
     ConstraintLayout button5;
     ConstraintLayout button6;
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-    }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.community_main_fragment, container, false);
-        setHasOptionsMenu(true);
+        View view = inflater.inflate(R.layout.community_list_item, container, false);
 
-        button1 = (ConstraintLayout)view.findViewById(R.id.community_main_1);
+
+        button1 = (ConstraintLayout)view.findViewById(R.id.community_main_bar);
         button2 = (ConstraintLayout)view.findViewById(R.id.community_main_2);
         button3 = (ConstraintLayout)view.findViewById(R.id.community_main_3);
         button4 = (ConstraintLayout)view.findViewById(R.id.community_main_4);
@@ -54,7 +47,7 @@ public class CommunityMainFragment extends Fragment{
             public void onClick(View v) {
                 FragmentManager fragmentManager = getFragmentManager();
                 Fragment fragment = null;
-                fragment = new BoardListFragment();
+                fragment = new BoardViewFragment();
                 loadFragment(fragment);
 
             }
@@ -66,6 +59,7 @@ public class CommunityMainFragment extends Fragment{
                 Fragment fragment = null;
                 fragment = new BoardListFragment2();
                 loadFragment(fragment);
+
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +69,7 @@ public class CommunityMainFragment extends Fragment{
                 Fragment fragment = null;
                 fragment = new BoardListFragment3();
                 loadFragment(fragment);
+
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
@@ -113,17 +108,18 @@ public class CommunityMainFragment extends Fragment{
 
     private boolean loadFragment(Fragment fragment)
     {
+        Log.d("test001", "1111");
         //switching fragment
         if(fragment != null)
         {
-            getFragmentManager().beginTransaction().addToBackStack(null);
             getFragmentManager()
                     .beginTransaction()
                     .replace(R.id.main_fragment_container, fragment)
                     .commit();
+            Log.d("test001", "2222");
             return true;
         }
         return false;
     }
 
-}
+}*/

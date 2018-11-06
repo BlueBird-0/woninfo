@@ -3,6 +3,7 @@ package com.bluebird.inhak.woninfo.Home;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -13,6 +14,12 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import com.bluebird.inhak.woninfo.Community.Board1.BoardListFragment;
+import com.bluebird.inhak.woninfo.Community.Board2.BoardListFragment2;
+import com.bluebird.inhak.woninfo.Community.Board3.BoardListFragment3;
+import com.bluebird.inhak.woninfo.Community.BoardListFragment4;
+import com.bluebird.inhak.woninfo.Dictionary.A08Fragment.A08Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
 import com.bluebird.inhak.woninfo.R;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -25,12 +32,60 @@ import java.util.ArrayList;
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 
 public class HomeMainFragment extends Fragment{
+    ConstraintLayout button1;
+    ConstraintLayout button2;
+    ConstraintLayout button3;
+    ConstraintLayout button4;
 
     AutoScrollViewPager autoViewPager;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v =inflater.inflate(R.layout.home_main_fragment,container,false);
+        button1 = (ConstraintLayout)v.findViewById(R.id.home_main_fragment_1);
+        button2 = (ConstraintLayout)v.findViewById(R.id.home_main_fragment_2);
+        button3 = (ConstraintLayout)v.findViewById(R.id.home_main_fragment_3);
+        button4 = (ConstraintLayout)v.findViewById(R.id.home_main_fragment_4);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getFragmentManager();
+                Fragment fragment = null;
+                fragment = new A15Fragment();
+                loadFragment(fragment);
+
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager2 = getFragmentManager();
+                Fragment fragment = null;
+                fragment = new A08Fragment();
+                loadFragment(fragment);
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager3 = getFragmentManager();
+                Fragment fragment = null;
+                fragment = new A08Fragment();
+                loadFragment(fragment);
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager testlistview = getFragmentManager();
+                Fragment fragment = null;
+                fragment = new BoardListFragment4();
+                loadFragment(fragment);
+
+            }
+        });
+
       //  WebView webView = (WebView)v.findViewById(R.id.youtube_player_view);
        // webView.getSettings().setJavaScriptEnabled(true);
        // webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
@@ -88,6 +143,20 @@ public class HomeMainFragment extends Fragment{
             }
     }
 */
+    private boolean loadFragment(Fragment fragment)
+    {
+        //switching fragment
+        if(fragment != null)
+        {
+            getFragmentManager().beginTransaction().addToBackStack(null);
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_fragment_container, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
 
 
 }
