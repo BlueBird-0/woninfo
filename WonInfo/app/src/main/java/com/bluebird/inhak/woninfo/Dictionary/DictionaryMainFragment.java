@@ -76,7 +76,15 @@ public class DictionaryMainFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         fragmentActivity = (FragmentActivity) context;
+        Log.d("qwe", "붙음");
         super.onAttach(context);
+    }
+
+
+    @Override
+    public void onDetach() {
+        Log.d("qwe", "떨어짐");
+        super.onDetach();
     }
 
     @Override

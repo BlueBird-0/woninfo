@@ -1,5 +1,7 @@
 package com.bluebird.inhak.woninfo;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -7,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -34,7 +37,12 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -52,9 +60,16 @@ import com.google.android.youtube.player.YouTubePlayerFragment;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
 import com.kakao.util.KakaoParameterException;
+
+import java.util.List;
+
+import gun0912.tedbottompicker.TedBottomPicker;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static Context mainContext;
@@ -103,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
 
+        //하단바 설정
         setBottomBar();
 
         // 메인화면
@@ -145,7 +161,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //프레그먼트(ViewFragment)가 열려있을 경우
         else if (getSupportFragmentManager().getBackStackEntryCount() != 0) {
             this.getSupportActionBar().setTitle(R.string.app_name);
-            super.onBackPressed();
+            getSupportFragmentManager().popBackStack();
+            //super.onBackPressed();
+            overridePendingTransition(0, R.anim.slide_close);
         }
         else {
             AlertDialog.Builder d = new AlertDialog.Builder(MainActivity.this);
@@ -168,6 +186,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             d.show();
         }
     }
+
+
 
     public void replaceFragment()
     {
@@ -204,11 +224,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             TextView textView = (TextView)navigationView.getHeaderView(1).findViewById(R.id.nav_text_userid);
                             textView.setText(user.getDisplayName());
 
-                            ImageView profilePic = (ImageView)navigationView.getHeaderView(1).findViewById(R.id.nav_btn_profilepic);
+                            final ImageView profilePic = (ImageView)navigationView.getHeaderView(1).findViewById(R.id.nav_btn_profilepic);
                             profilePic.setOnClickListener(new View.OnClickListener() {
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                                 @Override
                                 public void onClick(View v) {
+                                    PermissionListener permissionlistener = new PermissionListener() {
+                                        @Override
+                                        public void onPermissionGranted() {
+                                            // 권한 있을 때
+                                            TedBottomPicker bottomPicker = new TedBottomPicker.Builder(MainActivity.this)
+                                                    .setOnImageSelectedListener(new TedBottomPicker.OnImageSelectedListener() {
+                                                        @Override
+                                                        public void onImageSelected(Uri uri) {
+                                                            //uri 활용
 
+
+
+
+
+
+
+
+                                                            //유저 프로필 설정 부분
+                                                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                                                    .setPhotoUri(uri)
+                                                                    .build();
+                                                        }
+                                                    })
+                                                    .create();
+                                              bottomPicker.show(getSupportFragmentManager());
+                                            profilePic.setImageURI(user.getPhotoUrl());
+                                        }
+                                        @Override
+                                        public void onPermissionDenied(List<String> deniedPermissions) {
+                                            Toast.makeText(MainActivity.this, "권한 없음\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+                                        }
+                                    };
+                                    TedPermission.with(getApplicationContext())
+                                            .setPermissionListener(permissionlistener)
+                                            .setRationaleMessage("사진첩 접근 권한이 필요합니다.")
+                                            .setDeniedMessage("왜 거부하셨어요...\n하지만 [설정] > [권한] 에서 권한을 허용할 수 있어요.")
+                                            .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+                                            .check();
                                 }
                             });
 
@@ -252,7 +310,48 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //TOAST
         if (id == R.id.nav_createUser) {
             startActivity(new Intent(getApplicationContext(), CreateUserPopup.class));
-        } else if (id == R.id.nav_update) {
+        }else if(id == R.id.nav_adrace){
+            //TODO 여기 성적확인부분 바꿔야함
+            FrameLayout frameLayout = (FrameLayout) findViewById(R.id.main_fragment_container);
+            WebView webView = new WebView(MainActivity.this);
+            CookieSyncManager cookieSyncManager = CookieSyncManager.createInstance(webView.getContext());
+            CookieManager cookieManager = CookieManager.getInstance();
+            cookieManager.setAcceptCookie(true);
+            cookieManager.removeSessionCookie();
+            cookieManager.removeAllCookie();
+            cookieSyncManager.sync();
+
+            WebSettings settings = webView.getSettings();
+            settings.setJavaScriptEnabled(true);
+            //settings.setLoadWithOverviewMode(true);
+            settings.setUseWideViewPort(true);
+            settings.setSupportZoom(true);
+            settings.setBuiltInZoomControls(true);
+            settings.setDisplayZoomControls(false);
+            settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+            settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+            //settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+            settings.setDomStorageEnabled(true);
+            settings.setJavaScriptCanOpenWindowsAutomatically(true);
+
+            settings.setSaveFormData(true);
+            settings.setAppCacheEnabled(true);
+            settings.setDatabaseEnabled(true);
+            settings.setDomStorageEnabled(true);webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+            webView.setScrollbarFadingEnabled(true);
+            webView.setWebChromeClient(new WebChromeClient());
+            webView.setWebViewClient(new WebViewClient());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+            } else {
+                webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+            }
+            webView.setInitialScale(300);
+            webView.setX((float)0.5);
+            webView.loadUrl("http://hyunta.xyz/");
+            frameLayout.addView(webView);
+        }
+        else if (id == R.id.nav_update) {
             navUpdate();
         } else if (id == R.id.nav_tutorial) {
             navTutorial();
@@ -378,6 +477,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setBottomBar() {
         final BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
         BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
+        bottomNavigationView.findViewById(R.id.bottom_bar_menu_home).callOnClick();
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

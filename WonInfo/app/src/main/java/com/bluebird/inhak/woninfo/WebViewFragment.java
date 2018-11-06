@@ -96,8 +96,7 @@ public class WebViewFragment extends Fragment {
         } else {
             webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
-        webView.setInitialScale(300);
-        webView.setX((float)0.5);
+        webView.setInitialScale(1);
         webView.loadUrl("http://intra.wku.ac.kr");
 
         return view;
@@ -115,7 +114,7 @@ public class WebViewFragment extends Fragment {
         CookieSyncManager.getInstance().stopSync();
     }
 
-/*
+
 
     protected class ViewClient extends WebViewClient
     {
@@ -123,11 +122,13 @@ public class WebViewFragment extends Fragment {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
 
+            /*
             String Script = "var id = document.getElementById(\"userid\");id.value = \"" + "ije5581" + "\";" +
                     "var pw = document.getElementById(\"passwd\");pw.value = \"" + "Jeon3512!" + "\";" +
                     "};";
             view.evaluateJavascript(Script, null);
             Log.d("test33","d");
+            */
         }
-    }*/
+    }
 }

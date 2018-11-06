@@ -28,7 +28,7 @@ public class ExpandableNew {
         constraintLayout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //if(open)
+                //if(slide_open)
                 //{
                     //animation = AnimationUtils.loadAnimation(view.getContext(), R.anim.rotate_c);
                 //}else {

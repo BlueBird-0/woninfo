@@ -38,9 +38,7 @@ public class UserManager {
 
 
 
-
     //로그인 함수
-
     static public void loginUser(String email, String password) {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override

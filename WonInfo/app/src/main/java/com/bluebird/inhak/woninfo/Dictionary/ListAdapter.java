@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,8 +80,8 @@ public class ListAdapter extends BaseAdapter {
                     Class t = Class.forName("com.bluebird.inhak.woninfo.Dictionary."+ primaryKey +"Fragment."+ primaryKey +"Fragment");
                     //Class t = Class.forName("com.example.inhak.woninfo."+"A09"+"Fragment"+".A09"+"Fragment");
                     Fragment fragment = (Fragment)t.newInstance();
-
-                    fragmentTransaction.replace(R.id.main_fragment_container, fragment);
+                    fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
+                    fragmentTransaction.add(R.id.main_fragment_container, fragment);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                     mainActivity.getSupportActionBar().setTitle(menuItem.getText());
