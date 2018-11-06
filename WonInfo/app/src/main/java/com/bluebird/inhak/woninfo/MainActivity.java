@@ -213,7 +213,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         navigationView.getMenu().clear();
                         if(UserManager.checkLoggedin() == true)
                         {
-
                         //    View main_view = (View)findViewById(R.id.snackbar_view);
                         //    Snackbar snackbar = Snackbar.make(main_view,"로그인 성공",Snackbar.LENGTH_SHORT);
                         //    View snackBarView = snackbar.getView();

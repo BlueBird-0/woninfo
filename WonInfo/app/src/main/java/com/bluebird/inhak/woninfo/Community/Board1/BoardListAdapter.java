@@ -78,9 +78,8 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
                     try {
                         Class t = Class.forName("com.bluebird.inhak.woninfo.Community.Board1.BoardViewFragment");
                         Fragment fragment = (Fragment)t.newInstance();
-
-
-                        fragmentTransaction.replace(R.id.main_fragment_container, fragment);
+                        fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
+                        fragmentTransaction.add(R.id.main_fragment_container, fragment);
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
                     }catch(Exception e) {}

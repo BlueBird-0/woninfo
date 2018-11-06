@@ -70,8 +70,8 @@ public class BoardListAdapter3 extends RecyclerView.Adapter<BoardListAdapter3.Bo
                         Class t = Class.forName("com.bluebird.inhak.woninfo.Community.Board3.BoardViewFragment3");
                         //Class t = Class.forName("com.example.inhak.woninfo."+"A09"+"Fragment"+".A09"+"Fragment");
                         Fragment fragment = (Fragment)t.newInstance();
-
-                        fragmentTransaction.replace(R.id.main_fragment_container, fragment);
+                        fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
+                        fragmentTransaction.add(R.id.main_fragment_container, fragment);
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
                     }catch(Exception e) {}

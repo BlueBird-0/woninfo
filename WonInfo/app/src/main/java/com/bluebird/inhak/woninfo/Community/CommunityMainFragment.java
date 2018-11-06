@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -116,11 +117,11 @@ public class CommunityMainFragment extends Fragment{
         //switching fragment
         if(fragment != null)
         {
-            getFragmentManager().beginTransaction().addToBackStack(null);
-            getFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.main_fragment_container, fragment)
-                    .commit();
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
+            fragmentTransaction.add(R.id.main_fragment_container, fragment);
+            fragmentTransaction.addToBackStack("menu_community");
+            fragmentTransaction.commit();
             return true;
         }
         return false;
