@@ -97,6 +97,7 @@ public class CreateUserPopup extends AppCompatActivity
                                             "12")
                                     .build();
                     */
+                    finish();
 
                 }
             }

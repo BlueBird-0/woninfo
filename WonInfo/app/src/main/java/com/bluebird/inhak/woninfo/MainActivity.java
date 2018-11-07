@@ -15,6 +15,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
@@ -56,6 +57,7 @@ import com.bluebird.inhak.woninfo.Dictionary.A25Fragment.A25Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
 import com.bluebird.inhak.woninfo.Home.HomeMainFragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
+import com.bumptech.glide.Glide;
 import com.google.android.youtube.player.YouTubePlayerFragment;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.firebase.auth.FirebaseAuth;
@@ -66,6 +68,8 @@ import com.gun0912.tedpermission.TedPermission;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
 import com.kakao.util.KakaoParameterException;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.util.List;
 
@@ -221,51 +225,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             navigationView.inflateHeaderView(R.layout.nav_header_loggedin);
                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                             TextView textView = (TextView)navigationView.getHeaderView(1).findViewById(R.id.nav_text_userid);
-                            textView.setText(user.getDisplayName());
-
                             final ImageView profilePic = (ImageView)navigationView.getHeaderView(1).findViewById(R.id.nav_btn_profilepic);
+                            textView.setText(user.getDisplayName());
+                            if(user.getPhotoUrl()!=null){
+                            Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(user.getPhotoUrl()).into(profilePic);}
+
+
                             profilePic.setOnClickListener(new View.OnClickListener() {
-                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                                 @Override
                                 public void onClick(View v) {
-                                    PermissionListener permissionlistener = new PermissionListener() {
-                                        @Override
-                                        public void onPermissionGranted() {
-                                            // 권한 있을 때
-                                            TedBottomPicker bottomPicker = new TedBottomPicker.Builder(MainActivity.this)
-                                                    .setOnImageSelectedListener(new TedBottomPicker.OnImageSelectedListener() {
-                                                        @Override
-                                                        public void onImageSelected(Uri uri) {
-                                                            //uri 활용
-
-
-
-
-
-
-
-
-                                                            //유저 프로필 설정 부분
-                                                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                                                                    .setPhotoUri(uri)
-                                                                    .build();
-                                                        }
-                                                    })
-                                                    .create();
-                                              bottomPicker.show(getSupportFragmentManager());
-                                            profilePic.setImageURI(user.getPhotoUrl());
-                                        }
-                                        @Override
-                                        public void onPermissionDenied(List<String> deniedPermissions) {
-                                            Toast.makeText(MainActivity.this, "권한 없음\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
-                                        }
-                                    };
-                                    TedPermission.with(getApplicationContext())
-                                            .setPermissionListener(permissionlistener)
-                                            .setRationaleMessage("사진첩 접근 권한이 필요합니다.")
-                                            .setDeniedMessage("왜 거부하셨어요...\n하지만 [설정] > [권한] 에서 권한을 허용할 수 있어요.")
-                                            .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
-                                            .check();
+                                    UserManager.profielPicSelect(getSupportFragmentManager());
                                 }
                             });
 
@@ -309,6 +278,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //TOAST
         if (id == R.id.nav_createUser) {
             startActivity(new Intent(getApplicationContext(), CreateUserPopup.class));
+
+
+
         }else if(id == R.id.nav_adrace){
             //TODO 여기 성적확인부분 바꿔야함
             FrameLayout frameLayout = (FrameLayout) findViewById(R.id.main_fragment_container);
@@ -469,6 +441,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             kakaoLink.sendMessage(messageBuilder,getApplicationContext());
         } catch (KakaoParameterException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d("여기가", "실행됨");
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
+                Uri resultUri = result.getUri();
+                UserManager.profilePicUpdate(resultUri);   Log.d("여기가", "결과Uri전달");
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                Exception error = result.getError();
+            }
         }
     }
 
