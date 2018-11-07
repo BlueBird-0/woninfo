@@ -1,3 +1,4 @@
+/*
 package com.bluebird.inhak.woninfo.Community;
 
 import android.app.ActionBar;
@@ -95,4 +96,4 @@ public class BoardListFragment3 extends Fragment{
             }
         }
     }
-}
+}*/

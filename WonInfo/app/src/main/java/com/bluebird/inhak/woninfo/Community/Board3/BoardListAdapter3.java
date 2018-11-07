@@ -1,7 +1,9 @@
 
 package com.bluebird.inhak.woninfo.Community.Board3;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -56,20 +58,25 @@ public class BoardListAdapter3 extends RecyclerView.Adapter<BoardListAdapter3.Bo
     class BoardListViewHolder extends RecyclerView.ViewHolder{
         private TextView title;
         private TextView content;
+        ConstraintLayout button1;
+        private double num;
 
         public BoardListViewHolder(View itemView){
             super(itemView);
-            title = (TextView)itemView.findViewById(R.id.community_list_item_title);
-
-            title.setOnClickListener(new View.OnClickListener() {
+            button1 = (ConstraintLayout) itemView.findViewById(R.id.community_main);
+            button1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
+                    Bundle args = new Bundle();
+                    args.putDouble("Bundle_num", num);
+
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     try {
                         Class t = Class.forName("com.bluebird.inhak.woninfo.Community.Board3.BoardViewFragment3");
-                        //Class t = Class.forName("com.example.inhak.woninfo."+"A09"+"Fragment"+".A09"+"Fragment");
                         Fragment fragment = (Fragment)t.newInstance();
+                        fragment.setArguments(args);
+
                         fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
                         fragmentTransaction.add(R.id.main_fragment_container, fragment);
                         fragmentTransaction.addToBackStack(null);
@@ -77,6 +84,7 @@ public class BoardListAdapter3 extends RecyclerView.Adapter<BoardListAdapter3.Bo
                     }catch(Exception e) {}
                 }
             });
+            title = (TextView)itemView.findViewById(R.id.community_list_item_title);
             content = (TextView)itemView.findViewById(R.id.community_list_item_content);
         }
     }

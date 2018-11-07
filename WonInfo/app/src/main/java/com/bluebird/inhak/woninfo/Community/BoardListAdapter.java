@@ -1,3 +1,4 @@
+/*
 package com.bluebird.inhak.woninfo.Community;
 
 import android.support.annotation.NonNull;
@@ -72,3 +73,4 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
         });
     }
 }
+*/

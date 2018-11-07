@@ -83,7 +83,7 @@ public class CommunityMainFragment extends Fragment{
             public void onClick(View v) {
                 FragmentManager testlistview = getFragmentManager();
                 Fragment fragment = null;
-                fragment = new BoardListFragment4();
+               // fragment = new BoardListFragment4();
                 loadFragment(fragment);
 
             }

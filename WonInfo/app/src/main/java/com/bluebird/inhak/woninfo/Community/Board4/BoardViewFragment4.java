@@ -1,4 +1,4 @@
-/*
+
 package com.bluebird.inhak.woninfo.Community.Board4;
 
 import android.os.Bundle;
@@ -90,4 +90,4 @@ public class BoardViewFragment4 extends Fragment{
     }
 
 }
-*/
+

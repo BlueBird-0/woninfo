@@ -1,4 +1,4 @@
-/*
+
 package com.bluebird.inhak.woninfo.Community.Board4;
 
 import android.os.Bundle;
@@ -31,6 +31,8 @@ public class BoardListFragment4 extends Fragment{
 
     static  private String[] titles = new String[PAGE_COUNT];
     static  private String[] contents = new String[PAGE_COUNT];
+    static  private int[] nums = new int[PAGE_COUNT];
+
     private BoardListAdapter boardListAdapter4;
     private String Board4;
     private ArrayList<BoardListItem> items = new ArrayList<>();
@@ -45,7 +47,7 @@ public class BoardListFragment4 extends Fragment{
 
         Board4="신입생게시판";
 
-        final BoardListItem item = new BoardListItem("제목","내용");
+        final BoardListItem item = new BoardListItem("제목","내용", 0);
         db.collection("Community").document("게시판").collection(Board4)
                 .orderBy("num", Query.Direction.DESCENDING)
                 .get()
@@ -61,6 +63,7 @@ public class BoardListFragment4 extends Fragment{
 
                                 titles[i] = document.get("title").toString();
                                 contents[i] = document.get("content").toString();
+
 
 
                                 //map. ()
@@ -99,11 +102,11 @@ public class BoardListFragment4 extends Fragment{
         for(int i=0; i<titles.length; i++)
         {
             if( titles[i] != null ) {
-                BoardListItem item = new BoardListItem(titles[i], contents[i]);
+                BoardListItem item = new BoardListItem(titles[i], contents[i], nums[i]);
                 items.add(item);
                 //데이터 추가가 완료되었으면 notifyDataSetChanged() 메서드를 호출해 데이터 변경 체크를 실시합니다.
                 boardListAdapter4.notifyDataSetChanged();
             }
         }
     }
-}*/
+}

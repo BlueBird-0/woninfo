@@ -52,10 +52,12 @@ public class BoardViewFragment2 extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.community_text_comments_profile, container, false);
 
+        Double num = getArguments().getDouble("Bundle_num");
+
         Board2="자유게시판";
 
         db.collection("Community").document("게시판").collection(Board2)
-                .whereEqualTo("num", imsi_num)
+                .whereEqualTo("num", num)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

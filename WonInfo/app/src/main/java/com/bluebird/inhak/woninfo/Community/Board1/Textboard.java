@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -101,15 +102,18 @@ public class Textboard extends Fragment {
                                     date = now;
 
 
+
                                     String msg = editdt.getText().toString();
                                     String msg2 = editdt2.getText().toString();
-                                    Map<String, String> 대나무숲 = new HashMap<>();
+                                    Map<String, Object> 대나무숲 = new HashMap<>();
+                                   // Map<String, Object> 디나무 = new HashMap<>();
 
 
                                     대나무숲.put("title",editdt.getText().toString());
                                     대나무숲.put("content",editdt2.getText().toString());
                                     대나무숲.put("date",date);
-                                    대나무숲.put("num",String.valueOf(nums));
+                                    대나무숲.put("num", nums);
+
                                     Log.d("sibal",""+nums);
 
 
@@ -119,8 +123,9 @@ public class Textboard extends Fragment {
 
                                     //databaseReference.child("message").push().setValue(msg);
                                     //// Add a new document with a generated ID
-                                    db.collection("Community").document("게시판").collection(Board)
-                                            .add(대나무숲)
+                                    CollectionReference collectionReference = db.collection("Community").document("게시판").collection(Board);
+                                           // collectionReference.add(디나무);
+                                            collectionReference.add(대나무숲)
                                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                                 @Override
                                                 public void onSuccess(DocumentReference documentReference) {
@@ -134,6 +139,7 @@ public class Textboard extends Fragment {
                                                     Log.w("test002", "Error adding document", e);
                                                 }
                                             });
+
                                     Log.d("test004", "test : \n");
 
 

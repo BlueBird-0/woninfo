@@ -45,6 +45,7 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
     public void onBindViewHolder(@NonNull BoardListViewHolder holder, int position) {
         holder.title.setText(items.get(position).getTitle());
         holder.content.setText(items.get(position).getContent());
+        holder.num = (items.get(position).getNum());
     }
 
     //데이터 셋의 크기를 리턴해줍니다.
@@ -61,23 +62,26 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
         private TextView title;
         private TextView content;
         ConstraintLayout button1;
-        private int num;
+        private double num;
 
-        public BoardListViewHolder(View itemView){
+        public BoardListViewHolder(final View itemView){
             super(itemView);
             button1 = (ConstraintLayout) itemView.findViewById(R.id.community_main);
             button1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    // 게시글에 데이터 넘겨주는 번들
                     FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
-
+                    Bundle args = new Bundle();
+                    args.putDouble("Bundle_num", num);
 
 
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     try {
                         Class t = Class.forName("com.bluebird.inhak.woninfo.Community.Board1.BoardViewFragment");
                         Fragment fragment = (Fragment)t.newInstance();
+                        fragment.setArguments(args);
+
                         fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
                         fragmentTransaction.add(R.id.main_fragment_container, fragment);
                         fragmentTransaction.addToBackStack(null);

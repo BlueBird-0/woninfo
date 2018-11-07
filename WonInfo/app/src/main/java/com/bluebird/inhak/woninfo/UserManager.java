@@ -148,6 +148,7 @@ public class UserManager {
                 });
 */
         //회원가입
+
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

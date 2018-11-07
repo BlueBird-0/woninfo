@@ -1,4 +1,4 @@
-/*
+
 package com.bluebird.inhak.woninfo.Community.Board4;
 
 
@@ -24,10 +24,10 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
-*/
-/**
- * Created by InHak on 2017-12-31.
- *//*
+
+
+
+
 
 
 public class Textboard4 extends Fragment {
@@ -65,7 +65,7 @@ public class Textboard4 extends Fragment {
                 //db에 insert시켜준다
 
                 editdt = (EditText)view.findViewById(R.id.editText2);
-                editdt2 = (EditText)view.findViewById(R.id.editText4);
+                editdt2 = (EditText)view.findViewById(R.id.community_market_editText4);
                 date = now;
                 String msg = editdt.getText().toString();
                 Map<String, String> 신입생게시판 = new HashMap<>();
@@ -107,4 +107,4 @@ public class Textboard4 extends Fragment {
         return view;
     }
 }
-*/
+
