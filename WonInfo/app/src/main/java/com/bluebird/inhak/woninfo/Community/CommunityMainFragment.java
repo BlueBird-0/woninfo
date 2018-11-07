@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bluebird.inhak.woninfo.Community.Board1.BoardListFragment;
+import com.bluebird.inhak.woninfo.Community.Board2.BoardListFragment2;
+import com.bluebird.inhak.woninfo.Community.Board3.BoardListFragment3;
 import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A24Fragment.A24Fragment;
 import com.bluebird.inhak.woninfo.R;
@@ -51,7 +55,7 @@ public class CommunityMainFragment extends Fragment{
             public void onClick(View v) {
                 FragmentManager fragmentManager = getFragmentManager();
                 Fragment fragment = null;
-                fragment = new BoardListFragment1();
+                fragment = new BoardListFragment();
                 loadFragment(fragment);
 
             }
@@ -79,7 +83,7 @@ public class CommunityMainFragment extends Fragment{
             public void onClick(View v) {
                 FragmentManager testlistview = getFragmentManager();
                 Fragment fragment = null;
-                fragment = new BoardListFragment4();
+               // fragment = new BoardListFragment4();
                 loadFragment(fragment);
 
             }
@@ -113,11 +117,11 @@ public class CommunityMainFragment extends Fragment{
         //switching fragment
         if(fragment != null)
         {
-            getFragmentManager().beginTransaction().addToBackStack(null);
-            getFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.main_fragment_container, fragment)
-                    .commit();
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
+            fragmentTransaction.add(R.id.main_fragment_container, fragment);
+            fragmentTransaction.addToBackStack("menu_community");
+            fragmentTransaction.commit();
             return true;
         }
         return false;

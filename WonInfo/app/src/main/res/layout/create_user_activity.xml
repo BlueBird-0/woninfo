@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/create_layout_main"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/Theme_White"
     tools:layout_editor_absoluteY="81dp">
@@ -40,9 +40,9 @@
         android:id="@+id/create_user_activity_4"
         android:layout_width="wrap_content"
         android:layout_height="41dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/all_shape_roundbox"
         app:layout_constraintBottom_toTopOf="@+id/create_user_activity_1"
@@ -78,7 +78,6 @@
         android:background="@drawable/all_shape_roundbox"
         app:layout_constraintBottom_toTopOf="@+id/create_user_activity_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/create_user_activity_4">
 
@@ -94,10 +93,10 @@
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -161,16 +160,15 @@
         android:id="@+id/create_user_create_btn"
         android:layout_width="0dp"
         android:layout_height="41dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/all_item_cunfirmbtn"
         android:text="가입하기"
         android:textColor="@color/Theme_White"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/create_user_activity_3"
         app:layout_constraintVertical_bias="1.0" />

@@ -74,12 +74,6 @@ public class DictionaryMainFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Context context) {
-        fragmentActivity = (FragmentActivity) context;
-        super.onAttach(context);
-    }
-
-    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.clear();
         inflater.inflate(R.menu.actionbar_menu_community_search, menu);

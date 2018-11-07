@@ -1,43 +1,79 @@
 package com.bluebird.inhak.woninfo;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.Community.CommunityMainFragment;
+import com.bluebird.inhak.woninfo.Dictionary.A02Fragment.A02Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A05Fragment.A05Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A25Fragment.A25Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
 import com.bluebird.inhak.woninfo.Home.HomeMainFragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
+import com.bumptech.glide.Glide;
+import com.google.android.youtube.player.YouTubePlayerFragment;
+import com.google.android.youtube.player.YouTubePlayerSupportFragment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
 import com.kakao.util.KakaoParameterException;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
+
+import java.util.List;
+
+import gun0912.tedbottompicker.TedBottomPicker;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static Context mainContext;
@@ -86,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
 
+        //하단바 설정
         setBottomBar();
 
         // 메인화면
@@ -128,7 +165,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //프레그먼트(ViewFragment)가 열려있을 경우
         else if (getSupportFragmentManager().getBackStackEntryCount() != 0) {
             this.getSupportActionBar().setTitle(R.string.app_name);
-            super.onBackPressed();
+            getSupportFragmentManager().popBackStack();
+            //super.onBackPressed();
+            overridePendingTransition(0, R.anim.slide_close);
         }
         else {
             AlertDialog.Builder d = new AlertDialog.Builder(MainActivity.this);
@@ -151,6 +190,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             d.show();
         }
     }
+
+
 
     public void replaceFragment()
     {
@@ -176,13 +217,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         navigationView.getMenu().clear();
                         if(UserManager.checkLoggedin() == true)
                         {
-
                         //    View main_view = (View)findViewById(R.id.snackbar_view);
                         //    Snackbar snackbar = Snackbar.make(main_view,"로그인 성공",Snackbar.LENGTH_SHORT);
                         //    View snackBarView = snackbar.getView();
                         //    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
                         //    snackbar.show();
                             navigationView.inflateHeaderView(R.layout.nav_header_loggedin);
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                            TextView textView = (TextView)navigationView.getHeaderView(1).findViewById(R.id.nav_text_userid);
+                            final ImageView profilePic = (ImageView)navigationView.getHeaderView(1).findViewById(R.id.nav_btn_profilepic);
+                            textView.setText(user.getDisplayName());
+                            if(user.getPhotoUrl()!=null){
+                            Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(user.getPhotoUrl()).into(profilePic);}
+
+
+                            profilePic.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    UserManager.profielPicSelect(getSupportFragmentManager());
+                                }
+                            });
+
                             navigationView.inflateMenu(R.menu.nav_menu_loggedin);
                         }else
                         {
@@ -223,7 +278,51 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //TOAST
         if (id == R.id.nav_createUser) {
             startActivity(new Intent(getApplicationContext(), CreateUserPopup.class));
-        } else if (id == R.id.nav_update) {
+
+
+
+        }else if(id == R.id.nav_adrace){
+            //TODO 여기 성적확인부분 바꿔야함
+            FrameLayout frameLayout = (FrameLayout) findViewById(R.id.main_fragment_container);
+            WebView webView = new WebView(MainActivity.this);
+            CookieSyncManager cookieSyncManager = CookieSyncManager.createInstance(webView.getContext());
+            CookieManager cookieManager = CookieManager.getInstance();
+            cookieManager.setAcceptCookie(true);
+            cookieManager.removeSessionCookie();
+            cookieManager.removeAllCookie();
+            cookieSyncManager.sync();
+
+            WebSettings settings = webView.getSettings();
+            settings.setJavaScriptEnabled(true);
+            //settings.setLoadWithOverviewMode(true);
+            settings.setUseWideViewPort(true);
+            settings.setSupportZoom(true);
+            settings.setBuiltInZoomControls(true);
+            settings.setDisplayZoomControls(false);
+            settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+            settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+            //settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+            settings.setDomStorageEnabled(true);
+            settings.setJavaScriptCanOpenWindowsAutomatically(true);
+
+            settings.setSaveFormData(true);
+            settings.setAppCacheEnabled(true);
+            settings.setDatabaseEnabled(true);
+            settings.setDomStorageEnabled(true);webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+            webView.setScrollbarFadingEnabled(true);
+            webView.setWebChromeClient(new WebChromeClient());
+            webView.setWebViewClient(new WebViewClient());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+            } else {
+                webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+            }
+            webView.setInitialScale(300);
+            webView.setX((float)0.5);
+            webView.loadUrl("http://hyunta.xyz/");
+            frameLayout.addView(webView);
+        }
+        else if (id == R.id.nav_update) {
             navUpdate();
         } else if (id == R.id.nav_tutorial) {
             navTutorial();
@@ -247,17 +346,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             snackbar.show();
         }
         else if(id==R.id.nav_logout){
-            startActivity(new Intent(getApplicationContext(), PopupLogout.class));
+            UserManager.logoutUser();
+            this.replaceNavigation();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
-
-
 
     public void navUpdate()
     {
@@ -348,10 +444,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d("여기가", "실행됨");
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
+                Uri resultUri = result.getUri();
+                UserManager.profilePicUpdate(resultUri);   Log.d("여기가", "결과Uri전달");
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                Exception error = result.getError();
+            }
+        }
+    }
+
     //bottom_bar 하단바 설정
     private void setBottomBar() {
         final BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
         BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
+        bottomNavigationView.findViewById(R.id.bottom_bar_menu_home).callOnClick();
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

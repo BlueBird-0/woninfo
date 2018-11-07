@@ -25,19 +25,22 @@
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="59dp"
-                android:layout_height="54dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/community_board_title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_profile" />
 
             <TextView
-                android:id="@+id/a_26_text01"
+                android:id="@+id/community_board_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="10dp"
+                android:text=""
                 android:textColor="@color/Theme_Blue"
                 android:textSize="@dimen/menubigtitle_size"
                 android:textStyle="bold"
@@ -45,7 +48,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/a_26_text02"
+                android:id="@+id/community_board_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
@@ -57,19 +60,21 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/a_26_text03"
+                android:id="@+id/community_board_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="68dp"
+                android:layout_marginBottom="30dp"
                 android:textColor="@color/Theme_Black"
                 android:textSize="@dimen/list_item_bigtitle_size"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/community_board_content"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/community_board_content"
+                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
             <TextView
-                android:id="@+id/a_26_text04"
+                android:id="@+id/community_board_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"

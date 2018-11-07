@@ -3,13 +3,22 @@ package com.bluebird.inhak.woninfo.Community;
 public class BoardListItem {
     private String title;
     private String content;
+    private double num;
     private int like = 0;
     private int newContent;
     private int image;
 
-    public BoardListItem(String title, String content) {
+    public BoardListItem(String title, String content, double num) {
         this.title = title;
         this.content = content;
+        this.num = num;
+    }
+
+    public double getNum() {
+        return num;
+    }
+    public void setNum(double num) {
+        this.num = num;
     }
 
     public String getTitle() {

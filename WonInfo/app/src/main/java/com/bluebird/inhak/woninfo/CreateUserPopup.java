@@ -74,10 +74,12 @@ public class CreateUserPopup extends AppCompatActivity
 
                     Log.d("test001", email.getText().toString());
                     Log.d("test001", password.getText().toString());
+                    Log.d("test001",nickname.getText().toString());
 
                     UserManager.checkLoggedin();
                     UserManager.logoutUser();
-                    UserManager.createUser(email.getText().toString(), password.getText().toString());
+                    UserManager.createUser(email.getText().toString(), password.getText().toString(), nickname.getText().toString());
+
 
                     UserManager.checkLoggedin();
                     Log.d("test001", "asdsd");
@@ -95,6 +97,7 @@ public class CreateUserPopup extends AppCompatActivity
                                             "12")
                                     .build();
                     */
+                    finish();
 
                 }
             }

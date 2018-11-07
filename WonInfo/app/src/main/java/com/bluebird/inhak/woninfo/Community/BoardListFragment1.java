@@ -1,3 +1,4 @@
+/*
 package com.bluebird.inhak.woninfo.Community;
 
 import android.os.Bundle;
@@ -136,4 +137,4 @@ public class BoardListFragment1 extends Fragment {
             }
         }
     }
-}
+}*/
