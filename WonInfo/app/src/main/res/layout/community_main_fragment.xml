@@ -45,7 +45,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/community_main_text1"
             app:srcCompat="@drawable/ic_bamboo"
-            android:tint="@color/Theme_Gray" />
+            android:tint="@color/listbtn1" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -84,7 +84,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_free_community"
-            android:tint="@color/Theme_Gray" />
+            android:tint="@color/listbtn1" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -124,7 +124,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_market"
-            android:tint="@color/Theme_Gray"/>
+            android:tint="@color/listbtn1"/>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -161,7 +161,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_car"
-            android:tint="@color/Theme_Gray"/>
+            android:tint="@color/listbtn1"/>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -200,7 +200,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_speaker_2"
-            android:tint="@color/Theme_Gray" />
+            android:tint="@color/listbtn1" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -239,7 +239,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_bbs"
-            android:tint="@color/Theme_Gray"/>
+            android:tint="@color/listbtn1"/>
 
     </android.support.constraint.ConstraintLayout>
 
