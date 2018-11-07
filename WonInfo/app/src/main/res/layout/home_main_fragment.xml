@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:clickable="true"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:clickable="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -144,7 +144,7 @@
         android:layout_height="36dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/all_ripple_click_smallbtn"
         android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -183,7 +183,7 @@
 
 
     </android.support.constraint.ConstraintLayout>
-   
+
 
     <TextView
         android:id="@+id/a_25_text01"
@@ -207,197 +207,12 @@
     </cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/home_layout_btn1"
+        android:id="@+id/community_market_box"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:clickable="true"
-        android:background="@drawable/all_ripple_click_roundbox"
-        app:layout_constraintEnd_toStartOf="@+id/home_layout_btn2"
-        app:layout_constraintHeight_percent="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autoViewPager"
-        app:layout_constraintWidth_percent="0.45">
-
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="64dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.363"
-            app:srcCompat="@drawable/ic_small_calendar" />
-
-        <TextView
-            android:id="@+id/home_main_fragment_text_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="학사일정"
-            android:textColor="@color/Theme_Blue"
-            android:textSize="@dimen/bigtitle_size"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
-
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/home_layout_btn2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/all_ripple_click_roundbox"
-        android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.2"
-        app:layout_constraintTop_toBottomOf="@+id/autoViewPager"
-        app:layout_constraintWidth_percent="0.45">
-
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="64dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.222"
-            app:srcCompat="@drawable/ic_speaker" />
-
-        <TextView
-            android:id="@+id/home_main_fragment_text_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="공지"
-            android:textColor="@color/Theme_Blue"
-            android:textSize="@dimen/bigtitle_size"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView11" />
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/home_layout_btn3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="228dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/all_ripple_click_roundbox"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/home_layout_btn4"
-        app:layout_constraintHeight_percent="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_layout_btn1"
-        app:layout_constraintWidth_percent="0.45">
-
-        <ImageView
-            android:id="@+id/imageView12"
-            android:layout_width="64dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.222"
-            app:srcCompat="@drawable/ic_gps" />
-
-        <TextView
-            android:id="@+id/home_main_fragment_text_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="캠퍼스지도"
-            android:textColor="@color/Theme_Blue"
-            android:textSize="@dimen/bigtitle_size"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView12"
-            app:layout_constraintVertical_bias="0.0" />
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/home_layout_btn4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        android:background="@drawable/all_ripple_click_roundbox"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.2"
-        app:layout_constraintTop_toBottomOf="@+id/home_layout_btn2"
-        app:layout_constraintWidth_percent="0.45">
-
-        <ImageView
-            android:id="@+id/imageView13"
-            android:layout_width="64dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.222"
-            app:srcCompat="@drawable/ic_hall" />
-
-        <TextView
-            android:id="@+id/home_main_fragment_text_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="학생회관"
-            android:textColor="@color/Theme_Blue"
-            android:textSize="@dimen/bigtitle_size"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-    </android.support.constraint.ConstraintLayout>
-
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoViewPager" />
     </android.support.constraint.ConstraintLayout>

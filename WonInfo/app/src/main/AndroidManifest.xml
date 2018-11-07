@@ -55,6 +55,10 @@
         <activity android:name="com.bluebird.inhak.woninfo.CreateUserPopup"
             android:theme="@style/DialogTheme" >
         </activity>
+        <activity android:name="com.bluebird.inhak.woninfo.PopupLogout"
+            android:theme="@style/DialogTheme" >
+        </activity>
+
 
 
         <meta-data

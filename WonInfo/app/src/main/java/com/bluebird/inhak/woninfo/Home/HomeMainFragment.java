@@ -90,10 +90,10 @@ public class HomeMainFragment extends Fragment{
             }
         });
 
-        ConstraintLayout mainBotton1=(ConstraintLayout)v.findViewById(R.id.home_layout_btn1);
-        ConstraintLayout mainBotton2=(ConstraintLayout)v.findViewById(R.id.home_layout_btn2);
-        ConstraintLayout mainBotton3=(ConstraintLayout)v.findViewById(R.id.home_layout_btn3);
-        ConstraintLayout mainBotton4=(ConstraintLayout)v.findViewById(R.id.home_layout_btn4);
+        ConstraintLayout mainBotton1=(ConstraintLayout)v.findViewById(R.id.home_layout_smallbtn1);
+        ConstraintLayout mainBotton2=(ConstraintLayout)v.findViewById(R.id.home_layout_smallbtn2);
+        ConstraintLayout mainBotton3=(ConstraintLayout)v.findViewById(R.id.home_layout_smallbtn3);
+        ConstraintLayout mainBotton4=(ConstraintLayout)v.findViewById(R.id.home_layout_smallbtn4);
 
 
 

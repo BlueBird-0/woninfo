@@ -52,7 +52,7 @@ public class UserManager {
         if (mAuthListener != null) {
             auth.removeAuthStateListener(mAuthListener);
         }
-
+        ((MainActivity)mainContext).replaceNavigation();
     }
 
 

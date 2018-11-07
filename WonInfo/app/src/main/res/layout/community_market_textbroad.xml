@@ -93,16 +93,18 @@
         app:layout_constraintTop_toBottomOf="@+id/community_market_editText4" />
 
     <Button
-        android:id="@+id/textboard_write_btn"
+        android:id="@+id/market_textboard_write_btn"
         android:layout_width="197dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@color/Theme_Red"
-        android:onClick="mOnPopupClick"
+        android:background="@drawable/all_item_cunfirmbtn"
         android:text="글쓰기"
         android:textColor="@color/Theme_White"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout5" />
