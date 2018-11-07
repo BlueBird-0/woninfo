@@ -51,10 +51,10 @@ public class HomeMainFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.home_main_fragment, container, false);
-        button1 = (ConstraintLayout) v.findViewById(R.id.home_layout_btn1);
-        button2 = (ConstraintLayout) v.findViewById(R.id.home_layout_btn2);
-        button3 = (ConstraintLayout) v.findViewById(R.id.home_layout_btn3);
-        button4 = (ConstraintLayout) v.findViewById(R.id.home_layout_btn4);
+        button1 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn1);
+        button2 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn2);
+        button3 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn3);
+        button4 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn4);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,10 +149,10 @@ public class HomeMainFragment extends Fragment {
             }
         });
 
-        ConstraintLayout mainBotton1 = (ConstraintLayout) v.findViewById(R.id.home_layout_btn1);
-        ConstraintLayout mainBotton2 = (ConstraintLayout) v.findViewById(R.id.home_layout_btn2);
-        ConstraintLayout mainBotton3 = (ConstraintLayout) v.findViewById(R.id.home_layout_btn3);
-        ConstraintLayout mainBotton4 = (ConstraintLayout) v.findViewById(R.id.home_layout_btn4);
+        ConstraintLayout mainBotton1 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn1);
+        ConstraintLayout mainBotton2 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn2);
+        ConstraintLayout mainBotton3 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn3);
+        ConstraintLayout mainBotton4 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn4);
 
 
         mainBotton1.setOnClickListener(new View.OnClickListener() {
