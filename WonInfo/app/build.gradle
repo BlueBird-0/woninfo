@@ -70,7 +70,6 @@ dependencies {
     //권한 관리 라이브러리
     implementation 'gun0912.ted:tedpermission:2.2.2'
 
-
 }
 
 

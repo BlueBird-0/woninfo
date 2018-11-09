@@ -24,8 +24,6 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
     private ArrayList<BoardListItem> items;
     private MainActivity mainActivity;
 
-
-
     // 적절한 생성자를 제공합니다(데이터 집합의 종류에 따라 다름
     public BoardListAdapter(ArrayList<BoardListItem> items, MainActivity mainActivity)
     {

@@ -2,10 +2,12 @@
 package com.bluebird.inhak.woninfo.Community.Board1;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -27,18 +29,16 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Map;
 
-public class BoardListFragment extends Fragment{
+public class BoardListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
     // TODO 여기 String 으로 옮겨야함
-    static int PAGE_COUNT = 9;  //한페이지에 보여주는 게시글 수
+    static int PAGE_COUNT = 10;  //한페이지에 보여주는 게시글 수
+    static int PAGE_NUMBER = 0;     //현재 페이지 번호
 
-    static  private String[] titles = new String[PAGE_COUNT];
-    static  private String[] contents = new String[PAGE_COUNT];
-    static  private double[] nums = new double[PAGE_COUNT];
     private BoardListAdapter boardListAdapter;
-    private Menu CreateText;
-    private String Board;
-    private ArrayList<BoardListItem> items = new ArrayList<>();
+    private SwipeRefreshLayout swipeRefresh;
+    private ArrayList<BoardListItem> boardListItems = new ArrayList<>();
     private View view;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -49,43 +49,93 @@ public class BoardListFragment extends Fragment{
         view = inflater.inflate(R.layout.community_list_fragment, container, false);
         setHasOptionsMenu(true);
 
-        ArrayList<BoardListItem> boardlist = new ArrayList();
-        Board="대나무숲";
+        swipeRefresh = view.findViewById(R.id.community_layout_refrash);
+        swipeRefresh.setOnRefreshListener(this);
 
-        final BoardListItem item = new BoardListItem("제목","내용", 0);
+        final long startTime = System.currentTimeMillis();   Log.d("comunity","측정시작");      //TODO 게시글 시간 측정
+        //option count 가져오는 부분
+        db.collection("Community").document("게시판").collection("대나무숲")
+                .document("option").get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        double option_count = task.getResult().getDouble("count");
+                        Log.d("comunity", "총 게시글 수 : "+ option_count);
 
-        db.collection("Community").document("게시판").collection(Board)
-                .orderBy("num", Query.Direction.DESCENDING)
+                        // 게시글 가져오는 부분
+                        db.collection("Community").document("게시판").collection("대나무숲")
+                                .limit(PAGE_COUNT)
+                                .whereLessThan("num", option_count-(PAGE_COUNT*PAGE_NUMBER))
+                                .orderBy("num", Query.Direction.DESCENDING)
+                                .get()
+                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        if (task.isSuccessful()) {
+                                            for (DocumentSnapshot document : task.getResult()) {
+                                                //Map<String,Object> map = document.getData();
+                                                String title = document.get("title").toString();
+                                                String content = document.get("content").toString();
+                                                Double num = document.getDouble("num");
+                                                BoardListItem item = new BoardListItem(title, content, num);
+                                                boardListItems.add(item);
+                                            }
+                                            long endTime = System.currentTimeMillis();   Log.d("comunity","측정끝");      //TODO 게시글 시간 측정
+                                            Log.d("comunity", "게시글 불러오는 데 걸리는 시간 (ms):"+(endTime-startTime));
+                                        } else {
+                                            Log.w("comunity", "Error getting documents.", task.getException());
+                                        }
+                                        setRecyclerView();
+                                    }
+                                });
+                    }
+                });
+
+                /*
+        db.collection("Community").document("게시판").collection("대나무숲")
+                .limit(PAGE_COUNT)
+                .whereGreaterThanOrEqualTo("num", 5)
+  //              .orderBy("num", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            int i = 0;
                             for (DocumentSnapshot document : task.getResult()) {
-                                Log.d("test003", document.getId() + " => " + document.getData());
                                 //Map<String,Object> map = document.getData();
-                                titles[i] = document.get("title").toString();
-                                contents[i] = document.get("content").toString();
-                                nums[i] = document.getDouble("num");
-                                //nums[i] = Integer.parseInt(document.get("num").toString());
-                                //map. ()
-                                //item.setContent(document.getData().toString());
-                                i++;
+                                String title = document.get("title").toString();
+                                String content = document.get("content").toString();
+                                Double num = document.getDouble("num");
+                                BoardListItem item = new BoardListItem(title, content, num);
+                                boardListItems.add(item);
                             }
                         } else {
-                            Log.w("test003", "Error getting documents.", task.getException());
+                            Log.w("comunity", "Error getting documents.", task.getException());
                         }
-                        setRecyclerView();
+                        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.community_recycler_list);
+                        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
+                        recyclerView.setLayoutManager(linearLayoutManager);
+
+                        boardListAdapter = new BoardListAdapter(boardListItems,(MainActivity) getActivity());
+                        recyclerView.setAdapter(boardListAdapter);
+                        //setRecyclerView();
                     }
-                });
-        boardlist.add(item);
-
-
+                });*/
 
         return view;
     }
 
+    @Override
+    public void onRefresh() {
+        Log.d("comunity", "onRefresh");
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                swipeRefresh.setRefreshing(false);
+                //loadData();
+            }
+        }, 2000);
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -101,10 +151,6 @@ public class BoardListFragment extends Fragment{
                 Fragment fragment = null;
                 fragment = new Textboard();
                 loadFragment(fragment);
-
-
-
-
                 return false;
             }
         });
@@ -112,24 +158,22 @@ public class BoardListFragment extends Fragment{
     }
 
     private void setRecyclerView(){
-        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.community_listView);
+        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.community_recycler_list);
         //각 Item들이 RecyclerView 의 전체 크기를 변경하지 않는다면
         //setHasFixedSize() 함수를 사용해서 성능을 개선할 수 있습니다.
         //변경될 가능성이 있다면 false로, 없다면 true를 설정해주세요
         recyclerView.setHasFixedSize(true);
         //RecyclerView에 Adapter를 설정해줍니다.
-        boardListAdapter = new BoardListAdapter(items,(MainActivity) getActivity());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        boardListAdapter = new BoardListAdapter(boardListItems,(MainActivity) getActivity());
         recyclerView.setAdapter(boardListAdapter);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        Log.d("test001", "여기 실행 되나요?");
-        setData();
+        //setData();
     }
 
+    /*
     private void setData(){
         items.clear();
-        Log.d("test001", "dlkandklasndansdlk : " + titles[0]);
         //RecyclerView 에 들어갈 데이터를 추가합니다.
         for(int i=0; i<titles.length; i++)
         {
@@ -140,7 +184,7 @@ public class BoardListFragment extends Fragment{
                 boardListAdapter.notifyDataSetChanged();
             }
         }
-    }
+    }*/
 
     private boolean loadFragment(Fragment fragment)
     {

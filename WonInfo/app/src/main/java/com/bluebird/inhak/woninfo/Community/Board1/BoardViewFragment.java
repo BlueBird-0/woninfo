@@ -51,11 +51,6 @@ public class BoardViewFragment extends Fragment{
     private TextView editdt3;
     private TextView editdt4;
 
-
-
-
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -63,6 +58,7 @@ public class BoardViewFragment extends Fragment{
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         user.getDisplayName();
         Double num = getArguments().getDouble("Bundle_num");
+
 
         Board="대나무숲";
 
