@@ -238,7 +238,7 @@ public class UserManager {
         //패스워드 체크
 
         //사용자에게 확인 메일 보내기
-        /*
+/*
         firebaseUser.sendEmailVerification()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -259,6 +259,21 @@ public class UserManager {
                         if (task.isSuccessful()) {
                             Log.d("test001", "--------------회원가입 성공----------------");
                             FirebaseUser user = auth.getCurrentUser();
+
+
+                            user.sendEmailVerification()
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(task.isSuccessful())
+                                            {
+                                                Log.d("test031", "Email sent.");
+                                            }
+                                            else{
+                                                Log.d("test031","Email failed.");
+                                            }
+                                        }
+                                    });
 
                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                                     .setDisplayName(nickname)

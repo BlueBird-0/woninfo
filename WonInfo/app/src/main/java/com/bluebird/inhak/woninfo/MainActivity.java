@@ -63,6 +63,7 @@ import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 import com.kakao.kakaolink.KakaoLink;
@@ -96,6 +97,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+
+        String token =  FirebaseInstanceId.getInstance().getToken();
+        Log.d("test031",token);
+
 
         replaceNavigation();
         //TODO 로그인 버튼이랑 로그아웃 버튼 <- 실행시 바로 실행되도록 수정필요함
@@ -470,6 +475,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Fragment fragment = null;
                 switch (item.getItemId()) {
                     case R.id.bottom_bar_menu_community:
+                        // 인학아 소정이 공부 안함 혼내줘야 할듯
                         if (FRAGMENT_STATE != COMMUNITY_PAGE) {
                             fragment = new CommunityMainFragment();
                             FRAGMENT_STATE = COMMUNITY_PAGE;

@@ -69,6 +69,7 @@ dependencies {
     implementation'com.theartofdev.edmodo:android-image-cropper:2.6.+'
     //권한 관리 라이브러리
     implementation 'gun0912.ted:tedpermission:2.2.2'
+    implementation 'com.google.firebase:firebase-messaging:15.0.2'
 
 
 }
