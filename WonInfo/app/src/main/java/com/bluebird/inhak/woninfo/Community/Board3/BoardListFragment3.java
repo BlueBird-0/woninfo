@@ -113,7 +113,7 @@ public class BoardListFragment3 extends Fragment{
         super.onCreateOptionsMenu(menu, inflater);
     }
     private void setRecyclerView(){
-        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.community_listView);
+        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.community_recycler_list);
         //각 Item들이 RecyclerView 의 전체 크기를 변경하지 않는다면
         //setHasFixedSize() 함수를 사용해서 성능을 개선할 수 있습니다.
         //변경될 가능성이 있다면 false로, 없다면 true를 설정해주세요

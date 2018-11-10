@@ -1,6 +1,7 @@
 
 package com.bluebird.inhak.woninfo.Community.Board1;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,10 +11,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.R;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.ImageViewTarget;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,8 +43,6 @@ public class BoardViewFragment extends Fragment{
     static private FirebaseAuth.AuthStateListener mAuthListener;
 
 
-
-
     private BoardListAdapter boardListAdapter;
     private String Board;
     private ArrayList<BoardListItem> items = new ArrayList<>();
@@ -51,18 +53,14 @@ public class BoardViewFragment extends Fragment{
     private TextView editdt3;
     private TextView editdt4;
 
-
-
-
-
-
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.community_text_comments_profile, container, false);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         user.getDisplayName();
         Double num = getArguments().getDouble("Bundle_num");
+
 
         Board="대나무숲";
 
@@ -74,6 +72,17 @@ public class BoardViewFragment extends Fragment{
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot document : task.getResult()) {
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                ImageView imageView = (ImageView)view.findViewById(R.id.community_board_poto);
+
+
+                                Log.d("test040", user.getPhotoUrl().toString());
+
+
+                            if(user.getPhotoUrl() != null)
+                                Glide.with(getActivity()).load(user.getPhotoUrl()).into(imageView);
+
+
                                 Log.d("test123", "여기 실행");
                                 titles = document.get("title").toString();
                                 contents = document.get("content").toString();

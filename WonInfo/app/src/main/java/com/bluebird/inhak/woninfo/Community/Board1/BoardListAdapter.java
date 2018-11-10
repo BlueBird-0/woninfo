@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
@@ -24,8 +26,6 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
     private ArrayList<BoardListItem> items;
     private MainActivity mainActivity;
 
-
-
     // 적절한 생성자를 제공합니다(데이터 집합의 종류에 따라 다름
     public BoardListAdapter(ArrayList<BoardListItem> items, MainActivity mainActivity)
     {
@@ -37,6 +37,8 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
     @Override
     public BoardListAdapter.BoardListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.community_list_item, parent, false);
+        //ConstraintLayout linearLayout = (ConstraintLayout) view.findViewById(R.id.community_main);
+        //linearLayout.addView(new Button(parent.getContext()));
         return new BoardListViewHolder(view);
     }
 

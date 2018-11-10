@@ -71,7 +71,6 @@ dependencies {
     implementation 'gun0912.ted:tedpermission:2.2.2'
     implementation 'com.google.firebase:firebase-messaging:15.0.2'
 
-
 }
 
 
