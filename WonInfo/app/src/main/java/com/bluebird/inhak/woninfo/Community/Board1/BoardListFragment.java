@@ -17,6 +17,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.MainActivity;
@@ -45,7 +47,7 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.community_list_fragment, container, false);
         setHasOptionsMenu(true);
 
@@ -167,7 +169,6 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         boardListAdapter = new BoardListAdapter(boardListItems,(MainActivity) getActivity());
         recyclerView.setAdapter(boardListAdapter);
-
         //setData();
     }
 

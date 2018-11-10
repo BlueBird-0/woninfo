@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
@@ -35,6 +37,8 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
     @Override
     public BoardListAdapter.BoardListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.community_list_item, parent, false);
+        //ConstraintLayout linearLayout = (ConstraintLayout) view.findViewById(R.id.community_main);
+        //linearLayout.addView(new Button(parent.getContext()));
         return new BoardListViewHolder(view);
     }
 
