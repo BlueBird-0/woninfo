@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -92,38 +93,6 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
                                 });
                     }
                 });
-
-                /*
-        db.collection("Community").document("게시판").collection("대나무숲")
-                .limit(PAGE_COUNT)
-                .whereGreaterThanOrEqualTo("num", 5)
-  //              .orderBy("num", Query.Direction.DESCENDING)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (DocumentSnapshot document : task.getResult()) {
-                                //Map<String,Object> map = document.getData();
-                                String title = document.get("title").toString();
-                                String content = document.get("content").toString();
-                                Double num = document.getDouble("num");
-                                BoardListItem item = new BoardListItem(title, content, num);
-                                boardListItems.add(item);
-                            }
-                        } else {
-                            Log.w("comunity", "Error getting documents.", task.getException());
-                        }
-                        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.community_recycler_list);
-                        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
-                        recyclerView.setLayoutManager(linearLayoutManager);
-
-                        boardListAdapter = new BoardListAdapter(boardListItems,(MainActivity) getActivity());
-                        recyclerView.setAdapter(boardListAdapter);
-                        //setRecyclerView();
-                    }
-                });*/
-
         return view;
     }
 
@@ -141,6 +110,7 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
         menu.clear();
         inflater.inflate(R.menu.actionbar_menu_community_edit, menu);
 
@@ -148,15 +118,17 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
         editItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Log.d("test031","헿 여기 눌렀다능");
-                FragmentManager fragmentManager = getFragmentManager();
-                Fragment fragment = null;
-                fragment = new Textboard();
-                loadFragment(fragment);
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                Fragment fragment = new Textboard();
+
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
+                fragmentTransaction.add(R.id.main_fragment_container, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
                 return false;
             }
         });
-        super.onCreateOptionsMenu(menu, inflater);
     }
 
     private void setRecyclerView(){
@@ -169,6 +141,7 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         boardListAdapter = new BoardListAdapter(boardListItems,(MainActivity) getActivity());
         recyclerView.setAdapter(boardListAdapter);
+        recyclerView.setNestedScrollingEnabled(false);
         //setData();
     }
 

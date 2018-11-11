@@ -7,8 +7,12 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -51,18 +55,14 @@ public class Textboard extends Fragment {
     private String option;
     private Double nums;
 
-
-
-
     @Nullable
     @Override
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.community_textboard, container, false);
+        final View view = inflater.inflate(R.layout.community_write2_fragment, container, false);
+        setHasOptionsMenu(true);
 
-
-
-        sendbt = (Button)view.findViewById(R.id.textboard_write_btn);
+        sendbt = (Button)view.findViewById(R.id.write2_button_confirm);
         sendbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,7 +98,7 @@ public class Textboard extends Fragment {
                                     //db에 insert시켜준다
 
                                     editdt = (EditText) view.findViewById(R.id.editText2);
-                                    editdt2 = (EditText) view.findViewById(R.id.community_market_editText4);
+                                    editdt2 = (EditText) view.findViewById(R.id.write2_edit_content);
                                     date = now;
 
 
@@ -139,11 +139,6 @@ public class Textboard extends Fragment {
                                                     Log.w("test002", "Error adding document", e);
                                                 }
                                             });
-
-                                    Log.d("test004", "test : \n");
-
-
-
 
                                 } else {
                                     Log.d(TAG, "No such document");
@@ -188,6 +183,12 @@ public class Textboard extends Fragment {
 
 
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
     }
 
     private boolean loadFragment(Fragment fragment)

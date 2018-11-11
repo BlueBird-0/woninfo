@@ -98,7 +98,7 @@ public class Textboard2 extends Fragment {
                                     //db에 insert시켜준다
 
                                     editdt = (EditText) view.findViewById(R.id.editText2);
-                                    editdt2 = (EditText) view.findViewById(R.id.community_market_editText4);
+                                    editdt2 = (EditText) view.findViewById(R.id.write2_edit_content);
                                     date = now;
 
 

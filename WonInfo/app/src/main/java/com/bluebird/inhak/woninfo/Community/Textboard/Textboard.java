@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -80,7 +79,7 @@ public class Textboard extends Fragment {
                     //db에 insert시켜준다
 
                     editdt = (EditText) view.findViewById(R.id.editText2);
-                    editdt2 = (EditText) view.findViewById(R.id.community_market_editText4);
+                    editdt2 = (EditText) view.findViewById(R.id.write2_edit_content);
                     date = now;
 
                     String msg = editdt.getText().toString();

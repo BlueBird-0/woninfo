@@ -14,7 +14,7 @@
 
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/a_26_box0"
+            android:id="@+id/comminity_board1_layout"
             android:layout_width="0dp"
             android:layout_height="125dp"
             android:background="@drawable/box"
@@ -94,7 +94,7 @@
                 app:srcCompat="@drawable/ic_chat" />
 
             <TextView
-                android:id="@+id/a_26_text05"
+                android:id="@+id/community_board1_commentcount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="360dp"
@@ -117,7 +117,7 @@
             android:background="@drawable/box"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/a_26_box0">
+            app:layout_constraintTop_toBottomOf="@+id/comminity_board1_layout">
 
             <ImageView
                 android:id="@+id/imageView9"

@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.bluebird.inhak.woninfo.Community.Board2.BoardListAdapter2;
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -50,7 +49,7 @@ public class BoardViewFragment2 extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.community_text_comments_profile, container, false);
+        view = inflater.inflate(R.layout.community_item_document, container, false);
 
         Double num = getArguments().getDouble("Bundle_num");
 
@@ -69,9 +68,9 @@ public class BoardViewFragment2 extends Fragment{
                                 contents = document.get("content").toString();
                                 dates = document.get("date").toString();
 
-                                editdt =  (TextView) view.findViewById(R.id.community_board_title);
-                                editdt2 = (TextView) view.findViewById(R.id.community_board_content);
-                                editdt3 = (TextView) view.findViewById(R.id.community_board_date);
+                                editdt =  (TextView) view.findViewById(R.id.community_board1_title);
+                                editdt2 = (TextView) view.findViewById(R.id.community_board1_content);
+                                editdt3 = (TextView) view.findViewById(R.id.community_board1_date);
 
                                 Log.d("test300", titles);
                                 Log.d("test300", contents);
