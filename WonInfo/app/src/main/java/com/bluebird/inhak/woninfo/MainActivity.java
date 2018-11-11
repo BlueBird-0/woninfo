@@ -98,8 +98,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 
-        String token =  FirebaseInstanceId.getInstance().getToken();
-        Log.d("test031",token);
+        //String token =  FirebaseInstanceId.getInstance().getToken();Log.d("test031",token);
 
 
         replaceNavigation();

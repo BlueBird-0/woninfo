@@ -50,7 +50,7 @@ public class BoardViewFragment3 extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.community_text_comments_profile, container, false);
+        view = inflater.inflate(R.layout.community_item_document, container, false);
 
         Board3="자유시장";
 
@@ -67,9 +67,9 @@ public class BoardViewFragment3 extends Fragment{
                                 contents = document.get("content").toString();
                                 dates = document.get("date").toString();
 
-                                editdt =  (TextView) view.findViewById(R.id.community_board_title);
-                                editdt2 = (TextView) view.findViewById(R.id.community_board_content);
-                                editdt3 = (TextView) view.findViewById(R.id.community_board_date);
+                                editdt =  (TextView) view.findViewById(R.id.community_board1_title);
+                                editdt2 = (TextView) view.findViewById(R.id.community_board1_content);
+                                editdt3 = (TextView) view.findViewById(R.id.community_board1_date);
 
                                 Log.d("test100", titles);
 
