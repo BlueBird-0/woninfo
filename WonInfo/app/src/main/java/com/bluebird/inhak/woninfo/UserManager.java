@@ -34,6 +34,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.gun0912.tedonactivityresult.TedOnActivityResult;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 
@@ -78,16 +79,18 @@ public class UserManager {
                         .setOnImageSelectedListener(new TedBottomPicker.OnImageSelectedListener() {
                             @Override
                             public void onImageSelected(Uri uri) {
+
                                 //uri 활용
+
                                 CropImage.activity(uri).setAspectRatio(1,1)
+                                        .setRequestedSize(300, 300)
                                         .start((Activity) mainContext);
+
 
                             }
                         })
                       .create();
-
                 bottomPicker.show(fragmentManager);
-
             }
             @Override
             public void onPermissionDenied(List<String> deniedPermissions) {
@@ -100,6 +103,25 @@ public class UserManager {
                 .setDeniedMessage("왜 거부하셨어요...\n하지만 [설정] > [권한] 에서 권한을 허용할 수 있어요.")
                 .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
                 .check();
+    }
+
+    static public void profilePicDelete(){
+        // Create a storage reference from our app
+        // StorageReference storageRef = storage.getReference();
+        // Create a reference to the file to delete
+        //StorageReference desertRef = storageRef.child("images/desert.jpeg");
+        // Delete the file
+        storage.getReferenceFromUrl(firebaseUser.getPhotoUrl().toString()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("test031","사진삭제 완료");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                Log.d("test031","사진삭제 실패");
+            }
+        });
     }
 
     //프로필사진 firebase 업로드 및 업데이트
@@ -122,6 +144,9 @@ public class UserManager {
                 final ImageView profilePic = (ImageView)((Activity)mainContext).getWindow().getDecorView().getRootView().findViewById(R.id.nav_btn_profilepic);
                 final Uri downloadUrl = taskSnapshot.getDownloadUrl();
                 Log.d("test098", downloadUrl.toString());
+
+                profilePicDelete();
+
                 UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                         .setPhotoUri(downloadUrl)
                         .build();
@@ -130,7 +155,11 @@ public class UserManager {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful()){
-                                    Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(user.getPhotoUrl()).into(profilePic);
+
+                                    Glide.with(((Activity)mainContext)
+                                            .getWindow().getDecorView().getRootView())
+                                            .load(user.getPhotoUrl())
+                                            .into(profilePic);
 
                                     Log.d("test098",user.getPhotoUrl().toString());
                                 }
@@ -238,7 +267,7 @@ public class UserManager {
         //패스워드 체크
 
         //사용자에게 확인 메일 보내기
-        /*
+/*
         firebaseUser.sendEmailVerification()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -259,6 +288,21 @@ public class UserManager {
                         if (task.isSuccessful()) {
                             Log.d("test001", "--------------회원가입 성공----------------");
                             FirebaseUser user = auth.getCurrentUser();
+
+
+                            user.sendEmailVerification()
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(task.isSuccessful())
+                                            {
+                                                Log.d("test031", "Email sent.");
+                                            }
+                                            else{
+                                                Log.d("test031","Email failed.");
+                                            }
+                                        }
+                                    });
 
                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                                     .setDisplayName(nickname)

@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -73,7 +72,7 @@ public class Textboard2 extends Fragment {
                 String now = year + "-" + month + "-" + day + "\n" + hour + ":" + min + ":" + sec;
 
                 editdt = (EditText)view.findViewById(R.id.editText2);
-                editdt2 = (EditText)view.findViewById(R.id.community_market_editText4);
+                editdt2 = (EditText)view.findViewById(R.id.write2_edit_content);
                 date = now;
                 String msg = editdt.getText().toString();
                 Map<String, String> 자유게시판 = new HashMap<>();

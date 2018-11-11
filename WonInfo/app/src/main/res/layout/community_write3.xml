@@ -14,24 +14,20 @@
 
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/community_board_profile"
+            android:id="@+id/community_board1_profile"
             android:layout_width="0dp"
-            android:layout_height="125dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/box"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="8dp"
+                android:id="@+id/community_board_poto"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="13dp"
-                android:layout_marginBottom="33dp"
-                app:layout_constraintBottom_toTopOf="@+id/a_26_content"
-                app:layout_constraintEnd_toStartOf="@+id/a_26_text01"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_profile" />
@@ -40,28 +36,26 @@
                 android:id="@+id/a_26_text01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="226dp"
                 android:text="멍충멍충"
                 android:textColor="@color/Theme_Blue"
                 android:textSize="@dimen/menubigtitle_size"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView7"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/community_board_poto"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/a_26_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="time"
                 android:textColor="@color/Theme_Gray"
                 android:textSize="@dimen/bigtitle_size"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -69,52 +63,48 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="68dp"
+                android:layout_marginTop="5dp"
+                android:text="title"
                 android:textColor="@color/Theme_Black"
                 android:textSize="@dimen/list_item_bigtitle_size"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/community_board_poto" />
 
             <TextView
                 android:id="@+id/a_26_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="95dp"
                 android:layout_marginBottom="9dp"
+                android:text="content"
                 android:textColor="@color/Theme_Black"
                 android:textSize="@dimen/bigtitle_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+                app:layout_constraintTop_toBottomOf="@+id/a_26_title" />
 
             <ImageView
                 android:id="@+id/a_26_comment"
                 android:layout_width="0dp"
                 android:layout_height="21dp"
-                android:layout_marginStart="330dp"
-                android:layout_marginBottom="2dp"
-                app:layout_constraintBottom_toBottomOf="@+id/a_26_text05"
-                app:layout_constraintEnd_toStartOf="@+id/a_26_text05"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/community_board1_commentcount"
+                app:layout_constraintEnd_toStartOf="@+id/community_board1_commentcount"
                 app:srcCompat="@drawable/ic_chat" />
 
             <TextView
-                android:id="@+id/a_26_text05"
+                android:id="@+id/community_board1_commentcount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="360dp"
-                android:layout_marginTop="100dp"
                 android:layout_marginEnd="15dp"
+                android:layout_marginBottom="6dp"
                 android:text="2"
                 android:textColor="@color/Theme_Red"
                 android:textSize="@dimen/bigtitle_size"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/a_26_comment"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
 
         </android.support.constraint.ConstraintLayout>
@@ -127,7 +117,7 @@
             android:background="@drawable/box"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/community_board_profile">
+            app:layout_constraintTop_toBottomOf="@+id/community_board1_profile">
 
             <ImageView
                 android:id="@+id/imageView9"
