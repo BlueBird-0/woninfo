@@ -23,11 +23,11 @@
                 <item
                     android:id="@+id/nav_bookmark_soldier1"
                     android:icon="@drawable/ic_soldier"
-                    android:title="설정 (환경설정)" />
+                    android:title="군대휴학 신청" />
                 <item
                     android:id="@+id/nav_bookmark_soldier2"
-                    android:icon="@drawable/ic_settings"
-                    android:title="설정 (환경설정)" />
+                    android:icon="@drawable/ic_soldier"
+                    android:title="예비군" />
             </menu>
         </item>
     </group>

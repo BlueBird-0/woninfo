@@ -120,7 +120,7 @@
             app:layout_constraintTop_toBottomOf="@+id/comminity_board1_layout">
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/community_comment1_profile"
                 android:layout_width="41dp"
                 android:layout_height="38dp"
                 android:layout_marginStart="8dp"
@@ -139,7 +139,7 @@
                 android:textColor="@color/Theme_Blue"
                 android:textSize="@dimen/menubigtitle_size"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                app:layout_constraintStart_toEndOf="@+id/community_comment1_profile"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView

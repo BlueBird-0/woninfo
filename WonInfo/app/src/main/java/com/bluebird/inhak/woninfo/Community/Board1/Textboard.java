@@ -24,6 +24,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -45,8 +47,6 @@ import static android.support.constraint.Constraints.TAG;
 
 
 public class Textboard extends Fragment {
-
-
     private Button sendbt;
     private EditText editdt;
     private EditText editdt2;
@@ -97,46 +97,37 @@ public class Textboard extends Fragment {
 
                                     //db에 insert시켜준다
 
-                                    editdt = (EditText) view.findViewById(R.id.editText2);
+                                    editdt = (EditText) view.findViewById(R.id.write2_edit_title);
                                     editdt2 = (EditText) view.findViewById(R.id.write2_edit_content);
                                     date = now;
-
 
 
                                     String msg = editdt.getText().toString();
                                     String msg2 = editdt2.getText().toString();
                                     Map<String, Object> 대나무숲 = new HashMap<>();
-                                   // Map<String, Object> 디나무 = new HashMap<>();
-
 
                                     대나무숲.put("title",editdt.getText().toString());
                                     대나무숲.put("content",editdt2.getText().toString());
                                     대나무숲.put("date",date);
                                     대나무숲.put("num", nums);
 
-                                    Log.d("sibal",""+nums);
+                                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                    대나무숲.put("id", user.getDisplayName());
+                                    대나무숲.put("uid", user.getUid());
+                                    대나무숲.put("profile", user.getPhotoUrl().toString());
+
+                                    대나무숲.put("comment_count", 0);
+                                    대나무숲.put("like_count", 0);
+                                    //이미지 카운트
+                                    대나무숲.put("image_count", 0);
 
 
-
-
-
-
-                                    //databaseReference.child("message").push().setValue(msg);
-                                    //// Add a new document with a generated ID
                                     CollectionReference collectionReference = db.collection("Community").document("게시판").collection(Board);
-                                           // collectionReference.add(디나무);
                                             collectionReference.add(대나무숲)
                                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                                 @Override
                                                 public void onSuccess(DocumentReference documentReference) {
                                                     Log.d("test002", "DocumentSnapshot added with ID: " + documentReference.getId());
-                                                }
-                                            })
-
-                                            .addOnFailureListener(new OnFailureListener() {
-                                                @Override
-                                                public void onFailure(@NonNull Exception e) {
-                                                    Log.w("test002", "Error adding document", e);
                                                 }
                                             });
 
@@ -157,17 +148,11 @@ public class Textboard extends Fragment {
                             DocumentSnapshot snapshot = transaction.get(Count);
                             double newcheckpoint = snapshot.getDouble("count") + 1;
                             transaction.update(Count, "count", newcheckpoint);
-
                             // Success
                             return null;
                         }
                     });
-
-
-
                 }
-
-
 
                 FragmentManager fragmentManager = getFragmentManager();
                 Fragment fragment = null;

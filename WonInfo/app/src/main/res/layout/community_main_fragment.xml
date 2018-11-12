@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Theme_Beige"
+    android:background="@color/Theme_LightGray"
     tools:layout_editor_absoluteY="25dp">
 
 
@@ -12,8 +12,8 @@
         android:id="@+id/community_main_1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
         android:background="@drawable/all_ripple_click"
         app:layout_constraintHeight_percent="0.2"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,21 +41,21 @@
             android:layout_height="64dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:tint="@color/Theme_Red"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/community_main_text1"
-            app:srcCompat="@drawable/ic_bamboo"
-            android:tint="@color/listbtn1" />
+            app:srcCompat="@drawable/ic_bamboo" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/community_main_2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="2dp"
         android:background="@drawable/all_ripple_click"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,10 +81,10 @@
             android:layout_height="101dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:tint="@color/Theme_Red"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_free_community"
-            android:tint="@color/listbtn1" />
+            app:srcCompat="@drawable/ic_free_community" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -92,10 +92,10 @@
         android:id="@+id/community_main_3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="2dp"
         android:background="@drawable/all_ripple_click"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/community_main_2"
@@ -121,18 +121,18 @@
             android:layout_height="57dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:tint="@color/Theme_Red"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_market"
-            android:tint="@color/listbtn1"/>
+            app:srcCompat="@drawable/ic_market" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/community_main_4"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="1dp"
         android:background="@drawable/all_ripple_click"
         app:layout_constraintHeight_percent="0.20"
         app:layout_constraintStart_toStartOf="parent"
@@ -158,20 +158,20 @@
             android:layout_height="75dp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="4dp"
+            android:tint="@color/Theme_Red"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_car"
-            android:tint="@color/listbtn1"/>
+            app:srcCompat="@drawable/ic_car" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/community_main_5"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="3dp"
         android:background="@drawable/all_ripple_click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/community_main_6"
@@ -197,19 +197,19 @@
             android:layout_height="66dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
+            android:tint="@color/Theme_Red"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_speaker_2"
-            android:tint="@color/listbtn1" />
+            app:srcCompat="@drawable/ic_speaker_2" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/community_main_6"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="3dp"
         android:layout_marginBottom="64dp"
         android:background="@drawable/all_ripple_click"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -236,10 +236,10 @@
             android:layout_height="83dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:tint="@color/Theme_Red"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_bbs"
-            android:tint="@color/listbtn1"/>
+            app:srcCompat="@drawable/ic_bbs" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -248,5 +248,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_begin="255dp" />
 </android.support.constraint.ConstraintLayout>
