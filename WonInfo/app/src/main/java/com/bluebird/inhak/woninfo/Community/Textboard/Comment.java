@@ -7,6 +7,7 @@ public class Comment {
     String writer_uid;
     String writer_photoUri;
     String content;
+    String date;
 
     public void setWriter_uid(String writer_uid) {
         this.writer_uid = writer_uid;
@@ -20,8 +21,11 @@ public class Comment {
         this.content = content;
     }
 
-    public String getWriter_uid() {
+    public String getContent() {
+        return content;
+    }
 
+    public String getWriter_uid() {
         return writer_uid;
     }
 
@@ -29,8 +33,12 @@ public class Comment {
         return writer_photoUri;
     }
 
-    public String getContent() {
-        return content;
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
     }
 
     public Map<String, Object> getHashMap()
@@ -39,6 +47,7 @@ public class Comment {
         map.put("content", content);
         map.put("writer_uid", writer_uid);
         map.put("writer_photoUri", writer_photoUri);
+        map.put("date", date);
         return map;
     }
 }

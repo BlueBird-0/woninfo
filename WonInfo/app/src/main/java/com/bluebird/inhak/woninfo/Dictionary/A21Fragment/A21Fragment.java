@@ -56,13 +56,13 @@ public class A21Fragment extends Fragment {
             public void onClick(View v) {
                 try{
                     PackageManager pm = getActivity().getPackageManager();
-                    pm.getApplicationInfo("mirtech.slima.WONK2", PackageManager.GET_META_DATA);
-                    Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("mirtech.slima.WONK2");
+                    pm.getApplicationInfo("kr.co.libtech.sponge", PackageManager.GET_META_DATA);
+                    Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("kr.co.libtech.sponge");
                     startActivity(launchIntent);
                 }
                 catch (PackageManager.NameNotFoundException e)
                 {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=mirtech.slima.WONK2"));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=kr.co.libtech.sponge"));
                     startActivity(intent);
                 }
             }

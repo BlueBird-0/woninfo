@@ -38,10 +38,6 @@ import java.util.ArrayList;
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 
 public class HomeMainFragment extends Fragment {
-    ConstraintLayout button1;
-    ConstraintLayout button2;
-    ConstraintLayout button3;
-    ConstraintLayout button4;
 
     AutoScrollViewPager autoViewPager;
     static Fragment fragment = null;
@@ -51,49 +47,6 @@ public class HomeMainFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.home_main_fragment, container, false);
-        button1 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn1);
-        button2 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn2);
-        button3 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn3);
-        button4 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn4);
-
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getFragmentManager();
-                Fragment fragment = null;
-                fragment = new A15Fragment();
-                loadFragment(fragment);
-
-            }
-        });
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager2 = getFragmentManager();
-                Fragment fragment = null;
-                fragment = new A08Fragment();
-                loadFragment(fragment);
-            }
-        });
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager3 = getFragmentManager();
-                Fragment fragment = null;
-                fragment = new A08Fragment();
-                loadFragment(fragment);
-            }
-        });
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager testlistview = getFragmentManager();
-                Fragment fragment = null;
-                fragment = new BoardListFragment();
-                loadFragment(fragment);
-
-            }
-        });
 
         //  WebView webView = (WebView)v.findViewById(R.id.youtube_player_view);
         // webView.getSettings().setJavaScriptEnabled(true);
@@ -115,24 +68,26 @@ public class HomeMainFragment extends Fragment {
         autoViewPager.startAutoScroll(); //Auto Scroll 시작
 
 
-        ConstraintLayout topBotton1 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn1);
-        topBotton1.setOnClickListener(new View.OnClickListener() {
+        ConstraintLayout topButton1 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn1);
+        topButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
+                try{
                     PackageManager pm = getActivity().getPackageManager();
                     pm.getApplicationInfo("kr.co.libtech.sponge", PackageManager.GET_META_DATA);
                     Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("kr.co.libtech.sponge");
                     startActivity(launchIntent);
-                } catch (PackageManager.NameNotFoundException e) {
+                }
+                catch (PackageManager.NameNotFoundException e)
+                {
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=kr.co.libtech.sponge"));
                     startActivity(intent);
                 }
             }
         });
 
-        ConstraintLayout topBotton2 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn2);
-        topBotton2.setOnClickListener(new View.OnClickListener() {
+        ConstraintLayout topButton2 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn2);
+        topButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://elibrary.wku.ac.kr/lib/SlimaPlus.csp"));
@@ -140,8 +95,8 @@ public class HomeMainFragment extends Fragment {
             }
         });
 
-        ConstraintLayout topBotton3 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn3);
-        topBotton3.setOnClickListener(new View.OnClickListener() {
+        ConstraintLayout topButton3 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn3);
+        topButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://wvu.wku.ac.kr"));
@@ -149,34 +104,7 @@ public class HomeMainFragment extends Fragment {
             }
         });
 
-        ConstraintLayout mainBotton1 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn1);
-        ConstraintLayout mainBotton2 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn2);
-        ConstraintLayout mainBotton3 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn3);
-        ConstraintLayout mainBotton4 = (ConstraintLayout) v.findViewById(R.id.home_layout_smallbtn4);
 
-
-        mainBotton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                FragmentManager fragmentManager = getFragmentManager();
-                Fragment fragment = null;
-                fragment = new A15Fragment();
-                loadFragment(fragment);
-
-            }
-        });
-
-        mainBotton3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getFragmentManager();
-                Fragment fragment = null;
-                fragment = new A08Fragment();
-                loadFragment(fragment);
-
-            }
-        });
 
 
         return v;

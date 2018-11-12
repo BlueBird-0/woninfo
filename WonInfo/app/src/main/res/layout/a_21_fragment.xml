@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorBackground"
     android:clickable="true"
     android:orientation="vertical">
@@ -28,8 +28,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -44,6 +44,7 @@
                     android:layout_gravity="center"
                     android:text="원광대학교 중앙도서관 홈페이지"
                     android:textColor="@color/colorPrimary" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -79,8 +80,7 @@
                     android:layout_weight="1"
                     android:text="중앙도서관 이용시간"
                     android:textColor="@color/Theme_Black"
-                    android:textSize="@dimen/title_size"
-                    />
+                    android:textSize="@dimen/title_size" />
 
             </RelativeLayout>
 
@@ -113,8 +113,8 @@
                                 android:layout_columnSpan="2"
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
+                                android:layout_marginBottom="1dp"
                                 android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="구 분"
@@ -123,8 +123,8 @@
                             <TextView
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
+                                android:layout_marginBottom="1dp"
                                 android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="자료열람실"
@@ -133,8 +133,8 @@
                             <TextView
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
+                                android:layout_marginBottom="1dp"
                                 android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="중앙도서관(1,2층)\n자유열람실"
@@ -150,11 +150,11 @@
                                 android:textSize="15dp" />
 
                             <TextView
+                                android:layout_rowSpan="2"
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:layout_rowSpan="2"
+                                android:layout_marginBottom="1dp"
                                 android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="학기중"
@@ -163,8 +163,8 @@
                             <TextView
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
+                                android:layout_marginBottom="1dp"
                                 android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="평 일"
@@ -173,29 +173,29 @@
                             <TextView
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
+                                android:layout_marginBottom="1dp"
                                 android:background="@color/colorBackground"
                                 android:gravity="center"
                                 android:text=" 09:00 - 22:00 "
                                 android:textSize="15dp" />
 
                             <TextView
+                                android:layout_rowSpan="2"
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
-                                android:layout_rowSpan="2"
+                                android:layout_marginBottom="1dp"
                                 android:background="@color/colorBackground"
                                 android:gravity="center"
                                 android:text="06:30 - 24:00"
                                 android:textSize="15dp" />
 
                             <TextView
+                                android:layout_rowSpan="2"
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginBottom="1dp"
-                                android:layout_rowSpan="2"
                                 android:background="@color/colorBackground"
                                 android:gravity="center"
                                 android:text="24시간"
@@ -204,8 +204,8 @@
                             <TextView
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
+                                android:layout_marginBottom="1dp"
                                 android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="토요일"
@@ -214,18 +214,18 @@
                             <TextView
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
+                                android:layout_marginBottom="1dp"
                                 android:background="@color/colorBackground"
                                 android:gravity="center"
                                 android:text=" 09:00 - 17:00 "
                                 android:textSize="15dp" />
 
                             <TextView
+                                android:layout_rowSpan="2"
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginRight="1dp"
-                                android:layout_rowSpan="2"
                                 android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="방학중"
@@ -234,8 +234,8 @@
                             <TextView
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
+                                android:layout_marginBottom="1dp"
                                 android:background="@color/Theme_Yellow"
                                 android:gravity="center"
                                 android:text="평 일"
@@ -244,27 +244,27 @@
                             <TextView
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:layout_marginBottom="1dp"
                                 android:layout_marginRight="1dp"
+                                android:layout_marginBottom="1dp"
                                 android:background="@color/colorBackground"
                                 android:gravity="center"
                                 android:text=" 09:00 - 17:00 "
                                 android:textSize="15dp" />
 
                             <TextView
+                                android:layout_rowSpan="2"
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
                                 android:layout_marginRight="1dp"
-                                android:layout_rowSpan="2"
                                 android:background="@color/colorBackground"
                                 android:gravity="center"
                                 android:text="06:30 - 24:00"
                                 android:textSize="15dp" />
 
                             <TextView
+                                android:layout_rowSpan="2"
                                 android:layout_columnWeight="1"
                                 android:layout_gravity="fill"
-                                android:layout_rowSpan="2"
                                 android:background="@color/colorBackground"
                                 android:gravity="center"
                                 android:text="24시간"
@@ -295,19 +295,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/form_margin"
                         android:layout_marginTop="@dimen/form_margin"
                         android:layout_marginBottom="@dimen/form_margin"
-                        android:layout_marginLeft="@dimen/form_margin"
                         android:text="중앙도서관 1층 안내(Infomation)데스크, 6층 고문헌자료실, 6, 7층 보존서고 - 평일 17:20 / 토요일 휴무"
                         android:textColor="@color/colorPrimary" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/form_margin"
                         android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginBottom="@dimen/form_margin"
                         android:text="학생지원관 5층 학술논문실 - 평일 17:20 / 토요일 휴무"
-                        android:textColor="@color/colorPrimary"/>
+                        android:textColor="@color/colorPrimary" />
 
 
                 </LinearLayout>
@@ -371,8 +371,8 @@
                         <TextView
                             android:layout_columnWeight="1"
                             android:layout_gravity="fill"
-                            android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
+                            android:layout_marginBottom="1dp"
                             android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="안내데스크[1층]"
@@ -389,8 +389,8 @@
                         <TextView
                             android:layout_columnWeight="1"
                             android:layout_gravity="fill"
-                            android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
+                            android:layout_marginBottom="1dp"
                             android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text=" 자유열람실[1-2층]"
@@ -403,11 +403,12 @@
                             android:background="@color/colorBackground"
                             android:text=" 06:30 - 24:00 개방"
                             android:textSize="15dp" />
+
                         <TextView
                             android:layout_columnWeight="1"
                             android:layout_gravity="fill"
-                            android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
+                            android:layout_marginBottom="1dp"
                             android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="디지털정보센터[3층]"
@@ -424,8 +425,8 @@
                         <TextView
                             android:layout_columnWeight="1"
                             android:layout_gravity="fill"
-                            android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
+                            android:layout_marginBottom="1dp"
                             android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="인문 예술자료실[4층]"
@@ -442,8 +443,8 @@
                         <TextView
                             android:layout_columnWeight="1"
                             android:layout_gravity="fill"
-                            android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
+                            android:layout_marginBottom="1dp"
                             android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="원불교자료실[4층]"
@@ -460,8 +461,8 @@
                         <TextView
                             android:layout_columnWeight="1"
                             android:layout_gravity="fill"
-                            android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
+                            android:layout_marginBottom="1dp"
                             android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="사회 과학기술자료실[5층]"
@@ -474,11 +475,12 @@
                             android:background="@color/colorBackground"
                             android:text=" 총류, 사회과학, 순수과학, 기술과학, 건축술"
                             android:textSize="15dp" />
+
                         <TextView
                             android:layout_columnWeight="1"
                             android:layout_gravity="fill"
-                            android:layout_marginBottom="1dp"
                             android:layout_marginRight="1dp"
+                            android:layout_marginBottom="1dp"
                             android:background="@color/Theme_Yellow"
                             android:gravity="center"
                             android:text="고문헌자료실[6층]"
@@ -491,6 +493,7 @@
                             android:background="@color/colorBackground"
                             android:text=" 고서 및 족보, 각종 문집류"
                             android:textSize="15dp" />
+
                         <TextView
                             android:layout_columnWeight="1"
                             android:layout_gravity="fill"
@@ -561,28 +564,29 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/form_margin"
                         android:layout_marginLeft="@dimen/form_margin"
                         android:layout_marginTop="@dimen/form_margin"
+                        android:layout_marginBottom="@dimen/form_margin"
                         android:text="중앙 도서관 운영관리팀 (063) 850 - 5444" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/form_margin"
                         android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginBottom="@dimen/form_margin"
                         android:text="E-mail : bu5444@wonkwang.ac.kr" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/form_margin"
                         android:layout_marginLeft="@dimen/form_margin"
+                        android:layout_marginBottom="@dimen/form_margin"
                         android:text="중앙도서관 1층 안내데스크 (063) 850-5464" />
 
                 </LinearLayout>
 
             </com.github.chuross.library.ExpandableLayout>
+
             <include
                 layout="@layout/item_line"
                 android:layout_width="match_parent"

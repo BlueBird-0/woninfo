@@ -59,6 +59,8 @@ import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
 import com.bluebird.inhak.woninfo.Home.HomeMainFragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.google.android.youtube.player.YouTubePlayerFragment;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.firebase.auth.FirebaseAuth;
@@ -229,16 +231,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             navigationView.inflateHeaderView(R.layout.nav_header_loggedin);
                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                             TextView textView = (TextView)navigationView.getHeaderView(1).findViewById(R.id.nav_text_userid);
+                            ImageView imageView=(ImageView) navigationView.getHeaderView(1).findViewById(R.id.imageView_setting);
                             final ImageView profilePic = (ImageView)navigationView.getHeaderView(1).findViewById(R.id.nav_btn_profilepic);
                             textView.setText(user.getDisplayName());
                             if(user.getPhotoUrl()!=null){
-                            Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(user.getPhotoUrl()).into(profilePic);}
 
+                            Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(user.getPhotoUrl()).into(profilePic);}
 
                             profilePic.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
                                     UserManager.profielPicSelect(getSupportFragmentManager());
+                                }
+                            });
+                            imageView.setOnClickListener(new View.OnClickListener(){
+                                @Override
+                                public void onClick(View v) {
+                                    startActivity(new Intent(getApplicationContext(), Setting.class));
                                 }
                             });
 
@@ -331,12 +340,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_tutorial) {
             navTutorial();
         } else if (id == R.id.nav_manage) {
-            UserManager.checkLoggedin();
+            Fragment fragment = new Manage();
+            loadFragment(fragment);
+
+
+
+          /*  UserManager.checkLoggedin();
             View main_view = (View)findViewById(R.id.snackbar_view);
             Snackbar snackbar = Snackbar.make(main_view, "미개발 기능입니다.", Snackbar.LENGTH_SHORT);
             View snackBarView = snackbar.getView();
             snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
             snackbar.show();
+            */
         } else if (id == R.id.nav_share) {
             navShareKakao();
         } else if (id == R.id.nav_send) {
@@ -474,7 +489,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Fragment fragment = null;
                 switch (item.getItemId()) {
                     case R.id.bottom_bar_menu_community:
-                        // 인학아 소정이 공부 안함 혼내줘야 할듯
                         if (FRAGMENT_STATE != COMMUNITY_PAGE) {
                             fragment = new CommunityMainFragment();
                             FRAGMENT_STATE = COMMUNITY_PAGE;
