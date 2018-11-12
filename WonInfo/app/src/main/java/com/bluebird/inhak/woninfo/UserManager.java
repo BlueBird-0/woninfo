@@ -61,8 +61,8 @@ import static android.content.ContentValues.TAG;
 import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
 public class UserManager {
-    static private FirebaseAuth auth;
-    static private FirebaseUser firebaseUser;
+    static public FirebaseAuth auth;
+    static public FirebaseUser firebaseUser;
     static private FirebaseAuth.AuthStateListener mAuthListener;
     static private FirebaseStorage storage;
     static private NavigationView navigationView;
