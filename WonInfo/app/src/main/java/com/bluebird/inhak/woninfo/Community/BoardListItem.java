@@ -1,17 +1,72 @@
 package com.bluebird.inhak.woninfo.Community;
 
-public class BoardListItem {
+import java.io.Serializable;
+
+public class BoardListItem implements Serializable {
+    private String documentId;
+    private double num;
+    private String profileUri;
+    private String id;
+    private String uid;
+
     private String title;
     private String content;
-    private double num;
-    private int like = 0;
-    private int newContent;
-    private int image;
+    private String date;
+    private double imageCount;
+    private double likeCount;
+    private double commentCount;
+
+    public BoardListItem() {
+    }
 
     public BoardListItem(String title, String content, double num) {
         this.title = title;
         this.content = content;
         this.num = num;
+        // null
+        this.documentId = "null";
+        this.profileUri = "null";
+        this.id = "null";
+        this.uid = "null";
+        this.date = "null";
+        this.imageCount = 0;
+        this.likeCount = 0;
+        this.commentCount = 0;
+    }
+
+    public String getDocumentId() {
+        return documentId;
+    }
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
+
+    public String getProfileUri() {
+        return profileUri;
+    }
+    public void setProfileUri(String profileUri) {
+        this.profileUri = profileUri;
+    }
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getDate() {
+        return date;
+    }
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public double getNum() {
@@ -24,40 +79,30 @@ public class BoardListItem {
     public String getTitle() {
         return title;
     }
-
-    public String getContent() {
-        return content;
-    }
-
-    public int getLike() {
-        return like;
-    }
-
-    public int getNewContent() {
-        return newContent;
-    }
-
-    public int getImage() {
-        return image;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public void setContent(String content) {
         this.content = content;
     }
 
-    public void setLike(int like) {
-        this.like = like;
+    public String getContent() {
+        return content;
+    }
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setNewContent(int newContent) {
-        this.newContent = newContent;
+    public double getLikeCount() {
+        return likeCount;
     }
+    public void setLikeCount(double likeCount) { this.likeCount = likeCount; }
 
-    public void setImage(int image) {
-        this.image = image;
+    public double getCommentCount() {
+        return commentCount;
     }
+    public void setCommentCount(double commentCount) { this.commentCount = commentCount; }
+
+    public double getImageCount() {
+        return imageCount;
+    }
+    public void setImageCount(double imageCount) { this.imageCount = imageCount; }
+
 }
