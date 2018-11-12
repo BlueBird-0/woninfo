@@ -14,70 +14,60 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/a_26_box1"
             android:layout_width="0dp"
-            android:layout_height="84dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/box"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/comminity_board1_layout">
 
             <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="8dp"
+                android:id="@+id/community_comment1_profile"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_profile" />
 
             <TextView
-                android:id="@+id/a_26_text06"
+                android:id="@+id/community_comment1_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="인학쓰"
-                android:textColor="@color/Theme_Blue"
-                android:textSize="@dimen/menubigtitle_size"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/imageView9"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/a_26_text07"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="55dp"
-                android:text="대학로 수선집 우리집으로 오세용"
+                android:text="comment_id"
                 android:textColor="@color/Theme_Black"
-                android:textSize="@dimen/bigtitle_size"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="@dimen/font_14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/community_comment1_profile"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/a_26_text08"
+                android:id="@+id/community_comment1_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="290dp"
-                android:layout_marginTop="10dp"
-                android:text="10/01 19:22"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="comment_content"
                 android:textColor="@color/Theme_Gray"
                 android:textSize="@dimen/bigtitle_size"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="41dp"
-                android:layout_height="38dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/community_comment1_profile" />
 
-
+            <TextView
+                android:id="@+id/community_comment1_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="12dp"
+                android:text="10/01 19:22"
+                android:textColor="@color/Theme_Gray"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </android.support.constraint.ConstraintLayout>

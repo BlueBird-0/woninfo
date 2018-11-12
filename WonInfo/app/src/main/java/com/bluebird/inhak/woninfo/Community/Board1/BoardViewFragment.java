@@ -11,6 +11,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.util.ObjectsCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -27,6 +29,7 @@ import android.widget.TextView;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.Community.Textboard.Comment;
+import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -60,9 +63,10 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
 
     private BoardListItem args; //bundle
 
-    private BoardListAdapter boardListAdapter;
+    private CommentListAdapter commentListAdapter;
+    private ArrayList<Comment> commentItems = new ArrayList<>();
+
     private String Board;
-    private ArrayList<BoardListItem> items = new ArrayList<>();
     private View view;
     private SwipeRefreshLayout swipeRefresh;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -93,6 +97,33 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
         TextView commentCount= (TextView) view.findViewById(R.id.community_board1_commentcount);
         commentCount.setText(String.valueOf((int)args.getCommentCount()));
 
+
+        /* 댓글 recyclerView */
+        RecyclerView commentRecycler = view.findViewById(R.id.community_recycler_list);
+        commentRecycler.setHasFixedSize(true);
+        //RecyclerView에 Adapter를 설정해줍니다.
+
+        for ( int i=0; i<10; i++)
+        {
+            Comment comment = new Comment();
+            comment.setContent("내용"+i);
+            comment.setDate("여기 날자");
+            comment.setWriter_uid("작성자"+i);
+            comment.setWriter_photoUri("헤헿");
+            commentItems.add(comment);
+        }
+        commentRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        commentListAdapter = new CommentListAdapter(commentItems,(MainActivity)getActivity());
+        commentRecycler.setAdapter(commentListAdapter);
+        commentRecycler.setNestedScrollingEnabled(false);
+        double imageCount = args.getImageCount();
+
+        /*
+        for(;imageCount<0; imageCount--)
+        {
+        }*/
+
+
         //댓글 기능 추가
         this.setCommentFunction();
         return view;
@@ -111,7 +142,6 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                     Log.d("test040","값이 없습니다.");
                     return;
                 }
-
                 Comment comment = new Comment();
                 comment.setContent(commentEdit.getText().toString());
                 comment.setWriter_uid(firebaseUser.getUid());
@@ -131,7 +161,6 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                 View snackBarView = snackbar.getView();
                 snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
                 snackbar.show();
-
             }
         });
     }
