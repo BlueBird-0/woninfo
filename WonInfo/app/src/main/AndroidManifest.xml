@@ -46,6 +46,13 @@
         <activity android:name="com.bluebird.inhak.woninfo.LoginActivity"
             android:theme="@style/DialogTheme" >
         </activity>
+        <activity android:name="com.bluebird.inhak.woninfo.Setting"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.bluebird.inhak.woninfo.SettingAlam"
+        android:screenOrientation="portrait" >
+    </activity>
+
 
         <activity android:name="com.bluebird.inhak.woninfo.Popup01Activity"
             android:theme="@style/DialogTheme" >

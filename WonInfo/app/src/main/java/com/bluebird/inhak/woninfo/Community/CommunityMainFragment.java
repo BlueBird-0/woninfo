@@ -5,9 +5,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +25,9 @@ import com.bluebird.inhak.woninfo.Community.Board3.BoardListFragment3;
 import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A24Fragment.A24Fragment;
 import com.bluebird.inhak.woninfo.R;
+import com.bluebird.inhak.woninfo.UserManager;
+
+import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
 public class CommunityMainFragment extends Fragment{
     ConstraintLayout button1;
@@ -40,7 +45,7 @@ public class CommunityMainFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.community_main_fragment, container, false);
+        final View view = inflater.inflate(R.layout.community_main_fragment, container, false);
         setHasOptionsMenu(true);
 
         button1 = (ConstraintLayout)view.findViewById(R.id.community_main_1);
@@ -53,58 +58,114 @@ public class CommunityMainFragment extends Fragment{
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(UserManager.checkLoggedin()==true){
                 FragmentManager fragmentManager = getFragmentManager();
                 Fragment fragment = null;
                 fragment = new BoardListFragment();
-                loadFragment(fragment);
+                loadFragment(fragment);}
+                else{
+
+                    View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "로그인 후 이용가능합니다.", Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
+                }
 
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(UserManager.checkLoggedin()==true){
                 FragmentManager fragmentManager2 = getFragmentManager();
                 Fragment fragment = null;
                 fragment = new BoardListFragment2();
-                loadFragment(fragment);
+                loadFragment(fragment);}
+                else{
+
+                    View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "로그인 후 이용가능합니다.", Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
+                }
+
+
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(UserManager.checkLoggedin()==true){
                 FragmentManager fragmentManager3 = getFragmentManager();
                 Fragment fragment = null;
                 fragment = new BoardListFragment3();
-                loadFragment(fragment);
+                loadFragment(fragment);}
+                else{
+
+                    View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "로그인 후 이용가능합니다.", Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
+                }
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(UserManager.checkLoggedin()==true){
                 FragmentManager testlistview = getFragmentManager();
                 Fragment fragment = null;
                // fragment = new BoardListFragment4();
-                loadFragment(fragment);
+                loadFragment(fragment);}
+                else{
+
+                    View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "로그인 후 이용가능합니다.", Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
+                }
 
             }
         });
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(UserManager.checkLoggedin()==true){
                 FragmentManager a_15_fragment = getFragmentManager();
                 Fragment fragment = null;
                 fragment = new A15Fragment();
-                loadFragment(fragment);
+                loadFragment(fragment);}
+                else{
+
+                    View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "로그인 후 이용가능합니다.", Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
+                }
 
             }
         });
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(UserManager.checkLoggedin()==true){
                 FragmentManager a_24_fragment = getFragmentManager();
                 Fragment fragment = null;
                 fragment = new A24Fragment();
-                loadFragment(fragment);
+                loadFragment(fragment);}
+                else{
+
+                    View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "로그인 후 이용가능합니다.", Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
+                }
 
             }
         });
