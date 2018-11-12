@@ -19,24 +19,29 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class BoardListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
     // TODO 여기 String 으로 옮겨야함
-    static int PAGE_COUNT = 10;  //한페이지에 보여주는 게시글 수
+    static int PAGE_COUNT = 20;  //한페이지에 보여주는 게시글 수
     static int PAGE_NUMBER = 0;     //현재 페이지 번호
 
     private BoardListAdapter boardListAdapter;
@@ -55,22 +60,29 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
         swipeRefresh = view.findViewById(R.id.community_layout_refrash);
         swipeRefresh.setOnRefreshListener(this);
 
-        final long startTime = System.currentTimeMillis();   Log.d("comunity","측정시작");      //TODO 게시글 시간 측정
+        //실행시 새로고침 실행
+        swipeRefresh.setRefreshing(true);
+        this.onRefresh();
         //option count 가져오는 부분
+
+        /*
         db.collection("Community").document("게시판").collection("대나무숲")
                 .document("option").get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        double option_count = task.getResult().getDouble("count");
+                        final double option_count = task.getResult().getDouble("count");
                         Log.d("comunity", "총 게시글 수 : "+ option_count);
-
+*/
                         // 게시글 가져오는 부분
+        /*
                         db.collection("Community").document("게시판").collection("대나무숲")
-                                .limit(PAGE_COUNT)
-                                .whereLessThan("num", option_count-(PAGE_COUNT*PAGE_NUMBER))
+                                .limit(PAGE_COUNT * (PAGE_NUMBER*PAGE_COUNT))
                                 .orderBy("num", Query.Direction.DESCENDING)
+                                //.whereLessThan("num", option_count-(PAGE_COUNT*PAGE_NUMBER))
+                                //.whereLessThan("num", PAGE_COUNT)
                                 .get()
+
                                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                     @Override
                                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -80,7 +92,14 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
                                                 String title = document.get("title").toString();
                                                 String content = document.get("content").toString();
                                                 Double num = document.getDouble("num");
+
                                                 BoardListItem item = new BoardListItem(title, content, num);
+                                                item.setId(document.getString("id"));
+                                                item.setUid(document.getString("uid"));
+                                                item.setDate(document.getString("date"));
+                                                item.setCommentCount(document.getDouble("comment_count"));
+                                                item.setLikeCount(document.getDouble("like_count"));
+                                                item.setImageCount(document.getDouble("image_count"));
                                                 boardListItems.add(item);
                                             }
                                             long endTime = System.currentTimeMillis();   Log.d("comunity","측정끝");      //TODO 게시글 시간 측정
@@ -90,22 +109,64 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
                                         }
                                         setRecyclerView();
                                     }
-                                });
+                                });*/
+                        /*
                     }
                 });
+                */
+
         return view;
     }
 
     @Override
     public void onRefresh() {
         Log.d("comunity", "onRefresh");
-        new Handler().postDelayed(new Runnable() {
+        final long startTime = System.currentTimeMillis();   Log.d("comunity","측정시작");      //TODO 게시글 시간 측정
+        new Handler().post(new Runnable() {
             @Override
             public void run() {
-                swipeRefresh.setRefreshing(false);
-                //loadData();
+                db.collection("Community").document("게시판").collection("대나무숲")
+                        //.limit(PAGE_COUNT)
+                        .limit(PAGE_COUNT*(PAGE_NUMBER+1))
+                        .orderBy("num", Query.Direction.DESCENDING)
+                        //.whereLessThan("num", option_count-(PAGE_COUNT*PAGE_NUMBER))
+                        //.whereLessThan("num", PAGE_COUNT)
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    boardListItems.clear(); //원래 리스트 삭제
+
+                                    int index = 0;
+                                    for (DocumentSnapshot document : task.getResult()) {
+                                        BoardListItem item = new BoardListItem();
+                                        item.setDocumentId(document.getId());
+                                        item.setTitle(document.get("title").toString());
+                                        item.setContent(document.get("content").toString());
+                                        item.setNum(document.getDouble("num"));
+                                        item.setId(document.getString("id"));
+                                        item.setUid(document.getString("uid"));
+                                        item.setDate(document.getString("date"));
+                                        item.setCommentCount(document.getDouble("comment_count"));
+                                        item.setLikeCount(document.getDouble("like_count"));
+                                        item.setImageCount(document.getDouble("image_count"));
+
+                                        boardListItems.add(item);
+                                        if( index++ > PAGE_COUNT) break;
+                                    }
+                                    long endTime = System.currentTimeMillis();   Log.d("comunity","측정끝");      //TODO 게시글 시간 측정
+                                    Log.d("comunity", "게시글 불러오는 데 걸리는 시간 (ms):"+(endTime-startTime));
+                                } else {
+                                    Log.w("comunity", "Error getting documents.", task.getException());
+                                }
+                                setRecyclerView();
+                                swipeRefresh.setRefreshing(false);
+                                Log.d("comunity", "새로고침 완료");
+                            }
+                        });
             }
-        }, 2000);
+        });
     }
 
     @Override
@@ -144,21 +205,6 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
         recyclerView.setNestedScrollingEnabled(false);
         //setData();
     }
-
-    /*
-    private void setData(){
-        items.clear();
-        //RecyclerView 에 들어갈 데이터를 추가합니다.
-        for(int i=0; i<titles.length; i++)
-        {
-            if( titles[i] != null ) {
-                BoardListItem item = new BoardListItem(titles[i], contents[i], nums[i]);
-                items.add(item);
-                //데이터 추가가 완료되었으면 notifyDataSetChanged() 메서드를 호출해 데이터 변경 체크를 실시합니다.
-                boardListAdapter.notifyDataSetChanged();
-            }
-        }
-    }*/
 
     private boolean loadFragment(Fragment fragment)
     {

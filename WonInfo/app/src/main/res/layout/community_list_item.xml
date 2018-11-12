@@ -32,99 +32,85 @@
 
     <TextView
         android:id="@+id/community_list_item_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="2dp"
+        android:layout_marginEnd="8dp"
         android:text="title"
+        android:singleLine="true"
         android:textColor="@color/Theme_Black"
+        app:layout_constraintEnd_toStartOf="@+id/community_list_item_image"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
-
-    <TextView
-
-        android:id="@+id/textView23"
-
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="8dp"
-
-        android:layout_marginBottom="8dp"
-        android:layout_weight="1"
-        android:text=""
-        android:textAlignment="center"
-        android:textColor="@color/Theme_Blue"
-        android:textSize="@dimen/list_item_bigtitle_size"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.0" />
 
 
     <TextView
         android:id="@+id/community_list_item_content"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="content"
+        android:singleLine="true"
         android:textColor="@color/Theme_Gray"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/community_list_item_comment"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/community_list_item_title"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/community_list_item_image"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginBottom="4dp"
+        android:tint="@color/Theme_Gray"
+        app:layout_constraintBottom_toTopOf="@+id/community_list_item_likecount"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:srcCompat="@drawable/ic_picture"
-        android:tint="@color/Theme_Gray"/>
+        app:srcCompat="@drawable/ic_picture" />
 
     <ImageView
-        android:id="@+id/community_list_item_new"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
+        android:id="@+id/community_list_item_comment"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
         android:layout_marginEnd="3dp"
         android:tint="@color/Theme_Blue"
         app:layout_constraintBottom_toBottomOf="@+id/community_list_item_content"
-        app:layout_constraintEnd_toStartOf="@+id/community_list_item_comment2"
+        app:layout_constraintEnd_toStartOf="@+id/community_list_item_commentcount"
+        app:layout_constraintTop_toTopOf="@+id/community_list_item_commentcount"
         app:srcCompat="@drawable/ic_comment" />
 
     <TextView
-        android:id="@+id/community_list_item_comment2"
+        android:id="@+id/community_list_item_commentcount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="0"
         android:textColor="@color/Theme_Blue"
-        app:layout_constraintBottom_toBottomOf="@+id/community_list_item_content"
-        app:layout_constraintEnd_toStartOf="@+id/community_list_item_comment" />
+        app:layout_constraintBottom_toBottomOf="@+id/community_list_item_likecount"
+        app:layout_constraintEnd_toStartOf="@+id/community_list_img_like" />
 
     <ImageView
-        android:id="@+id/community_list_item_comment"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
+        android:id="@+id/community_list_img_like"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
         android:layout_marginEnd="3dp"
         android:tint="@color/Theme_Red"
         app:layout_constraintBottom_toBottomOf="@+id/community_list_item_content"
-        app:layout_constraintEnd_toStartOf="@+id/community_list_item_like"
+        app:layout_constraintEnd_toStartOf="@+id/community_list_item_likecount"
+        app:layout_constraintTop_toTopOf="@+id/community_list_item_likecount"
         app:srcCompat="@drawable/ic_like" />
 
     <TextView
-        android:id="@+id/community_list_item_like"
+        android:id="@+id/community_list_item_likecount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
         android:text="0"
         android:textColor="@color/Theme_Red"
-        app:layout_constraintBaseline_toBaselineOf="@+id/community_list_item_content"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintEnd_toStartOf="@+id/guideline3" />
 
     <FrameLayout
