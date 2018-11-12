@@ -1,27 +1,23 @@
-package com.bluebird.inhak.woninfo;
+package com.bluebird.inhak.woninfo.Popup;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 
-public class PopupLogout extends AppCompatActivity {
+import com.bluebird.inhak.woninfo.R;
+import com.bluebird.inhak.woninfo.UserManager;
 
-
+/*public class PopupWritesuccess extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //타이틀바 없애기
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.popup_logout);
+        setContentView(R.layout.popup_write);
 
-        Button button1 = findViewById(R.id.popup_logout_canclebtn);
+        Button button1 = findViewById(R.id.popup_write_canclebtn);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,16 +26,15 @@ public class PopupLogout extends AppCompatActivity {
             }
         });
 
-        Button button2 = findViewById(R.id.popup_logout_okbtn);
+        Button button2 = findViewById(R.id.popup_write_okbtn);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               UserManager.logoutUser();
-               finish();
+                finish();
 
             }
         });
+
     }
 }
-
-
+*/

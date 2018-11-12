@@ -47,7 +47,7 @@
             android:theme="@style/DialogTheme" >
         </activity>
 
-        <activity android:name="com.bluebird.inhak.woninfo.Popup01Activity"
+        <activity android:name="com.bluebird.inhak.woninfo.Popup.Popup01Activity"
             android:theme="@style/DialogTheme" >
         </activity>
 
@@ -58,10 +58,13 @@
         <activity android:name="com.bluebird.inhak.woninfo.CreateUserPopup"
             android:theme="@style/DialogTheme" >
         </activity>
-        <activity android:name="com.bluebird.inhak.woninfo.PopupLogout"
+        <activity android:name="com.bluebird.inhak.woninfo.Popup.PopupLogout"
             android:theme="@style/DialogTheme" >
         </activity>
-
+        <!--activity android:name="com.bluebird.inhak.woninfo.Popup.PopupWritesuccess"
+            android:theme="@style/DialogTheme" >
+        </activity-->
+        <!--HS_font-->
 
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat"/>

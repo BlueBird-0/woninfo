@@ -68,6 +68,9 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
 
         db.collection("Community").document("게시판").collection(Board)
                 .whereEqualTo("num", num)   //////////////////// 여기 시발놈
+
+
+
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

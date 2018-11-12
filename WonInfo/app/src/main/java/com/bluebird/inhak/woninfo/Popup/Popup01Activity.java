@@ -1,4 +1,4 @@
-package com.bluebird.inhak.woninfo;
+package com.bluebird.inhak.woninfo.Popup;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.FrameLayout;
+
+import com.bluebird.inhak.woninfo.R;
 
 /**
  * Created by InHak on 2017-12-31.

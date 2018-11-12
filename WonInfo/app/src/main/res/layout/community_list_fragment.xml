@@ -37,7 +37,7 @@
                 android:layout_below="@+id/community_layout_refrash"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:background="#ffff00"
+                android:background="#FFFFFF"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/community_layout_refrash">
@@ -47,6 +47,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/all_item_cunfirmbtn"
+                    android:textColor="@color/Theme_White"
+                    android:textStyle="bold"
                     android:text="왼쪽" />
 
                 <TextView
@@ -89,6 +92,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/all_item_loggedinbtn"
+                    android:textColor="@color/Theme_White"
+                    android:textStyle="bold"
                     android:text="오른쪽" />
             </LinearLayout>
 
