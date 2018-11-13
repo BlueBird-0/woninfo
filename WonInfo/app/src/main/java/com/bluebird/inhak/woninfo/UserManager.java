@@ -65,8 +65,8 @@ import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 import static com.bluebird.inhak.woninfo.WebViewFragment.view;
 
 public class UserManager {
-    static private FirebaseAuth auth;
-    static private FirebaseUser firebaseUser;
+    static public FirebaseAuth auth;
+    static public FirebaseUser firebaseUser;
     static private FirebaseAuth.AuthStateListener mAuthListener;
     static private FirebaseStorage storage;
     static private NavigationView navigationView;

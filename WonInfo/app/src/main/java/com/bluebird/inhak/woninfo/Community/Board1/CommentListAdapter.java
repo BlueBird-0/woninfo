@@ -46,11 +46,14 @@ public class CommentListAdapter extends RecyclerView.Adapter<CommentListAdapter.
     //View 의 내용을 해당 포지션의 데이터로 바꿈니다.
     @Override
     public void onBindViewHolder(@NonNull CommentListViewHolder holder, int position) {
+        Log.d("test040", "여기도 실행1.0");
         holder.item = new Comment();
         holder.item.setWriter_photoUri(items.get(position).getWriter_photoUri());
         holder.item.setWriter_uid(items.get(position).getWriter_uid());
+        holder.item.setWriter_id(items.get(position).getWriter_id());
         holder.item.setContent(items.get(position).getContent());
         holder.item.setDate(items.get(position).getDate());
+        Log.d("test040", "여기도 실행1");
         holder.DrawItem();  //리스트 안에 아이템 그림그리기 함수
     }
 
@@ -69,36 +72,13 @@ public class CommentListAdapter extends RecyclerView.Adapter<CommentListAdapter.
 
         public CommentListViewHolder(final View itemView){
             super(itemView);
-            /*
-            ConstraintLayout button1 = (ConstraintLayout) itemView.findViewById(R.id.community_main);
-            button1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // 게시글에 데이터 넘겨주는 번들 --------------------------------
-                    // args 에 넣어서 값 전달.
-                    Bundle args = new Bundle();
-                    args.putSerializable("Bundle", item);
-
-                    FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    try {
-                        Class t = Class.forName("com.bluebird.inhak.woninfo.Community.Board1.BoardViewFragment");
-                        Fragment fragment = (Fragment)t.newInstance();
-                        fragment.setArguments(args);
-
-                        fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
-                        fragmentTransaction.add(R.id.main_fragment_container, fragment);
-                        fragmentTransaction.addToBackStack(null);
-                        fragmentTransaction.commit();
-                    }catch(Exception e) {}
-                }
-            });*/
         }
 
         public void DrawItem()
         {
+            Log.d("test040", "여기도 실행2");
             TextView id = (TextView)itemView.findViewById(R.id.community_comment1_id);
-            id.setText(item.getWriter_uid());
+            id.setText(item.getWriter_id());
             TextView content= (TextView)itemView.findViewById(R.id.community_comment1_content);
             content.setText(item.getContent());
             TextView date = (TextView)itemView.findViewById(R.id.community_comment1_date);

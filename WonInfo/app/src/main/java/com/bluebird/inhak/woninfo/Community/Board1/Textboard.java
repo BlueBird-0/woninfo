@@ -33,6 +33,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
@@ -85,14 +86,9 @@ public class Textboard extends Fragment {
                                     nums = document.getDouble("count");
 
                                     GregorianCalendar calendar = new GregorianCalendar();
-                                    int year = calendar.get(Calendar.YEAR);
-                                    int month = calendar.get(Calendar.MONTH);
-                                    int day = calendar.get(Calendar.DAY_OF_MONTH);
-                                    int hour = calendar.get(Calendar.HOUR_OF_DAY);
-                                    int min = calendar.get(Calendar.MINUTE);
-                                    int sec = calendar.get(Calendar.SECOND);
-                                    //변수에 각각의 값을 담아주고
-                                    String now = year + "-" + month + "-" + day + "\n" + hour + ":" + min + ":" + sec;
+                                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-dd-MM\nhh:mm");
+                                    String now = dateFormat.format(calendar.getTime());
+                                    Log.d("community", "글 작성 시간 : "+now);
 
 
                                     //db에 insert시켜준다
