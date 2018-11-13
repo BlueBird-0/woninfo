@@ -31,6 +31,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseNetworkException;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -59,6 +62,7 @@ import gun0912.tedbottompicker.TedBottomPicker;
 import static android.app.Activity.RESULT_OK;
 import static android.content.ContentValues.TAG;
 import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
+import static com.bluebird.inhak.woninfo.WebViewFragment.view;
 
 public class UserManager {
     static private FirebaseAuth auth;
@@ -193,7 +197,7 @@ public class UserManager {
         };
         auth.signInWithEmailAndPassword(email,password);
         auth.addAuthStateListener(mAuthListener);
-    }
+   }
 
     //로그아웃
     static public void logoutUser() {
@@ -202,6 +206,11 @@ public class UserManager {
             auth.removeAuthStateListener(mAuthListener);
         }
         ((MainActivity)mainContext).replaceNavigation();
+        View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
+        Snackbar snackbar = Snackbar.make(main_view, "로그아웃 성공", Snackbar.LENGTH_SHORT);
+        View snackBarView = snackbar.getView();
+        snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+        snackbar.show();
     }
 
 
@@ -265,6 +274,8 @@ public class UserManager {
         //이메일 체크
 
         //패스워드 체크
+
+
 
         //사용자에게 확인 메일 보내기
 /*

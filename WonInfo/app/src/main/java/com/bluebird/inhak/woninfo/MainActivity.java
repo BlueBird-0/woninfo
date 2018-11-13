@@ -58,6 +58,7 @@ import com.bluebird.inhak.woninfo.Dictionary.A25Fragment.A25Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
 import com.bluebird.inhak.woninfo.Home.HomeMainFragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
+import com.bluebird.inhak.woninfo.Popup.PopupLogout;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
@@ -176,24 +177,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             overridePendingTransition(0, R.anim.slide_close);
         }
         else {
-            AlertDialog.Builder d = new AlertDialog.Builder(MainActivity.this);
-            d.setTitle("종료여부");
-            d.setMessage("종료합니다.");
-            d.setIcon(R.drawable.ic_alert_exit);
-
-            d.setPositiveButton("예", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    MainActivity.this.finish();
-                }
-            });
-            d.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
-                }
-            });
-            d.show();
+            startActivity(new Intent(getApplicationContext(), PopupEnd.class));
         }
     }
 
@@ -270,6 +254,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 public void onClick(View v) {
                                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                     ((DrawerLayout)findViewById(R.id.drawer_layout)).closeDrawer(GravityCompat.START);
+
                                 }
                             });
                         }
@@ -340,11 +325,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_tutorial) {
             navTutorial();
         } else if (id == R.id.nav_manage) {
-            Fragment fragment = new Manage();
-            loadFragment(fragment);
-
-
-
+            startActivity(new Intent(getApplicationContext(), DeveloperPage.class));
           /*  UserManager.checkLoggedin();
             View main_view = (View)findViewById(R.id.snackbar_view);
             Snackbar snackbar = Snackbar.make(main_view, "미개발 기능입니다.", Snackbar.LENGTH_SHORT);
@@ -365,10 +346,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             snackbar.show();
         }
         else if(id==R.id.nav_logout){
-            UserManager.logoutUser();
+            startActivity(new Intent(getApplicationContext(), PopupLogout.class));
             this.replaceNavigation();
         }
-
+        else if(id==R.id.nav_bookmark_soldier1){
+            startActivity(new Intent(getApplicationContext(),MilitaryLeave.class));
+        }
+        else if(id==R.id.nav_bookmark_soldier2){
+            startActivity(new Intent(getApplicationContext(),Reserve.class));
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

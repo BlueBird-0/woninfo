@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:clickable="true"
+
     android:background="@drawable/item_round_box">
 
     <TextView
@@ -16,6 +16,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:clickable="true"
         android:text="군대휴학 신청"
         android:textAlignment="center"
         android:textColor="@color/Theme_Blue"
@@ -28,14 +29,44 @@
     <TextView
         android:id="@+id/popup_militaryleave_text2"
         android:layout_width="wrap_content"
-        android:layout_height="62dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="웹정보서비스 → 정보서비스 → 학적관리 →  휴학신청\n(입대휴학) → 휴학원서 출력 → 보호자 연서 → 소속지도교수 및 학과(부)장 면담 → 소속대학 교학과 제출 → 확인증 교부"
+        android:layout_marginEnd="16dp"
+        android:text="웹정보서비스 → 정보서비스 → 학적관리 → "
         android:textColor="@color/Theme_Gray"
-        android:textSize="@dimen/font_15sp"
+        android:textSize="@dimen/font_14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text1" />
+
+    <TextView
+        android:id="@+id/popup_militaryleave_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="휴학신청(입대휴학) → 휴학원서 출력 → 보호자 연서 → "
+        android:textColor="@color/Theme_Gray"
+        android:textSize="@dimen/font_14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text2" />
+
+    <TextView
+        android:id="@+id/popup_militaryleave_text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="소속지도교수 및 학과(부)장 면담 → 소속대학 교학과 제출 → 확인증 교부"
+        android:textColor="@color/Theme_Gray"
+        android:textSize="@dimen/font_14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text3" />
+
 
     <Button
         android:id="@+id/popup_militaryleave_btn"
@@ -43,6 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:clickable="true"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -53,8 +85,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text2" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text4" />
 
 
 

@@ -49,7 +49,7 @@ public class Setting extends AppCompatActivity {
         setAlam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SettingAlam.class));
+                startActivity(new Intent(getApplicationContext(), SettingAlarm.class));
             }
         });
 
