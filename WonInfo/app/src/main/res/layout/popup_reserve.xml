@@ -28,16 +28,29 @@
     <TextView
         android:id="@+id/popup_reserve_text2"
         android:layout_width="wrap_content"
-        android:layout_height="39dp"
+        android:layout_height="22dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="- 예비군앱 다운받기 → 로그인 → 훈련일정 자율선택 →  \n훈련신청 결과확인 → 교수님에게 보여주기"
+        android:text="예비군앱 다운받기 → 로그인 → 훈련일정 자율선택"
         android:textColor="@color/Theme_Gray"
         android:textSize="@dimen/font_15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/popup_reserve_text1" />
+
+    <TextView
+        android:id="@+id/popup_reserve_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="→ 훈련신청 결과확인 → 교수님에게 보여주기"
+        android:textColor="@color/Theme_Gray"
+        android:textSize="@dimen/font_15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popup_reserve_text2" />
 
     <Button
         android:id="@+id/popup_reserve_btn"
@@ -56,7 +69,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_reserve_text2" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_reserve_text3" />
 
 
 

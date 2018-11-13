@@ -37,10 +37,10 @@ import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
 public class DictionaryMainFragment extends Fragment {
     static View view;
-    private FragmentActivity fragmentActivity;
     private DBOpenHelper dbOpenHelper;
     private Cursor cursor;
     private AdapterView.OnItemClickListener mOnItemClickListner;
+
 
     @Nullable
     @Override
@@ -65,9 +65,6 @@ public class DictionaryMainFragment extends Fragment {
             if(cursor.getString(2).equals("0"))
             menuAdapter.addItem(cursor.getString(0), cursor.getString(1),cursor.getString(2));
         }
-
-
-
         listView.setAdapter(menuAdapter);
         menuAdapter.notifyDataSetChanged();
         return view;
@@ -91,7 +88,7 @@ public class DictionaryMainFragment extends Fragment {
             }
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
-                Fragment fragment = (Fragment) fragmentActivity.getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
+                Fragment fragment = (Fragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
                 //프레그먼트가 (Dictionary) 꺼져있을시
                 if(fragment != null)
                 {
@@ -110,7 +107,7 @@ public class DictionaryMainFragment extends Fragment {
             @Override
             public boolean onQueryTextSubmit(final String query) {
 
-                Fragment fragment = (Fragment)fragmentActivity.getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
+                Fragment fragment = (Fragment)getActivity().getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
 
                 //프레그먼트가 (Dictionary) 꺼져있을시
                 if(fragment != null)
@@ -127,9 +124,8 @@ public class DictionaryMainFragment extends Fragment {
                 //프레그먼트가 (Dictionary) 꺼져있을시
                 else
                 {
-                    Log.d("test001", "d");
                     //프레그먼트 (Dictionary) 실행
-                    FragmentManager fm = fragmentActivity.getSupportFragmentManager();
+                    FragmentManager fm = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fm.beginTransaction();
                     fragmentTransaction.add(R.id.main_fragment_container, new DictionaryMainFragment());
                     fragmentTransaction.addToBackStack("menu_dictionary");
