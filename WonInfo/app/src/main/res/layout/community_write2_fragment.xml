@@ -25,7 +25,7 @@
     <FrameLayout
         android:id="@+id/frameLayout4"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="9dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/item_line"
         app:layout_constraintBottom_toTopOf="@+id/write2_edit_content"

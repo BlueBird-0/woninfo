@@ -49,6 +49,7 @@ public class CommentListAdapter extends RecyclerView.Adapter<CommentListAdapter.
         holder.item = new Comment();
         holder.item.setWriter_photoUri(items.get(position).getWriter_photoUri());
         holder.item.setWriter_uid(items.get(position).getWriter_uid());
+        holder.item.setWriter_id(items.get(position).getWriter_id());
         holder.item.setContent(items.get(position).getContent());
         holder.item.setDate(items.get(position).getDate());
         holder.DrawItem();  //리스트 안에 아이템 그림그리기 함수

@@ -103,15 +103,6 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
         commentRecycler.setHasFixedSize(true);
         //RecyclerView에 Adapter를 설정해줍니다.
 
-        for ( int i=0; i<10; i++)
-        {
-            Comment comment = new Comment();
-            comment.setContent("내용"+i);
-            comment.setDate("여기 날자");
-            comment.setWriter_uid("작성자"+i);
-            comment.setWriter_photoUri("헤헿");
-            commentItems.add(comment);
-        }
         commentRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         commentListAdapter = new CommentListAdapter(commentItems,(MainActivity)getActivity());
         commentRecycler.setAdapter(commentListAdapter);
@@ -145,6 +136,7 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                 Comment comment = new Comment();
                 comment.setContent(commentEdit.getText().toString());
                 comment.setWriter_uid(firebaseUser.getUid());
+                comment.setWriter_id(firebaseUser.getDisplayName());
                 comment.setWriter_photoUri(firebaseUser.getPhotoUrl().toString());
 
                 // EditText 내리고, 키보드 닫기
@@ -188,6 +180,15 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                     if(document.get("profile")!=null) {
                                         Glide.with(getActivity()).load(document.get("profile").toString()).into(imageView);
                                         Log.d("test040", "사진설정(경로 못찾을 때 바꿔야함): "+document.get("profile").toString());
+                                    }
+                                    for ( int i=0; i<10; i++)
+                                    {
+                                        Comment comment = new Comment();
+                                        comment.setContent("내용"+i);
+                                        comment.setDate("여기 날자");
+                                        comment.setWriter_uid("작성자"+i);
+                                        comment.setWriter_photoUri("헤헿");
+                                        commentItems.add(comment);
                                     }
                                     swipeRefresh.setRefreshing(false);
                                 }
