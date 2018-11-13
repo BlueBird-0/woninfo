@@ -55,6 +55,7 @@ public class Comment {
         Map<String, Object> map = new HashMap<>();
         map.put("content", content);
         map.put("writer_uid", writer_uid);
+        map.put("writer_id", writer_id);
         map.put("writer_photoUri", writer_photoUri);
         map.put("date", date);
         return map;

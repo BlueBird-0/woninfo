@@ -25,12 +25,15 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.Community.Textboard.Comment;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
+import com.bluebird.inhak.woninfo.UserManager;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -45,28 +48,21 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
 public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
-    // TODO 여기 String 으로 옮겨야함
-    //static int PAGE_COUNT = 1;  //한페이지에 보여주는 게시글 수
-
-
-    static  private String dates;
     static private FirebaseAuth auth;
-    static private FirebaseUser firebaseUser;
-    static private FirebaseAuth.AuthStateListener mAuthListener;
 
     private BoardListItem args; //bundle
 
-    private CommentListAdapter commentListAdapter;
     private ArrayList<Comment> commentItems = new ArrayList<>();
 
-    private String Board;
     private View view;
     private SwipeRefreshLayout swipeRefresh;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -80,8 +76,6 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
 
         swipeRefresh = view.findViewById(R.id.community_board1_layout);
         swipeRefresh.setOnRefreshListener(this);
-
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         /* args 데이터 입력 */
         TextView id= (TextView) view.findViewById(R.id.community_board1_id);
@@ -98,23 +92,9 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
         commentCount.setText(String.valueOf((int)args.getCommentCount()));
 
 
-        /* 댓글 recyclerView */
-        RecyclerView commentRecycler = view.findViewById(R.id.community_recycler_list);
-        commentRecycler.setHasFixedSize(true);
-        //RecyclerView에 Adapter를 설정해줍니다.
-
-        commentRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-        commentListAdapter = new CommentListAdapter(commentItems,(MainActivity)getActivity());
-        commentRecycler.setAdapter(commentListAdapter);
-        commentRecycler.setNestedScrollingEnabled(false);
         double imageCount = args.getImageCount();
 
-        /*
-        for(;imageCount<0; imageCount--)
-        {
-        }*/
-
-
+        this.onRefresh();
         //댓글 기능 추가
         this.setCommentFunction();
         return view;
@@ -133,20 +113,40 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                     Log.d("test040","값이 없습니다.");
                     return;
                 }
-                Comment comment = new Comment();
-                comment.setContent(commentEdit.getText().toString());
-                comment.setWriter_uid(firebaseUser.getUid());
-                comment.setWriter_id(firebaseUser.getDisplayName());
-                comment.setWriter_photoUri(firebaseUser.getPhotoUrl().toString());
+                final String content = commentEdit.getText().toString();
+
+
+                db.collection("Community").document("게시판").collection("대나무숲")
+                        .document(args.getDocumentId())
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                DocumentSnapshot documentSnapshot = task.getResult();
+                                double comment_count = documentSnapshot.getDouble("comment_count");
+
+                                Comment comment = new Comment();
+                                comment.setContent(content);
+                                comment.setWriter_uid(UserManager.firebaseUser.getUid());
+                                comment.setWriter_id(UserManager.firebaseUser.getDisplayName());
+                                comment.setWriter_photoUri(UserManager.firebaseUser.getPhotoUrl().toString());
+
+                                GregorianCalendar calendar = new GregorianCalendar();
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-dd-MM\nhh:mm");
+                                String now = dateFormat.format(calendar.getTime());
+                                comment.setDate(now);
+
+
+                                db.collection("Community").document("게시판").collection("대나무숲")
+                                        .document(args.getDocumentId())
+                                        .update("comment"+(int)comment_count, comment.getHashMap(), "comment_count",comment_count+1);
+                            }
+                        });
 
                 // EditText 내리고, 키보드 닫기
                 commentEdit.setText("");
                 InputMethodManager inputMethodManager = (InputMethodManager)getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
                 inputMethodManager.hideSoftInputFromWindow(commentEdit.getWindowToken(), 0);
-
-                db.collection("Community").document("게시판").collection("대나무숲")
-                        .document(args.getDocumentId())
-                        .update("댓글제목",comment.getHashMap());
 
                 View main_view = (View)getView().getRootView().findViewById(R.id.snackbar_view);
                 Snackbar snackbar = Snackbar.make(main_view, "댓글을 작성했습니다.", Snackbar.LENGTH_LONG);
@@ -172,24 +172,67 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                     DocumentSnapshot document = task.getResult();
                                     Log.d("test040", args.getId());
 
-                                    TextView likeCount= (TextView) view.findViewById(R.id.community_board1_likecount);
-                                    likeCount.setText(document.get("like_count").toString());
-                                    TextView commentCount= (TextView) view.findViewById(R.id.community_board1_commentcount);
-                                    commentCount.setText(document.get("comment_count").toString());
+                                    TextView likeCountText= (TextView) view.findViewById(R.id.community_board1_likecount);
+                                    likeCountText.setText(document.get("like_count").toString());
+                                    TextView commentCountText= (TextView) view.findViewById(R.id.community_board1_commentcount);
+                                    commentCountText.setText(String.valueOf((int)(double)document.getDouble("comment_count")));
                                     ImageView imageView = (ImageView)view.findViewById(R.id.community_board1_profile);
                                     if(document.get("profile")!=null) {
                                         Glide.with(getActivity()).load(document.get("profile").toString()).into(imageView);
-                                        Log.d("test040", "사진설정(경로 못찾을 때 바꿔야함): "+document.get("profile").toString());
                                     }
-                                    for ( int i=0; i<10; i++)
+
+
+
+                                    //사진 가져오기
+                                    double imageCount = document.getDouble("image_count");
+                                    //for(int i=0; i< (int)imageCount; i++)
+                                    for(int i=0; i< 4; i++)
                                     {
+                                        LinearLayout imageLinearLayout;
+                                        imageLinearLayout = view.findViewById(R.id.community_layout_image);
+                                        //RecyclerView에 Adapter를 설정해줍니다.
+
+                                        ImageView imageView1= new ImageView(getContext());
+                                        Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(UserManager.firebaseUser.getPhotoUrl()).into(imageView1);
+                                        imageLinearLayout.addView(imageView1);
+//                                        imageLinearLayout.addView(button);
+  //                                      imageLinearLayout.addView(button);
+                                    }
+
+
+                                    //댓글 가져오기
+                                    double commentCount = document.getDouble("comment_count");
+                                    commentItems.clear();
+                                    for(int i=0; i< (int)commentCount; i++)
+                                    {
+                                        Map<String, Object> commentMap = (Map<String, Object>) document.get("comment"+i);
+                                        Log.d("test040", "1:"+commentMap.get("writer_uid").toString());
+                                        Log.d("test040", "1:"+commentMap.get("writer_id").toString());
+                                        Log.d("test040", "1:"+commentMap.get("writer_photoUri").toString());
+                                        Log.d("test040", "1:"+commentMap.get("date").toString());
+                                        Log.d("test040", "1:"+commentMap.get("content").toString());
+
+
                                         Comment comment = new Comment();
-                                        comment.setContent("내용"+i);
-                                        comment.setDate("여기 날자");
-                                        comment.setWriter_uid("작성자"+i);
-                                        comment.setWriter_photoUri("헤헿");
+                                        comment.setWriter_uid( commentMap.get("writer_uid").toString());
+                                        comment.setWriter_id( commentMap.get("writer_id").toString());
+                                        comment.setWriter_photoUri( commentMap.get("writer_photoUri").toString());
+                                        comment.setDate( commentMap.get("date").toString());
+                                        comment.setContent( commentMap.get("content").toString());
                                         commentItems.add(comment);
                                     }
+                                    /* 댓글 recyclerView */
+                                    CommentListAdapter commentListAdapter;
+                                    RecyclerView commentRecycler;
+                                    commentRecycler = view.findViewById(R.id.community_recycler_list);
+                                    commentRecycler.setHasFixedSize(true);
+                                    //RecyclerView에 Adapter를 설정해줍니다.
+
+                                    commentRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+                                    commentListAdapter = new CommentListAdapter(commentItems,(MainActivity)getActivity());
+                                    commentRecycler.setAdapter(commentListAdapter);
+                                    commentRecycler.setNestedScrollingEnabled(false);
+
                                     swipeRefresh.setRefreshing(false);
                                 }
                             }

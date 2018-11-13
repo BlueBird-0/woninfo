@@ -62,7 +62,6 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
         holder.item.setCommentCount(items.get(position).getCommentCount());
         holder.item.setImageCount(items.get(position).getImageCount());
 
-        Log.d("test041", "연습 : "+holder.item.getId());
         holder.DrawItem();  //리스트 안에 아이템 그림그리기 함수
     }
 
@@ -89,7 +88,6 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
                     // args 에 넣어서 값 전달.
                     Bundle args = new Bundle();
                     args.putSerializable("Bundle", item);
-                    Log.d("test041", "연습2 : "+item.getId());
 
 
                     FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
