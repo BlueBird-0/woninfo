@@ -53,6 +53,13 @@ public class Setting extends AppCompatActivity {
             }
         });
 
+        community_rule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), CommunitySettingRules.class));
+            }
+        });
+
 
     }
 

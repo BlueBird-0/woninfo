@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/setting_privacy_policy_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="1. WONINFO 통합개인정보처리방침"
+                    android:textColor="@color/Theme_Blue"
+                    android:textSize="@dimen/bigtitle_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="에브리타임 통합개인정보처리방침은 에브리타임, 캠퍼스픽, 책방, 오늘의학식 등 회사가 제공하는 다양한 대학생 맞춤 서비스를 제공함에 있어, 정보를 어떻게 수집·이용·보관·파기하는지에 대한 정보를 담은 방침을 의미합니다. 에브리타임 통합개인정보처리방침은 개인정보보호법, 정보통신망 이용촉진 및 정보보호 등에 관한 법률 등 국내의 개인정보 보호 법령을 준수하고 있으며, 각 서비스에서 언제든지 이 방침을 확인할 수 있습니다."
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text1" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/setting_privacy_policy_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="2. 수집하는 개인정보의 항목"
+                    android:textColor="@color/Theme_Blue"
+                    android:textSize="@dimen/bigtitle_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="회원은 회원가입을 하지 않더라도, 대학생 맞춤 서비스를 회원과 동일하게 이용할 수 있습니다.
+회원은 본인의 선택으로 회원가입을 한 뒤 서비스를 이용할 수 있습니다. 이 경우, 회사는 회원가입 시점부터 아래와 같은 개인정보 중 일부를 수집합니다. 단, 회원이 각 항목에 해당되지 않을 경우, 해당 항목의 개인정보는 절대 수집하지 않습니다."
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text3" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:text="1) 회원이 회원가입 또는 본인확인을 할 경우"
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text4" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="- 학교, 아이디, 이메일, 휴대폰 번호, 성별, 나이, 이름, 닉네임, 입학년도, 프로필 사진, 마케팅 수신 동의 여부, 페이스북 고유번호"
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text5" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:text="2) 회원이 학교인증을 할 경우"
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text6" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:text="- 학번, 학교 이메일, 학생증, 학교 증명서, 수험번호"
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text7" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:text="3) 회원이 회사와 약정을 체결할 경우"
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text8" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:text="- 이름, 주소, 연락처"
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text9" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:text="4) 회원이 본인의 주소록을 이용하여 친구 초대·추가 기능을 사용할 경우"
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text10" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:text="- 주소록 내에 저장된 이름 및 전화번호"
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text11" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:text="5) 회원이 제휴/협력 및 게시 요청을 할 경우"
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text12" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:text="- 단체명, 이름, 직책, 이메일, 연락처"
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text13" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="※ 각 항목 또는 추가적으로 수집이 필요한 항목의 개인정보는 문의하기를 통한 회원 지원 과정 및 별도의 알림창을 통해서 서비스 이용 중 수집될 수 있습니다."
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text14" />
+
+                <TextView
+                    android:id="@+id/setting_privacy_policy_text16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="※ 회사는 미성년자의 회원가입을 허가하지 않으며, 개인정보를 수집하지 않습니다."
+                    android:textColor="@color/Theme_Gray"
+                    android:textSize="@dimen/font_10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_privacy_policy_text15" />
+
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
