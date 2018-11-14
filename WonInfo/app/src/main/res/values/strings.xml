@@ -3,6 +3,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="crop_image_menu_crop">자르기</string>
 
     <string name="action_search">검색</string>
     <string name="action_edit">글쓰기</string>
