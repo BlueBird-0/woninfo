@@ -7,12 +7,10 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -21,7 +19,6 @@ import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,7 +31,6 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -93,8 +89,8 @@ public class Textboard extends Fragment {
 
                                     //db에 insert시켜준다
 
-                                    editdt = (EditText) view.findViewById(R.id.write2_edit_title);
-                                    editdt2 = (EditText) view.findViewById(R.id.write2_edit_content);
+                                    editdt = (EditText) view.findViewById(R.id.write2_edit_titles);
+                                    editdt2 = (EditText) view.findViewById(R.id.write2_edit_contents);
                                     date = now;
 
 

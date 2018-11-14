@@ -18,11 +18,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
+import com.bluebird.inhak.woninfo.Home.NewsAdapter;
+import com.bluebird.inhak.woninfo.Home.NewsItem;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -37,6 +41,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class BoardListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
@@ -64,6 +69,26 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
         swipeRefresh.setRefreshing(true);
         this.onRefresh();
         //option count 가져오는 부분
+
+
+
+        //TODO 소정 연습
+       /* ListView listView = (ListView)view.findViewById(R.id.Listview);
+        List list = new ArrayList();
+        NewsItem newsItem = new NewsItem();
+        newsItem.setBoard("연습용");
+        newsItem.setTitle("제목");
+        list.add(newsItem);
+        list.add(newsItem);
+        list.add(newsItem);
+        list.add(newsItem);
+        list.add(newsItem);
+
+        NewsAdapter newsAdapter = new NewsAdapter(list, getContext());
+        listView.setAdapter(newsAdapter);
+*/
+
+        //TODO 여기까지 연습
 
         /*
         db.collection("Community").document("게시판").collection("대나무숲")

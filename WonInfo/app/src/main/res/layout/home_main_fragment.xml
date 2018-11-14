@@ -207,12 +207,29 @@ android:clickable="true"
     </cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/community_market_box"
+        android:id="@+id/home_listview_news"
         android:layout_width="0dp"
         android:layout_height="228dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autoViewPager" />
+        app:layout_constraintTop_toBottomOf="@+id/autoViewPager">
+
+        <ListView
+            android:id="@+id/Listview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:itemCount="5"
+            tools:listitem="@layout/home_main_list_item">
+
+        </ListView>
     </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

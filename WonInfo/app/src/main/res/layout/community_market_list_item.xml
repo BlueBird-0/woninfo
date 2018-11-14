@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
 
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/market_image_1"
+        android:id="@+id/community_market_book_images"
         android:layout_width="94dp"
         android:layout_height="106dp"
         android:layout_marginStart="16dp"
@@ -28,13 +28,12 @@
 
     <TextView
 
-        android:id="@+id/market_textView1"
+        android:id="@+id/community_market_book_kinds"
         android:layout_width="31dp"
         android:layout_height="17dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/all_item_market_subclass"
-        android:text="전공"
         android:textAlignment="center"
         android:textColor="@color/Theme_Blue"
         android:textSize="@dimen/middle_size"
@@ -43,19 +42,19 @@
         app:layout_constraintEnd_toEndOf="@+id/community_market_box"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/market_image_1"
+        app:layout_constraintTop_toBottomOf="@+id/community_market_book_images"
         app:layout_constraintVertical_bias="0.226" />
 
 
     <TextView
-        android:id="@+id/community_market_list_item_content"
+        android:id="@+id/community_market_book_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:text="가격"
+        android:text="원"
         android:textColor="@color/Theme_Red"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
