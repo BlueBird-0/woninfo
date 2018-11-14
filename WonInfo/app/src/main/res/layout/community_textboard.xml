@@ -8,7 +8,7 @@
 
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/write2_edit_titles"
         android:layout_width="fill_parent"
         android:layout_height="31dp"
         android:layout_margin="5dp"
@@ -24,13 +24,13 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@drawable/item_line"
-        app:layout_constraintBottom_toTopOf="@+id/write2_edit_content"
+        app:layout_constraintBottom_toTopOf="@+id/write2_edit_contents"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/write2_edit_content"
+        android:id="@+id/write2_edit_contents"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -44,7 +44,7 @@
         android:maxLines="11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_titles" />
 
     <FrameLayout
         android:id="@+id/frameLayout2"
@@ -56,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/write2_edit_content" />
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_contents" />
 
     <Button
         android:id="@+id/textboard_write_btn"
