@@ -71,8 +71,8 @@ public class Textboard2 extends Fragment {
                 //변수에 각각의 값을 담아주고
                 String now = year + "-" + month + "-" + day + "\n" + hour + ":" + min + ":" + sec;
 
-                editdt = (EditText)view.findViewById(R.id.editText2);
-                editdt2 = (EditText)view.findViewById(R.id.write2_edit_content);
+                editdt = (EditText)view.findViewById(R.id.write2_edit_titles);
+                editdt2 = (EditText)view.findViewById(R.id.write2_edit_contents);
                 date = now;
                 String msg = editdt.getText().toString();
                 Map<String, String> 자유게시판 = new HashMap<>();

@@ -4,20 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00ff00"
+    android:background="#ffffff"
+    android:clickable="true"
     tools:layout_editor_absoluteY="81dp">
 
 
     <EditText
-        android:id="@+id/write2_edit_titles"
+        android:id="@+id/write2_edit_title"
         android:layout_width="fill_parent"
         android:layout_height="31dp"
         android:layout_margin="5dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="84dp"
         android:background="@null"
         android:gravity="top|start"
         android:hint="제목 :"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,23 +29,61 @@
         android:layout_height="2dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/item_line"
-        app:layout_constraintBottom_toTopOf="@+id/write2_edit_contents"
+        app:layout_constraintBottom_toTopOf="@+id/write2_edit_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/write2_edit_titles"
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_title"
         app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/write2_edit_kind"
+        android:layout_width="189dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:gravity="top|start"
+        android:hint="종류"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_title" />
+
+    <EditText
+        android:id="@+id/write2_edit_price"
+        android:layout_width="189dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:gravity="top|start"
+        android:hint="가격"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_title" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/item_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_price" />
+
+
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/community_main_1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/all_ripple_click"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_kind">
 
         <ImageView
             android:layout_width="64dp"
@@ -64,13 +104,13 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@drawable/item_line"
-        app:layout_constraintBottom_toTopOf="@+id/write2_edit_contents"
+        app:layout_constraintBottom_toTopOf="@+id/write2_edit_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/write2_edit_contents"
+        android:id="@+id/write2_edit_content"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -91,7 +131,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/write2_edit_contents" />
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_content" />
 
     <Button
         android:id="@+id/market_textboard_write_btn"

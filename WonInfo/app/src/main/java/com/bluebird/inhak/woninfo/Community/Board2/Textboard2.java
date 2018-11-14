@@ -9,6 +9,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,9 +19,10 @@ import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -27,7 +30,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
-import java.util.Calendar;
+import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -41,8 +44,6 @@ import static android.support.constraint.Constraints.TAG;
 
 
 public class Textboard2 extends Fragment {
-
-
     private Button sendbt;
     private EditText editdt;
     private EditText editdt2;
@@ -51,18 +52,14 @@ public class Textboard2 extends Fragment {
     private String option;
     private Double nums;
 
-
-
-
     @Nullable
     @Override
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.community_textboard, container, false);
+        final View view = inflater.inflate(R.layout.community_write2_fragment, container, false);
+        setHasOptionsMenu(true);
 
-
-
-        sendbt = (Button)view.findViewById(R.id.textboard_write_btn);
+        sendbt = (Button)view.findViewById(R.id.write2_button_confirm);
         sendbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,43 +82,38 @@ public class Textboard2 extends Fragment {
                                     nums = document.getDouble("count");
 
                                     GregorianCalendar calendar = new GregorianCalendar();
-                                    int year = calendar.get(Calendar.YEAR);
-                                    int month = calendar.get(Calendar.MONTH);
-                                    int day = calendar.get(Calendar.DAY_OF_MONTH);
-                                    int hour = calendar.get(Calendar.HOUR_OF_DAY);
-                                    int min = calendar.get(Calendar.MINUTE);
-                                    int sec = calendar.get(Calendar.SECOND);
-                                    //변수에 각각의 값을 담아주고
-                                    String now = year + "-" + month + "-" + day + "\n" + hour + ":" + min + ":" + sec;
+                                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-dd-MM\nhh:mm");
+                                    String now = dateFormat.format(calendar.getTime());
+                                    Log.d("community", "글 작성 시간 : "+now);
 
 
                                     //db에 insert시켜준다
 
-                                    editdt = (EditText) view.findViewById(R.id.editText2);
-                                    editdt2 = (EditText) view.findViewById(R.id.write2_edit_content);
+                                    editdt = (EditText) view.findViewById(R.id.write2_edit_titles);
+                                    editdt2 = (EditText) view.findViewById(R.id.write2_edit_contents);
                                     date = now;
-
 
 
                                     String msg = editdt.getText().toString();
                                     String msg2 = editdt2.getText().toString();
                                     Map<String, Object> 자유게시판 = new HashMap<>();
 
-
                                     자유게시판.put("title",editdt.getText().toString());
                                     자유게시판.put("content",editdt2.getText().toString());
                                     자유게시판.put("date",date);
                                     자유게시판.put("num", nums);
 
-                                    Log.d("sibal",""+nums);
+                                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                    자유게시판.put("id", user.getDisplayName());
+                                    자유게시판.put("uid", user.getUid());
+                                    자유게시판.put("profile", user.getPhotoUrl().toString());
+
+                                    자유게시판.put("comment_count", 0);
+                                    자유게시판.put("like_count", 0);
+                                    //이미지 카운트
+                                    자유게시판.put("image_count", 0);
 
 
-
-
-
-
-                                    //databaseReference.child("message").push().setValue(msg);
-                                    //// Add a new document with a generated ID
                                     CollectionReference collectionReference = db.collection("Community").document("게시판").collection(Board);
                                     collectionReference.add(자유게시판)
                                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -129,19 +121,7 @@ public class Textboard2 extends Fragment {
                                                 public void onSuccess(DocumentReference documentReference) {
                                                     Log.d("test002", "DocumentSnapshot added with ID: " + documentReference.getId());
                                                 }
-                                            })
-
-                                            .addOnFailureListener(new OnFailureListener() {
-                                                @Override
-                                                public void onFailure(@NonNull Exception e) {
-                                                    Log.w("test002", "Error adding document", e);
-                                                }
                                             });
-
-                                    Log.d("test004", "test : \n");
-
-
-
 
                                 } else {
                                     Log.d(TAG, "No such document");
@@ -160,17 +140,11 @@ public class Textboard2 extends Fragment {
                             DocumentSnapshot snapshot = transaction.get(Count);
                             double newcheckpoint = snapshot.getDouble("count") + 1;
                             transaction.update(Count, "count", newcheckpoint);
-
                             // Success
                             return null;
                         }
                     });
-
-
-
                 }
-
-
 
                 FragmentManager fragmentManager = getFragmentManager();
                 Fragment fragment = null;
@@ -186,6 +160,12 @@ public class Textboard2 extends Fragment {
 
 
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
     }
 
     private boolean loadFragment(Fragment fragment)
