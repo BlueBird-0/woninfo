@@ -82,7 +82,7 @@ public class Textboard extends Fragment {
                                     nums = document.getDouble("count");
 
                                     GregorianCalendar calendar = new GregorianCalendar();
-                                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-dd-MM\nhh:mm");
+                                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd\nhh:mm");
                                     String now = dateFormat.format(calendar.getTime());
                                     Log.d("community", "글 작성 시간 : "+now);
 

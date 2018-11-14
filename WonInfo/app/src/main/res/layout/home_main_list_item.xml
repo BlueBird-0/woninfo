@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_main_list_item"
     android:layout_width="match_parent"
     android:layout_height="36dp"
     android:clickable="true">
@@ -9,9 +10,9 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:background="@color/Theme_Gray"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/Theme_Gray">
+        app:layout_constraintStart_toStartOf="parent">
 
     </FrameLayout>
 

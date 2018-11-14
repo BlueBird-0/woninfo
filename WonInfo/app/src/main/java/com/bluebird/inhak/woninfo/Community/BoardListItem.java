@@ -12,6 +12,7 @@ public class BoardListItem implements Serializable {
     private String uid;
     private String price;
     private String kinds;
+    private String board;
 
 
     private String title;
@@ -24,10 +25,20 @@ public class BoardListItem implements Serializable {
     public BoardListItem() {
     }
 
+    public String getBoard() {
+        return board;
+    }
+
+    public void setBoard(String board) {
+        this.board = board;
+    }
+
     public BoardListItem(String title, String content, double num) {
         this.title = title;
         this.content = content;
         this.num = num;
+        this.board = board;
+
         // null
         this.documentId = "null";
         this.profileUri = "null";

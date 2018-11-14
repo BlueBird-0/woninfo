@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.BoardListViewHolder> {
     private ArrayList<BoardListItem> items;
-    private MainActivity mainActivity;
+      private MainActivity mainActivity;
 
     // 적절한 생성자를 제공합니다(데이터 집합의 종류에 따라 다름
     public BoardListAdapter(ArrayList<BoardListItem> items, MainActivity mainActivity)
@@ -84,11 +84,11 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
             button1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // 게시글에 데이터 넘겨주는 번들 --------------------------------
-                    // args 에 넣어서 값 전달.
+
                     Bundle args = new Bundle();
                     args.putSerializable("Bundle", item);
-
+                    // 게시글에 데이터 넘겨주는 번들 --------------------------------
+                    // args 에 넣어서 값 전달.
 
                     FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
