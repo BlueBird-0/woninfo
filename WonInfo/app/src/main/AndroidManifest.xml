@@ -46,6 +46,9 @@
         <activity android:name="com.bluebird.inhak.woninfo.LoginActivity"
             android:theme="@style/DialogTheme" >
         </activity>
+        <activity android:name="com.bluebird.inhak.woninfo.CommunitySettingRules"
+            android:screenOrientation="portrait" >
+        </activity>
         <activity android:name="com.bluebird.inhak.woninfo.MilitaryLeave"
             android:theme="@style/DialogTheme" >
         </activity>
