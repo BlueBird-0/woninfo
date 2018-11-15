@@ -2,6 +2,7 @@
 package com.bluebird.inhak.woninfo.Community.Board1;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -36,10 +37,12 @@ import com.bluebird.inhak.woninfo.R;
 import com.bluebird.inhak.woninfo.UserManager;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -47,6 +50,10 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -65,7 +72,7 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
 
     private View view;
     private SwipeRefreshLayout swipeRefresh;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Nullable
     @Override
@@ -115,7 +122,6 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                 }
                 final String content = commentEdit.getText().toString();
 
-
                 db.collection("Community").document("게시판").collection("대나무숲")
                         .document(args.getDocumentId())
                         .get()
@@ -140,6 +146,7 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                 db.collection("Community").document("게시판").collection("대나무숲")
                                         .document(args.getDocumentId())
                                         .update("comment"+(int)comment_count, comment.getHashMap(), "comment_count",comment_count+1);
+
                             }
                         });
 
@@ -185,20 +192,7 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
 
                                     //사진 가져오기
                                     double imageCount = document.getDouble("image_count");
-                                    //for(int i=0; i< (int)imageCount; i++)
-                                    for(int i=0; i< 4; i++)
-                                    {
-                                        LinearLayout imageLinearLayout;
-                                        imageLinearLayout = view.findViewById(R.id.community_layout_image);
-                                        //RecyclerView에 Adapter를 설정해줍니다.
-
-                                        ImageView imageView1= new ImageView(getContext());
-                                        Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(UserManager.firebaseUser.getPhotoUrl()).into(imageView1);
-                                        imageLinearLayout.addView(imageView1);
-//                                        imageLinearLayout.addView(button);
-  //                                      imageLinearLayout.addView(button);
-                                    }
-
+                                    loadStoreImages(imageCount, document.getId());
 
                                     //댓글 가져오기
                                     double commentCount = document.getDouble("comment_count");
@@ -206,12 +200,6 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                     for(int i=0; i< (int)commentCount; i++)
                                     {
                                         Map<String, Object> commentMap = (Map<String, Object>) document.get("comment"+i);
-                                        Log.d("test040", "1:"+commentMap.get("writer_uid").toString());
-                                        Log.d("test040", "1:"+commentMap.get("writer_id").toString());
-                                        Log.d("test040", "1:"+commentMap.get("writer_photoUri").toString());
-                                        Log.d("test040", "1:"+commentMap.get("date").toString());
-                                        Log.d("test040", "1:"+commentMap.get("content").toString());
-
 
                                         Comment comment = new Comment();
                                         comment.setWriter_uid( commentMap.get("writer_uid").toString());
@@ -239,61 +227,44 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                         });
             }
         });
-/*
-        db.collection("Community").document("게시판").collection("대나무숲")
-                .whereEqualTo("num", args.getNum())   //////////////////// 여기 시발놈
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+    }
 
-                        if (task.isSuccessful()) {
-                            for (DocumentSnapshot document : task.getResult()) {
-                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                ImageView imageView = (ImageView)view.findViewById(R.id.community_board1_profile);
+    public void loadStoreImages(double imageCount, String documentId)
+    {
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReference();
 
+        final LinearLayout imageLinearLayout = view.findViewById(R.id.community_layout_image);
+        imageLinearLayout.removeAllViews();
+        for(int i=0; i<imageCount; i++){
+            Task<Uri> storageRef= storageReference.child("board1/" + documentId+"_image_"+i).getDownloadUrl();
+            storageRef.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    // unsuccessful upload
+                    Log.d("test098", "unsuccess");
+                }
+            }).addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    Log.d("test098", "success");
+                    Log.d("test098", uri.toString());
+                    //RecyclerView에 Adapter를 설정해줍니다.
 
-                                Log.d("test040", user.getPhotoUrl().toString());
+                    ImageView imageView1= new ImageView(getContext());
+                    Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(uri).into(imageView1);
+                    imageLinearLayout.addView(imageView1);
 
+                    LinearLayout.LayoutParams loparams = (LinearLayout.LayoutParams) imageView1.getLayoutParams();
 
-                                if(user.getPhotoUrl() != null)
-                                    Glide.with(getActivity()).load(user.getPhotoUrl()).into(imageView);
-
-                                dates = document.get("date").toString();
-                                TextView dateText= (TextView) view.findViewById(R.id.community_board1_date);
-                                dateText.setText(dates);
-
-*/
-                                /* 댓글 쓰기 버튼 */
-        /*
-                                Button commentBtn = (Button)view.findViewById(R.id.board1_btn_commentwrite);
-                                commentBtn.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        EditText commentEdit = (EditText)view.findViewById(R.id.board1_edit_commentwrite);
-                                        if(commentEdit.getText().toString().equals(null))
-                                        {
-                                            Log.d("test040","값이 없습니다.");
-                                            return;
-                                        }
-                                        Map<String, Object> 대나무숲 = new HashMap<>();
-
-                                        Comment comment = new Comment();
-                                        comment.setContent("댓글 제목");
-                                        comment.setWriter_uid("testUid");
-                                        comment.setWriter_photoUri("사진 uri");
-
-                                        db.collection("Community").document("게시판").collection("대나무숲")
-                                                .document("0tF1Lbej8V0JLSjVG4bj")
-                                                .update("댓글제목",comment.getHashMap());
-
-                                    }
-                                });
-                            }
-                        }
-                    }
-                });
-*/
+                    loparams.leftMargin = 30;
+                    loparams.rightMargin = 30;
+                    loparams.bottomMargin= 30;
+                    imageView1.setLayoutParams(loparams);
+                    //사진 등록
+                }
+            });
+        }
     }
 
     @Override

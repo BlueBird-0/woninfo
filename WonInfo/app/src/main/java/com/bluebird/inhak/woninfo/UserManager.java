@@ -169,10 +169,6 @@ public class UserManager {
                                 }
                             }
                         });
-
-                //Log.d("test098", user.getPhotoUrl().toString());
-
-
             }
         });
     }

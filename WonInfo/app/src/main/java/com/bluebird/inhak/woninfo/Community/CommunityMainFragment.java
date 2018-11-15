@@ -1,6 +1,5 @@
 package com.bluebird.inhak.woninfo.Community;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,12 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -48,7 +42,7 @@ public class CommunityMainFragment extends Fragment{
         final View view = inflater.inflate(R.layout.community_main_fragment, container, false);
         setHasOptionsMenu(true);
 
-        button1 = (ConstraintLayout)view.findViewById(R.id.community_main_1);
+        button1 = (ConstraintLayout)view.findViewById(R.id.write2_layout_picture);
         button2 = (ConstraintLayout)view.findViewById(R.id.community_main_2);
         button3 = (ConstraintLayout)view.findViewById(R.id.community_main_3);
         button4 = (ConstraintLayout)view.findViewById(R.id.community_main_4);

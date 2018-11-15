@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/community_main_1"
+        android:id="@+id/write2_layout_picture"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="6dp"
@@ -81,7 +81,7 @@
         android:minLines="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/community_main_1" />
+        app:layout_constraintTop_toBottomOf="@+id/write2_layout_picture" />
 
     <FrameLayout
         android:id="@+id/frameLayout5"
