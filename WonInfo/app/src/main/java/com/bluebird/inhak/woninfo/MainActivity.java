@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private DrawerLayout drawer;
     private NavigationView navigationView;
+    static private BottomNavigationView bottomNavigationView;
 
     static int FRAGMENT_STATE = 0;
     static int COMMUNITY_PAGE=1;
@@ -219,13 +220,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             final ImageView profilePic = (ImageView)navigationView.getHeaderView(1).findViewById(R.id.nav_btn_profilepic);
                             textView.setText(user.getDisplayName());
                             if(user.getPhotoUrl()!=null){
-
-                            Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(user.getPhotoUrl()).into(profilePic);}
+                                Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(user.getPhotoUrl()).into(profilePic);}
 
                             profilePic.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    UserManager.profielPicSelect(getSupportFragmentManager());
+                                    UserManager.profilePicSelect(getSupportFragmentManager());
                                 }
                             });
                             imageView.setOnClickListener(new View.OnClickListener(){
@@ -349,7 +349,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(getApplicationContext(), PopupLogout.class));
             this.replaceNavigation();
         }
-        else if(id==R.id.nav_bookmark_soldier1){
+       else if(id==R.id.nav_bookmark_soldier1){
             startActivity(new Intent(getApplicationContext(),MilitaryLeave.class));
         }
         else if(id==R.id.nav_bookmark_soldier2){
@@ -464,11 +464,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+
+    static public void setBottomBarMenu(int id){
+        BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
+        bottomNavigationView.findViewById(id).callOnClick();
+    }
     //bottom_bar 하단바 설정
     private void setBottomBar() {
-        final BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
-        BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
-        bottomNavigationView.findViewById(R.id.bottom_bar_menu_home).callOnClick();
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
+        setBottomBarMenu(R.id.bottom_bar_menu_home);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

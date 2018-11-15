@@ -18,26 +18,18 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class BoardListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
     // TODO 여기 String 으로 옮겨야함
@@ -64,6 +56,8 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
         swipeRefresh.setRefreshing(true);
         this.onRefresh();
         //option count 가져오는 부분
+
+
 
         /*
         db.collection("Community").document("게시판").collection("대나무숲")

@@ -1,5 +1,7 @@
 package com.bluebird.inhak.woninfo.Community;
 
+import android.widget.GridLayout;
+
 import java.io.Serializable;
 
 public class BoardListItem implements Serializable {
@@ -8,6 +10,10 @@ public class BoardListItem implements Serializable {
     private String profileUri;
     private String id;
     private String uid;
+    private String price;
+    private String kinds;
+    private String board;
+
 
     private String title;
     private String content;
@@ -19,10 +25,20 @@ public class BoardListItem implements Serializable {
     public BoardListItem() {
     }
 
+    public String getBoard() {
+        return board;
+    }
+
+    public void setBoard(String board) {
+        this.board = board;
+    }
+
     public BoardListItem(String title, String content, double num) {
         this.title = title;
         this.content = content;
         this.num = num;
+        this.board = board;
+
         // null
         this.documentId = "null";
         this.profileUri = "null";
@@ -62,6 +78,21 @@ public class BoardListItem implements Serializable {
         this.uid = uid;
     }
 
+    public String getKinds(){
+        return kinds;
+    }
+    public void setKinds(String kinds) {
+        this.kinds = kinds;
+    }
+
+    public String getPrice(){
+        return price;
+    }
+    public void setPrice(String price){
+        this.price = price;
+    }
+
+
     public String getDate() {
         return date;
     }
@@ -75,6 +106,7 @@ public class BoardListItem implements Serializable {
     public void setNum(double num) {
         this.num = num;
     }
+
 
     public String getTitle() {
         return title;

@@ -2,10 +2,13 @@
 package com.bluebird.inhak.woninfo.Community.Board2;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -15,82 +18,160 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
-import com.bluebird.inhak.woninfo.Community.Board1.BoardListAdapter;
-import com.bluebird.inhak.woninfo.Community.Board1.Textboard;
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class BoardListFragment2 extends Fragment{
+public class BoardListFragment2 extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
     // TODO 여기 String 으로 옮겨야함
-    static int PAGE_COUNT = 9;  //한페이지에 보여주는 게시글 수
+    static int PAGE_COUNT = 20;  //한페이지에 보여주는 게시글 수
+    static int PAGE_NUMBER = 0;     //현재 페이지 번호
 
-    static  private String[] titles = new String[PAGE_COUNT];
-    static  private String[] contents = new String[PAGE_COUNT];
-    static  private int[] nums = new int[PAGE_COUNT];
-    private BoardListAdapter2 boardListAdapter2;
-    private String Board2;
-    private ArrayList<BoardListItem> items = new ArrayList<>();
+    private BoardListAdapter2 boardListAdapter;
+    private SwipeRefreshLayout swipeRefresh;
+    private ArrayList<BoardListItem> boardListItems = new ArrayList<>();
     private View view;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.community_list_fragment, container, false);
         setHasOptionsMenu(true);
 
-        ArrayList<BoardListItem> boardlist = new ArrayList();
-        Board2="자유게시판";
+        swipeRefresh = view.findViewById(R.id.community_layout_refrash);
+        swipeRefresh.setOnRefreshListener(this);
 
-        final BoardListItem item = new BoardListItem("제목","내용",0);
-        db.collection("Community").document("게시판").collection(Board2)
-                .orderBy("num", Query.Direction.DESCENDING)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        //실행시 새로고침 실행
+        swipeRefresh.setRefreshing(true);
+        this.onRefresh();
+        //option count 가져오는 부분
+
+        /*
+        db.collection("Community").document("게시판").collection("대나무숲")
+                .document("option").get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            int i = 0;
-                            for (DocumentSnapshot document : task.getResult()) {
-                                Log.d("test003", document.getId() + " => " + document.getData());
-                                //Map<String,Object> map = document.getData();
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        final double option_count = task.getResult().getDouble("count");
+                        Log.d("comunity", "총 게시글 수 : "+ option_count);
+*/
+        // 게시글 가져오는 부분
+        /*
+                        db.collection("Community").document("게시판").collection("대나무숲")
+                                .limit(PAGE_COUNT * (PAGE_NUMBER*PAGE_COUNT))
+                                .orderBy("num", Query.Direction.DESCENDING)
+                                //.whereLessThan("num", option_count-(PAGE_COUNT*PAGE_NUMBER))
+                                //.whereLessThan("num", PAGE_COUNT)
+                                .get()
 
+                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        if (task.isSuccessful()) {
+                                            for (DocumentSnapshot document : task.getResult()) {
+                                                //Map<String,Object> map = document.getData();
+                                                String title = document.get("title").toString();
+                                                String content = document.get("content").toString();
+                                                Double num = document.getDouble("num");
 
-                                titles[i] = document.get("title").toString();
-                                contents[i] = document.get("content").toString();
-
-
-                                //map. ()
-                                //item.setContent(document.getData().toString());
-                                i++;
-                            }
-                        } else {
-                            Log.w("test003", "Error getting documents.", task.getException());
-                        }
-                        setRecyclerView();
+                                                BoardListItem item = new BoardListItem(title, content, num);
+                                                item.setId(document.getString("id"));
+                                                item.setUid(document.getString("uid"));
+                                                item.setDate(document.getString("date"));
+                                                item.setCommentCount(document.getDouble("comment_count"));
+                                                item.setLikeCount(document.getDouble("like_count"));
+                                                item.setImageCount(document.getDouble("image_count"));
+                                                boardListItems.add(item);
+                                            }
+                                            long endTime = System.currentTimeMillis();   Log.d("comunity","측정끝");      //TODO 게시글 시간 측정
+                                            Log.d("comunity", "게시글 불러오는 데 걸리는 시간 (ms):"+(endTime-startTime));
+                                        } else {
+                                            Log.w("comunity", "Error getting documents.", task.getException());
+                                        }
+                                        setRecyclerView();
+                                    }
+                                });*/
+                        /*
                     }
                 });
-        boardlist.add(item);
-
-
+                */
 
         return view;
     }
 
+    @Override
+    public void onRefresh() {
+        Log.d("comunity", "onRefresh");
+        final long startTime = System.currentTimeMillis();   Log.d("comunity","측정시작");      //TODO 게시글 시간 측정
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                db.collection("Community").document("게시판").collection("자유게시판")
+                        //.limit(PAGE_COUNT)
+                        .limit(PAGE_COUNT*(PAGE_NUMBER+1))
+                        .orderBy("num", Query.Direction.DESCENDING)
+                        //.whereLessThan("num", option_count-(PAGE_COUNT*PAGE_NUMBER))
+                        //.whereLessThan("num", PAGE_COUNT)
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    boardListItems.clear(); //원래 리스트 삭제
+
+                                    int index = 0;
+                                    for (DocumentSnapshot document : task.getResult()) {
+                                        BoardListItem item = new BoardListItem();
+                                        item.setDocumentId(document.getId());
+                                        item.setTitle(document.get("title").toString());
+                                        item.setContent(document.get("content").toString());
+                                        item.setNum(document.getDouble("num"));
+                                        item.setId(document.getString("id"));
+                                        item.setUid(document.getString("uid"));
+                                        item.setDate(document.getString("date"));
+                                        item.setCommentCount(document.getDouble("comment_count"));
+                                        item.setLikeCount(document.getDouble("like_count"));
+                                        item.setImageCount(document.getDouble("image_count"));
+
+                                        boardListItems.add(item);
+                                        if( index++ > PAGE_COUNT) break;
+                                    }
+                                    long endTime = System.currentTimeMillis();   Log.d("comunity","측정끝");      //TODO 게시글 시간 측정
+                                    Log.d("comunity", "게시글 불러오는 데 걸리는 시간 (ms):"+(endTime-startTime));
+                                } else {
+                                    Log.w("comunity", "Error getting documents.", task.getException());
+                                }
+                                setRecyclerView();
+                                swipeRefresh.setRefreshing(false);
+                                Log.d("comunity", "새로고침 완료");
+                            }
+                        });
+            }
+        });
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
         menu.clear();
         inflater.inflate(R.menu.actionbar_menu_community_edit, menu);
 
@@ -98,17 +179,17 @@ public class BoardListFragment2 extends Fragment{
         editItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Log.d("test031","헿 여기 눌렀다능");
-                FragmentManager fragmentManager = getFragmentManager();
-                Fragment fragment = null;
-                fragment = new Textboard2();
-                loadFragment(fragment);
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                Fragment fragment = new Textboard2();
 
-
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
+                fragmentTransaction.add(R.id.main_fragment_container, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
                 return false;
             }
         });
-        super.onCreateOptionsMenu(menu, inflater);
     }
 
     private void setRecyclerView(){
@@ -118,29 +199,13 @@ public class BoardListFragment2 extends Fragment{
         //변경될 가능성이 있다면 false로, 없다면 true를 설정해주세요
         recyclerView.setHasFixedSize(true);
         //RecyclerView에 Adapter를 설정해줍니다.
-        boardListAdapter2 = new BoardListAdapter2(items,(MainActivity) getActivity());
-        recyclerView.setAdapter(boardListAdapter2);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        Log.d("test001", "여기 실행 되나요?");
-        setData();
+        boardListAdapter = new BoardListAdapter2(boardListItems,(MainActivity) getActivity());
+        recyclerView.setAdapter(boardListAdapter);
+        recyclerView.setNestedScrollingEnabled(false);
+        //setData();
     }
 
-    private void setData(){
-        items.clear();
-        Log.d("test001", "dlkandklasndansdlk : " + titles[0]);
-        //RecyclerView 에 들어갈 데이터를 추가합니다.
-        for(int i=0; i<titles.length; i++)
-        {
-            if( titles[i] != null ) {
-                BoardListItem item = new BoardListItem(titles[i], contents[i], nums[i]);
-                items.add(item);
-                //데이터 추가가 완료되었으면 notifyDataSetChanged() 메서드를 호출해 데이터 변경 체크를 실시합니다.
-                boardListAdapter2.notifyDataSetChanged();
-            }
-        }
-    }
     private boolean loadFragment(Fragment fragment)
     {
         //switching fragment
@@ -157,4 +222,5 @@ public class BoardListFragment2 extends Fragment{
     }
 
 }
+
 
