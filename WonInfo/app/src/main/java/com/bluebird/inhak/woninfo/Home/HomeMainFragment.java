@@ -41,6 +41,7 @@ import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
 
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
+import com.bluebird.inhak.woninfo.UserManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -165,8 +166,6 @@ public class HomeMainFragment extends Fragment {
 
                                         newsItems.add(item);
 
-
-                                        
                                         recyclerView.setAdapter(newsAdapter);
                                     }
                                 }
