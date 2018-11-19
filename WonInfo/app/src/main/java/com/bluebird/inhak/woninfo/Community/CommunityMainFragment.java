@@ -131,7 +131,7 @@ public class CommunityMainFragment extends Fragment{
                 if(UserManager.checkLoggedin()==true){
                 FragmentManager a_15_fragment = getFragmentManager();
                 Fragment fragment = null;
-                fragment = new A15Fragment();
+               // fragment = new A15Fragment();
                 loadFragment(fragment);}
                 else{
 
@@ -150,7 +150,7 @@ public class CommunityMainFragment extends Fragment{
                 if(UserManager.checkLoggedin()==true){
                 FragmentManager a_24_fragment = getFragmentManager();
                 Fragment fragment = null;
-                fragment = new A24Fragment();
+                //fragment = new A24Fragment();
                 loadFragment(fragment);}
                 else{
 

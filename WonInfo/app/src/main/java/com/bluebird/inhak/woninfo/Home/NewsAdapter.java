@@ -4,9 +4,11 @@ package com.bluebird.inhak.woninfo.Home;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,9 +23,12 @@ import com.bluebird.inhak.woninfo.Community.BoardListItem;
 
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
+import com.bluebird.inhak.woninfo.UserManager;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+
+import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
     private ArrayList<BoardListItem> items;
@@ -111,11 +116,19 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
                         fragment.setArguments(args);
 
 
-
-                        fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
-                        fragmentTransaction.add(R.id.main_fragment_container, fragment);
-                        fragmentTransaction.addToBackStack(null);
-                        fragmentTransaction.commit();
+                        if(UserManager.checkLoggedin()==true) {
+                            fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
+                            fragmentTransaction.add(R.id.main_fragment_container, fragment);
+                            fragmentTransaction.addToBackStack(null);
+                            fragmentTransaction.commit();
+                        }
+                        else{
+                            View main_view = (View)v.getRootView().findViewById(R.id.snackbar_view);
+                            Snackbar snackbar = Snackbar.make(main_view,"로그인후 이용가능합니다.",Snackbar.LENGTH_SHORT);
+                            View snackBarView = snackbar.getView();
+                            snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                            snackbar.show();
+                        }
                     }catch(Exception e) {}
                     }
                     });
