@@ -27,17 +27,17 @@ public class Setting extends AppCompatActivity {
         setContentView(R.layout.setting);
 
         Intent intent = new Intent(this.getIntent());
-
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        TextView DisplayName = (TextView)findViewById(R.id.setting_nickname);
-        DisplayName.setText(user.getDisplayName());
-        TextView EmailAdress = (TextView)findViewById(R.id.setting_email_textview);
-        EmailAdress.setText(user.getEmail());
-        ImageView imageView=(ImageView)findViewById(R.id.setting_imageView);
-        if(user.getPhotoUrl()!=null){
-            Glide.with(getWindow().getDecorView().getRootView()).load(user.getPhotoUrl()).thumbnail(0.1f).into(imageView);
+        if(UserManager.checkLoggedin()==true) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            TextView DisplayName = (TextView) findViewById(R.id.setting_nickname);
+            DisplayName.setText(user.getDisplayName());
+            TextView EmailAdress = (TextView) findViewById(R.id.setting_email_textview);
+            EmailAdress.setText(user.getEmail());
+            ImageView imageView = (ImageView) findViewById(R.id.setting_imageView);
+            if (user.getPhotoUrl() != null) {
+                Glide.with(getWindow().getDecorView().getRootView()).load(user.getPhotoUrl()).thumbnail(0.1f).into(imageView);
+            }
         }
-
         ConstraintLayout setAlam = (ConstraintLayout) findViewById(R.id.setting_btn1);
         ConstraintLayout notify = (ConstraintLayout) findViewById(R.id.setting_btn2);
         ConstraintLayout community_rule = (ConstraintLayout) findViewById(R.id.setting_btn3);

@@ -164,6 +164,8 @@ public class HomeMainFragment extends Fragment {
 
                                         newsItems.add(item);
 
+
+                                        
                                         recyclerView.setAdapter(newsAdapter);
                                     }
                                 }

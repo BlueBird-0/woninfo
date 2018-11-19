@@ -94,6 +94,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     static int HOME_PAGE=3;
     static int CUSTOM_PAGE=4;
 
+    private String NOTIFICATION_TITLE = "Notification Sample App";
+    private String CONTENT_TEXT = "Expand me to see a detailed massage!";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -231,7 +235,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             imageView.setOnClickListener(new View.OnClickListener(){
                                 @Override
                                 public void onClick(View v) {
-                                    startActivity(new Intent(getApplicationContext(), Setting.class));
+                                    startActivity(new Intent(getApplicationContext(),Setting.class));
                                 }
                             });
 
@@ -247,6 +251,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             navigationView.inflateHeaderView(R.layout.nav_header_loggedout);
                             //navigationView.inflateMenu(R.menu.nav_menu_loggedout);
                             navigationView.inflateMenu(R.menu.nav_menu_loggedout);
+
+                            ImageView imageView =(ImageView)navigationView.getHeaderView(1).findViewById(R.id.imageView5);
+                            imageView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    startActivity(new Intent(getApplicationContext(),Setting.class));
+                                }
+                            });
 
                             Button btn_login = (Button)navigationView.getHeaderView(1).findViewById(R.id.login_btn_login);
                             btn_login.setOnClickListener(new View.OnClickListener() {
