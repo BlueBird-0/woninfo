@@ -13,12 +13,14 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -126,20 +128,17 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
                                 Log.d("test040", "총페이지 수 :"+documentSnapshot.get("count").toString());
                                 PAGE_ALL_COUNT = documentSnapshot.getDouble("count");
 
-                                LinearLayout pageList = (LinearLayout)view.findViewById(R.id.community_list_page);
-                                pageList.removeAllViews();
 
-                                TextView pageText= new TextView(getContext());
-                                pageText.setText("1");
-                                pageText.setTextSize(18);
-                                pageText.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                                //Left Button
+                                Button leftBtn = new Button(getContext());
 
-                                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                                params.weight = 1;
+                                for(int i=0; i<5; i++) {
+                                    TextView pageText = new TextView(getContext());
+                                }
 
-                                pageText.setLayoutParams(params);
+                                //Right Button
+                                Button rightBtn = new Button(getContext());
 
-                                pageList.addView(pageText);
                             }
                         });
 
