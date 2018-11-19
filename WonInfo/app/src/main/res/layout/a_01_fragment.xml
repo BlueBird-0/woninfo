@@ -141,7 +141,8 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_gravity="center"
-                        app:srcCompat="@drawable/a_01_img_webbutton" />
+                        app:srcCompat="@drawable/ic_bbs"
+                        android:tint="@color/Theme_Gray"/>
 
                     <TextView
                         android:layout_width="wrap_content"

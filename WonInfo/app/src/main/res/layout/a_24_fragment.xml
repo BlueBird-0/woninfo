@@ -70,15 +70,18 @@
                 </LinearLayout>
             </com.github.chuross.library.ExpandableLayout>
 
+
             <include
                 layout="@layout/item_line"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+
             <RelativeLayout
                 android:id="@+id/a_24_exlbtn1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
 
                 <ImageView
                     android:id="@+id/a_24_exlimg1"
@@ -106,7 +109,7 @@
                 android:id="@+id/a_24_exl1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:exl_expanded="true">
+                app:exl_expanded="false">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -125,6 +128,8 @@
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             android:layout_marginRight="@dimen/form_margin"
+                            android:rotation="180"
+
                             app:srcCompat="@drawable/ic_page_expand" />
 
                         <TextView
@@ -137,6 +142,7 @@
                             android:textColor="@color/colorPrimary"
                             android:textSize="@dimen/title_size" />
                     </RelativeLayout>
+
                     <com.github.chuross.library.ExpandableLayout
                         android:id="@+id/a_24_exl2"
                         android:layout_width="match_parent"
@@ -283,6 +289,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             android:layout_marginRight="@dimen/form_margin"
+                            android:rotation="180"
                             app:srcCompat="@drawable/ic_page_expand" />
                         <TextView
                             android:layout_width="wrap_content"
@@ -411,6 +418,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             android:layout_marginRight="@dimen/form_margin"
+                            android:rotation="180"
                             app:srcCompat="@drawable/ic_page_expand" />
                         <TextView
                             android:layout_width="wrap_content"
