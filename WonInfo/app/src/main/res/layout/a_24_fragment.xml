@@ -108,7 +108,7 @@
                 android:id="@+id/a_24_exl1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:exl_expanded="true">
+                app:exl_expanded="false">
 
                 <LinearLayout
                     android:layout_width="match_parent"
