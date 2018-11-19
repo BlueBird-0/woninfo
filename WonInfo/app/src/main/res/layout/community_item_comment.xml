@@ -47,7 +47,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginBottom="8dp"
             android:text="comment_content"
-            android:textColor="@color/Theme_Gray"
+            android:textColor="@color/Theme_Black"
             android:textSize="@dimen/bigtitle_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

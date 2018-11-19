@@ -1,6 +1,7 @@
 package com.bluebird.inhak.woninfo.Community;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
@@ -65,7 +66,6 @@ public class CommunityMainFragment extends Fragment{
                     snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
                     snackbar.show();
                 }
-
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {

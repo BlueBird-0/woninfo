@@ -188,12 +188,18 @@
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout6"
+            android:fitsSystemWindows="false"
             android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:background="@drawable/all_shape_roundrectanglebox"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentBottom="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/colorBackground">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/Theme_LightGray"/>
 
             <EditText
                 android:id="@+id/board1_edit_commentwrite"
@@ -214,7 +220,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/ic_send_2"
+                android:background="@drawable/ic_send"
                 android:backgroundTint="@color/Theme_Red"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"

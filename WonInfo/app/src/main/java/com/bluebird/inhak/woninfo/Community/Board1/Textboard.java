@@ -86,6 +86,7 @@ public class Textboard extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.community_write2_fragment, container, false);
         setHasOptionsMenu(true);
+        imgUriList = new ArrayList<>();
 
         final LinearLayout imageButton = (LinearLayout)view.findViewById(R.id.write2_layout_picture);
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +97,6 @@ public class Textboard extends Fragment {
                             @Override
                             public void onImagesSelected(ArrayList<Uri> uriList) {
                                 // here is selected uri list
-                                imgUriList = new ArrayList<>();
                                 LinearLayout linearLayout= (LinearLayout) view.findViewById(R.id.write2_layout_picture);
                                 linearLayout.removeAllViews();
 
@@ -170,28 +170,28 @@ public class Textboard extends Fragment {
                                             newArticle.put("date",date);
                                             newArticle.put("num", num);
 
-                                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                            newArticle.put("id", user.getDisplayName());
-                                            newArticle.put("uid", user.getUid());
-                                            newArticle.put("profile", user.getPhotoUrl().toString());
+                                            newArticle.put("id", UserManager.firebaseUser.getDisplayName());
+                                            newArticle.put("uid", UserManager.firebaseUser.getUid());
 
                                             newArticle.put("comment_count", 0);
                                             newArticle.put("like_count", 0);
                                             //이미지 카운트
                                             newArticle.put("image_count", imageCount);
 
-                                            Board = "대나무숲";
                                             Log.d("test050", "문서명 : "+ document.getId());
-                                            CollectionReference collectionReference = db.collection("Community").document("게시판").collection(Board);
+                                            CollectionReference collectionReference = db.collection("Community").document("게시판").collection("대나무숲");
                                                     collectionReference.add(newArticle)
                                                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                                         @Override
                                                         public void onSuccess(DocumentReference documentReference) {
-                                                            if(imgUriList.size() != 0)
-                                                                saveStoreImages(imgUriList,documentReference.getId());
-                                                            Log.d("test050", documentReference.getId());
+                                                            if(imgUriList.size() != 0) {
+                                                                saveStoreImages(imgUriList, documentReference.getId());
+                                                            }
                                                         }
                                                     });
+
+                                            db.collection("Community").document("게시판").collection("대나무숲").document("option")
+                                                    .update("count", num);
 
                                         } else {
                                             Log.d(TAG, "No such document");
@@ -204,7 +204,6 @@ public class Textboard extends Fragment {
                 }
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.popBackStack();
-
             }
         });
         return view;

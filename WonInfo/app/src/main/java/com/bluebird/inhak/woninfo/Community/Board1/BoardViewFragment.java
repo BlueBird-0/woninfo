@@ -135,7 +135,6 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                 comment.setContent(content);
                                 comment.setWriter_uid(UserManager.firebaseUser.getUid());
                                 comment.setWriter_id(UserManager.firebaseUser.getDisplayName());
-                                comment.setWriter_photoUri(UserManager.firebaseUser.getPhotoUrl().toString());
 
                                 GregorianCalendar calendar = new GregorianCalendar();
                                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-dd-MM\nhh:mm");
@@ -146,7 +145,8 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                 db.collection("Community").document("게시판").collection("대나무숲")
                                         .document(args.getDocumentId())
                                         .update("comment"+(int)comment_count, comment.getHashMap(), "comment_count",comment_count+1);
-
+                                //새로고침 실행
+                                onRefresh();
                             }
                         });
 
@@ -183,9 +183,9 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                     likeCountText.setText(document.get("like_count").toString());
                                     TextView commentCountText= (TextView) view.findViewById(R.id.community_board1_commentcount);
                                     commentCountText.setText(String.valueOf((int)(double)document.getDouble("comment_count")));
-                                    ImageView imageView = (ImageView)view.findViewById(R.id.community_board1_profile);
-                                    if(document.get("profile")!=null) {
-                                        Glide.with(getActivity()).load(document.get("profile").toString()).into(imageView);
+                                    if(document.get("uid")!=null) {
+                                        ImageView imageView = (ImageView)view.findViewById(R.id.community_board1_profile);
+                                        loadProfile(document.getString("uid"), imageView);
                                     }
 
 
@@ -204,7 +204,6 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                         Comment comment = new Comment();
                                         comment.setWriter_uid( commentMap.get("writer_uid").toString());
                                         comment.setWriter_id( commentMap.get("writer_id").toString());
-                                        comment.setWriter_photoUri( commentMap.get("writer_photoUri").toString());
                                         comment.setDate( commentMap.get("date").toString());
                                         comment.setContent( commentMap.get("content").toString());
                                         commentItems.add(comment);
@@ -229,6 +228,20 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
         });
     }
 
+    public void loadProfile(String uid, final ImageView imageView)
+    {
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReference();
+        Task<Uri> riversRef = storageReference.child("profiles/"+uid+"_profile").getDownloadUrl();
+        riversRef.addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                if(imageView != null)
+                    Glide.with(getActivity()).load(uri).into(imageView);
+            }
+        });
+    }
+
     public void loadStoreImages(double imageCount, String documentId)
     {
         FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -238,13 +251,7 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
         imageLinearLayout.removeAllViews();
         for(int i=0; i<imageCount; i++){
             Task<Uri> storageRef= storageReference.child("board1/" + documentId+"_image_"+i).getDownloadUrl();
-            storageRef.addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    // unsuccessful upload
-                    Log.d("test098", "unsuccess");
-                }
-            }).addOnSuccessListener(new OnSuccessListener<Uri>() {
+            storageRef.addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
                 public void onSuccess(Uri uri) {
                     Log.d("test098", "success");

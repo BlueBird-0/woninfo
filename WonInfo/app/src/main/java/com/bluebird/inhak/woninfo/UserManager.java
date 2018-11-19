@@ -89,14 +89,13 @@ public class UserManager {
 
                                 CropImage.activity(uri).setActivityTitle("이미지 자르기")
                                         .setAspectRatio(1,1)
-                                        .setRequestedSize(300,300)
+                                        .setRequestedSize(256,256)
                                         .start((Activity)mainContext);
 /*
                                 CropImage.activity(uri).setAspectRatio(1,1)
                                         .setRequestedSize(300, 300)
                                         .start((Activity) mainContext);
 */
-
                             }
                         })
                       .create();
@@ -152,11 +151,10 @@ public class UserManager {
                 final  FirebaseUser user = auth.getCurrentUser();
 
                 final ImageView profilePic = (ImageView)((Activity)mainContext).getWindow().getDecorView().getRootView().findViewById(R.id.nav_btn_profilepic);
+                profilePic.setImageResource(R.drawable.ic_profile);
                 final Uri downloadUrl = taskSnapshot.getDownloadUrl();
                 Log.d("test098", downloadUrl.toString());
-
-                profilePicDelete();
-
+                //profilePicDelete();
                 UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                         .setPhotoUri(downloadUrl)
                         .build();

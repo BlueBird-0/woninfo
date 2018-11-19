@@ -115,7 +115,6 @@ public class BoardViewFragment3 extends Fragment implements SwipeRefreshLayout.O
                 comment.setContent(commentEdit.getText().toString());
                 comment.setWriter_uid(UserManager.firebaseUser.getUid());
                 comment.setWriter_id(UserManager.firebaseUser.getDisplayName());
-                comment.setWriter_photoUri(UserManager.firebaseUser.getPhotoUrl().toString());
 
                 GregorianCalendar calendar = new GregorianCalendar();
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd\nhh:mm");
@@ -186,7 +185,6 @@ public class BoardViewFragment3 extends Fragment implements SwipeRefreshLayout.O
                                         Comment comment = new Comment();
                                         comment.setWriter_uid( commentMap.get("writer_uid").toString());
                                         comment.setWriter_id( commentMap.get("writer_id").toString());
-                                        comment.setWriter_photoUri( commentMap.get("writer_photoUri").toString());
                                         comment.setDate( commentMap.get("date").toString());
                                         comment.setContent( commentMap.get("content").toString());
                                         commentItems.add(comment);
