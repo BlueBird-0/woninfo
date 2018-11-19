@@ -246,11 +246,10 @@ xmlns:tools="http://schemas.android.com/tools"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/autoViewPager">
 
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/Listview"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@color/Theme_White"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -260,7 +259,7 @@ xmlns:tools="http://schemas.android.com/tools"
             tools:itemCount="6"
             tools:listitem="@layout/home_main_list_item">
 
-        </ListView>
+        </android.support.v7.widget.RecyclerView>
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
