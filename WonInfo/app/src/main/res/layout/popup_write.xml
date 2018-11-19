@@ -35,7 +35,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/all_item_cunfirmbtn"
-        android:text="CANCLE"
+        android:text="CANCEL"
         android:textColor="@color/Theme_White"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
