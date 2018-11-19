@@ -10,7 +10,7 @@
 
 
     <EditText
-        android:id="@+id/write2_edit_titles"
+        android:id="@+id/write2_edit_title"
         android:layout_width="fill_parent"
         android:layout_height="31dp"
         android:layout_margin="5dp"
@@ -25,30 +25,41 @@
     <FrameLayout
         android:id="@+id/frameLayout4"
         android:layout_width="match_parent"
-        android:layout_height="9dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/item_line"
-        app:layout_constraintBottom_toTopOf="@+id/write2_edit_contents"
+        android:layout_height="1dp"
+        android:background="@color/Theme_LightGray"
+        app:layout_constraintBottom_toTopOf="@+id/write2_edit_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/write2_edit_titles"
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_title"
         app:layout_constraintVertical_bias="0.0" />
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/community_main_1"
-        android:layout_width="0dp"
-        android:layout_height="118dp"
-        android:layout_marginTop="6dp"
-        android:background="@drawable/all_ripple_click"
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/write2_layout_picture"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:foreground="@drawable/all_ripple_click_foregorund"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout4">
 
         <ImageView
+            android:id="@+id/write2_img_noImage"
             android:layout_width="64dp"
             android:layout_height="64dp"
+            android:layout_gravity="center"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
@@ -58,20 +69,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_picture" />
-    </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/frameLayout6"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@drawable/item_line"
-        app:layout_constraintBottom_toTopOf="@+id/write2_edit_contents"
+        android:layout_height="1dp"
+        android:background="@color/Theme_LightGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/write2_layout_picture" />
 
     <EditText
-        android:id="@+id/write2_edit_contents"
+        android:id="@+id/write2_edit_content"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -82,17 +94,17 @@
         android:minLines="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/community_main_1" />
+        app:layout_constraintTop_toBottomOf="@+id/write2_layout_picture" />
 
     <FrameLayout
         android:id="@+id/frameLayout5"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@drawable/item_line"
+        android:layout_height="1dp"
+        android:background="@color/Theme_LightGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/write2_edit_contents" />
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_content" />
 
     <Button
         android:id="@+id/write2_button_confirm"

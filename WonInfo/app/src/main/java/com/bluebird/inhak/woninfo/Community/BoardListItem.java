@@ -7,7 +7,6 @@ import java.io.Serializable;
 public class BoardListItem implements Serializable {
     private String documentId;
     private double num;
-    private String profileUri;
     private String id;
     private String uid;
     private String price;
@@ -41,7 +40,6 @@ public class BoardListItem implements Serializable {
 
         // null
         this.documentId = "null";
-        this.profileUri = "null";
         this.id = "null";
         this.uid = "null";
         this.date = "null";
@@ -55,13 +53,6 @@ public class BoardListItem implements Serializable {
     }
     public void setDocumentId(String documentId) {
         this.documentId = documentId;
-    }
-
-    public String getProfileUri() {
-        return profileUri;
-    }
-    public void setProfileUri(String profileUri) {
-        this.profileUri = profileUri;
     }
 
     public String getId() {

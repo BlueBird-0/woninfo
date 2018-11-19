@@ -15,7 +15,7 @@
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/Theme_White"
+            android:background="@color/Theme_LightGray"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -28,13 +28,14 @@
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
 
 
                     <android.support.constraint.ConstraintLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/box"
+                        android:background="@color/colorBackground"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
@@ -161,21 +162,6 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/community_board1_commentcount">
 
-                            <ImageView
-                                android:id="@+id/imageView11"
-                                android:layout_width="match_parent"
-                                android:layout_height="143dp"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:background="@color/Theme_Beige"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.0"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_menu_gallery" />
-
                         </LinearLayout>
 
 
@@ -189,6 +175,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scrollbars="vertical"
+                    android:layout_marginBottom="10dp"
                     app:layoutManager="android.support.v7.widget.LinearLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -201,12 +188,18 @@
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout6"
+            android:fitsSystemWindows="false"
             android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:background="@drawable/all_shape_roundrectanglebox"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentBottom="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/colorBackground">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/Theme_LightGray"/>
 
             <EditText
                 android:id="@+id/board1_edit_commentwrite"
@@ -227,7 +220,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/ic_send_2"
+                android:background="@drawable/ic_send"
                 android:backgroundTint="@color/Theme_Red"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"

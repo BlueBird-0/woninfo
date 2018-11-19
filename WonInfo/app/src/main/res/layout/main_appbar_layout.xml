@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -56,37 +57,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
-        android:layout_marginBottom="?attr/actionBarSize"/>
+        android:layout_marginBottom="?attr/actionBarSize" />
 
     <FrameLayout
         android:id="@+id/webview_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
-        android:layout_marginBottom="?attr/actionBarSize"/>
+        android:layout_marginBottom="?attr/actionBarSize" />
 
     <android.support.design.widget.BottomNavigationView
+        android:fitsSystemWindows="false"
         android:id="@+id/bottom_navigation_view"
+        style="@android:style/Widget.GridView"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="bottom"
-        android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
-        android:paddingTop="1dp"
-        android:backgroundTint="@color/Theme_LightGray"
+        android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"
-        app:itemIconTint="@drawable/select_bottom_navigation"
+        android:backgroundTint="@color/Theme_LightGray"
+        android:paddingTop="1dp"
         app:itemBackground="@color/Theme_White"
+        app:itemIconTint="@drawable/select_bottom_navigation"
         app:itemTextColor="@color/Theme_Gray"
-        app:menu="@menu/bottom_bar"
-        app:labelVisibilityMode="unlabeled"/>
+        app:labelVisibilityMode="unlabeled"
+        app:layout_anchor="@+id/main_fragment_container"
+        app:layout_anchorGravity="bottom|center"
+        app:menu="@menu/bottom_bar" />
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/snackbar_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
-        android:layout_marginBottom="?attr/actionBarSize"/>
+        android:layout_marginBottom="?attr/actionBarSize" />
 
 
 </android.support.design.widget.CoordinatorLayout>

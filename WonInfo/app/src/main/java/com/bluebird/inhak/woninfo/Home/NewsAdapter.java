@@ -55,7 +55,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.item.setTitle(items.get(position).getTitle());
         holder.item.setDocumentId(items.get(position).getDocumentId());
         holder.item.setNum(items.get(position).getNum());
-        holder.item.setProfileUri(items.get(position).getProfileUri());
         holder.item.setId(items.get(position).getId());
         holder.item.setUid(items.get(position).getUid());
 

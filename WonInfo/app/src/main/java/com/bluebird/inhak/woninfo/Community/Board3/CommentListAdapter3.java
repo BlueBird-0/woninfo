@@ -37,7 +37,6 @@ public class CommentListAdapter3 extends RecyclerView.Adapter<CommentListAdapter
     public void onBindViewHolder(@NonNull CommentListViewHolder holder, int position) {
         Log.d("test040", "여기도 실행1.0");
         holder.item = new Comment();
-        holder.item.setWriter_photoUri(items.get(position).getWriter_photoUri());
         holder.item.setWriter_uid(items.get(position).getWriter_uid());
         holder.item.setWriter_id(items.get(position).getWriter_id());
         holder.item.setContent(items.get(position).getContent());
