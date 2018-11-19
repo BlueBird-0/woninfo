@@ -132,7 +132,7 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                 comment.setWriter_photoUri(UserManager.firebaseUser.getPhotoUrl().toString());
 
                                 GregorianCalendar calendar = new GregorianCalendar();
-                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-dd-MM\nhh:mm");
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd\nhh:mm");
                                 String now = dateFormat.format(calendar.getTime());
                                 comment.setDate(now);
 
@@ -183,20 +183,19 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
 
 
 
-                                    //사진 가져오기
+
                                     double imageCount = document.getDouble("image_count");
-                                    //for(int i=0; i< (int)imageCount; i++)
+
                                     for(int i=0; i< 4; i++)
                                     {
                                         LinearLayout imageLinearLayout;
                                         imageLinearLayout = view.findViewById(R.id.community_layout_image);
-                                        //RecyclerView에 Adapter를 설정해줍니다.
+
 
                                         ImageView imageView1= new ImageView(getContext());
                                         Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(UserManager.firebaseUser.getPhotoUrl()).into(imageView1);
                                         imageLinearLayout.addView(imageView1);
-//                                        imageLinearLayout.addView(button);
-  //                                      imageLinearLayout.addView(button);
+
                                     }
 
 
@@ -239,61 +238,7 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                         });
             }
         });
-/*
-        db.collection("Community").document("게시판").collection("대나무숲")
-                .whereEqualTo("num", args.getNum())   //////////////////// 여기 시발놈
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                        if (task.isSuccessful()) {
-                            for (DocumentSnapshot document : task.getResult()) {
-                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                ImageView imageView = (ImageView)view.findViewById(R.id.community_board1_profile);
-
-
-                                Log.d("test040", user.getPhotoUrl().toString());
-
-
-                                if(user.getPhotoUrl() != null)
-                                    Glide.with(getActivity()).load(user.getPhotoUrl()).into(imageView);
-
-                                dates = document.get("date").toString();
-                                TextView dateText= (TextView) view.findViewById(R.id.community_board1_date);
-                                dateText.setText(dates);
-
-*/
-                                /* 댓글 쓰기 버튼 */
-        /*
-                                Button commentBtn = (Button)view.findViewById(R.id.board1_btn_commentwrite);
-                                commentBtn.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        EditText commentEdit = (EditText)view.findViewById(R.id.board1_edit_commentwrite);
-                                        if(commentEdit.getText().toString().equals(null))
-                                        {
-                                            Log.d("test040","값이 없습니다.");
-                                            return;
-                                        }
-                                        Map<String, Object> 대나무숲 = new HashMap<>();
-
-                                        Comment comment = new Comment();
-                                        comment.setContent("댓글 제목");
-                                        comment.setWriter_uid("testUid");
-                                        comment.setWriter_photoUri("사진 uri");
-
-                                        db.collection("Community").document("게시판").collection("대나무숲")
-                                                .document("0tF1Lbej8V0JLSjVG4bj")
-                                                .update("댓글제목",comment.getHashMap());
-
-                                    }
-                                });
-                            }
-                        }
-                    }
-                });
-*/
     }
 
     @Override

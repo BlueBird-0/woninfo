@@ -74,7 +74,7 @@ public class UserManager {
 
 
     //프로필사진 선택 및 크롭
-    static public void profielPicSelect(final FragmentManager fragmentManager) {
+    static public void profilePicSelect(final FragmentManager fragmentManager) {
         PermissionListener permissionlistener = new PermissionListener() {
             @Override
             public void onPermissionGranted() {
@@ -85,11 +85,17 @@ public class UserManager {
                             public void onImageSelected(Uri uri) {
 
                                 //uri 활용
+                                String userUid = firebaseUser.getUid();
 
+                                CropImage.activity(uri).setActivityTitle("이미지 자르기")
+                                        .setAspectRatio(1,1)
+                                        .setRequestedSize(300,300)
+                                        .start((Activity)mainContext);
+/*
                                 CropImage.activity(uri).setAspectRatio(1,1)
                                         .setRequestedSize(300, 300)
                                         .start((Activity) mainContext);
-
+*/
 
                             }
                         })
@@ -132,7 +138,7 @@ public class UserManager {
     static  public void profilePicUpdate(Uri uri){
         storage = FirebaseStorage.getInstance();
         StorageReference storageReference = storage.getReference();
-        StorageReference riversRef = storageReference.child("images/"+uri.getLastPathSegment());
+        StorageReference riversRef = storageReference.child("profiles/"+firebaseUser.getUid()+"_profile");
         UploadTask uploadTask = riversRef.putFile(uri);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override

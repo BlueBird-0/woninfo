@@ -40,6 +40,7 @@
                     android:layout_height="wrap_content"
                     android:hint="웹정보서비스 ID"
                     android:inputType="text"
+                    android:text="qqqqqq@naver.com"
                     android:textColor="@color/Theme_Black"
                     android:textSize="18sp" />
             </com.github.florent37.materialtextfield.MaterialTextField>
@@ -61,6 +62,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Password"
                     android:inputType="textPassword"
+                    android:text="qqqqqq"
                     android:textColor="@color/Theme_Black"
                     android:textSize="18sp" />
             </com.github.florent37.materialtextfield.MaterialTextField>
