@@ -55,7 +55,7 @@ public class BoardListFragment3 extends Fragment implements SwipeRefreshLayout.O
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.community_market_list_fragment, container, false);
+        view = inflater.inflate(R.layout.community_market_list, container, false);
 
 
 

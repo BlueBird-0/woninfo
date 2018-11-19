@@ -60,7 +60,7 @@ public class Textboard3 extends Fragment {
     @Override
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.community_market_textbroad2, container, false);
+        final View view = inflater.inflate(R.layout.community_market_textbroad, container, false);
         setHasOptionsMenu(true);
 
         sendbt = (Button)view.findViewById(R.id.market_textboard_write_btn);
@@ -93,10 +93,10 @@ public class Textboard3 extends Fragment {
 
                                     //db에 insert시켜준다
 
-                                    editdt = (EditText) view.findViewById(R.id.write2_edit_title);
+                                    editdt = (EditText) view.findViewById(R.id.write2_edit_titles);
                                     editdt2 = (EditText) view.findViewById(R.id.write2_edit_kind);
                                     editdt3 = (EditText) view.findViewById(R.id.write2_edit_price);
-                                    editdt4 = (EditText) view.findViewById(R.id.write2_edit_content);
+                                    editdt4 = (EditText) view.findViewById(R.id.write2_edit_contents);
 
                                     date = now;
 

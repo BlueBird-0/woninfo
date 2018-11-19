@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="-5sp"
+                android:layout_marginBottom="-1sp"
                 android:text="출발시간"
                 android:textAlignment="center"
                 android:textColor="@color/Theme_Black" />
