@@ -3,8 +3,8 @@
 xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
-android:clickable="true"
-    android:background="@color/Theme_White"
+    android:background="#ffffff"
+    android:clickable="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -48,7 +48,8 @@ android:clickable="true"
             app:layout_constraintEnd_toStartOf="@+id/home_main_small_text_1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_bbs" />
+            app:srcCompat="@drawable/ic_bbs"
+            android:tint="@color/Theme_Red"/>
 
 
     </android.support.constraint.ConstraintLayout>
@@ -158,9 +159,9 @@ android:clickable="true"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="8dp"
-            android:text="우리집"
+            android:text="통학"
             android:textColor="@color/Theme_Blue"
             android:textSize="@dimen/mini_size"
             android:textStyle="bold"
@@ -180,31 +181,58 @@ android:clickable="true"
             app:layout_constraintEnd_toStartOf="@+id/home_main_small_text_4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_clock" />
+            app:srcCompat="@drawable/ic_placeholder"
+            android:tint="@color/Theme_Red"/>
 
 
     </android.support.constraint.ConstraintLayout>
 
-
-    <TextView
-        android:id="@+id/a_25_text01"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="40dp"
-        android:text="공지사항이다아아아아아악"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/all_shape_roundrectanglebox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/home_layout_smallbtn3">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:tint="@color/Theme_Blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_speaker" />
+
+        <TextView
+            android:id="@+id/a_25_text02"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="공지사항"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
 
     <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
         android:id="@+id/autoViewPager"
-
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="@color/Theme_LightGray"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/a_25_text01">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
     </cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager>
 
@@ -212,14 +240,13 @@ android:clickable="true"
         android:id="@+id/home_listview_news"
         android:layout_width="0dp"
         android:layout_height="228dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/autoViewPager">
 
         <android.support.v7.widget.RecyclerView
-            android:background="@color/Theme_White"
             android:id="@+id/Listview"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -229,10 +256,10 @@ android:clickable="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            tools:itemCount="5"
-            tools:listitem="@layout/home_main_list_item" />
+            tools:itemCount="6"
+            tools:listitem="@layout/home_main_list_item">
 
-
+        </android.support.v7.widget.RecyclerView>
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

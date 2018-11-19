@@ -89,14 +89,13 @@ public class UserManager {
 
                                 CropImage.activity(uri).setActivityTitle("이미지 자르기")
                                         .setAspectRatio(1,1)
-                                        .setRequestedSize(300,300)
+                                        .setRequestedSize(256,256)
                                         .start((Activity)mainContext);
 /*
                                 CropImage.activity(uri).setAspectRatio(1,1)
                                         .setRequestedSize(300, 300)
                                         .start((Activity) mainContext);
 */
-
                             }
                         })
                       .create();
@@ -152,11 +151,10 @@ public class UserManager {
                 final  FirebaseUser user = auth.getCurrentUser();
 
                 final ImageView profilePic = (ImageView)((Activity)mainContext).getWindow().getDecorView().getRootView().findViewById(R.id.nav_btn_profilepic);
+                profilePic.setImageResource(R.drawable.ic_profile);
                 final Uri downloadUrl = taskSnapshot.getDownloadUrl();
                 Log.d("test098", downloadUrl.toString());
-
-                profilePicDelete();
-
+                //profilePicDelete();
                 UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                         .setPhotoUri(downloadUrl)
                         .build();
@@ -175,10 +173,6 @@ public class UserManager {
                                 }
                             }
                         });
-
-                //Log.d("test098", user.getPhotoUrl().toString());
-
-
             }
         });
     }
@@ -269,33 +263,12 @@ public class UserManager {
     }
 
     //회원가입
-    static public Task<AuthResult> createUser(String email, String password, final String nickname)
-    {
+    static public Task<AuthResult> createUser(String email, String password, final String nickname) {
         Log.d("test001", "--------------회원가입 진입----------------");
-
-
-        if(checkLoggedin() == true) {
-            return null;
-        }
         //이메일 체크
 
         //패스워드 체크
 
-
-
-        //사용자에게 확인 메일 보내기
-/*
-        firebaseUser.sendEmailVerification()
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful())
-                        {
-                            Log.d("test001", "Email sent.");
-                        }
-                    }
-                });
-*/
         //회원가입
 
         auth.createUserWithEmailAndPassword(email, password)
@@ -304,19 +277,23 @@ public class UserManager {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d("test001", "--------------회원가입 성공----------------");
+                            View main_view = (View) view.getRootView().findViewById(R.id.snackbar_view);
+                            Snackbar snackbar = Snackbar.make(main_view, "회원가입 성공", Snackbar.LENGTH_SHORT);
+                            View snackBarView = snackbar.getView();
+                            snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext, R.color.Theme_Blue));
+                            snackbar.show();
                             FirebaseUser user = auth.getCurrentUser();
 
 
+                            //TODO 이메일 인증 메일은 보내지만 인증은 안하고 자동으로 로그인 되는중...ㅅㅂ
                             user.sendEmailVerification()
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
-                                            if(task.isSuccessful())
-                                            {
+                                            if (task.isSuccessful()) {
                                                 Log.d("test031", "Email sent.");
-                                            }
-                                            else{
-                                                Log.d("test031","Email failed.");
+                                            } else {
+                                                Log.d("test031", "Email failed.");
                                             }
                                         }
                                     });
@@ -329,22 +306,38 @@ public class UserManager {
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
-                                            if(task.isSuccessful()){
+                                            if (task.isSuccessful()) {
                                                 Log.d("test987", "User Profile updated.");
+                                                ((MainActivity)mainContext).replaceNavigation();
                                             }
                                         }
                                     })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d("test987", "User Profile updateddddd.");
-
-                                }
-                            });
-                        }else {
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.d("test987", "User Profile updateddddd.");
+                                        }
+                                    });
+                        } /*else {
                             Log.d("test001", "--------------회원가입 실패----------------");
+                            View main_view = (View) view.findViewById(R.id.snackbar_view);
+                            Snackbar snackbar = Snackbar.make(main_view, "회원가입 실패", Snackbar.LENGTH_SHORT);
+                            View snackBarView = snackbar.getView();
+                            snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext, R.color.Theme_Blue));
+                            snackbar.show();
                             Log.w("test001", task.getException());
-                        }
+                        }*/
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("test001", "--------------회원가입 실패----------------");
+                        View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
+                        Snackbar snackbar = Snackbar.make(main_view,"회원가입 실패\n"+e.getMessage(), Snackbar.LENGTH_LONG);
+                        View snackBarView = snackbar.getView();
+                        snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                        snackbar.show();
                     }
                 });
         return null;

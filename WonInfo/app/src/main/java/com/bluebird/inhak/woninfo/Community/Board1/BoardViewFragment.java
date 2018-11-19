@@ -2,6 +2,7 @@
 package com.bluebird.inhak.woninfo.Community.Board1;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -36,10 +37,12 @@ import com.bluebird.inhak.woninfo.R;
 import com.bluebird.inhak.woninfo.UserManager;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -47,6 +50,10 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -65,7 +72,7 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
 
     private View view;
     private SwipeRefreshLayout swipeRefresh;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Nullable
     @Override
@@ -115,7 +122,6 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                 }
                 final String content = commentEdit.getText().toString();
 
-
                 db.collection("Community").document("게시판").collection("대나무숲")
                         .document(args.getDocumentId())
                         .get()
@@ -129,10 +135,9 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                 comment.setContent(content);
                                 comment.setWriter_uid(UserManager.firebaseUser.getUid());
                                 comment.setWriter_id(UserManager.firebaseUser.getDisplayName());
-                                comment.setWriter_photoUri(UserManager.firebaseUser.getPhotoUrl().toString());
 
                                 GregorianCalendar calendar = new GregorianCalendar();
-                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd\nhh:mm");
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-dd-MM\nhh:mm");
                                 String now = dateFormat.format(calendar.getTime());
                                 comment.setDate(now);
 
@@ -140,6 +145,8 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                 db.collection("Community").document("게시판").collection("대나무숲")
                                         .document(args.getDocumentId())
                                         .update("comment"+(int)comment_count, comment.getHashMap(), "comment_count",comment_count+1);
+                                //새로고침 실행
+                                onRefresh();
                             }
                         });
 
@@ -176,28 +183,16 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                     likeCountText.setText(document.get("like_count").toString());
                                     TextView commentCountText= (TextView) view.findViewById(R.id.community_board1_commentcount);
                                     commentCountText.setText(String.valueOf((int)(double)document.getDouble("comment_count")));
-                                    ImageView imageView = (ImageView)view.findViewById(R.id.community_board1_profile);
-                                    if(document.get("profile")!=null) {
-                                        Glide.with(getActivity()).load(document.get("profile").toString()).into(imageView);
+                                    if(document.get("uid")!=null) {
+                                        ImageView imageView = (ImageView)view.findViewById(R.id.community_board1_profile);
+                                        loadProfile(document.getString("uid"), imageView);
                                     }
 
 
 
-
+                                    //사진 가져오기
                                     double imageCount = document.getDouble("image_count");
-
-                                    for(int i=0; i< 4; i++)
-                                    {
-                                        LinearLayout imageLinearLayout;
-                                        imageLinearLayout = view.findViewById(R.id.community_layout_image);
-
-
-                                        ImageView imageView1= new ImageView(getContext());
-                                        Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(UserManager.firebaseUser.getPhotoUrl()).into(imageView1);
-                                        imageLinearLayout.addView(imageView1);
-
-                                    }
-
+                                    loadStoreImages(imageCount, document.getId());
 
                                     //댓글 가져오기
                                     double commentCount = document.getDouble("comment_count");
@@ -205,17 +200,10 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                     for(int i=0; i< (int)commentCount; i++)
                                     {
                                         Map<String, Object> commentMap = (Map<String, Object>) document.get("comment"+i);
-                                        Log.d("test040", "1:"+commentMap.get("writer_uid").toString());
-                                        Log.d("test040", "1:"+commentMap.get("writer_id").toString());
-                                        Log.d("test040", "1:"+commentMap.get("writer_photoUri").toString());
-                                        Log.d("test040", "1:"+commentMap.get("date").toString());
-                                        Log.d("test040", "1:"+commentMap.get("content").toString());
-
 
                                         Comment comment = new Comment();
                                         comment.setWriter_uid( commentMap.get("writer_uid").toString());
                                         comment.setWriter_id( commentMap.get("writer_id").toString());
-                                        comment.setWriter_photoUri( commentMap.get("writer_photoUri").toString());
                                         comment.setDate( commentMap.get("date").toString());
                                         comment.setContent( commentMap.get("content").toString());
                                         commentItems.add(comment);
@@ -238,7 +226,52 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                         });
             }
         });
+    }
 
+    public void loadProfile(String uid, final ImageView imageView)
+    {
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReference();
+        Task<Uri> riversRef = storageReference.child("profiles/"+uid+"_profile").getDownloadUrl();
+        riversRef.addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                if(imageView != null)
+                    Glide.with(getActivity()).load(uri).into(imageView);
+            }
+        });
+    }
+
+    public void loadStoreImages(double imageCount, String documentId)
+    {
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReference();
+
+        final LinearLayout imageLinearLayout = view.findViewById(R.id.community_layout_image);
+        imageLinearLayout.removeAllViews();
+        for(int i=0; i<imageCount; i++){
+            Task<Uri> storageRef= storageReference.child("board1/" + documentId+"_image_"+i).getDownloadUrl();
+            storageRef.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    Log.d("test098", "success");
+                    Log.d("test098", uri.toString());
+                    //RecyclerView에 Adapter를 설정해줍니다.
+
+                    ImageView imageView1= new ImageView(getContext());
+                    Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(uri).into(imageView1);
+                    imageLinearLayout.addView(imageView1);
+
+                    LinearLayout.LayoutParams loparams = (LinearLayout.LayoutParams) imageView1.getLayoutParams();
+
+                    loparams.leftMargin = 30;
+                    loparams.rightMargin = 30;
+                    loparams.bottomMargin= 30;
+                    imageView1.setLayoutParams(loparams);
+                    //사진 등록
+                }
+            });
+        }
     }
 
     @Override

@@ -40,13 +40,25 @@
         android:layout_width="189dp"
         android:layout_height="0dp"
         android:layout_margin="5dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@null"
         android:gravity="top|start"
-        android:hint="종류"
+        android:hint="종류 : "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/write2_edit_title" />
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_titles" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout8"
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/item_line"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="@+id/write2_edit_kind"
+        app:layout_constraintEnd_toEndOf="@+id/write2_edit_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_titles" />
 
     <EditText
         android:id="@+id/write2_edit_price"
@@ -54,12 +66,12 @@
         android:layout_height="0dp"
         android:layout_margin="5dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:background="@null"
         android:gravity="top|start"
-        android:hint="가격"
+        android:hint="가격 : "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/write2_edit_title" />
+        app:layout_constraintStart_toEndOf="@+id/write2_edit_kind"
+        app:layout_constraintTop_toBottomOf="@+id/write2_edit_titles" />
 
     <FrameLayout
         android:id="@+id/frameLayout7"
@@ -73,7 +85,7 @@
 
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/community_main_1"
+        android:id="@+id/write2_layout_picture"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -120,7 +132,7 @@
         android:minLines="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/community_main_1" />
+        app:layout_constraintTop_toBottomOf="@+id/write2_layout_picture" />
 
     <FrameLayout
         android:id="@+id/frameLayout5"

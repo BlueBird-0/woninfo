@@ -50,7 +50,6 @@ public class BoardListAdapter3 extends RecyclerView.Adapter<BoardListAdapter3.Bo
         holder.item = new BoardListItem();
         holder.item.setDocumentId(items.get(position).getDocumentId());
         holder.item.setNum(items.get(position).getNum());
-        holder.item.setProfileUri(items.get(position).getProfileUri());
         holder.item.setId(items.get(position).getId());
         holder.item.setUid(items.get(position).getUid());
 
@@ -116,7 +115,7 @@ public class BoardListAdapter3 extends RecyclerView.Adapter<BoardListAdapter3.Bo
             title.setText(item.getTitle());
             TextView content = (TextView)itemView.findViewById(R.id.community_list_item_content);
             content.setText(item.getContent());*/
-            TextView kinds = (TextView) itemView.findViewById(R.id.community_market_book_kinds);
+            TextView kinds = (TextView) itemView.findViewById(R.id.community_market_kinds);
             kinds.setText(item.getKinds());
             TextView price = (TextView)itemView.findViewById(R.id.community_market_book_price);
             price.setText(item.getPrice());

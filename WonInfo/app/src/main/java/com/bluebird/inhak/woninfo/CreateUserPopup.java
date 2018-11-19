@@ -52,37 +52,28 @@ public class CreateUserPopup extends AppCompatActivity
                     View snackBarView = snackbar.getView();
                     snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext, R.color.Theme_Blue));
                     snackbar.show();
+                    return;
                 }
-
-                Log.d("test031", "3");
-
 
                 if (password_confirm.getText().toString().equals("")) {
                     password_confirm.requestFocus();
+                    return;
                 }
                 if (password.getText().toString().equals("")) {
                     password.requestFocus();
+                    return;
                 }
                 if (email.getText().toString().equals("")) {
                     email.requestFocus();
+                    return;
                 }
                 if (nickname.getText().toString().equals("")) {
                     nickname.requestFocus();
+                    return;
                 }
-                if (!password.getText().toString().equals("") && !password_confirm.getText().toString().equals("") && !email.getText().toString().equals("") && !nickname.getText().toString().equals("")) {
 
-
-                    Log.d("test001", email.getText().toString());
-                    Log.d("test001", password.getText().toString());
-                    Log.d("test001",nickname.getText().toString());
-
-                    UserManager.checkLoggedin();
-                    UserManager.logoutUser();
-                    UserManager.createUser(email.getText().toString(), password.getText().toString(), nickname.getText().toString());
-
-
-                    UserManager.checkLoggedin();
-                    Log.d("test001", "asdsd");
+                UserManager.createUser(email.getText().toString(), password.getText().toString(), nickname.getText().toString());
+                Log.d("test001", "asdsd");
 
                     // 아이디와 패스워드가 같은지 확인   GUI 수정
                     /*
@@ -98,8 +89,6 @@ public class CreateUserPopup extends AppCompatActivity
                                     .build();
                     */
                     finish();
-
-                }
             }
         });
 

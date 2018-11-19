@@ -13,9 +13,10 @@
         android:layout_height="match_parent">
 
         <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/Theme_LightGray"
+            android:background="@color/Theme_White"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -28,20 +29,19 @@
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp">
+                    android:layout_height="wrap_content">
 
 
                     <android.support.constraint.ConstraintLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorBackground"
+                        android:background="@drawable/box"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:id="@+id/community_board1_profile"
+                            android:id="@+id/community_market_profile"
                             android:layout_width="38dp"
                             android:layout_height="38dp"
                             android:layout_marginStart="16dp"
@@ -51,7 +51,7 @@
                             app:srcCompat="@drawable/ic_profile" />
 
                         <TextView
-                            android:id="@+id/community_board1_id"
+                            android:id="@+id/community_market_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="13dp"
@@ -60,11 +60,11 @@
                             android:textColor="@color/Theme_Black"
                             android:textSize="@dimen/title_size"
                             android:textStyle="bold"
-                            app:layout_constraintStart_toEndOf="@+id/community_board1_profile"
+                            app:layout_constraintStart_toEndOf="@+id/community_market_profile"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/community_board1_date"
+                            android:id="@+id/community_market_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -76,12 +76,13 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
+
                         <TextView
-                            android:id="@+id/community_board1_title"
+                            android:id="@+id/community_market_title"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:layout_marginTop="4dp"
+                            android:layout_marginTop="35dp"
                             android:layout_marginEnd="16dp"
                             android:text="title"
                             android:textColor="@color/Theme_Black"
@@ -89,7 +90,7 @@
                             android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/community_board1_profile" />
+                            app:layout_constraintTop_toBottomOf="@+id/community_market_profile" />
 
                         <TextView
                             android:id="@+id/community_board1_content"
@@ -103,53 +104,30 @@
                             android:textSize="@dimen/bigtitle_size"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/community_board1_title" />
+                            app:layout_constraintTop_toBottomOf="@+id/community_market_title" />
 
                         <ImageView
-                            android:id="@+id/imageView8"
+                            android:id="@+id/market_imageView8"
                             android:layout_width="18dp"
                             android:layout_height="18dp"
                             android:layout_marginEnd="4dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/community_board1_commentcount"
-                            app:layout_constraintEnd_toStartOf="@+id/community_board1_commentcount"
-                            app:srcCompat="@drawable/ic_comment"
-                            android:tint="@color/Theme_Blue"/>
+                            android:tint="@color/Theme_Black"
+                            app:layout_constraintBottom_toBottomOf="@+id/community_market_commentcount"
+                            app:layout_constraintEnd_toStartOf="@+id/community_market_commentcount"
+                            app:srcCompat="@drawable/ic_comment" />
 
                         <TextView
-                            android:id="@+id/community_board1_commentcount"
+                            android:id="@+id/community_market_commentcount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="12dp"
                             android:text="0"
-                            android:textColor="@color/Theme_Blue"
+                            android:textColor="@color/Theme_Black"
                             android:textSize="@dimen/bigtitle_size"
                             android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/community_board1_content" />
 
-                        <ImageView
-                            android:id="@+id/imageView10"
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:layout_marginEnd="4dp"
-                            android:layout_weight="1"
-                            app:layout_constraintBottom_toBottomOf="@+id/community_board1_likecount"
-                            app:layout_constraintEnd_toStartOf="@+id/community_board1_likecount"
-                            app:srcCompat="@drawable/ic_like"
-                            android:tint="@color/Theme_Red"/>
-
-                        <TextView
-                            android:id="@+id/community_board1_likecount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
-                            android:layout_weight="1"
-                            android:text="0"
-                            android:textColor="@color/Theme_Red"
-                            android:textSize="@dimen/bigtitle_size"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-                            app:layout_constraintEnd_toStartOf="@+id/imageView8" />
 
                         <LinearLayout
                             android:id="@+id/community_layout_image"
@@ -160,7 +138,22 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/community_board1_commentcount">
+                            app:layout_constraintTop_toBottomOf="@+id/community_market_commentcount">
+
+                            <ImageView
+                                android:id="@+id/market_imageView11"
+                                android:layout_width="match_parent"
+                                android:layout_height="143dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@color/Theme_LightGray"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_menu_gallery" />
 
                         </LinearLayout>
 
@@ -175,7 +168,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scrollbars="vertical"
-                    android:layout_marginBottom="10dp"
                     app:layoutManager="android.support.v7.widget.LinearLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -187,22 +179,53 @@
         </android.support.v4.widget.NestedScrollView>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout6"
-            android:fitsSystemWindows="false"
+            android:id="@+id/market_kinds"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="57dp"
+            android:background="@drawable/all_item_market_subclass"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/nestedScrollView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="종류"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/community_market_book_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="57dp"
+            android:text="원"
+            android:textColor="@color/Theme_Red"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/market_kinds"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/market_constraintLayout6"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_alignParentBottom="true"
+            android:layout_height="36dp"
+            android:background="@drawable/all_shape_roundrectanglebox"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:background="@color/colorBackground">
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/Theme_LightGray"/>
+            app:layout_constraintStart_toStartOf="parent">
 
             <EditText
-                android:id="@+id/board1_edit_commentwrite"
+                android:id="@+id/market_edit_commentwrite"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -216,11 +239,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/board1_btn_commentwrite"
+                android:id="@+id/market_btn_commentwrite"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/ic_send"
+                android:background="@drawable/ic_send_2"
                 android:backgroundTint="@color/Theme_Red"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"

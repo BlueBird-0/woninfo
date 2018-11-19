@@ -5,83 +5,79 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/a_26_box1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/Theme_White">
+        android:layout_height="wrap_content"
+        android:background="@drawable/all_ripple_click"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/a_26_box1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/box"
-            app:layout_constraintEnd_toEndOf="parent"
+        <ImageView
+            android:id="@+id/community_comment1_profile"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/community_comment1_id"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="@+id/community_comment1_id"
+            app:srcCompat="@drawable/ic_profile" />
 
-            <ImageView
-                android:id="@+id/community_comment1_profile"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="12dp"
-                app:layout_constraintBottom_toBottomOf="@+id/community_comment1_id"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/community_comment1_id"
-                app:srcCompat="@drawable/ic_profile" />
+        <TextView
+            android:id="@+id/community_comment1_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="6dp"
+            android:text="comment_id"
+            android:textColor="@color/Theme_Black"
+            android:textSize="@dimen/font_14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/community_comment1_profile"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/community_comment1_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="6dp"
-                android:text="comment_id"
-                android:textColor="@color/Theme_Black"
-                android:textSize="@dimen/font_14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/community_comment1_profile"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/community_comment1_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="comment_content"
+            android:textColor="@color/Theme_Black"
+            android:textSize="@dimen/bigtitle_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/community_comment1_profile" />
 
-            <TextView
-                android:id="@+id/community_comment1_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="8dp"
-                android:text="comment_content"
-                android:textColor="@color/Theme_Gray"
-                android:textSize="@dimen/bigtitle_size"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/community_comment1_profile" />
+        <TextView
+            android:id="@+id/community_comment1_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="12dp"
+            android:text="10/01 19:22"
+            android:textAlignment="textEnd"
+            android:textColor="@color/Theme_Gray"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/community_comment1_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="12dp"
-                android:text="10/01 19:22"
-                android:textAlignment="textEnd"
-                android:textColor="@color/Theme_Gray"
-                android:textSize="11sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Theme_LightGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:background="@color/Theme_Red">
-
-            </FrameLayout>
+        </FrameLayout>
 
 
-        </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>
