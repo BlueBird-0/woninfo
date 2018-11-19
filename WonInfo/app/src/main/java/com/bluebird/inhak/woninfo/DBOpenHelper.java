@@ -24,7 +24,7 @@ import static java.security.AccessController.getContext;
  */
 public class DBOpenHelper {
     private static final String DATABASE_NAME = "woninfo.db";
-    private static final int DATABASE_VERSION = 37; //db 바꿀때마다 버전업(중요)
+    private static final int DATABASE_VERSION = 38; //db 바꿀때마다 버전업(중요)
     public static SQLiteDatabase sqLiteDatabase;
     private DBHelper dbHelper;
     private Context context;
@@ -90,12 +90,12 @@ public class DBOpenHelper {
                 }
             }catch (Exception e){}
 
-            /*
-            Snackbar snackbar = Snackbar.make(context, "데이터베이스 생성",Snackbar.LENGTH_SHORT);
+            View view = new View(context);
+            Snackbar snackbar = Snackbar.make(view.getRootView(), "데이터베이스 생성",Snackbar.LENGTH_SHORT);
             View snackBarView = snackbar.getView();
             snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
             snackbar.show();
-            */
+
         }
 
         //버전이 업데이트 되었을 경우 DB를 다시 만들어 준다.
