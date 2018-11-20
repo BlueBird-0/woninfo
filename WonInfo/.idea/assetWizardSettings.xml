@@ -45,8 +45,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_placeholder" />
-                            <entry key="sourceFile" value="C:\Users\wku\Desktop\원대 로고\woninfo_image\placeholder (1).svg" />
+                            <entry key="outputName" value="ic_voluntary" />
+                            <entry key="sourceFile" value="C:\Users\wku\Desktop\원대 로고\woninfo_image\voluntary.svg" />
                           </map>
                         </option>
                       </PersistentState>

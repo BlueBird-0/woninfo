@@ -29,7 +29,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="-1sp"
-                android:text="출발시간"
+                android:text="7:30"
                 android:textAlignment="center"
                 android:textColor="@color/Theme_Black" />
 
@@ -38,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="출발장소"
+                android:text="삼천뜨란체 주공 4단지 맞은편 전북지리산 낙농농협 앞"
                 android:textAlignment="center"
                 android:textColor="@color/Theme_Black" />
 

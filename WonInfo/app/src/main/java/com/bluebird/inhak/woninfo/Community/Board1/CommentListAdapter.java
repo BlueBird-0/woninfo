@@ -80,14 +80,16 @@ public class CommentListAdapter extends RecyclerView.Adapter<CommentListAdapter.
         public void DrawItem()
         {
             TextView id = (TextView)itemView.findViewById(R.id.community_comment1_id);
-            id.setText(item.getWriter_id());
+           /* id.setText(item.getWriter_id());*/
+            id.setText("익명");
             TextView content= (TextView)itemView.findViewById(R.id.community_comment1_content);
             content.setText(item.getContent());
             TextView date = (TextView)itemView.findViewById(R.id.community_comment1_date);
             date.setText(item.getDate());
 
-            ImageView imageView = (ImageView)itemView.findViewById(R.id.community_comment1_profile);
-            loadProfile(item.getWriter_uid(), imageView);
+            //익명게시판이라 필요없음
+            /*ImageView imageView = (ImageView)itemView.findViewById(R.id.community_comment1_profile);
+            loadProfile(item.getWriter_uid(), imageView);*/
         }
     }
 

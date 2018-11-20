@@ -64,6 +64,9 @@
         <activity android:name="com.bluebird.inhak.woninfo.Popupdormitory"
             android:theme="@style/DialogTheme" >
         </activity>
+        <activity android:name="com.bluebird.inhak.woninfo.Popupvoluntary"
+            android:theme="@style/DialogTheme" >
+        </activity>
         <activity android:name="com.bluebird.inhak.woninfo.Setting"
             android:screenOrientation="portrait" >
         </activity>
