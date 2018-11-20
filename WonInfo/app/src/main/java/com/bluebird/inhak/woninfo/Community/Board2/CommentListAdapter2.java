@@ -1,18 +1,34 @@
 
 package com.bluebird.inhak.woninfo.Community.Board2;
 
+import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.Community.Textboard.Comment;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class CommentListAdapter2 extends RecyclerView.Adapter<CommentListAdapter2.CommentListViewHolder> {
@@ -36,13 +52,11 @@ public class CommentListAdapter2 extends RecyclerView.Adapter<CommentListAdapter
     //View 의 내용을 해당 포지션의 데이터로 바꿈니다.
     @Override
     public void onBindViewHolder(@NonNull CommentListViewHolder holder, int position) {
-        Log.d("test040", "여기도 실행1.0");
         holder.item = new Comment();
         holder.item.setWriter_uid(items.get(position).getWriter_uid());
         holder.item.setWriter_id(items.get(position).getWriter_id());
         holder.item.setContent(items.get(position).getContent());
         holder.item.setDate(items.get(position).getDate());
-        Log.d("test040", "여기도 실행1");
         holder.DrawItem();  //리스트 안에 아이템 그림그리기 함수
     }
 
@@ -65,14 +79,29 @@ public class CommentListAdapter2 extends RecyclerView.Adapter<CommentListAdapter
 
         public void DrawItem()
         {
-            Log.d("test040", "여기도 실행2");
             TextView id = (TextView)itemView.findViewById(R.id.community_comment1_id);
             id.setText(item.getWriter_id());
             TextView content= (TextView)itemView.findViewById(R.id.community_comment1_content);
             content.setText(item.getContent());
             TextView date = (TextView)itemView.findViewById(R.id.community_comment1_date);
             date.setText(item.getDate());
+
+            ImageView imageView = (ImageView)itemView.findViewById(R.id.community_comment1_profile);
+            loadProfile(item.getWriter_uid(), imageView);
         }
+    }
+
+    public void loadProfile(String uid, final ImageView imageView)
+    {
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReference();
+        Task<Uri> riversRef = storageReference.child("profiles/"+uid+"_profile").getDownloadUrl();
+        riversRef.addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Glide.with(mainActivity).load(uri).into(imageView);
+            }
+        });
     }
 }
 

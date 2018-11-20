@@ -1,6 +1,8 @@
 
 package com.bluebird.inhak.woninfo.Community.Board3;
 
+import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
@@ -20,9 +22,16 @@ import android.widget.TextView;
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+
+import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
 public class BoardListAdapter3 extends RecyclerView.Adapter<BoardListAdapter3.BoardListViewHolder> {
     private ArrayList<BoardListItem> items;
@@ -111,22 +120,44 @@ public class BoardListAdapter3 extends RecyclerView.Adapter<BoardListAdapter3.Bo
 
         public void DrawItem()
         {
-           /* TextView title = (TextView)itemView.findViewById(R.id.community_list_item_title);
-            title.setText(item.getTitle());
-            TextView content = (TextView)itemView.findViewById(R.id.community_list_item_content);
-            content.setText(item.getContent());*/
             TextView kinds = (TextView) itemView.findViewById(R.id.community_market_kinds);
             kinds.setText(item.getKinds());
             TextView price = (TextView)itemView.findViewById(R.id.community_market_book_price);
             price.setText(item.getPrice());
-        /*    TextView likeCount = (TextView)itemView.findViewById(R.id.community_list_item_likecount);
-            likeCount.setText(String.valueOf((int)item.getLikeCount()));
-            TextView commentCount= (TextView)itemView.findViewById(R.id.community_list_item_commentcount);
-            commentCount.setText(String.valueOf((int)item.getCommentCount()));*/
+
             ImageView hasImage = (ImageView)itemView.findViewById(R.id.community_market_book_images);
             if(item.getImageCount() == 0)
             {
                 hasImage.setVisibility(ImageView.INVISIBLE);
+            }else
+            {
+                loadStoreImages(item.getImageCount(), item.getDocumentId(), hasImage);
+            }
+        }
+
+
+        public void loadStoreImages(double imageCount, String documentId, final ImageView imageView)
+        {
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference storageReference = storage.getReference();
+
+            if(imageCount > 0)
+            {
+                Task<Uri> storageRef= storageReference.child("board3/" + documentId+"_image_"+0).getDownloadUrl();
+                storageRef.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(uri).into(imageView);
+/*
+                    LinearLayout.LayoutParams loparams = (LinearLayout.LayoutParams) imageView1.getLayoutParams();
+
+                    loparams.leftMargin = 30;
+                    loparams.rightMargin = 30;
+                    loparams.bottomMargin= 30;
+                    imageView1.setLayoutParams(loparams);*/
+                        //사진 등록
+                    }
+                });
             }
         }
     }

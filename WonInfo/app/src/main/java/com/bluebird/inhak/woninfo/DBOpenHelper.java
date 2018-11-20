@@ -24,7 +24,7 @@ import static java.security.AccessController.getContext;
  */
 public class DBOpenHelper {
     private static final String DATABASE_NAME = "woninfo.db";
-    private static final int DATABASE_VERSION = 37; //db 바꿀때마다 버전업(중요)
+    private static final int DATABASE_VERSION = 38; //db 바꿀때마다 버전업(중요)
     public static SQLiteDatabase sqLiteDatabase;
     private DBHelper dbHelper;
     private Context context;
