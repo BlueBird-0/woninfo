@@ -115,12 +115,18 @@ public class BoardViewFragment2 extends Fragment implements SwipeRefreshLayout.O
             public void onClick(View v) {
 
                 EditText commentEdit = (EditText)view.findViewById(R.id.board1_edit_commentwrite);
-                if(commentEdit.getText().toString().equals(null))
+                if(commentEdit.getText().toString().equals(""))
                 {
                     Log.d("test040","값이 없습니다.");
+                    View main_view = (View) view.getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "댓글을 입력해주세요", Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext, R.color.Theme_Blue));
+                    snackbar.show();
                     return;
                 }
                 final String content = commentEdit.getText().toString();
+
 
                 db.collection("Community").document("게시판").collection("자유게시판")
                         .document(args.getDocumentId())
