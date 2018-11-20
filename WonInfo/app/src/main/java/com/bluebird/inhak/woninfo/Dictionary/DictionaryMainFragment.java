@@ -39,8 +39,6 @@ public class DictionaryMainFragment extends Fragment {
     static View view;
     private DBOpenHelper dbOpenHelper;
     private Cursor cursor;
-    private AdapterView.OnItemClickListener mOnItemClickListner;
-
 
     @Nullable
     @Override

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,14 +12,12 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -40,7 +37,7 @@ import java.util.ArrayList;
 public class BoardListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
     // TODO 여기 String 으로 옮겨야함
     static double BOARD_COUNT = 20;  //한페이지에 보여주는 게시글 수
-    static double PAGE_NUMBER = 1;     //현재 페이지 번호
+    static double PAGE_NUMBER = 0;     //현재 페이지 번호
     static double PAGE_COUNT = 5;   //페이지 번호
     static double PAGE_ALL_COUNT;
 
@@ -49,7 +46,6 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
     private ArrayList<BoardListItem> boardListItems = new ArrayList<>();
     private View view;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-
 
     @Nullable
     @Override
@@ -61,7 +57,6 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
         swipeRefresh.setOnRefreshListener(this);
         return view;
     }
-
 
     @Override
     public void onStart() {
@@ -96,8 +91,7 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
                                 if (task.isSuccessful()) {
                                     int index = 0;
                                     for (DocumentSnapshot document : task.getResult()) {
-
-                                        if(index < BOARD_COUNT)
+                                        if(index >= BOARD_COUNT*(PAGE_NUMBER) && index < BOARD_COUNT*(PAGE_NUMBER+1))
                                         {
                                             BoardListItem item = new BoardListItem();
                                             item.setDocumentId(document.getId());
@@ -134,9 +128,9 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
                             @Override
                             public void onSuccess(DocumentSnapshot documentSnapshot) {
                                 Log.d("test040", "총페이지 수 :"+documentSnapshot.get("count").toString());
-                                PAGE_ALL_COUNT = documentSnapshot.getDouble("count")/ BOARD_COUNT;
+                                PAGE_ALL_COUNT = (int)((documentSnapshot.getDouble("count")-1  )/ BOARD_COUNT);
 
-                                LinearLayout pageList = view.findViewById(R.id.board1_list_page);
+                                final LinearLayout pageList = view.findViewById(R.id.board1_list_page);
                                 final TextView[] texts = new TextView[5];
                                 texts[0] = (TextView)view.findViewById(R.id.board1_text_page1);
                                 texts[1] = (TextView)view.findViewById(R.id.board1_text_page2);
@@ -174,11 +168,11 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
                                     if(pageNum[i] == PAGE_NUMBER) {
                                         texts[i].setTextColor(getContext().getResources().getColor(R.color.colorPrimary));
                                     }
-                                    texts[i].setText(String.valueOf(pageNum[i]));
+                                    texts[i].setText(String.valueOf(pageNum[i]+1));
                                     texts[i].setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            PAGE_NUMBER = Double.parseDouble(((TextView)v).getText().toString());
+                                            PAGE_NUMBER = Double.parseDouble(((TextView)v).getText().toString())-1;
                                             onRefresh();
                                         }
                                     });
@@ -188,9 +182,28 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
                                         texts[i].setVisibility(View.VISIBLE);
                                 }
 
-
-                                //Right Button
-                                Button rightBtn = new Button(getContext());
+                                //뒤로가기
+                                TextView textPrev = (TextView)view.findViewById(R.id.board1_button_prev);
+                                textPrev.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        PAGE_NUMBER -= PAGE_COUNT;
+                                        if(PAGE_NUMBER < 0)
+                                            PAGE_NUMBER = 0;
+                                        onRefresh();
+                                    }
+                                });
+                                //앞으로가기
+                                TextView nextPrev = (TextView)view.findViewById(R.id.board1_button_next);
+                                nextPrev.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        PAGE_NUMBER += PAGE_COUNT;
+                                        if(PAGE_NUMBER > PAGE_ALL_COUNT)
+                                            PAGE_NUMBER = PAGE_ALL_COUNT;
+                                        onRefresh();
+                                    }
+                                });
 
                             }
                         });
