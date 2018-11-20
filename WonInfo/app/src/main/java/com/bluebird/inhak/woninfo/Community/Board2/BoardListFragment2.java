@@ -128,15 +128,15 @@ public class BoardListFragment2 extends Fragment implements SwipeRefreshLayout.O
 
 
                 //paging
-                db.collection("Community").document("게시판").collection("자유게시판").document("option")
+                db.collection("Community").document("게시판").collection("대나무숲").document("option")
                         .get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override
                             public void onSuccess(DocumentSnapshot documentSnapshot) {
                                 Log.d("test040", "총페이지 수 :"+documentSnapshot.get("count").toString());
-                                PAGE_ALL_COUNT = documentSnapshot.getDouble("count")/ BOARD_COUNT;
+                                PAGE_ALL_COUNT = (int)((documentSnapshot.getDouble("count")-1  )/ BOARD_COUNT);
 
-                                LinearLayout pageList = view.findViewById(R.id.board1_list_page);
+                                final LinearLayout pageList = view.findViewById(R.id.board1_list_page);
                                 final TextView[] texts = new TextView[5];
                                 texts[0] = (TextView)view.findViewById(R.id.board1_text_page1);
                                 texts[1] = (TextView)view.findViewById(R.id.board1_text_page2);
@@ -174,11 +174,11 @@ public class BoardListFragment2 extends Fragment implements SwipeRefreshLayout.O
                                     if(pageNum[i] == PAGE_NUMBER) {
                                         texts[i].setTextColor(getContext().getResources().getColor(R.color.colorPrimary));
                                     }
-                                    texts[i].setText(String.valueOf(pageNum[i]));
+                                    texts[i].setText(String.valueOf(pageNum[i]+1));
                                     texts[i].setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            PAGE_NUMBER = Double.parseDouble(((TextView)v).getText().toString());
+                                            PAGE_NUMBER = Double.parseDouble(((TextView)v).getText().toString())-1;
                                             onRefresh();
                                         }
                                     });
@@ -188,9 +188,28 @@ public class BoardListFragment2 extends Fragment implements SwipeRefreshLayout.O
                                         texts[i].setVisibility(View.VISIBLE);
                                 }
 
-
-                                //Right Button
-                                Button rightBtn = new Button(getContext());
+                                //뒤로가기
+                                TextView textPrev = (TextView)view.findViewById(R.id.board1_button_prev);
+                                textPrev.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        PAGE_NUMBER -= PAGE_COUNT;
+                                        if(PAGE_NUMBER < 0)
+                                            PAGE_NUMBER = 0;
+                                        onRefresh();
+                                    }
+                                });
+                                //앞으로가기
+                                TextView nextPrev = (TextView)view.findViewById(R.id.board1_button_next);
+                                nextPrev.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        PAGE_NUMBER += PAGE_COUNT;
+                                        if(PAGE_NUMBER > PAGE_ALL_COUNT)
+                                            PAGE_NUMBER = PAGE_ALL_COUNT;
+                                        onRefresh();
+                                    }
+                                });
 
                             }
                         });

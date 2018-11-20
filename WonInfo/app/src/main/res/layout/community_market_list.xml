@@ -42,79 +42,141 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginTop="15dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
                 android:background="#FFFFFF"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/community_layout_refrash">
 
-                <Button
-                    android:id="@+id/button"
-                    android:layout_width="14dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/all_item_loggedinbtn"
-                    android:text="PREV"
-                    android:textColor="@color/Theme_White"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/board_market_page1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="1"
-                    android:textSize="@dimen/font_18sp"
-                    android:gravity="center_horizontal"/>
+                    android:background="@color/Theme_LightGray">
+
+                    <TextView
+                        android:id="@+id/board2_market_prev"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/all_item_loggedinbtn"
+                        android:gravity="center"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="4dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="4dp"
+                        android:text="Prev"
+                        android:textColor="@color/Theme_White"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/board2_market_page"
+                        app:layout_constraintEnd_toStartOf="@+id/board2_market_page"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/board2_market_page" />
+
+                    <LinearLayout
+                        android:id="@+id/board2_market_page"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/board2_market_next"
+                        app:layout_constraintStart_toEndOf="@+id/board2_market_prev"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/board2_market_page1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/all_ripple_click"
+                            android:backgroundTint="@color/Theme_LightGray"
+                            android:clickable="true"
+                            android:gravity="center_horizontal"
+                            android:text="1"
+                            android:textColor="@color/Theme_Gray"
+                            android:textSize="@dimen/font_18sp" />
 
 
-                <TextView
-                    android:id="@+id/board_market_page2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="2"
-                    android:textSize="@dimen/font_18sp"
-                    android:gravity="center_horizontal"/>
+                        <TextView
+                            android:id="@+id/board2_market_page2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/all_ripple_click"
+                            android:backgroundTint="@color/Theme_LightGray"
+                            android:clickable="true"
+                            android:gravity="center_horizontal"
+                            android:text="2"
+                            android:textColor="@color/Theme_Gray"
+                            android:textSize="@dimen/font_18sp" />
 
-                <TextView
-                    android:id="@+id/board_market_page3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="3"
-                    android:textSize="@dimen/font_18sp"
-                    android:gravity="center_horizontal"/>
+                        <TextView
+                            android:id="@+id/board2_market_page3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/all_ripple_click"
+                            android:backgroundTint="@color/Theme_LightGray"
+                            android:clickable="true"
+                            android:gravity="center_horizontal"
+                            android:text="3"
+                            android:textColor="@color/Theme_Gray"
+                            android:textSize="@dimen/font_18sp" />
 
-                <TextView
-                    android:id="@+id/board_market_page4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="4"
-                    android:textSize="@dimen/font_18sp"
-                    android:gravity="center_horizontal"/>
+                        <TextView
+                            android:id="@+id/board2_market_page4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/all_ripple_click"
+                            android:backgroundTint="@color/Theme_LightGray"
+                            android:clickable="true"
+                            android:gravity="center_horizontal"
+                            android:text="4"
+                            android:textColor="@color/Theme_Gray"
+                            android:textSize="@dimen/font_18sp" />
 
-                <TextView
-                    android:id="@+id/board_market_page5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="5"
-                    android:textSize="@dimen/font_18sp"
-                    android:gravity="center_horizontal"/>
+                        <TextView
+                            android:id="@+id/board2_market_page5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/all_ripple_click"
+                            android:backgroundTint="@color/Theme_LightGray"
+                            android:clickable="true"
+                            android:gravity="center_horizontal"
+                            android:text="5"
+                            android:textColor="@color/Theme_Gray"
+                            android:textSize="@dimen/font_18sp" />
 
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="14dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/all_item_loggedinbtn"
-                    android:text="Next"
-                    android:textColor="@color/Theme_White"
-                    android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/board2_market_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/all_item_loggedinbtn"
+                        android:gravity="center"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="4dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="4dp"
+                        android:text="Next"
+                        android:textColor="@color/Theme_White"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/board2_market_page"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/board2_market_page"
+                        app:layout_constraintTop_toTopOf="@+id/board2_market_page" />
+                </android.support.constraint.ConstraintLayout>
             </LinearLayout>
 
         </LinearLayout>
