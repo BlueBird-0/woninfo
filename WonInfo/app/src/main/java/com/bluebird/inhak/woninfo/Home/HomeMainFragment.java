@@ -69,14 +69,6 @@ public class HomeMainFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.home_main_fragment, container, false);
-
-        //  WebView webView = (WebView)v.findViewById(R.id.youtube_player_view);
-        // webView.getSettings().setJavaScriptEnabled(true);
-        // webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
-        // webView.setWebViewClient(new WebViewClient());
-        // webView.loadUrl("https://www.youtube.com/watch?v=tcuLThIyA70");
-
-
         ArrayList<String> data = new ArrayList<>(); //이미지 url를 저장하는 arraylist
         data.add("https://upload.wikimedia.org/wikipedia/en/thumb/2/24/SpongeBob_SquarePants_logo.svg/1200px-SpongeBob_SquarePants_logo.svg.png");
         data.add("http://nick.mtvnimages.com/nick/promos-thumbs/videos/spongebob-squarepants/rainbow-meme-video/spongebob-rainbow-meme-video-16x9.jpg?quality=0.60");
@@ -175,9 +167,6 @@ public class HomeMainFragment extends Fragment {
                                         item.setDate(document.get("date").toString());
                                         item.setLikeCount(document.getDouble("like_count"));
                                         item.setCommentCount(document.getDouble("comment_count"));
-
-
-
                                         newsItems.add(item);
 
                                         recyclerView.setAdapter(newsAdapter);

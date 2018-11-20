@@ -32,10 +32,11 @@
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/Theme_LightGray">
 
                 <TextView
-                    android:id="@+id/board1_button_left"
+                    android:id="@+id/board1_button_prev"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="12dp"
@@ -65,8 +66,8 @@
                     android:layout_marginBottom="12dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/board1_button_right"
-                    app:layout_constraintStart_toEndOf="@+id/board1_button_left"
+                    app:layout_constraintEnd_toStartOf="@+id/board1_button_next"
+                    app:layout_constraintStart_toEndOf="@+id/board1_button_prev"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
@@ -75,6 +76,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/all_ripple_click"
+                        android:backgroundTint="@color/Theme_LightGray"
                         android:clickable="true"
                         android:gravity="center_horizontal"
                         android:text="1"
@@ -88,6 +90,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/all_ripple_click"
+                        android:backgroundTint="@color/Theme_LightGray"
                         android:clickable="true"
                         android:gravity="center_horizontal"
                         android:text="2"
@@ -100,6 +103,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/all_ripple_click"
+                        android:backgroundTint="@color/Theme_LightGray"
                         android:clickable="true"
                         android:gravity="center_horizontal"
                         android:text="3"
@@ -112,6 +116,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/all_ripple_click"
+                        android:backgroundTint="@color/Theme_LightGray"
                         android:clickable="true"
                         android:gravity="center_horizontal"
                         android:text="4"
@@ -124,6 +129,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/all_ripple_click"
+                        android:backgroundTint="@color/Theme_LightGray"
                         android:clickable="true"
                         android:gravity="center_horizontal"
                         android:text="5"
@@ -133,7 +139,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/board1_button_right"
+                    android:id="@+id/board1_button_next"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="12dp"
