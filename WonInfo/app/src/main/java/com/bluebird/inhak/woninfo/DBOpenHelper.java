@@ -25,7 +25,7 @@ import static java.security.AccessController.getContext;
  */
 public class DBOpenHelper {
     private static final String DATABASE_NAME = "woninfo.db";
-    private static final int DATABASE_VERSION = 40; //db 바꿀때마다 버전업(중요)
+    private static final int DATABASE_VERSION = 43; //db 바꿀때마다 버전업(중요)
     public static SQLiteDatabase sqLiteDatabase;
     private DBHelper dbHelper;
     private Context context;
@@ -42,7 +42,7 @@ public class DBOpenHelper {
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL(DBStruct.CreateDB._CREATE);
-
+//
             //////////////// 테스트용 데이터 추가 코드
             //  String sql = "insert into "+DBStruct.CreateDB._TABLENAME + " " + "(primary_key, title, content) values( 'A01','웹정보서비스 이용방법','내용내용내용내용내용내용')";
             //  db.execSQL(sql);
@@ -53,18 +53,15 @@ public class DBOpenHelper {
                 InputStream inputStream = assetManager.open("menuExcelData.xls");
                 Workbook workbook = Workbook.getWorkbook(inputStream);
 
-                AssetManager assetManager1 = context.getAssets();
-                InputStream inputStream1 = assetManager1.open("busExcelData.xls");
-                Workbook workbook1 = Workbook.getWorkbook(inputStream1);
+
                 //시트 이름
                 Sheet sh = workbook.getSheet("Data");
-                Sheet sh2 = workbook1.getSheet("Data2");
+
 
                 String primaryKey="", title="",likes="", content="";
                 int row = sh.getRows();
                 int column = sh.getColumns();
-                int row2 = sh2.getRows();
-                int column2 = sh2.getColumns();
+
 
                 for(int r=1; r<row; r++) {
                     for(int c=0; c<column; c++) {

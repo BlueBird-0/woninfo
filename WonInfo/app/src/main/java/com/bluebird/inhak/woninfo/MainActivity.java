@@ -253,10 +253,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                     snackbar.show();
                                 }
                             });
-                            if(user.getDisplayName().toString().equals("김소정")) {
+                            if(user.getDisplayName().toString().equals("배수지")) {
                                 navigationView.inflateMenu(R.menu.nav_menu_girl);
                             }
-                            else if(user.getDisplayName().toString().equals("qqqqqq")){
+                            else if(user.getDisplayName().toString().equals("지창욱")){
                                 navigationView.inflateMenu(R.menu.nav_menu_boy);
                         }
                             else {
