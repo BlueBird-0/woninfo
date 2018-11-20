@@ -70,7 +70,6 @@ public class Textboard extends Fragment {
     private Button sendbt;
     private EditText editdt;
     private EditText editdt2;
-    private String Board;
     private String date;
     private String option;
     private Double num;

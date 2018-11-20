@@ -30,101 +30,127 @@
                 tools:itemCount="9"
                 tools:listitem="@layout/community_list_item" />
 
-            <LinearLayout
-                android:id="@+id/community_list_page"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/community_layout_refrash"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal"
-                android:clickable="true"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/community_layout_refrash">
+                android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/community_button_left"
+                    android:id="@+id/board1_button_left"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
                     android:layout_weight="1"
                     android:background="@drawable/all_item_loggedinbtn"
                     android:gravity="center"
-                    android:text="PREV"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="4dp"
+                    android:text="Prev"
                     android:textColor="@color/Theme_White"
                     android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/board1_list_page"
+                    app:layout_constraintEnd_toStartOf="@+id/board1_list_page"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/board1_list_page" />
 
-                <TextView
-                    android:id="@+id/community_text_page1"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/board1_list_page"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="1"
-                    android:background="@drawable/all_ripple_click"
-                    android:textColor="@color/Theme_Gray"
-                    android:textSize="@dimen/font_18sp" />
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/board1_button_right"
+                    app:layout_constraintStart_toEndOf="@+id/board1_button_left"
+                    app:layout_constraintTop_toTopOf="parent">
 
+                    <TextView
+                        android:id="@+id/board1_text_page1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/all_ripple_click"
+                        android:clickable="true"
+                        android:gravity="center_horizontal"
+                        android:text="1"
+                        android:textColor="@color/Theme_Gray"
+                        android:textSize="@dimen/font_18sp" />
+
+
+                    <TextView
+                        android:id="@+id/board1_text_page2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/all_ripple_click"
+                        android:clickable="true"
+                        android:gravity="center_horizontal"
+                        android:text="2"
+                        android:textColor="@color/Theme_Gray"
+                        android:textSize="@dimen/font_18sp" />
+
+                    <TextView
+                        android:id="@+id/board1_text_page3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/all_ripple_click"
+                        android:clickable="true"
+                        android:gravity="center_horizontal"
+                        android:text="3"
+                        android:textColor="@color/Theme_Gray"
+                        android:textSize="@dimen/font_18sp" />
+
+                    <TextView
+                        android:id="@+id/board1_text_page4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/all_ripple_click"
+                        android:clickable="true"
+                        android:gravity="center_horizontal"
+                        android:text="4"
+                        android:textColor="@color/Theme_Gray"
+                        android:textSize="@dimen/font_18sp" />
+
+                    <TextView
+                        android:id="@+id/board1_text_page5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/all_ripple_click"
+                        android:clickable="true"
+                        android:gravity="center_horizontal"
+                        android:text="5"
+                        android:textColor="@color/Theme_Gray"
+                        android:textSize="@dimen/font_18sp" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/community_text_page2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="2"
-                    android:background="@drawable/all_ripple_click"
-                    android:textColor="@color/Theme_Gray"
-                    android:textSize="@dimen/font_18sp" />
-
-                <TextView
-                    android:id="@+id/community_text_page3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="3"
-                    android:background="@drawable/all_ripple_click"
-                    android:textColor="@color/Theme_Gray"
-                    android:textSize="@dimen/font_18sp" />
-
-                <TextView
-                    android:id="@+id/community_text_page4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="4"
-                    android:background="@drawable/all_ripple_click"
-                    android:textColor="@color/Theme_Gray"
-                    android:textSize="@dimen/font_18sp" />
-
-                <TextView
-                    android:id="@+id/community_text_page5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="5"
-                    android:background="@drawable/all_ripple_click"
-                    android:textColor="@color/Theme_Gray"
-                    android:textSize="@dimen/font_18sp" />
-
-                <TextView
-                    android:id="@+id/community_button_right"
+                    android:id="@+id/board1_button_right"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginEnd="12dp"
                     android:layout_weight="1"
                     android:background="@drawable/all_item_loggedinbtn"
                     android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="4dp"
                     android:text="Next"
                     android:textColor="@color/Theme_White"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/board1_list_page"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/board1_list_page" />
+            </android.support.constraint.ConstraintLayout>
 
         </LinearLayout>
 

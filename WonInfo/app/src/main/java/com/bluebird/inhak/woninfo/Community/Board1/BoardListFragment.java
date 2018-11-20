@@ -39,8 +39,9 @@ import java.util.ArrayList;
 
 public class BoardListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
     // TODO 여기 String 으로 옮겨야함
-    static double PAGE_COUNT = 20;  //한페이지에 보여주는 게시글 수
-    static double PAGE_NUMBER = 0;     //현재 페이지 번호
+    static double BOARD_COUNT = 20;  //한페이지에 보여주는 게시글 수
+    static double PAGE_NUMBER = 1;     //현재 페이지 번호
+    static double PAGE_COUNT = 5;   //페이지 번호
     static double PAGE_ALL_COUNT;
 
     private BoardListAdapter boardListAdapter;
@@ -69,19 +70,22 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
 
         //실행시 새로고침 실행
         this.onRefresh();
-        swipeRefresh.setRefreshing(true);
     }
 
     @Override
     public void onRefresh() {
         Log.d("comunity", "onRefresh");
+        swipeRefresh.setRefreshing(true);
+        boardListItems.clear(); //원래 리스트 삭제
+        setRecyclerView();
+
         final long startTime = System.currentTimeMillis();   Log.d("comunity","측정시작");      //TODO 게시글 시간 측정
         new Handler().post(new Runnable() {
             @Override
             public void run() {
                 db.collection("Community").document("게시판").collection("대나무숲")
-                        //.limit(PAGE_COUNT)
-                        .limit((long)(PAGE_COUNT*(PAGE_NUMBER+1)))
+                        //.limit((long)BOARD_COUNT)
+                        .limit((long)(BOARD_COUNT*(PAGE_NUMBER+1)))
                         .orderBy("num", Query.Direction.DESCENDING)
                         //.whereLessThan("num", option_count-(PAGE_COUNT*PAGE_NUMBER))
                         //.whereLessThan("num", PAGE_COUNT)
@@ -90,24 +94,26 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                 if (task.isSuccessful()) {
-                                    boardListItems.clear(); //원래 리스트 삭제
-
                                     int index = 0;
                                     for (DocumentSnapshot document : task.getResult()) {
-                                        BoardListItem item = new BoardListItem();
-                                        item.setDocumentId(document.getId());
-                                        item.setTitle(document.get("title").toString());
-                                        item.setContent(document.get("content").toString());
-                                        item.setNum(document.getDouble("num"));
-                                        item.setId(document.getString("id"));
-                                        item.setUid(document.getString("uid"));
-                                        item.setDate(document.getString("date"));
-                                        item.setCommentCount(document.getDouble("comment_count"));
-                                        item.setLikeCount(document.getDouble("like_count"));
-                                        item.setImageCount(document.getDouble("image_count"));
 
-                                        boardListItems.add(item);
-                                        if( index++ > PAGE_COUNT) break;
+                                        if(index < BOARD_COUNT)
+                                        {
+                                            BoardListItem item = new BoardListItem();
+                                            item.setDocumentId(document.getId());
+                                            item.setTitle(document.get("title").toString());
+                                            item.setContent(document.get("content").toString());
+                                            item.setNum(document.getDouble("num"));
+                                            item.setId(document.getString("id"));
+                                            item.setUid(document.getString("uid"));
+                                            item.setDate(document.getString("date"));
+                                            item.setCommentCount(document.getDouble("comment_count"));
+                                            item.setLikeCount(document.getDouble("like_count"));
+                                            item.setImageCount(document.getDouble("image_count"));
+
+                                            boardListItems.add(item);
+                                        }
+                                        index++;
                                     }
                                     long endTime = System.currentTimeMillis();   Log.d("comunity","측정끝");      //TODO 게시글 시간 측정
                                     Log.d("comunity", "게시글 불러오는 데 걸리는 시간 (ms):"+(endTime-startTime));
@@ -120,21 +126,68 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
                             }
                         });
 
+
+                //paging
                 db.collection("Community").document("게시판").collection("대나무숲").document("option")
                         .get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override
                             public void onSuccess(DocumentSnapshot documentSnapshot) {
                                 Log.d("test040", "총페이지 수 :"+documentSnapshot.get("count").toString());
-                                PAGE_ALL_COUNT = documentSnapshot.getDouble("count");
+                                PAGE_ALL_COUNT = documentSnapshot.getDouble("count")/ BOARD_COUNT;
 
+                                LinearLayout pageList = view.findViewById(R.id.board1_list_page);
+                                final TextView[] texts = new TextView[5];
+                                texts[0] = (TextView)view.findViewById(R.id.board1_text_page1);
+                                texts[1] = (TextView)view.findViewById(R.id.board1_text_page2);
+                                texts[2] = (TextView)view.findViewById(R.id.board1_text_page3);
+                                texts[3] = (TextView)view.findViewById(R.id.board1_text_page4);
+                                texts[4] = (TextView)view.findViewById(R.id.board1_text_page5);
 
-                                //Left Button
-                                Button leftBtn = new Button(getContext());
+                                int []pageNum = new int[5];
+                                pageNum[0] = (int)(PAGE_NUMBER % PAGE_COUNT -2);
+                                pageNum[1] = (int)(PAGE_NUMBER % PAGE_COUNT -1);
+                                pageNum[2] = (int)(PAGE_NUMBER % PAGE_COUNT );
+                                pageNum[3] = (int)(PAGE_NUMBER % PAGE_COUNT +1);
+                                pageNum[4] = (int)(PAGE_NUMBER % PAGE_COUNT +2);
 
-                                for(int i=0; i<5; i++) {
-                                    TextView pageText = new TextView(getContext());
+                                if(pageNum[0] < 0)
+                                {
+                                    pageList.removeView(texts[0]);
+                                    pageList.addView(texts[0]);
+                                    pageNum[0] += PAGE_COUNT;
                                 }
+                                if(pageNum[1]  < 0)
+                                {
+                                    pageList.removeView(texts[1]);
+                                    pageList.addView(texts[1]);
+                                    pageNum[1] += PAGE_COUNT;
+                                }
+                                pageList.removeAllViews();
+                                for(int i=0; i<5; i++)
+                                {
+                                    pageList.addView(texts[i]);
+                                }
+
+                                for(int i=0; i<5; i++)
+                                {
+                                    if(pageNum[i] == PAGE_NUMBER) {
+                                        texts[i].setTextColor(getContext().getResources().getColor(R.color.colorPrimary));
+                                    }
+                                    texts[i].setText(String.valueOf(pageNum[i]));
+                                    texts[i].setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            PAGE_NUMBER = Double.parseDouble(((TextView)v).getText().toString());
+                                            onRefresh();
+                                        }
+                                    });
+                                    if(pageNum[i] > PAGE_ALL_COUNT)
+                                        texts[i].setVisibility(View.INVISIBLE);
+                                    else
+                                        texts[i].setVisibility(View.VISIBLE);
+                                }
+
 
                                 //Right Button
                                 Button rightBtn = new Button(getContext());
