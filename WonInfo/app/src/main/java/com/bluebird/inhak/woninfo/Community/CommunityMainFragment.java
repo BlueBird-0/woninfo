@@ -110,10 +110,15 @@ public class CommunityMainFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 if(UserManager.checkLoggedin()==true){
-                FragmentManager testlistview = getFragmentManager();
-                Fragment fragment = null;
-               // fragment = new BoardListFragment4();
-                loadFragment(fragment);}
+                    FragmentManager testlistview = getFragmentManager();
+                    Fragment fragment = null;
+                    // fragment = new BoardListFragment4();
+                    View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
+                    loadFragment(fragment);}
                 else{
 
                     View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
@@ -129,10 +134,16 @@ public class CommunityMainFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 if(UserManager.checkLoggedin()==true){
-                FragmentManager a_15_fragment = getFragmentManager();
-                Fragment fragment = null;
-               // fragment = new A15Fragment();
-                loadFragment(fragment);}
+                    FragmentManager a_15_fragment = getFragmentManager();
+                    Fragment fragment = null;
+                     // fragment = new A15Fragment();
+                    View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
+                    loadFragment(fragment);}
+
                 else{
 
                     View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
@@ -147,11 +158,17 @@ public class CommunityMainFragment extends Fragment{
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(UserManager.checkLoggedin()==true){
-                FragmentManager a_24_fragment = getFragmentManager();
-                Fragment fragment = null;
-                //fragment = new A24Fragment();
-                loadFragment(fragment);}
+                if(UserManager.checkLoggedin()==true) {
+                    FragmentManager a_24_fragment = getFragmentManager();
+                    Fragment fragment = null;
+                    View main_view = (View) view.getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext, R.color.Theme_Blue));
+                    snackbar.show();
+                    //fragment = new A24Fragment();
+                    loadFragment(fragment);
+                }
                 else{
 
                     View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);

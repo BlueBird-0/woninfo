@@ -90,11 +90,11 @@ public class DBOpenHelper {
                 }
             }catch (Exception e){}
 
-            View view = new View(context);
+      /*      View view = new View(context);
             Snackbar snackbar = Snackbar.make(view.getRootView(), "데이터베이스 생성",Snackbar.LENGTH_SHORT);
             View snackBarView = snackbar.getView();
             snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
-            snackbar.show();
+            snackbar.show();*/
 
         }
 

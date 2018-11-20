@@ -84,6 +84,8 @@ import java.util.List;
 
 import gun0912.tedbottompicker.TedBottomPicker;
 
+import static com.bluebird.inhak.woninfo.WebViewFragment.view;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static Context mainContext;
     private DBOpenHelper dbOpenHelper;
@@ -222,6 +224,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             TextView textView = (TextView)navigationView.getHeaderView(1).findViewById(R.id.nav_text_userid);
                             ImageView imageView=(ImageView) navigationView.getHeaderView(1).findViewById(R.id.imageView_setting);
                             final ImageView profilePic = (ImageView)navigationView.getHeaderView(1).findViewById(R.id.nav_btn_profilepic);
+                            ImageView message= (ImageView)navigationView.getHeaderView(1).findViewById(R.id.imageView_message);
                             textView.setText(user.getDisplayName());
                             if(user.getPhotoUrl()!=null){
                                 Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(user.getPhotoUrl()).into(profilePic);}
@@ -238,8 +241,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                     startActivity(new Intent(getApplicationContext(),Setting.class));
                                 }
                             });
+                            message.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
 
-                            navigationView.inflateMenu(R.menu.nav_menu_loggedin);
+                                    ((DrawerLayout)findViewById(R.id.drawer_layout)).closeDrawer(GravityCompat.START);
+                                    View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
+                                    Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
+                                    View snackBarView = snackbar.getView();
+                                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                                    snackbar.show();
+                                }
+                            });
+                            if(user.getDisplayName().toString().equals("김소정")) {
+                                navigationView.inflateMenu(R.menu.nav_menu_girl);
+                            }
+                            else if(user.getDisplayName().toString().equals("qqqqqq")){
+                                navigationView.inflateMenu(R.menu.nav_menu_boy);
+                        }
+                            else {
+                                navigationView.inflateMenu(R.menu.nav_menu_loggedin);
+                            }
                         }else
                         {
                         //    View main_view = (View)findViewById(R.id.snackbar_view);

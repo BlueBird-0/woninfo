@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
+import static com.bluebird.inhak.woninfo.WebViewFragment.view;
 
 public class Setting extends AppCompatActivity {
     @Override
@@ -59,7 +64,57 @@ public class Setting extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), CommunitySettingRules.class));
             }
         });
-
+ /*       notify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View main_view = (View)view.findViewById(R.id.snackbar_view);
+                Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
+                View snackBarView = snackbar.getView();
+                snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                snackbar.show();
+            }
+        });
+        personalinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View main_view = (View)findViewById(R.id.snackbar_view);
+                Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
+                View snackBarView = snackbar.getView();
+                snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                snackbar.show();
+            }
+        });
+        appversion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View main_view = (View)findViewById(R.id.snackbar_view);
+                Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
+                View snackBarView = snackbar.getView();
+                snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                snackbar.show();
+            }
+        });
+        agreement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View main_view = (View)findViewById(R.id.snackbar_view);
+                Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
+                View snackBarView = snackbar.getView();
+                snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                snackbar.show();
+            }
+        });
+        userleave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View main_view = (View)getWindow().getDecorView().getRootView().findViewById(R.id.snackbar_view);
+                Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
+                View snackBarView = snackbar.getView();
+                snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                snackbar.show();
+            }
+        });
+*/
 
     }
 

@@ -37,6 +37,7 @@ import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A08Fragment.A08Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A20Fragment.A20Fragment;
+import com.bluebird.inhak.woninfo.Dictionary.A24Fragment.A24Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
 
 import com.bluebird.inhak.woninfo.MainActivity;
@@ -122,6 +123,19 @@ public class HomeMainFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://wvu.wku.ac.kr"));
                 startActivity(intent);
+            }
+        });
+
+        ConstraintLayout topButton4 = (ConstraintLayout)view.findViewById(R.id.home_layout_smallbtn4);
+        topButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment bus = new A24Fragment();
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_fragment_container,bus)
+                        .commit();
+
             }
         });
 
