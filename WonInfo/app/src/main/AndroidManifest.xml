@@ -55,7 +55,13 @@
         <activity android:name="com.bluebird.inhak.woninfo.Reserve"
             android:theme="@style/DialogTheme" >
         </activity>
+        <activity android:name="com.bluebird.inhak.woninfo.Popupgirloffically"
+            android:theme="@style/DialogTheme" >
+        </activity>
         <activity android:name="com.bluebird.inhak.woninfo.PopupEnd"
+            android:theme="@style/DialogTheme" >
+        </activity>
+        <activity android:name="com.bluebird.inhak.woninfo.Popupdormitory"
             android:theme="@style/DialogTheme" >
         </activity>
         <activity android:name="com.bluebird.inhak.woninfo.Setting"

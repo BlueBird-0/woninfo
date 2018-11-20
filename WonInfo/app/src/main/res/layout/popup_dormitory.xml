@@ -2,22 +2,21 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-
-    android:background="@drawable/item_round_box">
+    android:background="@drawable/item_round_box"
+    android:clickable="true">
 
     <TextView
-        android:id="@+id/popup_militaryleave_text1"
+        android:id="@+id/popup_dormitory_text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/login_btn_submit"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:clickable="true"
-        android:text="군대휴학 신청"
+        android:layout_marginEnd="40dp"
+        android:text="기숙사 외박신청"
         android:textAlignment="center"
         android:textColor="@color/Theme_Blue"
         android:textSize="@dimen/title_size"
@@ -27,67 +26,64 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/popup_militaryleave_text2"
+        android:id="@+id/popup_dormitory_text2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="웹정보서비스 → 정보서비스 → 학적관리 → "
+        android:layout_marginEnd="40dp"
+        android:text="웹정보서비스 → 로그인 → 정보서비스  "
         android:textColor="@color/Theme_Gray"
-        android:textSize="@dimen/font_14sp"
+        android:textSize="@dimen/font_15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text1" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_dormitory_text1" />
 
     <TextView
-        android:id="@+id/popup_militaryleave_text3"
+        android:id="@+id/popup_dormitory_text3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="휴학신청(입대휴학) → 휴학원서 출력 → 보호자 연서 → "
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:text="→ 학생생활관/도덕관/국시관 → 생활관 학생관리  "
         android:textColor="@color/Theme_Gray"
-        android:textSize="@dimen/font_14sp"
+        android:textSize="@dimen/font_15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text2" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_dormitory_text2" />
 
     <TextView
-        android:id="@+id/popup_militaryleave_text4"
+        android:id="@+id/popup_dormitory_text4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="소속지도교수 및 학과(부)장 면담 → 소속대학 교학과 제출 → 확인증 교부"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:text="→ 외박내역조회  "
         android:textColor="@color/Theme_Gray"
-        android:textSize="@dimen/font_14sp"
+        android:textSize="@dimen/font_15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text3" />
-
+        app:layout_constraintTop_toBottomOf="@+id/popup_dormitory_text3" />
 
     <Button
-        android:id="@+id/popup_militaryleave_btn"
+        android:id="@+id/popup_domitory_btn"
         android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/all_item_cunfirmbtn"
-        android:clickable="true"
-        android:text="군대휴학\n신청하기"
+        android:text="웹정보서비스\n바로가기"
         android:textColor="@color/Theme_White"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text4" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_dormitory_text4"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </android.support.constraint.ConstraintLayout>
