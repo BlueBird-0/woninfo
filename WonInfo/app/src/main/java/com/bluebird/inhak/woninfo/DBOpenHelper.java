@@ -90,12 +90,12 @@ public class DBOpenHelper {
                 }
             }catch (Exception e){}
 
-            /*
-            Snackbar snackbar = Snackbar.make(context, "데이터베이스 생성",Snackbar.LENGTH_SHORT);
+      /*      View view = new View(context);
+            Snackbar snackbar = Snackbar.make(view.getRootView(), "데이터베이스 생성",Snackbar.LENGTH_SHORT);
             View snackBarView = snackbar.getView();
             snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
-            snackbar.show();
-            */
+            snackbar.show();*/
+
         }
 
         //버전이 업데이트 되었을 경우 DB를 다시 만들어 준다.

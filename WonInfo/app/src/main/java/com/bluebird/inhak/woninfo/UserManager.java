@@ -318,15 +318,7 @@ public class UserManager {
                                             Log.d("test987", "User Profile updateddddd.");
                                         }
                                     });
-                        } /*else {
-                            Log.d("test001", "--------------회원가입 실패----------------");
-                            View main_view = (View) view.findViewById(R.id.snackbar_view);
-                            Snackbar snackbar = Snackbar.make(main_view, "회원가입 실패", Snackbar.LENGTH_SHORT);
-                            View snackBarView = snackbar.getView();
-                            snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext, R.color.Theme_Blue));
-                            snackbar.show();
-                            Log.w("test001", task.getException());
-                        }*/
+                        }
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
