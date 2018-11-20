@@ -124,7 +124,7 @@
                 <TextView
                     android:id="@+id/setting_communityrules_text8"
                     android:layout_width="wrap_content"
-                    android:layout_height="11dp"
+                    android:layout_height="13dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="3dp"
                     android:text="- 중복글, 도배글, 낚시글, 내용 없는 게시물"

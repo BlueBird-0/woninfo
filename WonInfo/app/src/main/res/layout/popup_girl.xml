@@ -8,15 +8,15 @@
     android:clickable="true">
 
     <TextView
-        android:id="@+id/popup_reserve_text1"
+        android:id="@+id/popup_girl_text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/login_btn_submit"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="40dp"
-        android:text="예비군"
+        android:layout_marginEnd="70dp"
+        android:text="생리공결 신청"
         android:textAlignment="center"
         android:textColor="@color/Theme_Blue"
         android:textSize="@dimen/title_size"
@@ -26,50 +26,51 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/popup_reserve_text2"
+        android:id="@+id/popup_girl_text2"
         android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="40dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="40dp"
-        android:text="예비군앱 다운받기 → 로그인 → 훈련일정 자율선택"
+        android:layout_marginEnd="70dp"
+        android:text="웹정보서비스 → 로그인 → 정보서비스"
         android:textColor="@color/Theme_Gray"
         android:textSize="@dimen/font_15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_reserve_text1" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_girl_text1" />
 
     <TextView
-        android:id="@+id/popup_reserve_text3"
+        android:id="@+id/popup_girl_text3"
         android:layout_width="wrap_content"
         android:layout_height="23dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:text="→ 훈련신청 결과확인 → 교수님에게 보여주기"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:text="→ 전자출결관리 → 생리공결 신청 "
         android:textColor="@color/Theme_Gray"
         android:textSize="@dimen/font_15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_reserve_text2" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_girl_text2" />
 
     <Button
-        android:id="@+id/popup_reserve_btn"
+        android:id="@+id/popup_girl_btn"
         android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="70dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/all_item_cunfirmbtn"
-        android:text="예비군앱\n바로가기"
+        android:text="웹정보서비스\n바로가기"
         android:textColor="@color/Theme_White"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_reserve_text3" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_girl_text3"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </android.support.constraint.ConstraintLayout>
