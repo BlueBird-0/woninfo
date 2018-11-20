@@ -5,7 +5,8 @@
     android:id="@+id/home_main_list_item"
     android:layout_width="match_parent"
     android:layout_height="36dp"
-    android:clickable="true">
+    android:clickable="true"
+    android:background="@drawable/all_ripple_click">
 
     <FrameLayout
         android:layout_width="match_parent"

@@ -13,9 +13,9 @@
                     android:icon="@drawable/ic_grade"
                     android:title="성적확인" />
                 <item
-                    android:id="@+id/nav_bookmark_soldier1"
-                    android:icon="@drawable/ic_soldier"
-                    android:title="군대휴학 신청" />
+                    android:id="@+id/nav_voluntary"
+                    android:icon="@drawable/ic_voluntary"
+                    android:title="사회봉사" />
                 <item
                     android:id="@+id/nav_bookmark_soldier2"
                     android:icon="@drawable/ic_soldier"

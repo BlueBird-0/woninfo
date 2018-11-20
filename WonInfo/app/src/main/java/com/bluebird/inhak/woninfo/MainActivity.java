@@ -395,6 +395,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else if(id==R.id.nav_sleepout){
             startActivity(new Intent(getApplicationContext(),Popupdormitory.class));
         }
+        else if(id==R.id.nav_voluntary){
+            startActivity(new Intent(getApplicationContext(),Popupvoluntary.class));
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
