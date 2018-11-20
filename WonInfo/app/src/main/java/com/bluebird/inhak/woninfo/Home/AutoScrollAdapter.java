@@ -10,8 +10,11 @@ import android.widget.ImageView;
 
 import com.bluebird.inhak.woninfo.R;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
+
+import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 
 public class AutoScrollAdapter extends PagerAdapter {
     Context context;
@@ -29,7 +32,13 @@ public class AutoScrollAdapter extends PagerAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View v = inflater.inflate(R.layout.home_autopager_layout,null);
         ImageView image_container = (ImageView) v.findViewById(R.id.home_container_img);
-        Glide.with(context).load(data.get(position)).into(image_container);
+        image_container.setAdjustViewBounds(true);
+
+        Glide.with(context)
+                .load(data.get(position))
+                .apply(new RequestOptions().override(3000, 1500).centerCrop())
+                //.apply(new RequestOptions().override(3000, 1500).fitCenter())
+                .into(image_container);
         container.addView(v);
         return v;
     }

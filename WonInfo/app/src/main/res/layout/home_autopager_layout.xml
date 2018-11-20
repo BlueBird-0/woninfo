@@ -8,6 +8,6 @@
         android:id="@+id/home_container_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="fitXY"/>
+        />
 
 </android.support.constraint.ConstraintLayout>

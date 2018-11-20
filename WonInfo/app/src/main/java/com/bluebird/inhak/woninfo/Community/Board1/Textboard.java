@@ -10,9 +10,11 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -157,6 +159,24 @@ public class Textboard extends Fragment {
             @Override
             public void onClick(View v) {
                 {
+                    editdt = (EditText) view.findViewById(R.id.write2_edit_title);
+                    editdt2 = (EditText) view.findViewById(R.id.write2_edit_content);
+                    String errorString = "";
+                    if (editdt.getText().toString().equals("") ||
+                            editdt2.getText().toString().equals(""))
+                    {
+                        errorString = "빈칸을 입력하세요.";
+                    }
+                    if(!errorString.equals("")) {
+                        View main_view = (View) view.getRootView().findViewById(R.id.snackbar_view);
+                        Snackbar snackbar = Snackbar.make(main_view, errorString, Snackbar.LENGTH_SHORT);
+                        View snackBarView = snackbar.getView();
+                        snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext, R.color.Theme_Blue));
+                        snackbar.show();
+                        return;
+                    }
+
+
                     Toast.makeText(getContext(), "글이 작성되었습니다.", Toast.LENGTH_SHORT).show();
                     option = "option";
 
@@ -177,8 +197,7 @@ public class Textboard extends Fragment {
                                             Log.d("community", "글 작성 시간 : "+now);
                                             //db에 insert시켜준다
 
-                                            editdt = (EditText) view.findViewById(R.id.write2_edit_title);
-                                            editdt2 = (EditText) view.findViewById(R.id.write2_edit_content);
+
                                             date = now;
 
 
