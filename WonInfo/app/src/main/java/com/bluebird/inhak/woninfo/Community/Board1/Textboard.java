@@ -2,6 +2,7 @@
 package com.bluebird.inhak.woninfo.Community.Board1;
 
 
+import android.Manifest;
 import android.app.Activity;
 import android.graphics.Color;
 import android.net.Uri;
@@ -26,6 +27,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
+import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
 import com.bluebird.inhak.woninfo.UserManager;
 import com.bumptech.glide.Glide;
@@ -45,6 +47,9 @@ import com.google.firebase.firestore.Transaction;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
+import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -87,46 +92,63 @@ public class Textboard extends Fragment {
         setHasOptionsMenu(true);
         imgUriList = new ArrayList<>();
 
+
         final LinearLayout imageButton = (LinearLayout)view.findViewById(R.id.write2_layout_picture);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TedBottomPicker bottomSheetDialogFragment = new TedBottomPicker.Builder(getContext())
-                        .setOnMultiImageSelectedListener(new TedBottomPicker.OnMultiImageSelectedListener() {
-                            @Override
-                            public void onImagesSelected(ArrayList<Uri> uriList) {
-                                // here is selected uri list
-                                LinearLayout linearLayout= (LinearLayout) view.findViewById(R.id.write2_layout_picture);
-                                linearLayout.removeAllViews();
+                PermissionListener permissionlistener = new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted() {
+                        // 권한 있을 때  사진 넣기
+                        TedBottomPicker bottomSheetDialogFragment = new TedBottomPicker.Builder(getContext())
+                                .setOnMultiImageSelectedListener(new TedBottomPicker.OnMultiImageSelectedListener() {
+                                    @Override
+                                    public void onImagesSelected(ArrayList<Uri> uriList) {
+                                        // here is selected uri list
+                                        LinearLayout linearLayout= (LinearLayout) view.findViewById(R.id.write2_layout_picture);
+                                        linearLayout.removeAllViews();
 
-                                imageCount = uriList.size();
-                                for(Uri uri : uriList)
-                                {
-                                    imgUriList.add(uri);
-                                    ImageView pictureImg= new ImageView(getContext());
-                                    pictureImg.setBackground(null);
+                                        imageCount = uriList.size();
+                                        for(Uri uri : uriList)
+                                        {
+                                            imgUriList.add(uri);
+                                            ImageView pictureImg= new ImageView(getContext());
+                                            pictureImg.setBackground(null);
 
-                                    Glide.with((getActivity()).getWindow().getDecorView().getRootView()).load(uri).into(pictureImg);
-                                    linearLayout.addView(pictureImg);
+                                            Glide.with((getActivity()).getWindow().getDecorView().getRootView()).load(uri).into(pictureImg);
+                                            linearLayout.addView(pictureImg);
 
-                                    LinearLayout.LayoutParams loparams = (LinearLayout.LayoutParams) pictureImg.getLayoutParams();
+                                            LinearLayout.LayoutParams loparams = (LinearLayout.LayoutParams) pictureImg.getLayoutParams();
 
-                                    loparams.weight = 0;
-                                    loparams.rightMargin = 14;
-                                    if(pictureImg.getWidth() > linearLayout.getHeight())
-                                        loparams.width = linearLayout.getHeight();
-                                    loparams.height = linearLayout.getHeight();
-                                    pictureImg.setLayoutParams(loparams);
-                                }
-                            }
-                        })
-                        .setPeekHeight(1600)
-                        .showTitle(false)
-                        .setCompleteButtonText("OK")
-                        .setEmptySelectionText("No Select")
-                        .create();
+                                            loparams.weight = 0;
+                                            loparams.rightMargin = 14;
+                                            if(pictureImg.getWidth() > linearLayout.getHeight())
+                                                loparams.width = linearLayout.getHeight();
+                                            loparams.height = linearLayout.getHeight();
+                                            pictureImg.setLayoutParams(loparams);
+                                        }
+                                    }
+                                })
+                                .setPeekHeight(1600)
+                                .showTitle(false)
+                                .setCompleteButtonText("OK")
+                                .setEmptySelectionText("No Select")
+                                .create();
 
-                bottomSheetDialogFragment.show(getActivity().getSupportFragmentManager());
+                        bottomSheetDialogFragment.show(getActivity().getSupportFragmentManager());
+                    }
+                    @Override
+                    public void onPermissionDenied(List<String> deniedPermissions) {
+                        Toast.makeText(MainActivity.mainContext, "권한 없음\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                };
+                TedPermission.with(mainContext.getApplicationContext())
+                        .setPermissionListener(permissionlistener)
+                        .setRationaleMessage("사진첩 접근 권한이 필요합니다.")
+                        .setDeniedMessage("왜 거부하셨어요...\n하지만 [설정] > [권한] 에서 권한을 허용할 수 있어요.")
+                        .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+                        .check();
             }
         });
 
@@ -150,7 +172,7 @@ public class Textboard extends Fragment {
                                             num = document.getDouble("count")+1;
 
                                             GregorianCalendar calendar = new GregorianCalendar();
-                                            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-dd-MM\nhh:mm");
+                                            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd\nhh:mm");
                                             String now = dateFormat.format(calendar.getTime());
                                             Log.d("community", "글 작성 시간 : "+now);
                                             //db에 insert시켜준다

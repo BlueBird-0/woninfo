@@ -137,7 +137,7 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                 comment.setWriter_id(UserManager.firebaseUser.getDisplayName());
 
                                 GregorianCalendar calendar = new GregorianCalendar();
-                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-dd-MM\nhh:mm");
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd\nhh:mm");
                                 String now = dateFormat.format(calendar.getTime());
                                 comment.setDate(now);
 

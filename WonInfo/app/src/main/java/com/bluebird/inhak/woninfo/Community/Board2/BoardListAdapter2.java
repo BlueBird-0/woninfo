@@ -83,11 +83,11 @@ public class BoardListAdapter2 extends RecyclerView.Adapter<BoardListAdapter2.Bo
             button1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // 게시글에 데이터 넘겨주는 번들 --------------------------------
-                    // args 에 넣어서 값 전달.
+
                     Bundle args = new Bundle();
                     args.putSerializable("Bundle", item);
-
+                    // 게시글에 데이터 넘겨주는 번들 --------------------------------
+                    // args 에 넣어서 값 전달.
 
                     FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
