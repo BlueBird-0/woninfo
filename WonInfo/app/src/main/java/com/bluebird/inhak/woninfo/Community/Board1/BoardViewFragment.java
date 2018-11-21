@@ -100,6 +100,22 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
         commentCount.setText(String.valueOf((int)args.getCommentCount()));
 
 
+        db.collection("Community").document("게시판").collection("대나무숲")
+                .document(args.getDocumentId())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            //사진 가져오기
+                            DocumentSnapshot document = task.getResult();
+                            double imageCount = document.getDouble("image_count");
+                            loadStoreImages(imageCount, document.getId());
+                        }
+                    }
+                });
+
+
         double imageCount = args.getImageCount();
 
         this.onRefresh();
@@ -195,12 +211,6 @@ public class BoardViewFragment extends Fragment implements SwipeRefreshLayout.On
                                    //     ImageView imageView = (ImageView)view.findViewById(R.id.community_board1_profile);
                                    //     loadProfile(document.getString("uid"), imageView);
                                    // }
-
-
-
-                                    //사진 가져오기
-                                    double imageCount = document.getDouble("image_count");
-                                    loadStoreImages(imageCount, document.getId());
 
                                     //댓글 가져오기
                                     double commentCount = document.getDouble("comment_count");

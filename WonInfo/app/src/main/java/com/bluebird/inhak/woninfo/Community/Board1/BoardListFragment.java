@@ -79,11 +79,8 @@ public class BoardListFragment extends Fragment implements SwipeRefreshLayout.On
             @Override
             public void run() {
                 db.collection("Community").document("게시판").collection("대나무숲")
-                        //.limit((long)BOARD_COUNT)
                         .limit((long)(BOARD_COUNT*(PAGE_NUMBER+1)))
                         .orderBy("num", Query.Direction.DESCENDING)
-                        //.whereLessThan("num", option_count-(PAGE_COUNT*PAGE_NUMBER))
-                        //.whereLessThan("num", PAGE_COUNT)
                         .get()
                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
