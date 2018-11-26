@@ -51,29 +51,52 @@
         tools:layout_editor_absoluteY="81dp">
 
 
-        <FrameLayout
-            android:id="@+id/frameLayout10"
+        <LinearLayout
+            android:id="@+id/linearLayout4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
-                android:id="@+id/write2_edit_title"
+                android:id="@+id/write2_edit_kind"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:paddingBottom="4dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
                 android:background="@null"
                 android:gravity="top|start"
-                android:hint="제목"
+                android:hint="종류"
+                android:singleLine="true"
+                android:paddingBottom="4dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-        </FrameLayout>
+
+            <EditText
+                android:id="@+id/write2_edit_price"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="top|start"
+                android:hint="가격"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:paddingBottom="4dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
 
         <FrameLayout
             android:id="@+id/frameLayout4"
@@ -83,7 +106,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout10" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
 
         <ScrollView
@@ -133,7 +156,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2" >
+
+        </FrameLayout>
 
         <EditText
             android:id="@+id/write2_edit_content"
@@ -141,12 +166,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:paddingTop="8dp"
             android:background="@null"
             android:gravity="top|start"
             android:hint="내용"
             android:maxLines="11"
             android:minLines="3"
+            android:paddingTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -172,7 +197,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/all_item_cunfirmbtn"
-            android:text="글쓰기"
+            android:text="판매하기"
             android:textColor="@color/Theme_White"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

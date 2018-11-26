@@ -55,7 +55,7 @@ public class MyFirebaseMessagingService extends com.google.firebase.messaging.Fi
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 //.setSmallIcon(R.mipmap.ic_appicon_round)
                 .setSmallIcon(R.drawable.ic_bbs)
-                .setContentTitle("FCM Push Test") // 이부분은 어플 켜놓은 상태에서 알림 메세지 받으면 저 텍스트로 띄워준다.
+                .setContentTitle("FCM Push Test!") // 이부분은 어플 켜놓은 상태에서 알림 메세지 받으면 저 텍스트로 띄워준다.
                 .setContentText(messageBody)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)

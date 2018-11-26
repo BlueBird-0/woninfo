@@ -14,9 +14,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
@@ -25,7 +22,6 @@ import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
 import com.bluebird.inhak.woninfo.UserManager;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
@@ -110,7 +106,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
                         } else if (item.getBoard().equals("자유게시판")) {
                             t = Class.forName("com.bluebird.inhak.woninfo.Community.Board2.BoardViewFragment2");
                         }else if(item.getBoard().equals("자유시장")) {
-                            t = Class.forName("com.bluebird.inhak.woninfo.Community.Board3.BoardViewFragment3");
+                            t = Class.forName("com.bluebird.inhak.woninfo.Community.Board3.BoardViewActivity3");
                         }
                         Fragment fragment = (Fragment) t.newInstance();
                         fragment.setArguments(args);

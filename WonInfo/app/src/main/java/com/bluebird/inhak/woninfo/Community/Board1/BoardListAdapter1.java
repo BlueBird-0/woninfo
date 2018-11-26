@@ -1,35 +1,29 @@
 
 package com.bluebird.inhak.woninfo.Community.Board1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.BoardListViewHolder> {
+public class BoardListAdapter1 extends RecyclerView.Adapter<BoardListAdapter1.BoardListViewHolder> {
     private ArrayList<BoardListItem> items;
       private MainActivity mainActivity;
 
     // 적절한 생성자를 제공합니다(데이터 집합의 종류에 따라 다름
-    public BoardListAdapter(ArrayList<BoardListItem> items, MainActivity mainActivity)
+    public BoardListAdapter1(ArrayList<BoardListItem> items, MainActivity mainActivity)
     {
         this.items = items;
         this.mainActivity = mainActivity;
@@ -37,7 +31,7 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
 
     //새로운 뷰 홀더 생성합니다. (레이아웃 관리자에 의해 호출 됨)
     @Override
-    public BoardListAdapter.BoardListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BoardListAdapter1.BoardListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.community_list_item, parent, false);
         //ConstraintLayout linearLayout = (ConstraintLayout) view.findViewById(R.id.community_main);
         //linearLayout.addView(new Button(parent.getContext()));
@@ -83,24 +77,12 @@ public class BoardListAdapter extends RecyclerView.Adapter<BoardListAdapter.Boar
             button1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Intent intent=new Intent(mainActivity, BoardViewActivity1.class);
+                    //args 에 값 넣어서 전달
                     Bundle args = new Bundle();
                     args.putSerializable("Bundle", item);
-                    // 게시글에 데이터 넘겨주는 번들 --------------------------------
-                    // args 에 넣어서 값 전달.
-
-                    FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    try {
-                        Class t = Class.forName("com.bluebird.inhak.woninfo.Community.Board1.BoardViewFragment");
-                        Fragment fragment = (Fragment)t.newInstance();
-                        fragment.setArguments(args);
-
-                        fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
-                        fragmentTransaction.add(R.id.main_fragment_container, fragment);
-                        fragmentTransaction.addToBackStack(null);
-                        fragmentTransaction.commit();
-                    }catch(Exception e) {}
+                    intent.putExtras(args);
+                    mainActivity.startActivity(intent);
                 }
             });
         }

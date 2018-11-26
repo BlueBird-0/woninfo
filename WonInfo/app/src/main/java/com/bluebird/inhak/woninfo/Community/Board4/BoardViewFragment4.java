@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.bluebird.inhak.woninfo.Community.Board1.BoardListAdapter;
+import com.bluebird.inhak.woninfo.Community.Board1.BoardListAdapter1;
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,7 +36,7 @@ public class BoardViewFragment4 extends Fragment{
 
 
 
-    private BoardListAdapter boardListAdapter;
+    private BoardListAdapter1 boardListAdapter;
     private String Board4;
     private ArrayList<BoardListItem> items = new ArrayList<>();
     private View view;

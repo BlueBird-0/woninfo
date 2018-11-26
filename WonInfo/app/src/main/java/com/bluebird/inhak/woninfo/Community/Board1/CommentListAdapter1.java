@@ -2,25 +2,16 @@
 package com.bluebird.inhak.woninfo.Community.Board1;
 
 import android.net.Uri;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.Community.Textboard.Comment;
-import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -28,23 +19,22 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CommentListAdapter extends RecyclerView.Adapter<CommentListAdapter.CommentListViewHolder> {
+public class CommentListAdapter1 extends RecyclerView.Adapter<CommentListAdapter1.CommentListViewHolder> {
     private ArrayList<Comment> items;
-    private MainActivity mainActivity;
+    private AppCompatActivity activity;
 
     // 적절한 생성자를 제공합니다(데이터 집합의 종류에 따라 다름
-    public CommentListAdapter(ArrayList<Comment> items, MainActivity mainActivity)
+    public CommentListAdapter1(ArrayList<Comment> items, AppCompatActivity activity)
     {
         this.items = items;
-        this.mainActivity = mainActivity;
+        this.activity = activity;
     }
 
     //새로운 뷰 홀더 생성합니다. (레이아웃 관리자에 의해 호출 됨)
     @Override
-    public CommentListAdapter.CommentListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CommentListAdapter1.CommentListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.community_item_comment, parent, false);
         return new CommentListViewHolder(view);
     }
@@ -101,7 +91,7 @@ public class CommentListAdapter extends RecyclerView.Adapter<CommentListAdapter.
         riversRef.addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                Glide.with(mainActivity).load(uri).into(imageView);
+                Glide.with(activity).load(uri).into(imageView);
             }
         });
     }

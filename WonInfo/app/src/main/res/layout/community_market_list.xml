@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-
 <android.support.v4.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,8 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
 
                 <android.support.v7.widget.RecyclerView
@@ -52,7 +48,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/Theme_LightGray">
+                    android:background="@color/colorBackground">
 
                     <TextView
                         android:id="@+id/board2_market_prev"
@@ -95,7 +91,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/all_ripple_click"
-                            android:backgroundTint="@color/Theme_LightGray"
+                            android:backgroundTint="@color/colorBackground"
                             android:clickable="true"
                             android:gravity="center_horizontal"
                             android:text="1"
@@ -109,7 +105,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/all_ripple_click"
-                            android:backgroundTint="@color/Theme_LightGray"
+                            android:backgroundTint="@color/colorBackground"
                             android:clickable="true"
                             android:gravity="center_horizontal"
                             android:text="2"
@@ -122,7 +118,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/all_ripple_click"
-                            android:backgroundTint="@color/Theme_LightGray"
+                            android:backgroundTint="@color/colorBackground"
                             android:clickable="true"
                             android:gravity="center_horizontal"
                             android:text="3"
@@ -135,7 +131,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/all_ripple_click"
-                            android:backgroundTint="@color/Theme_LightGray"
+                            android:backgroundTint="@color/colorBackground"
                             android:clickable="true"
                             android:gravity="center_horizontal"
                             android:text="4"
@@ -148,7 +144,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/all_ripple_click"
-                            android:backgroundTint="@color/Theme_LightGray"
+                            android:backgroundTint="@color/colorBackground"
                             android:clickable="true"
                             android:gravity="center_horizontal"
                             android:text="5"

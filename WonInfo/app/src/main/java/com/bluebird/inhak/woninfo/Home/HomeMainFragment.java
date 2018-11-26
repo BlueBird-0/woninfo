@@ -9,40 +9,23 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 
-import android.support.v4.app.FragmentManager;
-
 
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
-
-import com.bluebird.inhak.woninfo.Community.Board1.BoardListAdapter;
-import com.bluebird.inhak.woninfo.Community.Board1.BoardListFragment;
-import com.bluebird.inhak.woninfo.Community.Board2.BoardListFragment2;
-import com.bluebird.inhak.woninfo.Community.Board3.BoardListFragment3;
 
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
-import com.bluebird.inhak.woninfo.Dictionary.A08Fragment.A08Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
 
 
-import com.bluebird.inhak.woninfo.Dictionary.A08Fragment.A08Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A20Fragment.A20Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.A24Fragment.A24Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
 
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
-import com.bluebird.inhak.woninfo.UserManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -131,8 +114,6 @@ public class HomeMainFragment extends Fragment {
             }
         });
 
-
-
         setRecyclerView();
         onRefresh();
         return view;
@@ -144,17 +125,24 @@ public class HomeMainFragment extends Fragment {
             public void run() {
                 newsAdapter = new NewsAdapter(newsItems,(MainActivity) getActivity());
                 final RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.Listview);
+                //맨 처음에 값 넣어두기 위해 있음
+                for(int i=0; i<3; i++) {
+                    BoardListItem boardListItem = new BoardListItem();
+                    boardListItem.setTitle("Loading...");
+                    boardListItem.setBoard("최신글");
+                    newsItems.add(boardListItem);
+                }
+                recyclerView.setAdapter(newsAdapter);
 
                 db.collection("Community").document("게시판").collection("대나무숲")
-
                         .orderBy("num", Query.Direction.DESCENDING)
-                        .limit(2)
+                        .limit(1)
                         .get()
                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>(){
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task){
                                 if(task.isSuccessful()){
-
+                                    newsItems.remove(0);
                                     for(DocumentSnapshot document:task.getResult()){
                                         BoardListItem item = new BoardListItem();
                                         item.setDocumentId(document.getId());
@@ -176,26 +164,24 @@ public class HomeMainFragment extends Fragment {
                         });
                 db.collection("Community").document("게시판").collection("자유게시판")
                         .orderBy("num", Query.Direction.DESCENDING)
-                        .limit(2)
+                        .limit(1)
                         .get()
                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>(){
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task){
                                 if(task.isSuccessful()){
-
+                                    newsItems.remove(0);
                                     for(DocumentSnapshot document:task.getResult()){
                                         BoardListItem item = new BoardListItem();
                                         item.setDocumentId(document.getId());
 
                                         item.setBoard(String.valueOf(("자유게시판")));
                                         item.setTitle(document.get("title").toString());
-
                                         item.setId(document.get("id").toString());
                                         item.setContent(document.get("content").toString());
                                         item.setDate(document.get("date").toString());
                                         item.setLikeCount(document.getDouble("like_count"));
                                         item.setCommentCount(document.getDouble("comment_count"));
-
 
                                         newsItems.add(item);
 
@@ -205,13 +191,13 @@ public class HomeMainFragment extends Fragment {
                             }
                         }); db.collection("Community").document("게시판").collection("자유시장")
                         .orderBy("num", Query.Direction.DESCENDING)
-                        .limit(2)
+                        .limit(1)
                         .get()
                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>(){
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task){
                                 if(task.isSuccessful()){
-
+                                    newsItems.remove(0);
                                     for(DocumentSnapshot document:task.getResult()){
                                         BoardListItem item = new BoardListItem();
                                         item.setDocumentId(document.getId());
@@ -238,14 +224,6 @@ public class HomeMainFragment extends Fragment {
 
     private void setRecyclerView(){
         ArrayList items = new ArrayList<>();
-
-
-
-
-
-
-
-
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.Listview);
         //각 Item들이 RecyclerView 의 전체 크기를 변경하지 않는다면
         //setHasFixedSize() 함수를 사용해서 성능을 개선할 수 있습니다.
@@ -277,39 +255,3 @@ public class HomeMainFragment extends Fragment {
         return false;
     }
 }
-
-
-    /*
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-
-        View fragmentYoutubeView = inflater.inflate(R.layout.home_main_fragment, container, false);
-        mYoutubePlayerFragment = new YouTubePlayerSupportFragment();
-        mYoutubePlayerFragment.initialize(youtubeKey, this);
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.youtube_player_view, mYoutubePlayerFragment);
-        fragmentTransaction.commit();
-
-        return fragmentYoutubeView;
-    }
-
-    @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-            if(!b){
-                youTubePlayer.cueVideo("tcuLThIyA70");
-            }
-    }
-
-    @Override
-    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult result) {
-            if (result.isUserRecoverableError()) {
-                result.getErrorDialog(this.getActivity(),1).show();
-            } else {
-                Toast.makeText(this.getActivity(),
-                        "YouTubePlayer.onInitializationFailure(): " + result.toString(),
-                        Toast.LENGTH_LONG).show();
-            }
-    }
-*/
-

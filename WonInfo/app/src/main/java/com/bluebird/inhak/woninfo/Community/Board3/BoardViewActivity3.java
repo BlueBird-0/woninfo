@@ -12,8 +12,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.util.ObjectsCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -63,58 +66,60 @@ import java.util.Map;
 
 import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
-public class BoardViewFragment3 extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
-    static private FirebaseAuth auth;
+public class BoardViewActivity3 extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
+    private AppCompatActivity activity;
 
     private BoardListItem args; //bundle
 
     private ArrayList<Comment> commentItems = new ArrayList<>();
 
-    private View view;
     private SwipeRefreshLayout swipeRefresh;
     final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.community_item_document, container, false);
-        setHasOptionsMenu(true);
-        args = (BoardListItem)getArguments().getSerializable("Bundle");
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.community_item_document);
+        this.activity = this;
 
-        swipeRefresh = view.findViewById(R.id.community_board1_layout);
+        swipeRefresh = findViewById(R.id.community_board1_layout);
         swipeRefresh.setOnRefreshListener(this);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Bundle bundle = getIntent().getExtras();
+        args = (BoardListItem) bundle.getSerializable("Bundle");
+
         /* args 데이터 입력 */
-        TextView id= (TextView) view.findViewById(R.id.community_board1_id);
+        TextView id= (TextView) findViewById(R.id.community_board1_id);
         id.setText(args.getId());
-        TextView title= (TextView) view.findViewById(R.id.community_board1_title);
+        TextView title= (TextView) findViewById(R.id.community_board1_title);
         title.setText(args.getTitle());
-        TextView content= (TextView) view.findViewById(R.id.community_board1_content);
+        TextView content= (TextView) findViewById(R.id.community_board1_content);
         content.setText(args.getContent());
-        final TextView date= (TextView) view.findViewById(R.id.community_board1_date);
+        final TextView date= (TextView) findViewById(R.id.community_board1_date);
         date.setText(args.getDate());
-    /*    TextView likeCount= (TextView) view.findViewById(R.id.community_board1_likecount);
-        likeCount.setText(String.valueOf((int)args.getLikeCount()));*/
-        TextView commentCount= (TextView) view.findViewById(R.id.community_board1_commentcount);
+
+        TextView commentCount= (TextView) findViewById(R.id.community_board1_commentcount);
         commentCount.setText(String.valueOf((int)args.getCommentCount()));
 
-
-        double imageCount = args.getImageCount();
 
         this.onRefresh();
         //댓글 기능 추가
         this.setCommentFunction();
-        return view;
     }
 
     public void setCommentFunction()
     {
-        final Button commentBtn = (Button)view.findViewById(R.id.board1_btn_commentwrite);
+        final Button commentBtn = (Button)findViewById(R.id.board1_btn_commentwrite);
         commentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                EditText commentEdit = (EditText)view.findViewById(R.id.board1_edit_commentwrite);
+                EditText commentEdit = (EditText)findViewById(R.id.board1_edit_commentwrite);
                 if(commentEdit.getText().toString().equals(null))
                 {
                     Log.d("test040","값이 없습니다.");
@@ -152,10 +157,10 @@ public class BoardViewFragment3 extends Fragment implements SwipeRefreshLayout.O
 
                 // EditText 내리고, 키보드 닫기
                 commentEdit.setText("");
-                InputMethodManager inputMethodManager = (InputMethodManager)getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
+                InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
                 inputMethodManager.hideSoftInputFromWindow(commentEdit.getWindowToken(), 0);
 
-                View main_view = (View)getView().getRootView().findViewById(R.id.snackbar_view);
+                View main_view = (View)findViewById(R.id.snackbar_view);
                 Snackbar snackbar = Snackbar.make(main_view, "댓글을 작성했습니다.", Snackbar.LENGTH_LONG);
                 View snackBarView = snackbar.getView();
                 snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
@@ -181,10 +186,10 @@ public class BoardViewFragment3 extends Fragment implements SwipeRefreshLayout.O
 
                    /*                 TextView likeCountText= (TextView) view.findViewById(R.id.community_board1_likecount);
                                     likeCountText.setText(document.get("like_count").toString());*/
-                                    TextView commentCountText= (TextView) view.findViewById(R.id.community_board1_commentcount);
+                                    TextView commentCountText= (TextView) findViewById(R.id.community_board1_commentcount);
                                     commentCountText.setText(String.valueOf((int)(double)document.getDouble("comment_count")));
                                     if(document.get("uid")!=null) {
-                                        ImageView imageView = (ImageView)view.findViewById(R.id.community_board1_profile);
+                                        ImageView imageView = (ImageView)findViewById(R.id.community_board1_profile);
                                         loadProfile(document.getString("uid"), imageView);
                                     }
 
@@ -211,12 +216,12 @@ public class BoardViewFragment3 extends Fragment implements SwipeRefreshLayout.O
                                     /* 댓글 recyclerView */
                                     CommentListAdapter3 commentListAdapter;
                                     RecyclerView commentRecycler;
-                                    commentRecycler = view.findViewById(R.id.community_recycler_list);
+                                    commentRecycler = findViewById(R.id.community_recycler_list);
                                     commentRecycler.setHasFixedSize(true);
                                     //RecyclerView에 Adapter를 설정해줍니다.
 
-                                    commentRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-                                    commentListAdapter = new CommentListAdapter3(commentItems,(MainActivity)getActivity());
+                                    commentRecycler.setLayoutManager(new LinearLayoutManager(activity));
+                                    commentListAdapter = new CommentListAdapter3(commentItems,activity);
                                     commentRecycler.setAdapter(commentListAdapter);
                                     commentRecycler.setNestedScrollingEnabled(false);
 
@@ -237,7 +242,7 @@ public class BoardViewFragment3 extends Fragment implements SwipeRefreshLayout.O
             @Override
             public void onSuccess(Uri uri) {
                 if(imageView != null)
-                    Glide.with(getActivity()).load(uri).into(imageView);
+                    Glide.with(activity).load(uri).into(imageView);
             }
         });
     }
@@ -247,7 +252,7 @@ public class BoardViewFragment3 extends Fragment implements SwipeRefreshLayout.O
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageReference = storage.getReference();
 
-        final LinearLayout imageLinearLayout = view.findViewById(R.id.community_layout_image);
+        final LinearLayout imageLinearLayout = findViewById(R.id.community_layout_image);
         imageLinearLayout.removeAllViews();
         for(int i=0; i<imageCount; i++){
             Task<Uri> storageRef= storageReference.child("board3/" + documentId+"_image_"+i).getDownloadUrl();
@@ -258,7 +263,7 @@ public class BoardViewFragment3 extends Fragment implements SwipeRefreshLayout.O
                     Log.d("test098", uri.toString());
                     //RecyclerView에 Adapter를 설정해줍니다.
 
-                    ImageView imageView1= new ImageView(getContext());
+                    ImageView imageView1= new ImageView(getApplicationContext());
                     Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(uri).into(imageView1);
                     imageLinearLayout.addView(imageView1);
 
@@ -272,12 +277,6 @@ public class BoardViewFragment3 extends Fragment implements SwipeRefreshLayout.O
                 }
             });
         }
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        menu.clear();
     }
 }
 
