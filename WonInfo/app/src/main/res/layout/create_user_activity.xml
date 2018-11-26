@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/create_layout_main"
+    android:id="@+id/user_layout_createuser"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/Theme_White"
@@ -10,7 +10,7 @@
 
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/user_text_createuser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -37,7 +37,7 @@
     </LinearLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/create_user_activity_4"
+        android:id="@+id/user_box_displayname"
         android:layout_width="wrap_content"
         android:layout_height="41dp"
         android:layout_marginStart="8dp"
@@ -45,13 +45,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/all_shape_roundbox"
-        app:layout_constraintBottom_toTopOf="@+id/create_user_activity_1"
+        app:layout_constraintBottom_toTopOf="@+id/user_box_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/user_text_createuser">
 
+        <!-- create_user_id_edit-->
         <EditText
-            android:id="@+id/create_user_id_edit"
+            android:id="@+id/user_edittext_displayname"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -68,7 +69,7 @@
 
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/create_user_activity_1"
+        android:id="@+id/user_box_email"
         android:layout_width="wrap_content"
         android:layout_height="41dp"
         android:layout_marginStart="8dp"
@@ -76,14 +77,15 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/all_shape_roundbox"
-        app:layout_constraintBottom_toTopOf="@+id/create_user_activity_2"
+        app:layout_constraintBottom_toTopOf="@+id/user_box_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_user_activity_4">
+        app:layout_constraintTop_toBottomOf="@+id/user_box_displayname">
 
+        <!--create_user_email_edit-->
         <EditText
-            android:id="@+id/create_user_email_edit"
+            android:id="@+id/user_edittext_email"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -101,7 +103,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/create_user_activity_2"
+        android:id="@+id/user_box_password"
         android:layout_width="wrap_content"
         android:layout_height="41dp"
         android:layout_marginStart="8dp"
@@ -110,10 +112,11 @@
         android:background="@drawable/all_shape_roundbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_user_activity_1">
+        app:layout_constraintTop_toBottomOf="@+id/user_box_email">
 
+        <!--create_user_password_edit-->
         <EditText
-            android:id="@+id/create_user_password_edit"
+            android:id="@+id/user_edittext_password"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -130,7 +133,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/create_user_activity_3"
+        android:id="@+id/user_box_passwordconfirm"
         android:layout_width="wrap_content"
         android:layout_height="41dp"
         android:layout_marginStart="8dp"
@@ -140,10 +143,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_user_activity_2">
+        app:layout_constraintTop_toBottomOf="@+id/user_box_password">
 
+        <!-- create_user_confirm_edit-->
         <EditText
-            android:id="@+id/create_user_confirm_edit"
+            android:id="@+id/user_edittext_passwordconfirm"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -158,8 +162,9 @@
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
+    <!--create_user_create_btn-->
     <Button
-        android:id="@+id/create_user_create_btn"
+        android:id="@+id/user_btn_createuser"
         android:layout_width="0dp"
         android:layout_height="41dp"
         android:layout_marginStart="50dp"
@@ -172,32 +177,32 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_user_activity_3"
+        app:layout_constraintTop_toBottomOf="@+id/user_box_passwordconfirm"
         app:layout_constraintVertical_bias="1.0" />
 
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/user_text_undername"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="8dp"
         android:text="닉네임은 변경불가입니다."
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/create_user_activity_1"
+        app:layout_constraintBottom_toTopOf="@+id/user_box_email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_user_activity_4" />
+        app:layout_constraintTop_toBottomOf="@+id/user_box_displayname" />
 
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/user_text_underpassword"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="8dp"
         android:text="비밀번호는 6자 이상입력하시기 바랍니다."
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/create_user_activity_3"
+        app:layout_constraintBottom_toTopOf="@+id/user_box_passwordconfirm"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_user_activity_2" />
+        app:layout_constraintTop_toBottomOf="@+id/user_box_password" />
 </android.support.constraint.ConstraintLayout>

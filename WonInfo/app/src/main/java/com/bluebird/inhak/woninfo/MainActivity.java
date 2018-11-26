@@ -221,10 +221,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         //    snackbar.show();
                             navigationView.inflateHeaderView(R.layout.nav_header_loggedin);
                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                            TextView textView = (TextView)navigationView.getHeaderView(1).findViewById(R.id.nav_text_userid);
+                            TextView textView = (TextView)navigationView.getHeaderView(1).findViewById(R.id.nav_text_displayname);
                             ImageView imageView=(ImageView) navigationView.getHeaderView(1).findViewById(R.id.imageView_setting);
                             final ImageView profilePic = (ImageView)navigationView.getHeaderView(1).findViewById(R.id.nav_btn_profilepic);
-                            ImageView message= (ImageView)navigationView.getHeaderView(1).findViewById(R.id.imageView_message);
+                            ImageView message= (ImageView)navigationView.getHeaderView(1).findViewById(R.id.nav_imageView_message);
                             textView.setText(user.getDisplayName());
                             if(user.getPhotoUrl()!=null){
                                 Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(user.getPhotoUrl()).into(profilePic);}
@@ -274,7 +274,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             //navigationView.inflateMenu(R.menu.nav_menu_loggedout);
                             navigationView.inflateMenu(R.menu.nav_menu_loggedout);
 
-                            ImageView imageView =(ImageView)navigationView.getHeaderView(1).findViewById(R.id.imageView5);
+                            ImageView imageView =(ImageView)navigationView.getHeaderView(1).findViewById(R.id.nav_imageview_setting);
                             imageView.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
@@ -282,7 +282,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 }
                             });
 
-                            Button btn_login = (Button)navigationView.getHeaderView(1).findViewById(R.id.login_btn_login);
+                            Button btn_login = (Button)navigationView.getHeaderView(1).findViewById(R.id.nav_btn_login);
                             btn_login.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {

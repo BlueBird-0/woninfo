@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="컴퓨터공학과"
+            android:text="경찰행정학과"
             android:textColor="@color/Theme_Gray"
             android:textSize="@dimen/bigtitle_size"
             android:textStyle="bold"

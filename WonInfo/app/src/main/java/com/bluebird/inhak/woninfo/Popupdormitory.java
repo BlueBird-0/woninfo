@@ -14,7 +14,7 @@ public class Popupdormitory extends AppCompatActivity {
         setContentView(R.layout.popup_dormitory);
         Intent intent = new Intent(this.getIntent());
 
-        Button button = (Button) findViewById(R.id.popup_domitory_btn);
+        Button button = (Button) findViewById(R.id.popup_btn_dormitory);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

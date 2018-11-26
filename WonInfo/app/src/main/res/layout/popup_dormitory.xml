@@ -8,7 +8,7 @@
     android:clickable="true">
 
     <TextView
-        android:id="@+id/popup_dormitory_text1"
+        android:id="@+id/popup_text_dormitory1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/login_btn_submit"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/popup_dormitory_text2"
+        android:id="@+id/popup_text_dormitory2"
         android:layout_width="wrap_content"
         android:layout_height="18dp"
         android:layout_marginStart="40dp"
@@ -37,10 +37,10 @@
         android:textSize="@dimen/font_15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_dormitory_text1" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_text_dormitory1" />
 
     <TextView
-        android:id="@+id/popup_dormitory_text3"
+        android:id="@+id/popup_text_dormitory3"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="40dp"
@@ -50,10 +50,10 @@
         android:textSize="@dimen/font_15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_dormitory_text2" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_text_dormitory2" />
 
     <TextView
-        android:id="@+id/popup_dormitory_text4"
+        android:id="@+id/popup_text_dormitory4"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="40dp"
@@ -63,10 +63,10 @@
         android:textSize="@dimen/font_15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_dormitory_text3" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_text_dormitory3" />
 
     <Button
-        android:id="@+id/popup_domitory_btn"
+        android:id="@+id/popup_btn_dormitory"
         android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -82,7 +82,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_dormitory_text4"
+        app:layout_constraintTop_toBottomOf="@+id/popup_text_dormitory4"
         app:layout_constraintVertical_bias="1.0" />
 
 

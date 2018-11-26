@@ -7,8 +7,9 @@
     android:clickable="true"
     android:background="@color/colorPrimary">
 
+    <!--relativelayout  id로 있었음-->
     <RelativeLayout
-        android:id="@+id/relativeLayout"
+
         android:layout_width="296dp"
         android:layout_height="match_parent"
         android:layout_marginEnd="4dp"
@@ -25,7 +26,7 @@
             android:orientation="vertical">
 
             <com.github.florent37.materialtextfield.MaterialTextField
-                android:id="@+id/login_textfiled_id"
+                android:id="@+id/user_login_textfield_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:mtf_image="@drawable/ic_login_id"
@@ -35,7 +36,7 @@
                 tools:layout_editor_absoluteY="16dp">
 
                 <EditText
-                    android:id="@+id/login_edit_id"
+                    android:id="@+id/user_login_edittext_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="웹정보서비스 ID"
@@ -46,7 +47,7 @@
             </com.github.florent37.materialtextfield.MaterialTextField>
 
             <com.github.florent37.materialtextfield.MaterialTextField
-                android:id="@+id/login_textfiled_pw"
+                android:id="@+id/user_login_textfiled_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
@@ -57,7 +58,7 @@
                 tools:layout_editor_absoluteY="16dp">
 
                 <EditText
-                    android:id="@+id/login_edit_pw"
+                    android:id="@+id/user_login_edittext_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
@@ -72,7 +73,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/login_btn_submit"
+            android:layout_above="@+id/user_login_btn_submit"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:text="ID, PW 는 암호화 되지 않고\n현재 기기에 저장됩니다"
@@ -80,7 +81,7 @@
             android:textColor="@color/Theme_White" />
 
         <Button
-            android:id="@+id/login_btn_submit"
+            android:id="@+id/user_login_btn_submit"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

@@ -14,8 +14,8 @@ public class PopupEnd extends AppCompatActivity {
 
         setContentView(R.layout.popup_ending);
 
-        Button canclebutton = (Button)findViewById(R.id.popup_ending_canclebtn);
-        Button agreebutton = (Button)findViewById(R.id.popup_ending_okbtn);
+        Button canclebutton = (Button)findViewById(R.id.ending_btn_cancle);
+        Button agreebutton = (Button)findViewById(R.id.ending_btn_yes);
 
         canclebutton.setOnClickListener(new View.OnClickListener() {
             @Override
