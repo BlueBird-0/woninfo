@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/setting_alram_check1"
+        android:id="@+id/setting_check1_allalarm"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/all_ripple_click_roundrectanglebox"
@@ -46,13 +46,13 @@
 
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/setting_alram_check2"
+        android:id="@+id/setting_check2_soundalarm"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/all_ripple_click_roundrectanglebox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_alram_check1">
+        app:layout_constraintTop_toBottomOf="@+id/setting_check1_allalarm">
 
         <TextView
             android:id="@+id/setting_alram_listname2"
@@ -84,13 +84,13 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/setting_alram_check3"
+        android:id="@+id/setting_check3_prevalarm"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/all_ripple_click_roundrectanglebox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_alram_check2">
+        app:layout_constraintTop_toBottomOf="@+id/setting_check2_soundalarm">
 
         <TextView
             android:id="@+id/setting_alram_listname3"
@@ -128,7 +128,7 @@
         android:background="@drawable/all_ripple_click_roundrectanglebox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_alram_check3">
+        app:layout_constraintTop_toBottomOf="@+id/setting_check3_prevalarm">
 
         <TextView
             android:id="@+id/setting_alram_listname4"
@@ -162,7 +162,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/setting_alram_check5"
+        android:id="@+id/setting_check5_communityalarm"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/all_ripple_click_roundrectanglebox"
@@ -196,7 +196,7 @@
         android:background="@drawable/all_ripple_click_roundrectanglebox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_alram_check5">
+        app:layout_constraintTop_toBottomOf="@+id/setting_check5_communityalarm">
 
         <TextView
             android:id="@+id/setting_alram_listname6"
