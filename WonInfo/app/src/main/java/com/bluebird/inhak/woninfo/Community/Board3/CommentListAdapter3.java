@@ -1,6 +1,7 @@
 package com.bluebird.inhak.woninfo.Community.Board3;
 
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,13 +17,13 @@ import java.util.ArrayList;
 
 public class CommentListAdapter3 extends RecyclerView.Adapter<CommentListAdapter3.CommentListViewHolder> {
     private ArrayList<Comment> items;
-    private MainActivity mainActivity;
+    private AppCompatActivity activity;
 
     // 적절한 생성자를 제공합니다(데이터 집합의 종류에 따라 다름
-    public CommentListAdapter3(ArrayList<Comment> items, MainActivity mainActivity)
+    public CommentListAdapter3(ArrayList<Comment> items, AppCompatActivity activity)
     {
         this.items = items;
-        this.mainActivity = mainActivity;
+        this.activity = activity;
     }
 
     //새로운 뷰 홀더 생성합니다. (레이아웃 관리자에 의해 호출 됨)

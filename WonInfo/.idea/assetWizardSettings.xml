@@ -45,8 +45,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_voluntary" />
-                            <entry key="sourceFile" value="C:\Users\wku\Desktop\원대 로고\woninfo_image\voluntary.svg" />
+                            <entry key="outputName" value="ic_send_24dp" />
+                            <entry key="sourceFile" value="C:\Users\wku\Downloads\ic_send_24dp.svg" />
                           </map>
                         </option>
                       </PersistentState>

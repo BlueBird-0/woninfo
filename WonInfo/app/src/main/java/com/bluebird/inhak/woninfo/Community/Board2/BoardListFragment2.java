@@ -1,6 +1,7 @@
 
 package com.bluebird.inhak.woninfo.Community.Board2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -59,17 +60,11 @@ public class BoardListFragment2 extends Fragment implements SwipeRefreshLayout.O
 
         swipeRefresh = view.findViewById(R.id.community_layout_refrash);
         swipeRefresh.setOnRefreshListener(this);
-        return view;
-    }
 
-
-    @Override
-    public void onStart() {
-        Log.d("test050", "onStart 시작 ");
-        super.onStart();
 
         //실행시 새로고침 실행
         this.onRefresh();
+        return view;
     }
 
     @Override
@@ -128,7 +123,7 @@ public class BoardListFragment2 extends Fragment implements SwipeRefreshLayout.O
 
 
                 //paging
-                db.collection("Community").document("게시판").collection("대나무숲").document("option")
+                db.collection("Community").document("게시판").collection("자유게시판").document("option")
                         .get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override
@@ -230,14 +225,9 @@ public class BoardListFragment2 extends Fragment implements SwipeRefreshLayout.O
         editItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                Fragment fragment = new Textboard2();
 
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
-                fragmentTransaction.add(R.id.main_fragment_container, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                Intent intent=new Intent(getActivity(), BoardTextBoard2.class);
+                getActivity().startActivity(intent);
                 return false;
             }
         });

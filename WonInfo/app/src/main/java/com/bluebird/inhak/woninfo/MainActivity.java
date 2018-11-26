@@ -36,6 +36,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -253,10 +254,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                     snackbar.show();
                                 }
                             });
-                            if(user.getDisplayName().toString().equals("김소정")) {
+                            if(user.getDisplayName().toString().equals("배수지")) {
                                 navigationView.inflateMenu(R.menu.nav_menu_girl);
                             }
-                            else if(user.getDisplayName().toString().equals("qqqqqq")){
+                            else if(user.getDisplayName().toString().equals("지창욱")){
                                 navigationView.inflateMenu(R.menu.nav_menu_boy);
                         }
                             else {
@@ -555,6 +556,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
+
 
 
     private boolean loadFragment(Fragment fragment)

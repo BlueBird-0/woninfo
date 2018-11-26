@@ -1,7 +1,6 @@
 package com.bluebird.inhak.woninfo.Community;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
@@ -14,11 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bluebird.inhak.woninfo.Community.Board1.BoardListFragment;
+import com.bluebird.inhak.woninfo.Community.Board1.BoardListFragment1;
 import com.bluebird.inhak.woninfo.Community.Board2.BoardListFragment2;
 import com.bluebird.inhak.woninfo.Community.Board3.BoardListFragment3;
-import com.bluebird.inhak.woninfo.Dictionary.A15Fragment.A15Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A24Fragment.A24Fragment;
 import com.bluebird.inhak.woninfo.R;
 import com.bluebird.inhak.woninfo.UserManager;
 
@@ -56,7 +53,7 @@ public class CommunityMainFragment extends Fragment{
                 if(UserManager.checkLoggedin()==true){
                 FragmentManager fragmentManager = getFragmentManager();
                 Fragment fragment = null;
-                fragment = new BoardListFragment();
+                fragment = new BoardListFragment1();
                 loadFragment(fragment);}
                 else{
 

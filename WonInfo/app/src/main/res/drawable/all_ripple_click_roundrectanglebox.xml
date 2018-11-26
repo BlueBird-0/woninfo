@@ -11,7 +11,7 @@
                 android:topRightRadius="0dp" />
             <stroke
                 android:width="1px"
-                android:color="#D5D5D5" />
+                android:color="@color/Theme_Gray" />
             <solid android:color="#ffffff" /> <!-- background color -->
         </shape>
     </item>

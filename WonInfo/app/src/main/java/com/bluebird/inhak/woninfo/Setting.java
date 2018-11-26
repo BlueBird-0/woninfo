@@ -64,10 +64,10 @@ public class Setting extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), CommunitySettingRules.class));
             }
         });
- /*       notify.setOnClickListener(new View.OnClickListener() {
+        notify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View main_view = (View)view.findViewById(R.id.snackbar_view);
+                View main_view = (View)findViewById(R.id.setting_layout_main);
                 Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
                 View snackBarView = snackbar.getView();
                 snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
@@ -77,7 +77,7 @@ public class Setting extends AppCompatActivity {
         personalinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View main_view = (View)findViewById(R.id.snackbar_view);
+                View main_view = (View)findViewById(R.id.setting_layout_main);
                 Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
                 View snackBarView = snackbar.getView();
                 snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
@@ -87,7 +87,7 @@ public class Setting extends AppCompatActivity {
         appversion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View main_view = (View)findViewById(R.id.snackbar_view);
+                View main_view = (View)findViewById(R.id.setting_layout_main);
                 Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
                 View snackBarView = snackbar.getView();
                 snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
@@ -97,7 +97,7 @@ public class Setting extends AppCompatActivity {
         agreement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View main_view = (View)findViewById(R.id.snackbar_view);
+                View main_view = (View)findViewById(R.id.setting_layout_main);
                 Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
                 View snackBarView = snackbar.getView();
                 snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
@@ -107,14 +107,14 @@ public class Setting extends AppCompatActivity {
         userleave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View main_view = (View)getWindow().getDecorView().getRootView().findViewById(R.id.snackbar_view);
+                View main_view = (View)getWindow().getDecorView().getRootView().findViewById(R.id.setting_layout_main);
                 Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
                 View snackBarView = snackbar.getView();
                 snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
                 snackbar.show();
             }
         });
-*/
+
 
     }
 

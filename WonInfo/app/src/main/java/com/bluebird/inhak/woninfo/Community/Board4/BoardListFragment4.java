@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bluebird.inhak.woninfo.Community.Board1.BoardListAdapter;
+import com.bluebird.inhak.woninfo.Community.Board1.BoardListAdapter1;
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
@@ -33,7 +33,7 @@ public class BoardListFragment4 extends Fragment{
     static  private String[] contents = new String[PAGE_COUNT];
     static  private int[] nums = new int[PAGE_COUNT];
 
-    private BoardListAdapter boardListAdapter4;
+    private BoardListAdapter1 boardListAdapter4;
     private String Board4;
     private ArrayList<BoardListItem> items = new ArrayList<>();
     private View view;
@@ -86,7 +86,7 @@ public class BoardListFragment4 extends Fragment{
         //변경될 가능성이 있다면 false로, 없다면 true를 설정해주세요
         recyclerView.setHasFixedSize(true);
         //RecyclerView에 Adapter를 설정해줍니다.
-        boardListAdapter4 = new BoardListAdapter(items,(MainActivity) getActivity());
+        boardListAdapter4 = new BoardListAdapter1(items,(MainActivity) getActivity());
         recyclerView.setAdapter(boardListAdapter4);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

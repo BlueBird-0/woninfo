@@ -15,6 +15,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -72,7 +73,7 @@ import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
  */
 
 
-public class Textboard3 extends Fragment {
+public class BoardTextBoard3 extends AppCompatActivity {
     private Button sendbt;
     private EditText editdt;
     private EditText editdt2;
@@ -87,48 +88,45 @@ public class Textboard3 extends Fragment {
 
     final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    @Nullable
     @Override
-
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        //final View view = inflater.inflate(R.layout.community_market_list, container, false);
-        final View view = inflater.inflate(R.layout.community_market_textbroad, container, false);
-        setHasOptionsMenu(true);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.community_write3_fragment);
         imgUriList = new ArrayList<>();
 
-        final ConstraintLayout constraintLayout = (ConstraintLayout)view.findViewById(R.id.write2_layout_picture);
-        constraintLayout.setOnClickListener(new View.OnClickListener() {
+        final LinearLayout linearLayout = (LinearLayout)findViewById(R.id.write2_layout_picture);
+        linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PermissionListener permissionlistener = new PermissionListener() {
                     @Override
                     public void onPermissionGranted() {
                         // 권한 있을 때  사진 넣기
-                        TedBottomPicker bottomSheetDialogFragment = new TedBottomPicker.Builder(getContext())
+                        TedBottomPicker bottomSheetDialogFragment = new TedBottomPicker.Builder(getApplicationContext())
                                 .setOnMultiImageSelectedListener(new TedBottomPicker.OnMultiImageSelectedListener() {
                                     @Override
                                     public void onImagesSelected(ArrayList<Uri> uriList) {
                                         // here is selected uri list
-                                        ConstraintLayout constraintLayout= (ConstraintLayout) view.findViewById(R.id.write2_layout_picture);
-                                        constraintLayout.removeAllViews();
+//                                        LinearLayout constraintLayout= (LinearLayout) findViewById(R.id.write2_layout_picture);
+                                        linearLayout.removeAllViews();
 
                                         imageCount = uriList.size();
                                         for(Uri uri : uriList)
                                         {
                                             imgUriList.add(uri);
-                                            ImageView pictureImg= new ImageView(getContext());
+                                            ImageView pictureImg= new ImageView(getApplicationContext());
                                             pictureImg.setBackground(null);
 
-                                            Glide.with((getActivity()).getWindow().getDecorView().getRootView()).load(uri).into(pictureImg);
-                                            constraintLayout.addView(pictureImg);
+                                            Glide.with(getWindow().getDecorView().getRootView()).load(uri).into(pictureImg);
+                                            linearLayout.addView(pictureImg);
 
                                             LinearLayout.LayoutParams loparams = (LinearLayout.LayoutParams) pictureImg.getLayoutParams();
 
                                             loparams.weight = 0;
                                             loparams.rightMargin = 14;
-                                            if(pictureImg.getWidth() > constraintLayout.getHeight())
-                                                loparams.width = constraintLayout.getHeight();
-                                            loparams.height = constraintLayout.getHeight();
+                                            if(pictureImg.getWidth() > linearLayout.getHeight())
+                                                loparams.width = linearLayout.getHeight();
+                                            loparams.height = linearLayout.getHeight();
                                             pictureImg.setLayoutParams(loparams);
                                         }
                                     }
@@ -139,7 +137,7 @@ public class Textboard3 extends Fragment {
                                 .setEmptySelectionText("No Select")
                                 .create();
 
-                        bottomSheetDialogFragment.show(getActivity().getSupportFragmentManager());
+                        bottomSheetDialogFragment.show(getSupportFragmentManager());
                     }
                     @Override
                     public void onPermissionDenied(List<String> deniedPermissions) {
@@ -155,24 +153,22 @@ public class Textboard3 extends Fragment {
             }
         });
 
-        sendbt = (Button)view.findViewById(R.id.market_textboard_write_btn);
+        sendbt = (Button)findViewById(R.id.write2_button_confirm);
         sendbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 {
-                    editdt = (EditText) view.findViewById(R.id.write2_edit_titles);
-                    editdt2 = (EditText) view.findViewById(R.id.write2_edit_contents);
-                    editdt3 = (EditText) view.findViewById(R.id.write2_edit_price);
-                    editdt4 = (EditText) view.findViewById(R.id.write2_edit_kind);
+                    editdt2 = (EditText) findViewById(R.id.write2_edit_content);
+                    editdt3 = (EditText) findViewById(R.id.write2_edit_price);
+                    editdt4 = (EditText) findViewById(R.id.write2_edit_kind);
                     String errorString = "";
-                    if (editdt.getText().toString().equals("") ||
-                            editdt2.getText().toString().equals("") ||
+                    if (  editdt2.getText().toString().equals("") ||
                             editdt3.getText().toString().equals("") ||
                             editdt4.getText().toString().equals("")) {
                         errorString = "빈칸을 입력하세요.";
                     }
                     if(!errorString.equals("")) {
-                        View main_view = (View) view.getRootView().findViewById(R.id.snackbar_view);
+                        View main_view = (View) findViewById(R.id.snackbar_view);
                         Snackbar snackbar = Snackbar.make(main_view, errorString, Snackbar.LENGTH_SHORT);
                         View snackBarView = snackbar.getView();
                         snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext, R.color.Theme_Blue));
@@ -182,7 +178,7 @@ public class Textboard3 extends Fragment {
 
 
 
-                    Toast.makeText(getContext(), "글이 작성되었습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "글이 작성되었습니다.", Toast.LENGTH_SHORT).show();
 
                     option = "option";
 
@@ -203,23 +199,21 @@ public class Textboard3 extends Fragment {
                                             Log.d("community", "글 작성 시간 : " + now);
                                             //db에 insert시켜준다
 
-                                            editdt = (EditText) view.findViewById(R.id.write2_edit_titles);
-                                            editdt2 = (EditText) view.findViewById(R.id.write2_edit_contents);
-                                            editdt3 = (EditText) view.findViewById(R.id.write2_edit_price);
-                                            editdt4 = (EditText) view.findViewById(R.id.write2_edit_kind);
+                                            editdt2 = (EditText) findViewById(R.id.write2_edit_content);
+                                            editdt3 = (EditText) findViewById(R.id.write2_edit_price);
+                                            editdt4 = (EditText) findViewById(R.id.write2_edit_kind);
 
                                             date = now;
 
-                                            String msg = editdt.getText().toString();
                                             String msg2 = editdt2.getText().toString();
                                             String msg3 = editdt3.getText().toString();
                                             String msg4 = editdt4.getText().toString();
                                             Map<String, Object> newArticle = new HashMap<>();
 
-                                            newArticle.put("title", editdt.getText().toString());
-                                            newArticle.put("content", editdt2.getText().toString());
-                                            newArticle.put("price", editdt3.getText().toString());
-                                            newArticle.put("kinds", editdt4.getText().toString());
+                                            newArticle.put("title", msg4 + " 판매글 " + msg3 + "￦");
+                                            newArticle.put("content", msg2);
+                                            newArticle.put("price", msg3);
+                                            newArticle.put("kinds", msg4);
 
                                             newArticle.put("date", date);
                                             newArticle.put("num", num);
@@ -256,12 +250,11 @@ public class Textboard3 extends Fragment {
                                 }
                             });
                 }
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.popBackStack();
+                finish();
             }
         });
-        return view;
     }
+
 
     public void saveStoreImages(List<Uri> uriList, String documentId) {
         FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -285,26 +278,4 @@ public class Textboard3 extends Fragment {
             i++;
         }
     }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        menu.clear();
-    }
-
-    private boolean loadFragment(Fragment fragment)
-    {
-        //switching fragment
-        if(fragment != null)
-        {
-            getFragmentManager().beginTransaction().addToBackStack(null);
-            getFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.main_fragment_container, fragment)
-                    .commit();
-            return true;
-        }
-        return false;
-    }
-
 }

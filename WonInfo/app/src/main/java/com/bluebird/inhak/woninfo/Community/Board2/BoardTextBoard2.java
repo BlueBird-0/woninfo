@@ -15,6 +15,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -51,6 +52,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
+import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -72,7 +74,7 @@ import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
  */
 
 
-public class Textboard2 extends Fragment {
+public class BoardTextBoard2 extends AppCompatActivity {
     private Button sendbt;
     private EditText editdt;
     private EditText editdt2;
@@ -85,15 +87,14 @@ public class Textboard2 extends Fragment {
 
     final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    @Nullable
+
     @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.community_write2_fragment);
 
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.community_write2_fragment, container, false);
-        setHasOptionsMenu(true);
         imgUriList = new ArrayList<>();
-
-        final LinearLayout imageButton = (LinearLayout)view.findViewById(R.id.write2_layout_picture);
+        final LinearLayout imageButton = (LinearLayout)findViewById(R.id.write2_layout_picture);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,22 +102,22 @@ public class Textboard2 extends Fragment {
                     @Override
                     public void onPermissionGranted() {
                         // 권한 있을 때  사진 넣기
-                        TedBottomPicker bottomSheetDialogFragment = new TedBottomPicker.Builder(getContext())
+                        TedBottomPicker bottomSheetDialogFragment = new TedBottomPicker.Builder(getApplicationContext())
                                 .setOnMultiImageSelectedListener(new TedBottomPicker.OnMultiImageSelectedListener() {
                                     @Override
                                     public void onImagesSelected(ArrayList<Uri> uriList) {
                                         // here is selected uri list
-                                        LinearLayout linearLayout= (LinearLayout) view.findViewById(R.id.write2_layout_picture);
+                                        LinearLayout linearLayout= (LinearLayout) findViewById(R.id.write2_layout_picture);
                                         linearLayout.removeAllViews();
 
                                         imageCount = uriList.size();
                                         for(Uri uri : uriList)
                                         {
                                             imgUriList.add(uri);
-                                            ImageView pictureImg= new ImageView(getContext());
+                                            ImageView pictureImg= new ImageView(getApplicationContext());
                                             pictureImg.setBackground(null);
 
-                                            Glide.with((getActivity()).getWindow().getDecorView().getRootView()).load(uri).into(pictureImg);
+                                            Glide.with(getWindow().getDecorView().getRootView()).load(uri).into(pictureImg);
                                             linearLayout.addView(pictureImg);
 
                                             LinearLayout.LayoutParams loparams = (LinearLayout.LayoutParams) pictureImg.getLayoutParams();
@@ -136,7 +137,7 @@ public class Textboard2 extends Fragment {
                                 .setEmptySelectionText("No Select")
                                 .create();
 
-                        bottomSheetDialogFragment.show(getActivity().getSupportFragmentManager());
+                        bottomSheetDialogFragment.show(getSupportFragmentManager());
                     }
                     @Override
                     public void onPermissionDenied(List<String> deniedPermissions) {
@@ -151,13 +152,14 @@ public class Textboard2 extends Fragment {
                         .check();
             }
         });
-        sendbt = (Button)view.findViewById(R.id.write2_button_confirm);
+
+        sendbt = (Button)findViewById(R.id.write2_button_confirm);
         sendbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 {
-                    editdt = (EditText) view.findViewById(R.id.write2_edit_title);
-                    editdt2 = (EditText) view.findViewById(R.id.write2_edit_content);
+                    editdt = (EditText) findViewById(R.id.write2_edit_title);
+                    editdt2 = (EditText) findViewById(R.id.write2_edit_content);
                     String errorString = "";
                     if (editdt.getText().toString().equals("") ||
                             editdt2.getText().toString().equals(""))
@@ -165,7 +167,7 @@ public class Textboard2 extends Fragment {
                         errorString = "빈칸을 입력하세요.";
                     }
                     if(!errorString.equals("")) {
-                        View main_view = (View) view.getRootView().findViewById(R.id.snackbar_view);
+                        View main_view = (View)findViewById(R.id.snackbar_view);
                         Snackbar snackbar = Snackbar.make(main_view, errorString, Snackbar.LENGTH_SHORT);
                         View snackBarView = snackbar.getView();
                         snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext, R.color.Theme_Blue));
@@ -174,8 +176,7 @@ public class Textboard2 extends Fragment {
                     }
 
 
-
-                    Toast.makeText(getContext(), "글이 작성되었습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "글이 작성되었습니다.", Toast.LENGTH_SHORT).show();
                     option = "option";
 
                     DocumentReference Count1 = db.collection("Community").document("게시판").collection("자유게시판").document(option);
@@ -194,6 +195,7 @@ public class Textboard2 extends Fragment {
                                             String now = dateFormat.format(calendar.getTime());
                                             Log.d("community", "글 작성 시간 : "+now);
                                             //db에 insert시켜준다
+
 
                                             date = now;
 
@@ -239,11 +241,9 @@ public class Textboard2 extends Fragment {
                                 }
                             });
                 }
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.popBackStack();
+                finish();
             }
         });
-        return view;
     }
 
     public void saveStoreImages(List<Uri> uriList, String documentId) {
@@ -251,7 +251,7 @@ public class Textboard2 extends Fragment {
         StorageReference storageReference = storage.getReference();
         int i=0;
         for(Uri uri : uriList) {
-            StorageReference riversRef = storageReference.child("board2/" + documentId+"_image_"+i);
+            StorageReference riversRef = storageReference.child("board1/" + documentId+"_image_"+i);
             UploadTask uploadTask = riversRef.putFile(uri);
             uploadTask.addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -267,27 +267,6 @@ public class Textboard2 extends Fragment {
             });
             i++;
         }
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        menu.clear();
-    }
-
-    private boolean loadFragment(Fragment fragment)
-    {
-        //switching fragment
-        if(fragment != null)
-        {
-            getFragmentManager().beginTransaction().addToBackStack(null);
-            getFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.main_fragment_container, fragment)
-                    .commit();
-            return true;
-        }
-        return false;
     }
 
 }

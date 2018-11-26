@@ -20,6 +20,8 @@
     <dimen name="bigtitle_size">13sp</dimen>
     <dimen name="menubigtitle_size">20sp</dimen>
 
+
+
     <!--HS_font-->
     <dimen name="font_10sp">10sp</dimen>
     <dimen name="font_11sp">11sp</dimen>
@@ -31,6 +33,10 @@
     <dimen name="font_17sp">17sp</dimen>
     <dimen name="font_18sp">18sp</dimen>
     <dimen name="font_19sp">19sp</dimen>
+
+    <dimen name="font_all_mini_12sp">12sp</dimen>
+    <dimen name="font_all_middle_14sp">14sp</dimen>
+    <dimen name="font_all_large_17sp">17sp</dimen>
 
 
 </resources>

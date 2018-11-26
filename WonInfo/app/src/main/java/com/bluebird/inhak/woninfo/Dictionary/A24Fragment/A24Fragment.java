@@ -1,5 +1,7 @@
 package com.bluebird.inhak.woninfo.Dictionary.A24Fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -41,6 +43,10 @@ public class A24Fragment extends Fragment {
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.wku.ac.kr/campus-life/school-bus-lines/inter-city-lines.html"));
+                    startActivity(intent);
+                    /*
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     try {
@@ -56,7 +62,7 @@ public class A24Fragment extends Fragment {
                         fragmentTransaction.commit();
                         ((MainActivity)getActivity()).getSupportActionBar().setTitle(FragmentTitle[finalI]);
 
-                    }catch(Exception e) {}
+                    }catch(Exception e) {}*/
                 }
             });
         }
