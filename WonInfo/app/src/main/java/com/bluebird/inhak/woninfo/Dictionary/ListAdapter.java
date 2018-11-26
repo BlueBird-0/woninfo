@@ -53,7 +53,7 @@ public class ListAdapter extends BaseAdapter {
         /*'item_menu' Layout을 inflate하여 convertView 참조 획득 */
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.item_menu, parent, false);
+            convertView = inflater.inflate(R.layout.dictionary_item_menu, parent, false);
         }
         /* 'item_menu' 에 정의된 위젯에 대한 참조 획득 */
         RelativeLayout menuList_btn = (RelativeLayout) convertView.findViewById(R.id.menuList_btn);

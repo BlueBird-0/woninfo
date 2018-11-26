@@ -2,6 +2,7 @@
 package com.bluebird.inhak.woninfo.Community.Board3;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,26 +10,26 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bluebird.inhak.woninfo.Community.Board2.BoardViewActivity2;
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
@@ -96,24 +97,12 @@ public class BoardListAdapter3 extends RecyclerView.Adapter<BoardListAdapter3.Bo
             button1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // 게시글에 데이터 넘겨주는 번들 --------------------------------
-                    // args 에 넣어서 값 전달.
+                    Intent intent=new Intent(mainActivity, BoardViewActivity3.class);
+                    //args 에 값 넣어서 전달
                     Bundle args = new Bundle();
                     args.putSerializable("Bundle", item);
-
-
-                    FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    try {
-                        Class t = Class.forName("com.bluebird.inhak.woninfo.Community.Board3.BoardViewFragment3");
-                        Fragment fragment = (Fragment)t.newInstance();
-                        fragment.setArguments(args);
-
-                        fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
-                        fragmentTransaction.add(R.id.main_fragment_container, fragment);
-                        fragmentTransaction.addToBackStack(null);
-                        fragmentTransaction.commit();
-                    }catch(Exception e) {}
+                    intent.putExtras(args);
+                    mainActivity.startActivity(intent);
                 }
             });
         }
@@ -123,8 +112,10 @@ public class BoardListAdapter3 extends RecyclerView.Adapter<BoardListAdapter3.Bo
             TextView kinds = (TextView) itemView.findViewById(R.id.community_market_kinds);
             kinds.setText(item.getKinds());
             TextView price = (TextView)itemView.findViewById(R.id.community_market_book_price);
-            price.setText(item.getPrice());
+            price.setText(item.getPrice() +"￦");
 
+            SwipeRefreshLayout refreshLayout = (SwipeRefreshLayout)itemView.findViewById(R.id.community_market_item_refrash);
+            refreshLayout.setRefreshing(true);
             ImageView hasImage = (ImageView)itemView.findViewById(R.id.community_market_book_images);
             if(item.getImageCount() == 0)
             {
@@ -147,15 +138,20 @@ public class BoardListAdapter3 extends RecyclerView.Adapter<BoardListAdapter3.Bo
                 storageRef.addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                        Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView()).load(uri).into(imageView);
-/*
-                    LinearLayout.LayoutParams loparams = (LinearLayout.LayoutParams) imageView1.getLayoutParams();
+                        Glide.with(((Activity)mainContext).getWindow().getDecorView().getRootView())
+                                .load(uri)
+                                .apply(new RequestOptions().centerCrop())
+                                .into(imageView);
 
-                    loparams.leftMargin = 30;
-                    loparams.rightMargin = 30;
-                    loparams.bottomMargin= 30;
-                    imageView1.setLayoutParams(loparams);*/
-                        //사진 등록
+                        SwipeRefreshLayout refreshLayout = (SwipeRefreshLayout)itemView.findViewById(R.id.community_market_item_refrash);
+                        refreshLayout.setRefreshing(false);
+                        refreshLayout.setEnabled(false);
+                        refreshLayout.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Log.d("test050", "050505");
+                            }
+                        });
                     }
                 });
             }

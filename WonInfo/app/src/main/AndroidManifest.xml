@@ -46,6 +46,49 @@
         <activity android:name="com.bluebird.inhak.woninfo.LoginActivity"
             android:theme="@style/DialogTheme" >
         </activity>
+
+        <!-- Board 게시판 엑티비티-->
+        <activity android:name="com.bluebird.inhak.woninfo.Community.Board1.BoardViewActivity1"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name="com.bluebird.inhak.woninfo.Community.Board1.BoardTextBoard1"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name="com.bluebird.inhak.woninfo.Community.Board2.BoardViewActivity2"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name="com.bluebird.inhak.woninfo.Community.Board2.BoardTextBoard2"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name="com.bluebird.inhak.woninfo.Community.Board3.BoardViewActivity3"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name="com.bluebird.inhak.woninfo.Community.Board3.BoardTextBoard3"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+
+
         <activity android:name="com.bluebird.inhak.woninfo.CommunitySettingRules"
             android:screenOrientation="portrait" >
         </activity>
@@ -92,10 +135,6 @@
         <activity android:name="com.bluebird.inhak.woninfo.Popup.PopupLogout"
             android:theme="@style/DialogTheme" >
         </activity>
-        <!--activity android:name="com.bluebird.inhak.woninfo.Popup.PopupWritesuccess"
-            android:theme="@style/DialogTheme" >
-        </activity-->
-        <!--HS-->
 
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat"/>

@@ -1,6 +1,7 @@
 
 package com.bluebird.inhak.woninfo.Community.Board2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
@@ -17,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bluebird.inhak.woninfo.Community.Board1.BoardViewActivity1;
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
@@ -83,24 +85,12 @@ public class BoardListAdapter2 extends RecyclerView.Adapter<BoardListAdapter2.Bo
             button1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Intent intent=new Intent(mainActivity, BoardViewActivity2.class);
+                    //args 에 값 넣어서 전달
                     Bundle args = new Bundle();
                     args.putSerializable("Bundle", item);
-                    // 게시글에 데이터 넘겨주는 번들 --------------------------------
-                    // args 에 넣어서 값 전달.
-
-                    FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    try {
-                        Class t = Class.forName("com.bluebird.inhak.woninfo.Community.Board2.BoardViewFragment2");
-                        Fragment fragment = (Fragment)t.newInstance();
-                        fragment.setArguments(args);
-
-                        fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
-                        fragmentTransaction.add(R.id.main_fragment_container, fragment);
-                        fragmentTransaction.addToBackStack(null);
-                        fragmentTransaction.commit();
-                    }catch(Exception e) {}
+                    intent.putExtras(args);
+                    mainActivity.startActivity(intent);
                 }
             });
         }

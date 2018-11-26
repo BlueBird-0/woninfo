@@ -5,8 +5,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="1px"
         android:background="@drawable/back_line"
-        android:layout_margin="6dp" />
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"/>
 
 </LinearLayout>

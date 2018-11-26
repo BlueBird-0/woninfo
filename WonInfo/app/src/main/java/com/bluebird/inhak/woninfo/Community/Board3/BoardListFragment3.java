@@ -2,6 +2,7 @@
 package com.bluebird.inhak.woninfo.Community.Board3;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bluebird.inhak.woninfo.Community.Board2.BoardTextBoard2;
 import com.bluebird.inhak.woninfo.Community.BoardListItem;
 import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
@@ -137,6 +139,13 @@ public class BoardListFragment3 extends Fragment implements SwipeRefreshLayout.O
                         });
             }
         });
+
+
+
+
+
+
+
         db.collection("Community").document("게시판").collection("자유시장").document("option")
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -234,14 +243,9 @@ public class BoardListFragment3 extends Fragment implements SwipeRefreshLayout.O
         editItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                Fragment fragment = new Textboard3();
 
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.setCustomAnimations(R.anim.slide_open, 0, 0, R.anim.slide_close);
-                fragmentTransaction.add(R.id.main_fragment_container, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                Intent intent=new Intent(getActivity(), BoardTextBoard3.class);
+                getActivity().startActivity(intent);
                 return false;
             }
         });
