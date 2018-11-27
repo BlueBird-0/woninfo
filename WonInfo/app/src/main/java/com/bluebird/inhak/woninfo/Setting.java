@@ -43,13 +43,13 @@ public class Setting extends AppCompatActivity {
                 Glide.with(getWindow().getDecorView().getRootView()).load(user.getPhotoUrl()).thumbnail(0.1f).into(imageView);
             }
         }
-        ConstraintLayout setAlam = (ConstraintLayout) findViewById(R.id.setting_btn1);
-        ConstraintLayout notify = (ConstraintLayout) findViewById(R.id.setting_btn2);
-        ConstraintLayout community_rule = (ConstraintLayout) findViewById(R.id.setting_btn3);
-        ConstraintLayout personalinfo = (ConstraintLayout) findViewById(R.id.setting_btn4);
-        ConstraintLayout appversion = (ConstraintLayout) findViewById(R.id.setting_btn5);
-        ConstraintLayout agreement = (ConstraintLayout) findViewById(R.id.setting_btn6);
-        ConstraintLayout userleave = (ConstraintLayout) findViewById(R.id.setting_btn7);
+        ConstraintLayout setAlam = (ConstraintLayout) findViewById(R.id.setting_btn1_alarm);
+        ConstraintLayout notify = (ConstraintLayout) findViewById(R.id.setting_btn2_notice);
+        ConstraintLayout community_rule = (ConstraintLayout) findViewById(R.id.setting_btn3_communityrules);
+        ConstraintLayout personalinfo = (ConstraintLayout) findViewById(R.id.setting_btn4_privacypolicy);
+        ConstraintLayout appversion = (ConstraintLayout) findViewById(R.id.setting_btn5_appver);
+        ConstraintLayout agreement = (ConstraintLayout) findViewById(R.id.setting_btn6_informedconsent);
+        ConstraintLayout userleave = (ConstraintLayout) findViewById(R.id.setting_btn7_dropout);
 
         setAlam.setOnClickListener(new View.OnClickListener() {
             @Override

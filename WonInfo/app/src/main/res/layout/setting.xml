@@ -100,7 +100,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/setting_btn1"
+        android:id="@+id/setting_btn1_alarm"
         android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -151,7 +151,7 @@
         android:background="@drawable/all_shape_roundrectanglebox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_btn1">
+        app:layout_constraintTop_toBottomOf="@+id/setting_btn1_alarm">
 
         <TextView
             android:id="@+id/setting_gidelinename"
@@ -172,7 +172,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/setting_btn2"
+        android:id="@+id/setting_btn2_notice"
         android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -215,14 +215,14 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/setting_btn3"
+        android:id="@+id/setting_btn3_communityrules"
         android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/all_ripple_click_roundrectanglebox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_btn2">
+        app:layout_constraintTop_toBottomOf="@+id/setting_btn2_notice">
 
         <ImageView
             android:id="@+id/setting_next3"
@@ -258,14 +258,14 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/setting_btn4"
+        android:id="@+id/setting_btn4_privacypolicy"
         android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/all_ripple_click_roundrectanglebox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_btn3">
+        app:layout_constraintTop_toBottomOf="@+id/setting_btn3_communityrules">
 
         <ImageView
             android:id="@+id/setting_next4"
@@ -301,14 +301,14 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/setting_btn5"
+        android:id="@+id/setting_btn5_appver"
         android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/all_ripple_click_roundrectanglebox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_btn4">
+        app:layout_constraintTop_toBottomOf="@+id/setting_btn4_privacypolicy">
 
         <ImageView
             android:id="@+id/setting_next5"
@@ -351,7 +351,7 @@
         android:background="@drawable/all_shape_roundrectanglebox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_btn5">
+        app:layout_constraintTop_toBottomOf="@+id/setting_btn5_appver">
 
         <TextView
             android:id="@+id/setting_gidelinename2"
@@ -370,7 +370,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/setting_btn6"
+        android:id="@+id/setting_btn6_informedconsent"
         android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -413,14 +413,14 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/setting_btn7"
+        android:id="@+id/setting_btn7_dropout"
         android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/all_ripple_click_roundrectanglebox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_btn6">
+        app:layout_constraintTop_toBottomOf="@+id/setting_btn6_informedconsent">
 
         <ImageView
             android:id="@+id/setting_next7"
