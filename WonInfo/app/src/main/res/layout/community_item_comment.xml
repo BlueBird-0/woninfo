@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/a_26_box1"
+        android:id="@+id/community_layout_comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/all_ripple_click"

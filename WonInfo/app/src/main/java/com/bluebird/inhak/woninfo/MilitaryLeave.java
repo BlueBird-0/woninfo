@@ -16,7 +16,7 @@ public class MilitaryLeave extends AppCompatActivity {
         setContentView(R.layout.popup_militaryleave);
         Intent intent = new Intent(this.getIntent());
 
-        Button button = (Button) findViewById(R.id.popup_militaryleave_btn);
+        Button button = (Button) findViewById(R.id.militaryleave_btn_submit);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

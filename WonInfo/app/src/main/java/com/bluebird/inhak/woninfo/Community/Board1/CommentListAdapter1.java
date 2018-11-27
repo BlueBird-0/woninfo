@@ -3,13 +3,18 @@ package com.bluebird.inhak.woninfo.Community.Board1;
 
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.Community.Textboard.Comment;
 import com.bluebird.inhak.woninfo.R;
@@ -20,6 +25,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+
+import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
 
 public class CommentListAdapter1 extends RecyclerView.Adapter<CommentListAdapter1.CommentListViewHolder> {
     private ArrayList<Comment> items;
@@ -76,6 +83,22 @@ public class CommentListAdapter1 extends RecyclerView.Adapter<CommentListAdapter
             content.setText(item.getContent());
             TextView date = (TextView)itemView.findViewById(R.id.community_comment1_date);
             date.setText(item.getDate());
+
+            ConstraintLayout boxLayout = (ConstraintLayout)itemView.findViewById(R.id.community_layout_comment);
+            boxLayout.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    View main_view = (View)v.getRootView().findViewById(R.id.snackbar_view);
+                    Snackbar snackbar = Snackbar.make(main_view,"롱클릭 삐융삐융",Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
+                    snackbar.show();
+
+                    Log.d("comment",item.getWriter_uid());
+
+                    return true;
+                }
+            });
 
             //익명게시판이라 필요없음
             /*ImageView imageView = (ImageView)itemView.findViewById(R.id.community_comment1_profile);

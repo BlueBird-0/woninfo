@@ -14,7 +14,7 @@ public class Popupgirloffically extends AppCompatActivity {
         setContentView(R.layout.popup_girl);
         Intent intent = new Intent(this.getIntent());
 
-        Button button = (Button) findViewById(R.id.popup_girl_btn);
+        Button button = (Button) findViewById(R.id.period_btn_submit);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

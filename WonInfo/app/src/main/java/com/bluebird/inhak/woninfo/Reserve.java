@@ -17,7 +17,7 @@ public class Reserve extends AppCompatActivity {
 
         setContentView(R.layout.popup_reserve);
 
-        Button button =(Button)findViewById(R.id.popup_reserve_btn);
+        Button button =(Button)findViewById(R.id.reserve_btn_submit);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

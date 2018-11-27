@@ -14,7 +14,7 @@ public class Popupvoluntary extends AppCompatActivity {
         setContentView(R.layout.popup_voluntary);
         Intent intent = new Intent(this.getIntent());
 
-        Button button = (Button) findViewById(R.id.popup_voluntary_btn);
+        Button button = (Button) findViewById(R.id.voluntary_btn_submit);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
