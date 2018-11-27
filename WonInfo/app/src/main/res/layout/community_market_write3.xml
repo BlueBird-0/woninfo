@@ -40,41 +40,64 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
+
                         <ImageView
                             android:id="@+id/community_market_profile"
                             android:layout_width="38dp"
                             android:layout_height="38dp"
                             android:layout_marginStart="16dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="8dp"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/community_layout_image"
                             app:srcCompat="@drawable/ic_profile" />
 
                         <TextView
                             android:id="@+id/community_market_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="13dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
                             android:text="id"
                             android:textColor="@color/Theme_Black"
                             android:textSize="@dimen/title_size"
                             android:textStyle="bold"
                             app:layout_constraintStart_toEndOf="@+id/community_market_profile"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toBottomOf="@+id/community_layout_image" />
 
                         <TextView
                             android:id="@+id/community_market_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="12dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
                             android:text="date"
                             android:textAlignment="textEnd"
                             android:textColor="@color/Theme_Gray"
                             android:textSize="@dimen/bigtitle_size"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toBottomOf="@+id/community_layout_image" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="종류"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/community_market_profile" />
+
+                        <TextView
+                            android:id="@+id/community_market_book_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="70dp"
+                            android:layout_marginTop="8dp"
+                            android:text="원"
+                            android:textColor="@color/Theme_Red"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/community_market_profile" />
 
 
                         <TextView
@@ -133,12 +156,12 @@
                             android:id="@+id/community_layout_image"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="8dp"
                             android:orientation="vertical"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/community_market_commentcount">
+                            app:layout_constraintTop_toTopOf="parent">
 
                             <ImageView
                                 android:id="@+id/market_imageView11"
@@ -147,7 +170,7 @@
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="10dp"
-                                android:background="@color/Theme_LightGray"
+                                android:background="@drawable/all_shape_roundrectanglebox"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.0"
@@ -178,42 +201,6 @@
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/market_kinds"
-            android:layout_width="wrap_content"
-            android:layout_height="21dp"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="57dp"
-            android:background="@drawable/all_item_market_subclass"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/nestedScrollView">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="종류"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/community_market_book_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="57dp"
-            android:text="원"
-            android:textColor="@color/Theme_Red"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/market_kinds"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/market_constraintLayout6"
