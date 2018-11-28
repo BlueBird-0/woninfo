@@ -73,7 +73,6 @@ public class CreateUserPopup extends AppCompatActivity
                 }
 
                 UserManager.createUser(email.getText().toString(), password.getText().toString(), nickname.getText().toString());
-                Log.d("test001", "asdsd");
 
                     // 아이디와 패스워드가 같은지 확인   GUI 수정
                     /*

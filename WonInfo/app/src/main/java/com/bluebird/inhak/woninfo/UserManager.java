@@ -34,6 +34,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -55,7 +58,9 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import gun0912.tedbottompicker.TedBottomPicker;
 
@@ -282,7 +287,7 @@ public class UserManager {
                             View snackBarView = snackbar.getView();
                             snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext, R.color.Theme_Blue));
                             snackbar.show();
-                            FirebaseUser user = auth.getCurrentUser();
+                            final FirebaseUser user = auth.getCurrentUser();
 
 
                             //TODO 이메일 인증 메일은 보내지만 인증은 안하고 자동으로 로그인 되는중...ㅅㅂ
@@ -309,15 +314,25 @@ public class UserManager {
                                             if (task.isSuccessful()) {
                                                 Log.d("test987", "User Profile updated.");
                                                 ((MainActivity)mainContext).replaceNavigation();
+
+                                                //사용자 Database 제작
+                                                Map<String, Object> newArticle = new HashMap<>();
+                                                newArticle.put("name", user.getDisplayName());
+                                                newArticle.put("message_token", null);
+
+                                                FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+                                                firestore.collection("Users").document( user.getUid() )
+                                                        .set(newArticle)
+                                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                            @Override
+                                                            public void onSuccess(Void aVoid) {
+
+                                                            }
+                                                        });
                                             }
                                         }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.d("test987", "User Profile updateddddd.");
-                                        }
                                     });
+
                         }
                     }
                 })
