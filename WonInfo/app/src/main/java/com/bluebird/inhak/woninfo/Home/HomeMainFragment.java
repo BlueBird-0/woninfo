@@ -136,7 +136,7 @@ public class HomeMainFragment extends Fragment {
 
                 db.collection("Community").document("게시판").collection("대나무숲")
                         .orderBy("num", Query.Direction.DESCENDING)
-                        .limit(1)
+                        .limit(2)
                         .get()
                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>(){
                             @Override
@@ -164,7 +164,7 @@ public class HomeMainFragment extends Fragment {
                         });
                 db.collection("Community").document("게시판").collection("자유게시판")
                         .orderBy("num", Query.Direction.DESCENDING)
-                        .limit(1)
+                        .limit(2)
                         .get()
                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>(){
                             @Override
@@ -191,7 +191,12 @@ public class HomeMainFragment extends Fragment {
                             }
                         }); db.collection("Community").document("게시판").collection("자유시장")
                         .orderBy("num", Query.Direction.DESCENDING)
-                        .limit(1)
+                        .limit(2
+
+
+
+
+                        )
                         .get()
                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>(){
                             @Override

@@ -27,8 +27,8 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         // 설치할때 여기서 토큰을 자동으로 만들어 준다
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(TAG, "Refreshed token: " + refreshedToken);
-        Log.d("FirebaseCloud", "Refreshed token: " + refreshedToken);
-        Log.d("FirebaseCloud", "Refreshed token: " + UserManager.firebaseUser.getIdToken(true));
+  //      Log.d("FirebaseCloud", "Refreshed token: " + refreshedToken);
+//        Log.d("FirebaseCloud", "Refreshed token: " + UserManager.firebaseUser.getIdToken(true));
 
 
         // 생성한 토큰을 서버로 날려서 저장하기 위해서 만든거

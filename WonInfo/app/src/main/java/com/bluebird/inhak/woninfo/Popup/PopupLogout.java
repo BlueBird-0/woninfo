@@ -28,7 +28,7 @@ public class PopupLogout extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.popup_logout);
 
-        Button button1 = findViewById(R.id.popup_logout_canclebtn);
+        Button button1 = findViewById(R.id.logout_btn_cancle);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +37,7 @@ public class PopupLogout extends AppCompatActivity {
             }
         });
 
-        Button button2 = findViewById(R.id.popup_logout_okbtn);
+        Button button2 = findViewById(R.id.logout_btn_yes);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

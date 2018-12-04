@@ -41,7 +41,7 @@ import java.util.ArrayList;
 public class BoardListFragment2 extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
     // TODO 여기 String 으로 옮겨야함
     static double BOARD_COUNT = 20;  //한페이지에 보여주는 게시글 수
-    static double PAGE_NUMBER = 1;     //현재 페이지 번호
+    static double PAGE_NUMBER = 0;     //현재 페이지 번호
     static double PAGE_COUNT = 5;   //페이지 번호
     static double PAGE_ALL_COUNT;
 

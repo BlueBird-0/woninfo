@@ -8,7 +8,7 @@
     android:background="@drawable/item_round_box">
 
     <TextView
-        android:id="@+id/popup_militaryleave_text1"
+        android:id="@+id/militaryleave_text_maintext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/login_btn_submit"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/popup_militaryleave_text2"
+        android:id="@+id/militaryleave_text_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -38,10 +38,10 @@
         android:textSize="@dimen/font_14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text1" />
+        app:layout_constraintTop_toBottomOf="@+id/militaryleave_text_maintext" />
 
     <TextView
-        android:id="@+id/popup_militaryleave_text3"
+        android:id="@+id/militaryleave_text_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -51,10 +51,10 @@
         android:textSize="@dimen/font_14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text2" />
+        app:layout_constraintTop_toBottomOf="@+id/militaryleave_text_first" />
 
     <TextView
-        android:id="@+id/popup_militaryleave_text4"
+        android:id="@+id/militaryleave_text_third"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -65,11 +65,11 @@
         android:textSize="@dimen/font_14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text3" />
+        app:layout_constraintTop_toBottomOf="@+id/militaryleave_text_second" />
 
 
     <Button
-        android:id="@+id/popup_militaryleave_btn"
+        android:id="@+id/militaryleave_btn_submit"
         android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -87,7 +87,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_militaryleave_text4" />
+        app:layout_constraintTop_toBottomOf="@+id/militaryleave_text_third" />
 
 
 </android.support.constraint.ConstraintLayout>

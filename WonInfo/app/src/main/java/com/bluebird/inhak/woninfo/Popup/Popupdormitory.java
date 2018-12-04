@@ -8,13 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class Popupgirloffically extends AppCompatActivity {
+public class Popupdormitory extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.popup_girl);
+        setContentView(R.layout.popup_dormitory);
         Intent intent = new Intent(this.getIntent());
 
-        Button button = (Button) findViewById(R.id.popup_girl_btn);
+        Button button = (Button) findViewById(R.id.popup_btn_dormitory);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,5 +25,3 @@ public class Popupgirloffically extends AppCompatActivity {
 
     }
 }
-
-

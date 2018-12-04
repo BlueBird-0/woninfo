@@ -17,7 +17,7 @@ import com.bluebird.inhak.woninfo.UserManager;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.popup_write);
 
-        Button button1 = findViewById(R.id.popup_write_canclebtn);
+        Button button1 = findViewById(R.id.write_btn_cancel);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,7 +26,7 @@ import com.bluebird.inhak.woninfo.UserManager;
             }
         });
 
-        Button button2 = findViewById(R.id.popup_write_okbtn);
+        Button button2 = findViewById(R.id.write_btn_yes);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

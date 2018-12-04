@@ -40,12 +40,12 @@ public class LoginActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.login_activity);
 
-        final MaterialTextField layout_id= (MaterialTextField)findViewById(R.id.login_textfiled_id);
-        final MaterialTextField layout_pw= (MaterialTextField)findViewById(R.id.login_textfiled_pw);
+        final MaterialTextField layout_id= (MaterialTextField)findViewById(R.id.user_login_textfield_id);
+        final MaterialTextField layout_pw= (MaterialTextField)findViewById(R.id.user_login_textfiled_password);
 
-        final EditText edit_id= (EditText)findViewById(R.id.login_edit_id);
-        final EditText edit_pw= (EditText)findViewById(R.id.login_edit_pw);
-        final Button login_submit = (Button)findViewById(R.id.login_btn_submit);
+        final EditText edit_id= (EditText)findViewById(R.id.user_login_edittext_id);
+        final EditText edit_pw= (EditText)findViewById(R.id.user_login_edittext_password);
+        final Button login_submit = (Button)findViewById(R.id.user_login_btn_submit);
 
 
         Log.d("test031", "login test");

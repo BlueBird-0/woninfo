@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/popup_logout_textView"
+        android:id="@+id/logout_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/login_btn_submit"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/popup_logout_canclebtn"
+        android:id="@+id/logout_btn_cancle"
         android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -41,10 +41,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_logout_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/logout_text" />
 
     <Button
-        android:id="@+id/popup_logout_okbtn"
+        android:id="@+id/logout_btn_yes"
         android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -59,8 +59,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/popup_logout_canclebtn"
-        app:layout_constraintTop_toBottomOf="@+id/popup_logout_textView"
+        app:layout_constraintStart_toEndOf="@+id/logout_btn_cancle"
+        app:layout_constraintTop_toBottomOf="@+id/logout_text"
         app:layout_constraintVertical_bias="1.0" />
 
 
