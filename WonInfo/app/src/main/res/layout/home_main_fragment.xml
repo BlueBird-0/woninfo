@@ -276,7 +276,7 @@ xmlns:tools="http://schemas.android.com/tools"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/frameLayout9"
-            tools:itemCount="3"
+            tools:itemCount="6"
             tools:listitem="@layout/home_main_list_item">
 
         </android.support.v7.widget.RecyclerView>

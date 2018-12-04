@@ -20,7 +20,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/nav_text_userid"
+            android:id="@+id/nav_text_displayname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -50,7 +50,7 @@
             app:srcCompat="@mipmap/ic_appicon_round" />
 
         <ImageView
-            android:id="@+id/imageView_message"
+            android:id="@+id/nav_imageView_message"
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_marginStart="16dp"
@@ -67,7 +67,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@+id/nav_btn_profilepic"
-            app:layout_constraintTop_toBottomOf="@+id/imageView_message"
+            app:layout_constraintTop_toBottomOf="@+id/nav_imageView_message"
             app:srcCompat="@drawable/ic_settings" />
 
 

@@ -8,7 +8,7 @@
     android:background="@drawable/item_round_box">
 
     <TextView
-        android:id="@+id/popup_ending_textView"
+        android:id="@+id/ending_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/login_btn_submit"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/popup_ending_canclebtn"
+        android:id="@+id/ending_btn_cancle"
         android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -40,10 +40,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_ending_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/ending_text" />
 
     <Button
-        android:id="@+id/popup_ending_okbtn"
+        android:id="@+id/ending_btn_yes"
         android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -58,8 +58,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/popup_ending_canclebtn"
-        app:layout_constraintTop_toBottomOf="@+id/popup_ending_textView"
+        app:layout_constraintStart_toEndOf="@+id/ending_btn_cancle"
+        app:layout_constraintTop_toBottomOf="@+id/ending_text"
         app:layout_constraintVertical_bias="1.0" />
 
 

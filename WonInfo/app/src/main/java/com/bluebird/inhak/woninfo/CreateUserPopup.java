@@ -34,11 +34,11 @@ public class CreateUserPopup extends AppCompatActivity
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.create_user_activity);
 
-        final EditText email = ((EditText)findViewById(R.id.create_user_email_edit));
-        final EditText password = ((EditText)findViewById(R.id.create_user_password_edit));
-        final EditText password_confirm = ((EditText)findViewById(R.id.create_user_confirm_edit));
-        final EditText nickname = ((EditText)findViewById(R.id.create_user_id_edit));
-        Button createBtn = (Button)findViewById(R.id.create_user_create_btn);
+        final EditText nickname = ((EditText)findViewById(R.id.user_edittext_displayname));
+        final EditText email = ((EditText)findViewById(R.id.user_edittext_email));
+        final EditText password = ((EditText)findViewById(R.id.user_edittext_password));
+        final EditText password_confirm = ((EditText)findViewById(R.id.user_edittext_passwordconfirm));
+        Button createBtn = (Button)findViewById(R.id.user_btn_createuser);
 
 
         createBtn.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +47,7 @@ public class CreateUserPopup extends AppCompatActivity
             public void onClick(View v) {
                 //비밀번호 확인
                 if (!password.getText().toString().equals(password_confirm.getText().toString())) {
-                    View main_view = (View)findViewById(R.id.create_layout_main);
+                    View main_view = (View)findViewById(R.id.user_layout_createuser);
                     Snackbar snackbar = Snackbar.make(main_view, "비밀번호를 확인해주세요", Snackbar.LENGTH_SHORT);
                     View snackBarView = snackbar.getView();
                     snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext, R.color.Theme_Blue));

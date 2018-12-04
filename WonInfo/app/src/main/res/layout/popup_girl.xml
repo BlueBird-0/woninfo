@@ -8,7 +8,7 @@
     android:clickable="true">
 
     <TextView
-        android:id="@+id/popup_girl_text1"
+        android:id="@+id/period_text_maintext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/login_btn_submit"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/popup_girl_text2"
+        android:id="@+id/period_text_first"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginStart="70dp"
@@ -37,10 +37,10 @@
         android:textSize="@dimen/font_15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_girl_text1" />
+        app:layout_constraintTop_toBottomOf="@+id/period_text_maintext" />
 
     <TextView
-        android:id="@+id/popup_girl_text3"
+        android:id="@+id/period_text_second"
         android:layout_width="wrap_content"
         android:layout_height="23dp"
         android:layout_marginStart="70dp"
@@ -50,10 +50,10 @@
         android:textSize="@dimen/font_15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_girl_text2" />
+        app:layout_constraintTop_toBottomOf="@+id/period_text_first" />
 
     <Button
-        android:id="@+id/popup_girl_btn"
+        android:id="@+id/period_btn_submit"
         android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -69,7 +69,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_girl_text3"
+        app:layout_constraintTop_toBottomOf="@+id/period_text_second"
         app:layout_constraintVertical_bias="1.0" />
 
 
