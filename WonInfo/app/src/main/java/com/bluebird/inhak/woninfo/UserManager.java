@@ -315,7 +315,9 @@ public class UserManager {
                                                 Log.d("test987", "User Profile updated.");
                                                 ((MainActivity)mainContext).replaceNavigation();
 
-                                                //사용자 Database 제작
+                                                /*  사용자 Database 제작
+                                                    Firestore > Users
+                                                */
                                                 Map<String, Object> newArticle = new HashMap<>();
                                                 newArticle.put("name", user.getDisplayName());
                                                 newArticle.put("message_token", null);

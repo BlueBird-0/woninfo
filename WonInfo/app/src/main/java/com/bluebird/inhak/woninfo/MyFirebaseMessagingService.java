@@ -31,10 +31,14 @@ public class MyFirebaseMessagingService extends com.google.firebase.messaging.Fi
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
         String channelId = "Default";
 
+        String notificationBody = "null";
+        if(remoteMessage.getNotification()!= null && remoteMessage.getNotification().getBody() != null)
+            notificationBody = remoteMessage.getNotification().getBody();
+
         NotificationCompat.Builder builder = new  NotificationCompat.Builder(this, channelId)
                 .setSmallIcon(R.drawable.ic_bbs)
                 .setContentTitle("test")
-                .setContentText(remoteMessage.getNotification().getBody()).setAutoCancel(true).setContentIntent(pendingIntent);;
+                .setContentText( notificationBody ).setAutoCancel(true).setContentIntent(pendingIntent);;
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(channelId, "Default channel", NotificationManager.IMPORTANCE_DEFAULT);
