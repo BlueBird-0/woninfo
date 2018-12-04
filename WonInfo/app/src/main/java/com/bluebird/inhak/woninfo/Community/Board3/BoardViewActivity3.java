@@ -79,24 +79,24 @@ public class BoardViewActivity3 extends AppCompatActivity implements SwipeRefres
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.community_item_document);
+        setContentView(R.layout.community_market_write3);
         this.activity = this;
 
-        swipeRefresh = findViewById(R.id.community_board1_layout);
-        swipeRefresh.setOnRefreshListener(this);
+        //swipeRefresh = findViewById(R.id.community_board1_layout);
+        //swipeRefresh.setOnRefreshListener(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+        //getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Bundle bundle = getIntent().getExtras();
         args = (BoardListItem) bundle.getSerializable("Bundle");
 
         /* args 데이터 입력 */
-        TextView id= (TextView) findViewById(R.id.community_board1_id);
+        TextView id= (TextView) findViewById(R.id.community_market_id);
         id.setText(args.getId());
-        TextView title= (TextView) findViewById(R.id.community_board1_title);
+        TextView title= (TextView) findViewById(R.id.community_market_title);
         title.setText(args.getTitle());
         TextView content= (TextView) findViewById(R.id.community_board1_content);
         content.setText(args.getContent());
