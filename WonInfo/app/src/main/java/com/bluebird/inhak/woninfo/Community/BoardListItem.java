@@ -1,7 +1,5 @@
 package com.bluebird.inhak.woninfo.Community;
 
-import android.widget.GridLayout;
-
 import java.io.Serializable;
 
 public class BoardListItem implements Serializable {

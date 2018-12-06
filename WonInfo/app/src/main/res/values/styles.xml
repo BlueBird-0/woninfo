@@ -6,12 +6,14 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="windowNoTitle">true</item>
         <!--<item name="android:textColor">@color/colorPrimaryDark</item>      테마 글씨체 (지우면 원래색) -->
 
         <!-- toolbar & bottombar -->
         <item name="actionBarSize">49dp</item>
-        <!-- 포커스 되어있지 않은 경우의 밑줄 부분 -->
-        <item name="android:colorControlNormal">@color/Theme_Black</item>
+        <!-- toolbar 버튼 색 -->
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
         <!-- 터치된 마지막 물방울 모양 -->
         <item name="android:colorControlActivated">@color/colorPrimary</item>
         <!-- 툴바 아이콘 색 -->

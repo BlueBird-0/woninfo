@@ -1,84 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
     android:background="@color/colorBackground"
     android:clickable="true"
     android:orientation="vertical">
 
-    <ScrollView
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/user_message_box"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="60dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/all_ripple_click"
+        android:clickable="true">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        <TextView
+            android:id="@+id/user_message_broadname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="message_broadname"
+            android:textColor="@color/Theme_Black"
+            android:textSize="@dimen/font_14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/user_message_layout1"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/all_ripple_click"
-                android:clickable="true">
+        <TextView
+            android:id="@+id/user_message_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:singleLine="true"
+            android:text="message_content"
+            android:textColor="@color/Theme_Black"
+            android:textSize="@dimen/bigtitle_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/community_comment1_id" />
 
-                <TextView
-                    android:id="@+id/user_message_broadname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:text="message_broadname"
-                    android:textColor="@color/Theme_Black"
-                    android:textSize="@dimen/font_14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/user_message_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="10/01 19:22"
+            android:textAlignment="textEnd"
+            android:textColor="@color/Theme_Gray"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-                <TextView
-                    android:id="@+id/user_message_content"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="message_content"
-                    android:textColor="@color/Theme_Black"
-                    android:textSize="@dimen/bigtitle_size"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/community_comment1_id" />
+    </android.support.constraint.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/user_message_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="10/01 19:22"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/Theme_Gray"
-                    android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/Theme_Gray">
 
-            </android.support.constraint.ConstraintLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="2px"
-                android:background="@color/Theme_Gray">
-
-            </FrameLayout>
-
-        </LinearLayout>
-
-
-    </ScrollView>
-
+    </FrameLayout>
 
 
 </LinearLayout>

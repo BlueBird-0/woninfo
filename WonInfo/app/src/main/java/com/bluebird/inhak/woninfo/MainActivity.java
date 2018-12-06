@@ -1,49 +1,35 @@
 package com.bluebird.inhak.woninfo;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.drawable.Drawable;
-import android.inputmethodservice.Keyboard;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import android.webkit.WebChromeClient;
@@ -54,42 +40,24 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bluebird.inhak.woninfo.Community.CommunityMainFragment;
-import com.bluebird.inhak.woninfo.Dictionary.A02Fragment.A02Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A05Fragment.A05Fragment;
-import com.bluebird.inhak.woninfo.Dictionary.A25Fragment.A25Fragment;
 import com.bluebird.inhak.woninfo.Dictionary.DictionaryMainFragment;
 import com.bluebird.inhak.woninfo.Home.HomeMainFragment;
 import com.bluebird.inhak.woninfo.Dictionary.A16Fragment.A16Fragment;
+import com.bluebird.inhak.woninfo.Message.MessageMainActivity;
 import com.bluebird.inhak.woninfo.Popup.PopupLogout;
-import com.bluebird.inhak.woninfo.PopupEnd;
-import com.bluebird.inhak.woninfo.Popupdormitory;
-import com.bluebird.inhak.woninfo.Popupgirloffically;
-import com.bluebird.inhak.woninfo.Popupvoluntary;
+import com.bluebird.inhak.woninfo.Popup.PopupEnd;
+import com.bluebird.inhak.woninfo.Popup.Popupdormitory;
+import com.bluebird.inhak.woninfo.Popup.Popupgirloffically;
+import com.bluebird.inhak.woninfo.Popup.Popupvoluntary;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.transition.Transition;
-import com.google.android.youtube.player.YouTubePlayerFragment;
-import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.gun0912.tedpermission.PermissionListener;
-import com.gun0912.tedpermission.TedPermission;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
 import com.kakao.util.KakaoParameterException;
 import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
-
-import java.util.List;
-
-import gun0912.tedbottompicker.TedBottomPicker;
-
-import static com.bluebird.inhak.woninfo.WebViewFragment.view;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static Context mainContext;
@@ -249,13 +217,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             message.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-
-                                    ((DrawerLayout)findViewById(R.id.drawer_layout)).closeDrawer(GravityCompat.START);
-                                    View main_view = (View)view.getRootView().findViewById(R.id.snackbar_view);
-                                    Snackbar snackbar = Snackbar.make(main_view, "점검중입니다.", Snackbar.LENGTH_SHORT);
-                                    View snackBarView = snackbar.getView();
-                                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
-                                    snackbar.show();
+                                    //드로어블 레이아웃에 쪽지 버튼 클릭
+                                    startActivity(new Intent(getApplicationContext(), MessageMainActivity.class));
+                                    //drawer.closeDrawer(GravityCompat.START);
                                 }
                             });
                             if(user.getDisplayName().toString().equals("배수지")) {
@@ -513,7 +477,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    static public void setBottomBarMenu(int id){
+    static public void setBottomBarMenu(@Nullable int id){
         BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
         bottomNavigationView.findViewById(id).callOnClick();
     }

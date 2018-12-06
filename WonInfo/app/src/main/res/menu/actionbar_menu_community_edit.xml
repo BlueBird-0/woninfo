@@ -6,6 +6,5 @@
         android:id="@+id/action_edit"
         android:icon="@drawable/ic_action_edit"
         android:title="@string/action_edit"
-        app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView"/>
 </menu>

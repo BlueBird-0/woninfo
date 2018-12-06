@@ -1,242 +1,303 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/community_board1_layout"
+    android:id="@+id/community_view_article"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <android.support.constraint.ConstraintLayout
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="@color/Theme_Red">
 
-        <android.support.v4.widget.NestedScrollView
-            android:id="@+id/nestedScrollView"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginBottom="1px"
             android:background="@color/Theme_White"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
-            app:layout_constraintTop_toTopOf="parent">
+            android:fitsSystemWindows="true">
 
-            <LinearLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="WON"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="INFO"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/community_market_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clickable="true"
-                android:orientation="vertical">
+                android:layout_height="0dp"
+                android:background="@color/Theme_LightGray"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-
-                <android.support.constraint.ConstraintLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:orientation="vertical">
 
 
                     <android.support.constraint.ConstraintLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/box"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/colorBackground">
 
-
-                        <ImageView
-                            android:id="@+id/community_market_profile"
-                            android:layout_width="38dp"
-                            android:layout_height="38dp"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="8dp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/community_layout_image"
-                            app:srcCompat="@drawable/ic_profile" />
-
-                        <TextView
-                            android:id="@+id/community_market_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="8dp"
-                            android:text="id"
-                            android:textColor="@color/Theme_Black"
-                            android:textSize="@dimen/title_size"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toEndOf="@+id/community_market_profile"
-                            app:layout_constraintTop_toBottomOf="@+id/community_layout_image" />
-
-                        <TextView
-                            android:id="@+id/community_market_date"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="16dp"
-                            android:text="date"
-                            android:textAlignment="textEnd"
-                            android:textColor="@color/Theme_Gray"
-                            android:textSize="@dimen/bigtitle_size"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/community_layout_image" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="8dp"
-                            android:text="종류"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/community_market_profile" />
-
-                        <TextView
-                            android:id="@+id/community_market_book_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="70dp"
-                            android:layout_marginTop="8dp"
-                            android:text="원"
-                            android:textColor="@color/Theme_Red"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/community_market_profile" />
-
-
-                        <TextView
-                            android:id="@+id/community_market_title"
+                        <android.support.constraint.ConstraintLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="35dp"
-                            android:layout_marginEnd="16dp"
-                            android:text="title"
-                            android:textColor="@color/Theme_Black"
-                            android:textSize="@dimen/list_item_bigtitle_size"
-                            android:textStyle="bold"
+                            android:background="@drawable/box"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/community_market_profile" />
-
-                        <TextView
-                            android:id="@+id/community_board1_content"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="16dp"
-                            android:text="content"
-                            android:textColor="@color/Theme_Black"
-                            android:textSize="@dimen/bigtitle_size"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/community_market_title" />
-
-                        <ImageView
-                            android:id="@+id/community_list_item_comment"
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:layout_marginEnd="4dp"
-                            android:tint="@color/Theme_Black"
-                            app:layout_constraintBottom_toBottomOf="@+id/community_market_commentcount"
-                            app:layout_constraintEnd_toStartOf="@+id/community_market_commentcount"
-                            app:srcCompat="@drawable/ic_comment" />
-
-                        <TextView
-                            android:id="@+id/community_market_commentcount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="12dp"
-                            android:text="0"
-                            android:textColor="@color/Theme_Black"
-                            android:textSize="@dimen/bigtitle_size"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/community_board1_content" />
-
-
-                        <LinearLayout
-                            android:id="@+id/community_layout_image"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:orientation="vertical"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
-                            <ImageView
-                                android:id="@+id/market_imageView11"
+
+                            <LinearLayout
+                                android:id="@+id/community_layout_image"
                                 android:layout_width="match_parent"
-                                android:layout_height="143dp"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:background="@drawable/all_shape_roundrectanglebox"
-                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:orientation="vertical"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.0"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_menu_gallery" />
+                                app:layout_constraintTop_toTopOf="parent">
 
-                        </LinearLayout>
+                                <ImageView
+                                    android:id="@+id/market_imageView11"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="143dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@drawable/all_shape_roundrectanglebox"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.0"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/ic_menu_gallery" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/community_market_profile"
+                                android:layout_width="38dp"
+                                android:layout_height="38dp"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="8dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/community_layout_image"
+                                app:srcCompat="@drawable/ic_profile" />
+
+                            <TextView
+                                android:id="@+id/community_market_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="8dp"
+                                android:text="id"
+                                android:textColor="@color/Theme_Black"
+                                android:textSize="@dimen/title_size"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/community_market_profile"
+                                app:layout_constraintTop_toBottomOf="@+id/community_layout_image" />
+
+                            <TextView
+                                android:id="@+id/community_market_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="16dp"
+                                android:text="date"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/Theme_Gray"
+                                android:textSize="@dimen/bigtitle_size"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/community_layout_image" />
+
+                            <TextView
+                                android:id="@+id/community_market_kinds"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="8dp"
+                                android:text="종류"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/community_market_profile" />
+
+                            <TextView
+                                android:id="@+id/community_market_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="8dp"
+                                android:text="원"
+                                android:textColor="@color/Theme_Red"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/community_market_kinds"
+                                app:layout_constraintTop_toBottomOf="@+id/community_market_profile" />
+
+
+                            <TextView
+                                android:id="@+id/community_market_title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="35dp"
+                                android:layout_marginEnd="16dp"
+                                android:text="title"
+                                android:textColor="@color/Theme_Black"
+                                android:textSize="@dimen/list_item_bigtitle_size"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/community_market_profile" />
+
+                            <TextView
+                                android:id="@+id/community_market_content"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="16dp"
+                                android:text="content"
+                                android:textColor="@color/Theme_Black"
+                                android:textSize="@dimen/bigtitle_size"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/community_market_title" />
+
+                            <ImageView
+                                android:id="@+id/community_list_item_comment"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_marginEnd="8dp"
+                                android:tint="@color/colorPrimaryDark"
+                                app:layout_constraintBottom_toBottomOf="@+id/community_market_commentcount"
+                                app:layout_constraintEnd_toStartOf="@+id/community_market_commentcount"
+                                app:srcCompat="@drawable/ic_comment" />
+
+                            <TextView
+                                android:id="@+id/community_market_commentcount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="0"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="@dimen/bigtitle_size"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/community_market_content" />
+
+
+                        </android.support.constraint.ConstraintLayout>
 
 
                     </android.support.constraint.ConstraintLayout>
 
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/community_recycler_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:scrollbars="vertical"
+                        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/comminity_board1_layout"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/community_item_comment" />
 
-                </android.support.constraint.ConstraintLayout>
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/community_recycler_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scrollbars="vertical"
-                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/comminity_board1_layout"
-                    tools:itemCount="3"
-                    tools:listitem="@layout/community_item_comment" />
-
-            </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>
-
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/market_constraintLayout6"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:background="@drawable/all_shape_roundrectanglebox"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <EditText
-                android:id="@+id/market_edit_commentwrite"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:background="@null"
-                android:ems="10"
-                android:hint="새 댓글을 작성하세요."
-                android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/board1_btn_commentwrite"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/market_btn_commentwrite"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:background="@drawable/ic_send_2"
-                android:backgroundTint="@color/Theme_Red"
-                android:textStyle="bold"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorBackground"
+                android:fitsSystemWindows="false"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
-    </android.support.constraint.ConstraintLayout>
+                app:layout_constraintStart_toStartOf="parent">
 
-</android.support.v4.widget.SwipeRefreshLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/Theme_Gray" />
+
+                <EditText
+                    android:id="@+id/market_edit_commentwrite"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="  새 댓글을 작성하세요."
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/board1_btn_commentwrite"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/market_btn_commentwrite"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/ic_send_24dp"
+                    android:backgroundTint="@color/Theme_Red"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/snackbar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize" />
+</android.support.design.widget.CoordinatorLayout>

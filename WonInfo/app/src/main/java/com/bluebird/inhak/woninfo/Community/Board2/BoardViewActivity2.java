@@ -65,11 +65,6 @@ public class BoardViewActivity2 extends AppCompatActivity implements SwipeRefres
         swipeRefresh = findViewById(R.id.community_board1_layout);
         swipeRefresh.setOnRefreshListener(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         Bundle bundle = getIntent().getExtras();
         args = (BoardListItem) bundle.getSerializable("Bundle");

@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/community_view_article"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -38,16 +39,11 @@
                 android:textStyle="bold" />
 
 
-
         </android.support.v7.widget.Toolbar>
-
     </android.support.design.widget.AppBarLayout>
 
-
-    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/user_message_layout"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/user_swipe_messageroom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize">
@@ -56,39 +52,40 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!--
             <android.support.v4.widget.NestedScrollView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:background="@color/Theme_White"
-                app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+            android:id="@+id/user_recycler_messagescroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorBackground"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clickable="true"
-                    android:orientation="vertical">
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/user_message_recycler_list"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:scrollbars="vertical"
-                        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/comminity_board1_layout"
-                        tools:itemCount="1"
-                        tools:listitem="@layout/user_mymessage_chat_item" />
-
+                    android:layout_height="match_parent">
+            -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/user_recycler_messagelist"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scrollbars="vertical"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="5"
+                tools:listitem="@layout/user_message_chat1_item" />
+            <!--
                 </LinearLayout>
 
             </android.support.v4.widget.NestedScrollView>
+            -->
 
             <android.support.constraint.ConstraintLayout
-                android:id="@+id/user_message_constraintLayout"
+                android:id="@+id/constraintLayout6"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_alignParentBottom="true"
@@ -106,27 +103,28 @@
                     android:background="@color/Theme_Gray" />
 
                 <EditText
-                    android:id="@+id/user_message_edit_commentwrite"
+                    android:id="@+id/message_edit_commentwrite"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:background="@null"
                     android:ems="10"
-                    android:hint="  채팅"
+                    android:hint="Send..."
                     android:inputType="textPersonName"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/user_message_btn_commentwrite"
+                    app:layout_constraintEnd_toStartOf="@+id/message_btn_commentwrite"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/user_message_btn_commentwrite"
+                    android:id="@+id/message_btn_commentwrite"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/ic_send_24dp"
-                    android:backgroundTint="@color/Theme_Red"
+                    android:enabled="false"
+                    android:backgroundTint="@color/Theme_Gray"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

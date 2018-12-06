@@ -2,20 +2,19 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:id="@+id/community_layout_commentpopup"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:background="@drawable/item_round_box"
-    android:id="@+id/community_layout_commentpopup"
     android:clickable="true">
 
 
     <Button
-        android:id="@+id/popup_voluntary_btn"
+        android:id="@+id/popup_sendmessage_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
         android:background="@drawable/all_ripple_click_roundrectanglebox"
         android:text="쪽지 보내기"
         android:textColor="@color/Theme_Blue"
@@ -30,8 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
         android:background="@drawable/all_ripple_click_roundrectanglebox"
         android:text="신고"
         android:textColor="@color/Theme_Red"
@@ -40,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popup_voluntary_btn"
+        app:layout_constraintTop_toBottomOf="@+id/popup_sendmessage_btn"
         app:layout_constraintVertical_bias="0.0" />
 
 

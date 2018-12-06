@@ -6,24 +6,18 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bluebird.inhak.woninfo.Community.LongclickPopup;
 import com.bluebird.inhak.woninfo.Community.Textboard.Comment;
-import com.bluebird.inhak.woninfo.CreateUserPopup;
-import com.bluebird.inhak.woninfo.MainActivity;
+import com.bluebird.inhak.woninfo.InteractUserPopup;
+import com.bluebird.inhak.woninfo.Popup.PopupEnd;
 import com.bluebird.inhak.woninfo.R;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,12 +27,9 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
-import static com.bluebird.inhak.woninfo.MainActivity.mainContext;
-
 public class CommentListAdapter1 extends RecyclerView.Adapter<CommentListAdapter1.CommentListViewHolder> {
     private ArrayList<Comment> items;
     private AppCompatActivity activity;
-    private Context context;
 
     // 적절한 생성자를 제공합니다(데이터 집합의 종류에 따라 다름
     public CommentListAdapter1(ArrayList<Comment> items, AppCompatActivity activity)
@@ -96,6 +87,7 @@ public class CommentListAdapter1 extends RecyclerView.Adapter<CommentListAdapter
             boxLayout.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
+                    activity.startActivity(new Intent(activity.getApplicationContext(), InteractUserPopup.class));
 
                 //    Context context = (Context)v.getContext().getApplicationContext().findViewById(R.id.community_view_article);
               //      View view = (View)v.getRootView().findViewById(R.id.community_view_article);

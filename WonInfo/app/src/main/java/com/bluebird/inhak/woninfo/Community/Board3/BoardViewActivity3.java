@@ -39,6 +39,7 @@ import com.bluebird.inhak.woninfo.MainActivity;
 import com.bluebird.inhak.woninfo.R;
 import com.bluebird.inhak.woninfo.UserManager;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -82,8 +83,8 @@ public class BoardViewActivity3 extends AppCompatActivity implements SwipeRefres
         setContentView(R.layout.community_market_write3);
         this.activity = this;
 
-        //swipeRefresh = findViewById(R.id.community_board1_layout);
-        //swipeRefresh.setOnRefreshListener(this);
+        swipeRefresh = findViewById(R.id.community_market_layout);
+        swipeRefresh.setOnRefreshListener(this);
 
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
@@ -92,18 +93,22 @@ public class BoardViewActivity3 extends AppCompatActivity implements SwipeRefres
 
         Bundle bundle = getIntent().getExtras();
         args = (BoardListItem) bundle.getSerializable("Bundle");
-
         /* args 데이터 입력 */
         TextView id= (TextView) findViewById(R.id.community_market_id);
         id.setText(args.getId());
         TextView title= (TextView) findViewById(R.id.community_market_title);
         title.setText(args.getTitle());
-        TextView content= (TextView) findViewById(R.id.community_board1_content);
+        TextView content= (TextView) findViewById(R.id.community_market_content);
         content.setText(args.getContent());
-        final TextView date= (TextView) findViewById(R.id.community_board1_date);
+        final TextView date= (TextView) findViewById(R.id.community_market_date);
         date.setText(args.getDate());
 
-        TextView commentCount= (TextView) findViewById(R.id.community_board1_commentcount);
+        TextView kinds= (TextView) findViewById(R.id.community_market_kinds);
+        kinds.setText(args.getKinds());
+        TextView price= (TextView) findViewById(R.id.community_market_price);
+        price.setText(args.getPrice()+"￦");
+
+        TextView commentCount= (TextView) findViewById(R.id.community_market_commentcount);
         commentCount.setText(String.valueOf((int)args.getCommentCount()));
 
 
@@ -114,12 +119,12 @@ public class BoardViewActivity3 extends AppCompatActivity implements SwipeRefres
 
     public void setCommentFunction()
     {
-        final Button commentBtn = (Button)findViewById(R.id.board1_btn_commentwrite);
+        final Button commentBtn = (Button)findViewById(R.id.market_btn_commentwrite);
         commentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                EditText commentEdit = (EditText)findViewById(R.id.board1_edit_commentwrite);
+                EditText commentEdit = (EditText)findViewById(R.id.market_edit_commentwrite);
                 if(commentEdit.getText().toString().equals(null))
                 {
                     Log.d("test040","값이 없습니다.");
@@ -186,10 +191,10 @@ public class BoardViewActivity3 extends AppCompatActivity implements SwipeRefres
 
                    /*                 TextView likeCountText= (TextView) view.findViewById(R.id.community_board1_likecount);
                                     likeCountText.setText(document.get("like_count").toString());*/
-                                    TextView commentCountText= (TextView) findViewById(R.id.community_board1_commentcount);
+                                    TextView commentCountText= (TextView) findViewById(R.id.community_market_commentcount);
                                     commentCountText.setText(String.valueOf((int)(double)document.getDouble("comment_count")));
                                     if(document.get("uid")!=null) {
-                                        ImageView imageView = (ImageView)findViewById(R.id.community_board1_profile);
+                                        ImageView imageView = (ImageView)findViewById(R.id.community_market_profile);
                                         loadProfile(document.getString("uid"), imageView);
                                     }
 
@@ -242,7 +247,10 @@ public class BoardViewActivity3 extends AppCompatActivity implements SwipeRefres
             @Override
             public void onSuccess(Uri uri) {
                 if(imageView != null)
-                    Glide.with(activity).load(uri).into(imageView);
+                    Glide.with(activity)
+                            .load(uri)
+                            .apply(new RequestOptions().centerCrop())
+                            .into(imageView);
             }
         });
     }

@@ -215,7 +215,6 @@ public class BoardListFragment1 extends Fragment implements SwipeRefreshLayout.O
         editItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-
                 Intent intent=new Intent(getActivity(), BoardTextBoard1.class);
                 getActivity().startActivity(intent);
                 return false;
