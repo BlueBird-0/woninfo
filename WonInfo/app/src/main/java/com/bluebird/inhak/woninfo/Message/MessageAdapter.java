@@ -55,10 +55,16 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     @Override
     public void onBindViewHolder(@NonNull final MessageViewHolder messageViewHolder, int position) {
         message = messageList.get(position);
-        messageViewHolder.boardname.setText(message.getNickname());
+        if (message.isAnon() == true)
+        {
+            messageViewHolder.boardname.setText("익명");
+        }else
+        {
+            messageViewHolder.boardname.setText(message.getNickname());
+        }
         messageViewHolder.content.setText(message.getLastMessage());
-        Format formatter = new SimpleDateFormat("HH:mm");
-        String dateStr = formatter.format(message.getDate().getApproximateDate());
+        Format formatter = new SimpleDateFormat("yy-MM-dd\nHH:mm");
+        String dateStr = formatter.format(message.getDate());
         messageViewHolder.date.setText(dateStr);
 
         messageViewHolder.layout.setOnClickListener(new View.OnClickListener() {

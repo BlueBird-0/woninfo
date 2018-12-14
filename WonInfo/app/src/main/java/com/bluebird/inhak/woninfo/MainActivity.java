@@ -222,6 +222,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                     //drawer.closeDrawer(GravityCompat.START);
                                 }
                             });
+
+
                             if(user.getDisplayName().toString().equals("배수지")) {
                                 navigationView.inflateMenu(R.menu.nav_menu_girl);
                             }

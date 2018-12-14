@@ -77,7 +77,6 @@ public class UserManager {
     static private NavigationView navigationView;
 
 
-
     //프로필사진 선택 및 크롭
     static public void profilePicSelect(final FragmentManager fragmentManager) {
         PermissionListener permissionlistener = new PermissionListener() {
@@ -307,12 +306,13 @@ public class UserManager {
                                     .setDisplayName(nickname)
                                     .build();
 
+                            Log.d("test001","회원가입");
+
                             user.updateProfile(profileUpdates)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-                                                Log.d("test987", "User Profile updated.");
                                                 ((MainActivity)mainContext).replaceNavigation();
 
                                                 /*  사용자 Database 제작
@@ -320,15 +320,21 @@ public class UserManager {
                                                 */
                                                 Map<String, Object> newArticle = new HashMap<>();
                                                 newArticle.put("name", user.getDisplayName());
+                                                newArticle.put("userId", user.getUid());
                                                 newArticle.put("message_token", null);
 
-                                                FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-                                                firestore.collection("Users").document( user.getUid() )
+                                                final FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                                db.collection("Users").document( user.getUid() )
                                                         .set(newArticle)
                                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                             @Override
                                                             public void onSuccess(Void aVoid) {
+                                                                Map<String, Object> readMeArticle = new HashMap<>();
+                                                                readMeArticle.put("desc", "anon, boardName, date, lastMessage, messageRoomUid, nickname, uid");
+                                                                db.collection("Users").document(user.getUid()).collection("MessageJoin")
+                                                                        .document("README").set(readMeArticle);
 
+                                                                new MyFirebaseInstanceIDService().onTokenRefresh();
                                                             }
                                                         });
                                             }

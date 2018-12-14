@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/user_message_nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -47,7 +47,7 @@
             android:background="@drawable/shape_theirmessage_chat"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10">
+            app:layout_constraintTop_toBottomOf="@+id/user_message_nickname">
 
             <TextView
                 android:id="@+id/user_message_body"

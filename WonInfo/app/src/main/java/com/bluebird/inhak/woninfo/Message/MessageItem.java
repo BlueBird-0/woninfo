@@ -6,19 +6,23 @@ import android.util.Log;
 import com.google.firebase.Timestamp;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MessageItem implements Serializable {
     private String boardName;
     private String lastMessage;
-    private Timestamp date;
+    private Date date;
     private String nickname;
     private String messageRoomUid;
     private String uid;
     private boolean anon;
+    private int alert_num;
 
-    public MessageItem(String messageRoomUid, String boardName, String lastMessage, Timestamp date,String uid, String nickname, boolean anon)
+    public MessageItem()
+    {}
+    public MessageItem(String messageRoomUid, String boardName, String lastMessage, Date date, String uid, String nickname, boolean anon)
     {
         this.messageRoomUid = messageRoomUid;
         this.boardName = boardName;
@@ -27,6 +31,16 @@ public class MessageItem implements Serializable {
         this.uid = uid;
         this.nickname = nickname;
         this.anon = anon;
+        this.alert_num = 0;
+    }
+
+
+    public int getAlert_num() {
+        return alert_num;
+    }
+
+    public void setAlert_num(int alert_num) {
+        this.alert_num = alert_num;
     }
 
     public Map<String, Object> getHashMap(){
@@ -38,6 +52,7 @@ public class MessageItem implements Serializable {
         newArticle.put("messageRoomUid", messageRoomUid);
         newArticle.put("uid", uid);
         newArticle.put("anon", anon);
+        newArticle.put("alert_num", alert_num);
         return newArticle;
     }
 
@@ -89,11 +104,11 @@ public class MessageItem implements Serializable {
         this.lastMessage = lastMessage;
     }
 
-    public Timestamp getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }

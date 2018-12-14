@@ -30,6 +30,21 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/user_message_alertnum"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/all_shape_circle2"
+            android:gravity="center"
+            android:text="100"
+            android:textColor="@color/Theme_White"
+            android:textSize="8sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/user_message_date"
+            app:layout_constraintEnd_toStartOf="@+id/user_message_date"
+            app:layout_constraintTop_toTopOf="@+id/user_message_date" />
+
+        <TextView
             android:id="@+id/user_message_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,7 +53,7 @@
             android:layout_marginBottom="8dp"
             android:singleLine="true"
             android:text="message_content"
-            android:textColor="@color/Theme_Black"
+            android:textColor="@color/Theme_Gray"
             android:textSize="@dimen/bigtitle_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

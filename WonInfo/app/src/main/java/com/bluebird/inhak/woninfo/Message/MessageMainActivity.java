@@ -76,17 +76,15 @@ public class MessageMainActivity extends AppCompatActivity {
                 messageList.clear();
                 for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
                     if (doc.get("messageRoomUid") != null) {
-
                         String messageRoomUid = doc.getString("messageRoomUid");
                         boolean anon = doc.getBoolean("anon");
                         String boardName = doc.getString("boardName");
                         String lastMessage = doc.getString("lastMessage");
                         Date date = doc.getDate("date");
-                        Timestamp timestamp = new Timestamp(date);
                         String nickname = doc.getString("nickname");
                         String uid = doc.getString("uid");
 
-                        MessageItem message = new MessageItem(messageRoomUid, boardName, lastMessage, timestamp,uid, nickname, anon);
+                        MessageItem message = new MessageItem(messageRoomUid, boardName, lastMessage, date, uid, nickname, anon);
                         messageList.add(message);
                     }
                 }

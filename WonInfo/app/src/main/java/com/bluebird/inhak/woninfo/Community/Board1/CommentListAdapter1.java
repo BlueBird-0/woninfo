@@ -4,6 +4,7 @@ package com.bluebird.inhak.woninfo.Community.Board1;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.bluebird.inhak.woninfo.Community.Textboard.Comment;
 import com.bluebird.inhak.woninfo.InteractUserPopup;
+import com.bluebird.inhak.woninfo.Message.MessageItem;
 import com.bluebird.inhak.woninfo.Popup.PopupEnd;
 import com.bluebird.inhak.woninfo.R;
 import com.bumptech.glide.Glide;
@@ -87,18 +89,19 @@ public class CommentListAdapter1 extends RecyclerView.Adapter<CommentListAdapter
             boxLayout.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    activity.startActivity(new Intent(activity.getApplicationContext(), InteractUserPopup.class));
 
-                //    Context context = (Context)v.getContext().getApplicationContext().findViewById(R.id.community_view_article);
-              //      View view = (View)v.getRootView().findViewById(R.id.community_view_article);
-            //        v.getContext().startActivity(new Intent(v.getContext().getApplicationContext(), LongclickPopup.class));
+                    //Bundle 만들어서 전달
+                    MessageItem messageItem = new MessageItem();
+                    messageItem.setAnon(true);
+                    messageItem.setUid(item.getWriter_uid());
+                    messageItem.setBoardName("익명게시판");
+                    messageItem.setNickname(item.getWriter_id());
 
-
-//                    View main_view = (View)v.getRootView().findViewById(R.id.snackbar_view);
-//                    Snackbar snackbar = Snackbar.make(main_view,"롱클릭 삐융삐융",Snackbar.LENGTH_SHORT);
-//                    View snackBarView = snackbar.getView();
-//                    snackBarView.setBackgroundColor(ContextCompat.getColor(mainContext,R.color.Theme_Blue));
-//                    snackbar.show();
+                    Intent intent = new Intent(activity.getApplicationContext(), InteractUserPopup.class);
+                    Bundle args = new Bundle();
+                    args.putSerializable("Bundle", messageItem);
+                    intent.putExtras(args);
+                    activity.startActivity(intent);
 
                     Log.d("comment",item.getWriter_uid());
 

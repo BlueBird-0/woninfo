@@ -80,22 +80,36 @@ public class MessageRoomActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //bundle있다면 가져오기
-        if(!getIntent().getExtras().isEmpty()) {
+        if(getIntent().getExtras() != null && !getIntent().getExtras().isEmpty()) {
             Bundle bundle = getIntent().getExtras();
             args = (MessageItem) bundle.getSerializable("Bundle");
-
             //채팅방이 있는 경우이면
             if(args.getMessageRoomUid() != null)
             {
                 connectedMessageRoom = args.getMessageRoomUid();
+                synchronizeMessage();
+                //getMessage();
             }
             //리스트에서 사람 이름으로 채팅 검색
-            //if(args.isAnon() != false && args.getUid() != null)
-            //{
-            //}
+            else if(args.isAnon() != false && args.getUid() != null)
+            {
+                db.collection("Users").document(UserManager.firebaseUser.getUid())
+                        .collection("MessageJoin")
+                        .whereEqualTo("uid", args.getUid())
+                        .get()
+                        .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                for(DocumentSnapshot ds : queryDocumentSnapshots.getDocuments())
+                                {
+                                    connectedMessageRoom = ds.getString("messageRoomUid");
+                                    synchronizeMessage();
+                                }
+                            }
+                        });
+                Log.d("test098", "testtest2");
+            }
         }
-        getMessage();
-
 
         messageRecycler = (RecyclerView)findViewById(R.id.user_recycler_messagelist);
         messageRecycler.setHasFixedSize(true);
@@ -128,7 +142,7 @@ public class MessageRoomActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(connectedMessageRoom == null) {
-                    settingMessageRoom(editText.getText().toString());
+                    createMessageRoom(editText.getText().toString());
                 }else {
                     sendMessage(editText.getText().toString());
                 }
@@ -139,25 +153,6 @@ public class MessageRoomActivity extends AppCompatActivity {
                 messageSend.startAnimation(animation);
             }
         });
-
-
-        searchList("a");
-    }
-
-    public void testCreate()
-    {
-        MessageItem messageItem =  new MessageItem(connectedMessageRoom,"",    "", Timestamp.now(), "상대방 uid", "상대방 닉네임", false);
-        Map<String, Object> newArticle = messageItem.getHashMap();
-
-        db.collection("Users").document(UserManager.firebaseUser.getUid())
-                .collection("MessageJoin")
-                .add(newArticle)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d("test098","메세지 보내기 성공");
-                    }
-                });
     }
 
     List<String> Chatlist = new ArrayList();
@@ -180,12 +175,12 @@ public class MessageRoomActivity extends AppCompatActivity {
                 });
     }
 
-    public void settingMessageRoom(final String firstMessage)
+    public void createMessageRoom(final String firstMessage)
     {
         messageSend_Tirger = false; //채팅방 생성까지 잠시 막아둠
         Map<String, Object> newArticle = new HashMap<>();
         newArticle.put("User1_uid", UserManager.firebaseUser.getUid()); //자신 uid 입력
-        newArticle.put("User2_uid", "bundle_uid");  //상대방 uid 입력
+        newArticle.put("User2_uid", args.getUid());  //상대방 uid 입력
         db.collection("MessageRooms")
                 .add(newArticle)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -193,19 +188,33 @@ public class MessageRoomActivity extends AppCompatActivity {
                     public void onSuccess(DocumentReference documentReference) {
                         connectedMessageRoom = documentReference.getId(); //채팅방 이름 설정
                         synchronizeMessage();
-                        sendMessage(firstMessage);
-                        testCreate();
                         messageSend_Tirger = true;
+
+                        //자기 채팅방 목록에 추가
+                        settingMessageRoom(UserManager.firebaseUser.getUid(), args.getUid());
+                        //상대 채팅방 목록에 추가
+                        settingMessageRoom(args.getUid(), UserManager.firebaseUser.getUid());
+                        sendMessage(firstMessage);
                     }
                 });
     }
 
+    public void settingMessageRoom(String my_uid, String other_uid)
+    {
+        MessageItem messageItem =  new MessageItem(connectedMessageRoom, args.getBoardName(), args.getLastMessage(), Timestamp.now().getApproximateDate(), other_uid, args.getNickname(), args.isAnon());
+        final Map<String, Object> newArticle = messageItem.getHashMap();
+
+        db.collection("Users").document(my_uid).collection("MessageJoin")
+                .document(connectedMessageRoom)
+                .set(newArticle);
+    }
+
     public void sendMessage(String message)
     {
+        Timestamp sendTime = Timestamp.now();
         Map<String, Object> newArticle = new HashMap<>();
         newArticle.put("message", message);
-
-        newArticle.put("date", Timestamp.now());
+        newArticle.put("date", sendTime);
         newArticle.put("writerUid", UserManager.firebaseUser.getUid());
 
         db.collection("MessageRooms").document(connectedMessageRoom).collection("Messages")
@@ -216,6 +225,19 @@ public class MessageRoomActivity extends AppCompatActivity {
                         Log.d("test098","메세지 보내기 성공");
                     }
                 });
+
+
+        //최신 메시지 함 바꾸기
+        Map<String, Object> messageRoomArticle = new HashMap<>();
+        messageRoomArticle.put("lastMessage", message);
+        messageRoomArticle.put("date", sendTime);
+
+        db.collection("Users").document(UserManager.firebaseUser.getUid())
+                .collection("MessageJoin").document(connectedMessageRoom)
+                .update(messageRoomArticle);
+        db.collection("Users").document(args.getUid())
+                .collection("MessageJoin").document(connectedMessageRoom)
+                .update(messageRoomArticle);
     }
 
     //메시지창을 동기화 합니다. 메시지창이 켜진 다음부터의 대화를 출력합니다.
@@ -223,6 +245,7 @@ public class MessageRoomActivity extends AppCompatActivity {
     {
         db.collection("MessageRooms").document(connectedMessageRoom)
                 .collection("Messages")
+                .orderBy("date")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value,
@@ -232,14 +255,11 @@ public class MessageRoomActivity extends AppCompatActivity {
                             return;
                         }
                         for (DocumentChange dc : value.getDocumentChanges()) {
-                            Log.d("test098", "받아오기 성공 :"+dc.toString());
                             String messageString = dc.getDocument().getString("message");
                             String writerUid = dc.getDocument().getString("writerUid");
                             Date date = dc.getDocument().getDate("date");
-                            Format formatter = new SimpleDateFormat("HH:mm");
-                            String dateStr = formatter.format(date);
 
-                            MessageItem message = new MessageItem(connectedMessageRoom, null, null, Timestamp.now(), messageString, writerUid, args.isAnon());
+                            MessageItem message = new MessageItem(connectedMessageRoom, null, messageString, date, writerUid, args.getNickname(), args.isAnon());
                             messageList.add(message);
                             messageAdapter.notifyDataSetChanged();
                             messageRecycler.scrollToPosition(messageAdapter.getItemCount()-1);
@@ -262,13 +282,8 @@ public class MessageRoomActivity extends AppCompatActivity {
                             String messageString = documentSnapshot.getString("message");
                             String writerUid = documentSnapshot.getString("writerUid");
                             Date date = documentSnapshot.getDate("date");
-                            Timestamp timestamp = new Timestamp(date);
-                            Log.d("test098","aaaa:"+timestamp.toString());
-                            //Format formatter = new SimpleDateFormat("HH:mm");
-                            //String dateStr = formatter.format(date);
-                            //Log.d("test098", dateStr);
 
-                            MessageItem message = new MessageItem(connectedMessageRoom,null, messageString, timestamp, writerUid, args.getNickname(), args.isAnon());
+                            MessageItem message = new MessageItem(connectedMessageRoom,null, messageString, date, writerUid, args.getNickname(), args.isAnon());
                             messageList.add(0, message);
                         }
                         messageAdapter.notifyDataSetChanged();
